@@ -1,0 +1,656 @@
+
+@prefix : <http://example.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Ontology a owl:Ontology .
+
+# Classes
+:Subject a owl:Class .
+:Character a owl:Class .
+:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf :Character .
+:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf :Character .
+:StudyPlan a owl:Class .
+:School a owl:Class .
+:University a owl:Class .
+:Professor a owl:Class .
+:Competence a owl:Class .
+:Outcome a owl:Class .
+:Evaluation a owl:Class .
+:Activity a owl:Class .
+:Topic a owl:Class .
+:Resource a owl:Class .
+:RecommendedPreviousSubject a owl:Class .
+:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range xsd:string .
+# Note: Subject_evaluationCriteria is in UML, but the PDF text for evaluation criteria is complex (tables, rules). We will represent this via relations to Evaluation instances, not a simple string property.
+
+:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain :StudyPlan ;
+    rdfs:range xsd:string .
+:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain :StudyPlan ;
+    rdfs:range xsd:string .
+
+:School_code a owl:DatatypeProperty ;
+    rdfs:domain :School ;
+    rdfs:range xsd:string .
+:School_name a owl:DatatypeProperty ;
+    rdfs:domain :School ;
+    rdfs:range xsd:string .
+
+:University_name a owl:DatatypeProperty ;
+    rdfs:domain :University ;
+    rdfs:range xsd:string .
+# Note: No explicit name for the university found in the PDF text sections describing the subject/school. Skipping instance creation for University.
+
+:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain :Professor ;
+    rdfs:range xsd:string .
+:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain :Professor ;
+    rdfs:range xsd:string .
+:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain :Professor ;
+    rdfs:range xsd:string .
+:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain :Professor ;
+    rdfs:range xsd:string .
+:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain :Professor ;
+    rdfs:range xsd:boolean .
+
+:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain :Competence ;
+    rdfs:range xsd:string .
+:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain :Competence ;
+    rdfs:range xsd:string .
+
+:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain :Outcome ;
+    rdfs:range xsd:string .
+:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain :Outcome ;
+    rdfs:range xsd:string .
+
+:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain :Evaluation ;
+    rdfs:range xsd:string .
+
+:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:string .
+:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:string .
+:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:string .
+:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:string .
+:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range xsd:string .
+# Note: Activity_type is mentioned in tables (OT, TG, EX, PG), but not in UML Activity attributes. Will not create a property for it.
+
+:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain :Topic ;
+    rdfs:range xsd:string .
+
+:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain :Resource ;
+    rdfs:range xsd:string .
+# Note: Resource_type (Bibliografía, Recursos web, Equipamiento) is mentioned in tables, but not in UML Resource attributes. Will not create a property for it.
+
+:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain :RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+
+:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain :RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+# Object Properties
+:Subject_character a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Character .
+
+:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :StudyPlan .
+
+:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Professor .
+# Note: Relationship is 'professors' (plural) in UML, but represents 'hasProfessor'. Let's stick to the UML name for the property.
+
+:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Resource .
+# Note: Relationship is 'resources' (plural) in UML, but represents 'hasResource'. Let's stick to the UML name for the property.
+
+:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Competence .
+# Note: Relationship is 'competencies' (plural) in UML, but represents 'hasCompetence'. Let's stick to the UML name for the property.
+
+:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Outcome .
+# Note: Relationship is 'outcomes' (plural) in UML, but represents 'hasOutcome'. Let's stick to the UML name for the property.
+
+:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :RecommendedPreviousSubject .
+# Note: Relationship is 'recommendedPreviousSubjects' (plural) in UML.
+
+:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :RecommendedPreviousKnowledge .
+# Note: Relationship is 'recommendedPreviousKnowledges' (plural) in UML.
+
+:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Topic .
+# Note: Relationship is 'topics' (plural) in UML, but represents 'hasTopic'. Let's stick to the UML name for the property.
+
+:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain :Subject ;
+    rdfs:range :Evaluation .
+# Note: Relationship is 'evaluations' (plural) in UML, but represents 'hasEvaluation'. Let's stick to the UML name for the property.
+
+:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain :StudyPlan ;
+    rdfs:range :School .
+
+# Note: School_university relationship in UML, but no explicit university name in PDF text to instantiate.
+
+:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain :Evaluation ;
+    rdfs:range :Activity .
+# Note: Relationship is 'activities' (plural) in UML.
+
+:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range :Outcome .
+# Note: Relationship is 'relatedOutcomes' (plural) in UML.
+
+:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range :Competence .
+# Note: Relationship is 'relatedCompetencies' (plural) in UML.
+
+:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain :Activity ;
+    rdfs:range :Topic .
+# Note: Relationship is 'relatedTopics' (plural) in UML.
+
+:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain :Topic ;
+    rdfs:range :Topic .
+# Note: Relationship is 'subTopics' (plural) in UML.
+
+# Instances
+
+# Subject
+:subject_calidad_software a :Subject ;
+    :Subject_name "Calidad Del Software" ;
+    :Subject_code "615000259" ;
+    :Subject_credits "6 ECTS" ;
+    :Subject_course "Cuarto curso" ;
+    :Subject_courseYear "2024/25" ;
+    :Subject_language "Castellano" ;
+    :Subject_semester "Primer semestre" ; # Using the semester from the guide's header
+    :Subject_period "Septiembre-Enero" .
+    # Relationships will be added later
+
+# Character
+:character_obligatoria a :MandatoryCharacter .
+
+# StudyPlan
+:studyplan_61iw a :StudyPlan ;
+    :StudyPlan_code "61IW" ;
+    :StudyPlan_name "Grado En Ingenieria Del Software" .
+    # Relationship to School will be added later
+
+# School
+:school_61 a :School ;
+    :School_code "61" ;
+    :School_name "E.T.S De Ing. De Sistemas Informáticos" .
+    # No relationship to University instance as per constraint
+
+# Professors
+:professor_carolina_gallardo_perez a :Professor ;
+    :Professor_name "Carolina Gallardo Perez" ;
+    :Professor_email "carolina.gallardop@upm.es" ;
+    :Professor_office "1209" ;
+    :Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle" ;
+    :Professor_isCoordinator true .
+
+:professor_juan_garbajosa_sopeña a :Professor ;
+    :Professor_name "Juan Garbajosa Sopeña" ;
+    :Professor_email "juan.garbajosa@upm.es" ;
+    # Office not specified
+    :Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." ;
+    :Professor_isCoordinator false . # Not explicitly stated as coordinator
+
+:professor_javier_alegre_landaburu a :Professor ;
+    :Professor_name "Javier Alegre Landaburu" ;
+    :Professor_email "javier.alegre.landaburu@upm.es" ;
+    # Office not specified
+    :Professor_hours "Sin horario." ; # Hours less detailed than others
+    :Professor_isCoordinator false . # Not explicitly stated as coordinator
+
+# Competencies
+:competence_cc1 a :Competence ;
+    :Competence_code "CC1" ;
+    :Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+
+:competence_cc4 a :Competence ;
+    :Competence_code "CC4" ;
+    :Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los estándares y normativas vigentes" .
+
+:competence_ce1 a :Competence ;
+    :Competence_code "CE1" ;
+    :Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+
+:competence_ct6 a :Competence ;
+    :Competence_code "CT6" ;
+    :Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar dispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las experiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta habilidad en la aplicación de esos métodos." .
+
+# Outcomes
+:outcome_ra113 a :Outcome ;
+    :Outcome_code "RA113" ;
+    :Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a desarrollar" .
+
+:outcome_ra109 a :Outcome ;
+    :Outcome_code "RA109" ;
+    :Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+
+:outcome_ra83 a :Outcome ;
+    :Outcome_code "RA83" ;
+    :Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para abordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información, maneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e interacción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las decisiones oportunas para lograr su propósito." .
+
+:outcome_ra114 a :Outcome ;
+    :Outcome_code "RA114" ;
+    :Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de manera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones. Identifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos niveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+# Topics
+:topic_1 a :Topic ;
+    :Topic_name "1. Introducción e historia de la calidad" .
+:topic_1_1 a :Topic ;
+    :Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." .
+:topic_1_2 a :Topic ;
+    :Topic_name "1.2. Evolución de la calidad." .
+
+:topic_2 a :Topic ;
+    :Topic_name "2. Técnicas de la calidad" .
+:topic_2_1 a :Topic ;
+    :Topic_name "2.1. Técnicas básicas." .
+:topic_2_2 a :Topic ;
+    :Topic_name "2.2. Técnicas estadísticas." .
+:topic_2_3 a :Topic ;
+    :Topic_name "2.3. Técnicas avanzadas." .
+
+:topic_3 a :Topic ;
+    :Topic_name "3. Mediciones de calidad del software" .
+:topic_3_1 a :Topic ;
+    :Topic_name "3.1. Medidas y métricas." .
+:topic_3_2 a :Topic ;
+    :Topic_name "3.2. Medición del producto." .
+
+:topic_4 a :Topic ;
+    :Topic_name "4. Costes y consideraciones éticas" .
+:topic_4_1 a :Topic ;
+    :Topic_name "4.1. Costes de la calidad. Modelos de costes." .
+:topic_4_2 a :Topic ;
+    :Topic_name "4.2. Caracterización de defectos." .
+:topic_4_3 a :Topic ;
+    :Topic_name "4.3. Código ético del ingeniero de software." .
+
+:topic_5 a :Topic ;
+    :Topic_name "5. Procesos de gestión de la calidad" .
+:topic_5_1 a :Topic ;
+    :Topic_name "5.1. Estándares de calidad" .
+:topic_5_2 a :Topic ;
+    :Topic_name "5.2. Gestión de la calidad por procesos" .
+
+:topic_6 a :Topic ;
+    :Topic_name "6. Estándares de calidad del software: SQUARE" .
+:topic_6_1 a :Topic ;
+    :Topic_name "6.1. Estándares y modelos para la calidad del software." .
+:topic_6_2 a :Topic ;
+    :Topic_name "6.2. Serie ISO 25000n" .
+
+:topic_7 a :Topic ;
+    :Topic_name "7. Aseguramiento de la calidad del software" .
+:topic_7_1 a :Topic ;
+    :Topic_name "7.1. Aseguramiento del proceso software" .
+:topic_7_2 a :Topic ;
+    :Topic_name "7.2. Aseguramiento del producto software" .
+
+:topic_8 a :Topic ;
+    :Topic_name "8. Mejora de procesos SW" .
+:topic_8_1 a :Topic ;
+    :Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" .
+:topic_8_2 a :Topic ;
+    :Topic_name "8.2. Modelos de referencia para mejora de procesos SW" .
+
+# Resources
+:resource_software_quality_assurance_laporte_april a :Resource ;
+    :Resource_name "Software Quality Assurance" . # Using name from table, ignoring authors/ISBN
+
+:resource_software_quality_galin a :Resource ;
+    :Resource_name "Software Quality: Concepts and Practice" . # Using name from table
+
+:resource_sev_vocab a :Resource ;
+    :Resource_name "Sevocab" . # Using name from table
+
+:resource_del_aseguramiento_a_la_gestion a :Resource ;
+    :Resource_name "\"Del aseguramiento a la gestión de la calidad: El enfoque basado en procesos\". David Hoyle, John Thompson. AENOR" . # Using name from table
+
+:resource_total_quality_management a :Resource ;
+    :Resource_name "\"Total Quality Management\". Dale H. Besterfield, Carol Besterfield-Michna, Glen H. Besterfield, Mary Besterfield-Sacre. Prentice Hall" . # Using name from table
+
+:resource_medicion_para_la_gestion a :Resource ;
+    :Resource_name "\"Medición para la Gestión en la Ingeniería del Software\". José J. Dolado, Luís Fernández. Ed Ra-Ma." . # Using name from table
+
+:resource_aula_etsisi a :Resource ;
+    :Resource_name "Aula" . # Using name from table
+
+:resource_moodle_platform a :Resource ;
+    :Resource_name "Plataforma de enseñanza MOODLE" . # Using name from table
+
+# Recommended Previous Subjects
+:recommended_subject_fundamentos_is a :RecommendedPreviousSubject ;
+    :RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+# Recommended Previous Knowledge
+:recommended_knowledge_none_defined a :RecommendedPreviousKnowledge ;
+    :RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+# Evaluations
+:evaluation_progresiva a :Evaluation ;
+    :Evaluation_name "Evaluación (progresiva)" . # Using name from table header
+
+:evaluation_global a :Evaluation ;
+    :Evaluation_name "Prueba evaluación global" . # Using name from table header
+
+:evaluation_extraordinaria a :Evaluation ;
+    :Evaluation_name "Evaluación convocatoria extraordinaria" . # Using name from table header
+
+# Activities (Based on Evaluation Progressive Table first)
+:activity_progresiva_sem2_ot a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "3%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem3_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "3%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem4_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem5_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem7_tg_actividad_presencial a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem7_ex_temas1_4 a :Activity ;
+    :Activity_name "Examen Temas 1-2-3-4" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "02:00" ;
+    :Activity_weight "30%" ;
+    :Activity_minGrade "3 / 10" .
+
+:activity_progresiva_sem9_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem10_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem11_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem12_tg a :Activity ;
+    :Activity_name "Actividad presencial" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "2%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem15_tg_trabajo_memoria a :Activity ;
+    :Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "15%" ;
+    :Activity_minGrade "4 / 10" .
+
+:activity_progresiva_sem15_pg_trabajo_defensa a :Activity ;
+    :Activity_name "Trabajo Final. Defensa y exposición" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "5%" ;
+    :Activity_minGrade " / 10" .
+
+:activity_progresiva_sem15_ex_temas5_8 a :Activity ;
+    :Activity_name "Examen Temas 5-6-7-8" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "02:00" ;
+    :Activity_weight "30%" ;
+    :Activity_minGrade "3 / 10" .
+
+# Activities (Based on Prueba evaluación global Table)
+:activity_global_sem17_ex_final a :Activity ;
+    :Activity_name "Examen Final (Escenario 2)" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "03:00" ;
+    :Activity_weight "80%" ;
+    :Activity_minGrade "4 / 10" .
+
+:activity_global_sem17_tg_trabajo_memoria a :Activity ;
+    :Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "15%" ;
+    :Activity_minGrade "4 / 10" .
+
+:activity_global_sem17_pg_trabajo_defensa a :Activity ;
+    :Activity_name "Trabajo Final. Defensa y exposición" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "5%" ;
+    :Activity_minGrade " / 10" .
+
+# Activities (Based on Evaluación convocatoria extraordinaria Table)
+:activity_extraordinaria_ex a :Activity ;
+    :Activity_name "Examen extraordinario (RA83, RA109, RA113, RA114)" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "02:00" ;
+    :Activity_weight "80%" ;
+    :Activity_minGrade "4 / 10" .
+
+:activity_extraordinaria_ot_trabajo_documentacion a :Activity ;
+    :Activity_name "Trabajo final: documentación" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:00" ;
+    :Activity_weight "15%" ;
+    :Activity_minGrade "5 / 10" .
+
+:activity_extraordinaria_ot_defensa_oral a :Activity ;
+    :Activity_name "Defensa oral de la práctica" ;
+    :Activity_modality "Presencial" ;
+    :Activity_duration "00:05" ;
+    :Activity_weight "5%" ;
+    :Activity_minGrade " / 10" .
+
+
+# Linking Instances
+
+# Subject Relationships
+:subject_calidad_software
+    :Subject_character :character_obligatoria ;
+    :Subject_studyPlan :studyplan_61iw ;
+    :Subject_professors :professor_carolina_gallardo_perez, :professor_juan_garbajosa_sopeña, :professor_javier_alegre_landaburu ;
+    :Subject_resources :resource_software_quality_assurance_laporte_april, :resource_software_quality_galin, :resource_sev_vocab, :resource_del_aseguramiento_a_la_gestion, :resource_total_quality_management, :resource_medicion_para_la_gestion, :resource_aula_etsisi, :resource_moodle_platform ;
+    :Subject_competencies :competence_cc1, :competence_cc4, :competence_ce1, :competence_ct6 ;
+    :Subject_outcomes :outcome_ra113, :outcome_ra109, :outcome_ra83, :outcome_ra114 ;
+    :Subject_recommendedPreviousSubjects :recommended_subject_fundamentos_is ;
+    :Subject_recommendedPreviousKnowledges :recommended_knowledge_none_defined ;
+    :Subject_topics :topic_1, :topic_2, :topic_3, :topic_4, :topic_5, :topic_6, :topic_7, :topic_8 ;
+    :Subject_evaluations :evaluation_progresiva, :evaluation_global, :evaluation_extraordinaria .
+
+# StudyPlan Relationships
+:studyplan_61iw
+    :StudyPlan_school :school_61 .
+
+# Evaluation Relationships (linking evaluations to their activities)
+:evaluation_progresiva
+    :Evaluation_activities :activity_progresiva_sem2_ot, :activity_progresiva_sem3_tg, :activity_progresiva_sem4_tg, :activity_progresiva_sem5_tg, :activity_progresiva_sem7_tg_actividad_presencial, :activity_progresiva_sem7_ex_temas1_4, :activity_progresiva_sem9_tg, :activity_progresiva_sem10_tg, :activity_progresiva_sem11_tg, :activity_progresiva_sem12_tg, :activity_progresiva_sem15_tg_trabajo_memoria, :activity_progresiva_sem15_pg_trabajo_defensa, :activity_progresiva_sem15_ex_temas5_8 .
+
+:evaluation_global
+    :Evaluation_activities :activity_global_sem17_ex_final, :activity_global_sem17_tg_trabajo_memoria, :activity_global_sem17_pg_trabajo_defensa .
+
+:evaluation_extraordinaria
+    :Evaluation_activities :activity_extraordinaria_ex, :activity_extraordinaria_ot_trabajo_documentacion, :activity_extraordinaria_ot_defensa_oral .
+
+# Activity Relationships (linking activities to outcomes and competencies)
+# Progressive Evaluation Activities
+:activity_progresiva_sem7_ex_temas1_4
+    :Activity_relatedCompetencies :competence_ce1, :competence_ct6 ;
+    :Activity_relatedOutcomes :outcome_ra114 . # Only RA114 explicitly listed in Criteria table for T1
+
+:activity_progresiva_sem15_tg_trabajo_memoria
+    :Activity_relatedCompetencies :competence_cc1 ;
+    :Activity_relatedOutcomes :outcome_ra83 . # Explicitly listed in name
+
+:activity_progresiva_sem15_pg_trabajo_defensa
+    :Activity_relatedCompetencies :competence_cc1, :competence_ct6 .
+
+:activity_progresiva_sem15_ex_temas5_8
+    :Activity_relatedCompetencies :competence_cc1, :competence_cc4 ;
+    :Activity_relatedOutcomes :outcome_ra109, :outcome_ra113 . # Explicitly listed in Criteria table for T2
+
+# Global Evaluation Activities
+:activity_global_sem17_ex_final
+    :Activity_relatedCompetencies :competence_cc1, :competence_cc4, :competence_ce1, :competence_ct6 ;
+    :Activity_relatedOutcomes :outcome_ra83, :outcome_ra109, :outcome_ra113, :outcome_ra114 . # Based on criteria table for Examen Final
+
+:activity_global_sem17_tg_trabajo_memoria
+    :Activity_relatedCompetencies :competence_cc1 ;
+    :Activity_relatedOutcomes :outcome_ra83 . # Explicitly listed in name
+
+:activity_global_sem17_pg_trabajo_defensa
+    :Activity_relatedCompetencies :competence_cc1, :competence_ct6 .
+
+# Extraordinary Evaluation Activities
+:activity_extraordinaria_ex
+    :Activity_relatedCompetencies :competence_cc1, :competence_cc4, :competence_ce1, :competence_ct6 ;
+    :Activity_relatedOutcomes :outcome_ra83, :outcome_ra109, :outcome_ra113, :outcome_ra114 . # Explicitly listed in name
+
+:activity_extraordinaria_ot_trabajo_documentacion
+    :Activity_relatedCompetencies :competence_ct6, :competence_cc4, :competence_ce1 . # Explicitly listed in table
+
+:activity_extraordinaria_ot_defensa_oral
+    :Activity_relatedCompetencies :competence_cc1, :competence_cc4, :competence_ce1, :competence_ct6 . # Explicitly listed in table
+
+# Activity Relationships (linking activities to topics)
+# Only link topics explicitly mentioned for evaluation activities in the evaluation tables.
+:activity_progresiva_sem7_ex_temas1_4
+    :Activity_relatedTopics :topic_1, :topic_2, :topic_3, :topic_4 .
+
+:activity_progresiva_sem15_ex_temas5_8
+    :Activity_relatedTopics :topic_5, :topic_6, :topic_7, :topic_8 .
+
+# No explicit topic relation for global/extraordinary exams or other activities in evaluation tables.
+
+# Topic Relationships (subtopics)
+:topic_1
+    :Topic_subTopics :topic_1_1, :topic_1_2 .
+
+:topic_2
+    :Topic_subTopics :topic_2_1, :topic_2_2, :topic_2_3 .
+
+:topic_3
+    :Topic_subTopics :topic_3_1, :topic_3_2 .
+
+:topic_4
+    :Topic_subTopics :topic_4_1, :topic_4_2, :topic_4_3 .
+
+:topic_5
+    :Topic_subTopics :topic_5_1, :topic_5_2 .
+
+:topic_6
+    :Topic_subTopics :topic_6_1, :topic_6_2 .
+
+:topic_7
+    :Topic_subTopics :topic_7_1, :topic_7_2 .
+
+:topic_8
+    :Topic_subTopics :topic_8_1, :topic_8_2 .
+

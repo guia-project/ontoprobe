@@ -1,0 +1,1 @@
+{"error": "at line 24 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'ryCharacter a owl:Class .\\n    rdfs:subClassOf onto:Character'^b' .\\nonto:OptionalCharacter a owl:Class .\\n    rdfs:subClassOf '...\""}

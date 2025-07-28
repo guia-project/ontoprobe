@@ -1,0 +1,27 @@
+Plant:
+    '@startuml'
+    elements*=Element
+    '@enduml'
+;
+
+Element:
+    Class | Relationship
+;
+
+Class:
+    ('abstract')? 'class' name=ID '{'
+        fields*=ID
+    '}'
+;
+
+Relationship:
+    AssociationRelationship | InheritanceRelationship
+;
+
+AssociationRelationship:
+    origin=ID '-->' target=ID ':' name=ID
+;
+
+InheritanceRelationship:
+    origin=ID '--|>' target=ID
+;

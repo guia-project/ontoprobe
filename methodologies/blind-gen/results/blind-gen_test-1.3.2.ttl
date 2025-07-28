@@ -1,0 +1,69 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/GestionDeProyectosYDelRiesgo#> .
+
+:Asignatura a rdfs:Class ;
+    rdfs:label "Asignatura"^^xsd:string .
+
+:Profesor a rdfs:Class ;
+    rdfs:label "Profesor"^^xsd:string .
+
+:Competencia a rdfs:Class ;
+    rdfs:label "Competencia"^^xsd:string .
+
+:ResultadoAprendizaje a rdfs:Class ;
+    rdfs:label "Resultado de Aprendizaje"^^xsd:string .
+
+:GestionDeProyectosYDelRiesgo a :Asignatura ;
+    rdfs:label "615000258 - Gestion De Proyectos Y Del Riesgo"^^xsd:string ;
+    :codigo "615000258"^^xsd:string ;
+    :creditos "6"^^xsd:float ;
+    :caracter "Obligatoria"^^xsd:string ;
+    :curso "Cuarto curso"^^xsd:string ;
+    :semestre "Séptimo semestre"^^xsd:string ;
+    :periodo "Septiembre-Enero"^^xsd:string ;
+    :idioma "Castellano"^^xsd:string ;
+    :planEstudios "61IW - Grado En Ingenieria Del Software"^^xsd:string ;
+    :centro "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"^^xsd:string ;
+    :cursoAcademico "2024-25"^^xsd:string .
+
+:AldoGordilloMendez a :Profesor ;
+    rdfs:label "Aldo Gordillo Mendez"^^xsd:string ;
+    :despacho "1219"^^xsd:string ;
+    :correo "a.gordillo@upm.es"^^xsd:string .
+
+:ManuelOttaviano a :Profesor ;
+    rdfs:label "Manuel Ottaviano"^^xsd:string ;
+    :despacho "1212"^^xsd:string .
+
+:JavierSerranoRomero a :Profesor ;
+    rdfs:label "Javier Serrano Romero"^^xsd:string ;
+    :despacho "4219"^^xsd:string ;
+    :correo "javier.serrano@upm.es"^^xsd:string .
+
+:CC2 a :Competencia ;
+    rdfs:label "CC2 - Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social"^^xsd:string .
+
+:CC3 a :Competencia ;
+    rdfs:label "CC3 - Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software."^^xsd:string .
+
+:CE6 a :Competencia ;
+    rdfs:label "CE6 - Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos."^^xsd:string .
+
+:CT11 a :Competencia ;
+    rdfs:label "CT11 - Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista."^^xsd:string .
+
+:CT5 a :Competencia ;
+    rdfs:label "CT5 - Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos."^^xsd:string .
+
+:RA112 a :ResultadoAprendizaje ;
+    rdfs:label "RA112 - Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software"^^xsd:string .
+
+:RA116 a :ResultadoAprendizaje ;
+    rdfs:label "RA116 - Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas."^^xsd:string .
+
+:RA111 a :ResultadoAprendizaje ;
+    rdfs:label "RA111 - Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar"^^xsd:string .
+
+:RA118 a :ResultadoAprendizaje ;
+    rdfs:label "RA118 - Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en

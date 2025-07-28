@@ -1,0 +1,231 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class .
+onto:OptionalCharacter a owl:Class .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+# Relationships
+onto:Subject_character a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Professor .
+onto:Subject_resources a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Resource .
+onto:Subject_competencies a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Competence .
+onto:Subject_outcomes a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Outcome .
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:RecommendedPreviousSubject .
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:RecommendedPreviousKnowledge .
+onto:Subject_topics a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Topic .
+onto:Subject_evaluations a owl:ObjectProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range onto:Evaluation .
+
+onto:MandatoryCharacter_is_a a owl:ObjectProperty ;
+ rdfs:domain onto:MandatoryCharacter ;
+ rdfs:range onto:Character .
+onto:OptionalCharacter_is_a a owl:ObjectProperty ;
+ rdfs:domain onto:OptionalCharacter ;
+ rdfs:range onto:Character .
+
+onto:StudyPlan_school a owl:ObjectProperty ;
+ rdfs:domain onto:StudyPlan ;
+ rdfs:range onto:School .
+
+onto:School_university a owl:ObjectProperty ;
+ rdfs:domain onto:School ;
+ rdfs:range onto:University .
+
+onto:Evaluation_activities a owl:ObjectProperty ;
+ rdfs:domain onto:Evaluation ;
+ rdfs:range onto:Activity .
+
+onto:Activity_relatedOutcomes a owl:ObjectProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range onto:Outcome .
+onto:Activity_relatedCompetencies a owl:ObjectProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range onto:Competence .
+onto:Activity_relatedTopics a owl:ObjectProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range onto:Topic .
+
+onto:Topic_subTopics a owl:ObjectProperty ;
+ rdfs:domain onto:Topic ;
+ rdfs:range onto:Topic .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_description a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+ rdfs:domain onto:Subject ;
+ rdfs:range xsd:string .
+
+onto:Professor_email a owl:DatatypeProperty ;
+ rdfs:domain onto:Professor ;
+ rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+ rdfs:domain onto:Professor ;
+ rdfs:range xsd:string .
+onto:Professor_office a owl:DatatypeProperty ;
+ rdfs:domain onto:Professor ;
+ rdfs:range xsd:string .
+onto:Professor_hours a owl:DatatypeProperty ;
+ rdfs:domain onto:Professor ;
+ rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+ rdfs:domain onto:Professor ;
+ rdfs:range xsd:boolean .
+
+onto:Competence_code a owl:DatatypeProperty ;
+ rdfs:domain onto:Competence ;
+ rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ;
+ rdfs:domain onto:Competence ;
+ rdfs:range xsd:string .
+
+onto:Outcome_code a owl:DatatypeProperty ;
+ rdfs:domain onto:Outcome ;
+ rdfs:range xsd:string .
+onto:Outcome_description a owl:DatatypeProperty ;
+ rdfs:domain onto:Outcome ;
+ rdfs:range xsd:string .
+
+onto:Evaluation_name a owl:DatatypeProperty ;
+ rdfs:domain onto:Evaluation ;
+ rdfs:range xsd:string .
+
+onto:Activity_name a owl:DatatypeProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range xsd:string .
+onto:Activity_modality a owl:DatatypeProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range xsd:string .
+onto:Activity_weight a owl:DatatypeProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range xsd:string .
+onto:Activity_duration a owl:DatatypeProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range xsd:string .
+onto:Activity_minGrade a owl:DatatypeProperty ;
+ rdfs:domain onto:Activity ;
+ rdfs:range xsd:string .
+
+onto:Topic_name a owl:DatatypeProperty ;
+ rdfs:domain onto:Topic ;
+ rdfs:range xsd:string .
+
+onto:Resource_name a owl:DatatypeProperty ;
+ rdfs:domain onto:Resource ;
+ rdfs:range xsd:string .
+
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+ rdfs:domain onto:RecommendedPreviousSubject ;
+ rdfs:range xsd:string .
+
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+ rdfs:domain onto:RecommendedPreviousKnowledge ;
+ rdfs:range xsd:string .
+
+# Instances
+onto:Fundamentos_de_Programacion a onto:Subject ;
+ onto:Subject_name "Fundamentos de Programacion" ;
+ onto:Subject_code "2050001" ;
+ onto:Subject_course "1" ;
+ onto:Subject_courseYear "2010" ;
+ onto:Subject_credits "12" ;
+ onto:Subject_language "Espanol" ;
+ onto:Subject_semester "Anual" ;
+ onto:Subject_period "Anual" ;
+ onto:Subject_evaluationCriteria "Evaluacion continua y examenes" .
+
+onto:Python a onto:Topic ;
+ onto:Topic_name "Python" .
+
+onto:Java a onto:Topic ;
+ onto:Topic_name "Java" .
+
+onto:Antonia_Maria_Reina_Quintero a onto:Professor ;
+ onto:Professor_email "reina@us.es" ;
+ onto:Professor_name "Antonia Maria Reina Quintero" ;
+ onto:Professor_office "C1" ;
+ onto:Professor_hours "2" ;
+ onto:Professor_isCoordinator "true" .
+
+onto:E03 a onto:Competence ;
+ onto:Competence_code "E03" ;
+ onto:Competence_description "Competencia E03" .
+
+onto:Outcome1 a onto:Outcome ;
+ onto:Outcome_code "O1" ;
+ onto:Outcome_description "Outcome 1" .
+
+onto:Evaluation1 a onto:Evaluation ;
+ onto:Evaluation_name "Evaluacion 1" .
+
+onto:Activity1 a onto:Activity ;
+ onto:Activity_name "Actividad 1" ;
+ onto:Activity_modality "Teorica" ;
+ onto:Activity_weight "20" ;
+ onto:Activity_duration "2" ;
+ onto:Activity_minGrade "4" .
+

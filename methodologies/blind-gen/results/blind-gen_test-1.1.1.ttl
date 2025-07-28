@@ -1,0 +1,564 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix upm: <http://www.example.org/upm#> .
+
+# Ontology Metadata
+<http://www.example.org/upm>
+  a owl:Ontology ;
+  rdfs:comment "Ontology representing the Guía de Aprendizaje (Learning Guide) of Gestion de Proyectos Y Del Riesgo course." ;
+.
+
+# Classes
+upm:Asignatura a rdfs:Class;
+    rdfs:label "Asignatura"@es;
+    rdfs:comment "Represents a subject or course."@en .
+
+upm:Profesor a rdfs:Class;
+    rdfs:label "Profesor"@es;
+    rdfs:comment "Represents a professor or instructor."@en .
+
+upm:PlanEstudios a rdfs:Class;
+    rdfs:label "Plan de Estudios"@es;
+    rdfs:comment "Represents the study plan or academic program."@en .
+
+upm:Competencia a rdfs:Class;
+    rdfs:label "Competencia"@es;
+    rdfs:comment "Represents a competence or skill."@en .
+
+upm:ResultadoAprendizaje a rdfs:Class;
+    rdfs:label "Resultado de Aprendizaje"@es;
+    rdfs:comment "Represents a learning outcome."@en .
+
+upm:ActividadEvaluacion a rdfs:Class;
+    rdfs:label "Actividad de Evaluación"@es;
+    rdfs:comment "Represents an evaluation activity."@en .
+
+upm:RecursoDidactico a rdfs:Class;
+    rdfs:label "Recurso Didáctico"@es;
+    rdfs:comment "Represents a didactic resource."@en.
+
+upm:Cronograma a rdfs:Class;
+    rdfs:label "Cronograma"@es;
+    rdfs:comment "Represents the schedule."@en .
+
+upm:SemanaCronograma a rdfs:Class;
+    rdfs:label "Semana del Cronograma"@es;
+    rdfs:comment "Represents a schedule week."@en .
+
+# Properties
+upm:nombreAsignatura a rdf:Property;
+    rdfs:label "nombre de la asignatura"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:codigoAsignatura a rdf:Property;
+    rdfs:label "código de la asignatura"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:creditos a rdf:Property;
+    rdfs:label "créditos"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:integer .
+
+upm:caracter a rdf:Property;
+    rdfs:label "carácter"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:curso a rdf:Property;
+    rdfs:label "curso"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:semestre a rdf:Property;
+    rdfs:label "semestre"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:periodoImparticion a rdf:Property;
+    rdfs:label "periodo de impartición"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:idiomaImparticion a rdf:Property;
+    rdfs:label "idioma de impartición"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:titulacion a rdf:Property;
+    rdfs:label "titulación"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:centroResponsable a rdf:Property;
+    rdfs:label "centro responsable"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:cursoAcademico a rdf:Property;
+    rdfs:label "curso académico"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string .
+
+upm:despacho a rdf:Property;
+    rdfs:label "despacho"@es;
+    rdfs:domain upm:Profesor;
+    rdfs:range xsd:string .
+
+upm:correoElectronico a rdf:Property;
+    rdfs:label "correo electrónico"@es;
+    rdfs:domain upm:Profesor;
+    rdfs:range xsd:string .
+
+upm:horarioTutorias a rdf:Property;
+    rdfs:label "horario de tutorías"@es;
+    rdfs:domain upm:Profesor;
+    rdfs:range xsd:string .
+
+upm:nombrePlan a rdf:Property;
+    rdfs:label "nombre del plan"@es;
+    rdfs:domain upm:PlanEstudios;
+    rdfs:range xsd:string .
+
+upm:codigoPlan a rdf:Property;
+    rdfs:label "código del plan"@es;
+    rdfs:domain upm:PlanEstudios;
+    rdfs:range xsd:string .
+
+upm:descripcionCompetencia a rdf:Property;
+    rdfs:label "descripción de la competencia"@es;
+    rdfs:domain upm:Competencia;
+    rdfs:range xsd:string .
+
+upm:codigoCompetencia a rdf:Property;
+    rdfs:label "código de la competencia"@es;
+    rdfs:domain upm:Competencia;
+    rdfs:range xsd:string .
+
+upm:descripcionResultado a rdf:Property;
+    rdfs:label "descripción del resultado"@es;
+    rdfs:domain upm:ResultadoAprendizaje;
+    rdfs:range xsd:string .
+
+upm:codigoResultado a rdf:Property;
+    rdfs:label "código del resultado"@es;
+    rdfs:domain upm:ResultadoAprendizaje;
+    rdfs:range xsd:string .
+
+upm:tipoActividad a rdf:Property;
+    rdfs:label "tipo de actividad"@es;
+    rdfs:domain upm:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+upm:duracionActividad a rdf:Property;
+    rdfs:label "duración de la actividad"@es;
+    rdfs:domain upm:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+upm:pesoNota a rdf:Property;
+    rdfs:label "peso en la nota"@es;
+    rdfs:domain upm:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+upm:notaMinima a rdf:Property;
+    rdfs:label "nota mínima"@es;
+    rdfs:domain upm:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+upm:semana a rdf:Property;
+    rdfs:label "semana del cronograma"@es;
+    rdfs:domain upm:SemanaCronograma;
+    rdfs:range xsd:integer .
+
+upm:actividadTipo1 a rdf:Property;
+    rdfs:label "actividad tipo 1"@es;
+    rdfs:domain upm:SemanaCronograma;
+    rdfs:range xsd:string .
+
+upm:actividadTipo2 a rdf:Property;
+    rdfs:label "actividad tipo 2"@es;
+    rdfs:domain upm:SemanaCronograma;
+    rdfs:range xsd:string .
+
+upm:teleEnsenanza a rdf:Property;
+    rdfs:label "tele-enseñanza"@es;
+    rdfs:domain upm:SemanaCronograma;
+    rdfs:range xsd:string .
+
+upm:actividadesEvaluacion a rdf:Property;
+    rdfs:label "actividades de evaluación"@es;
+    rdfs:domain upm:SemanaCronograma;
+    rdfs:range xsd:string .
+
+upm:tituloRecurso a rdf:Property;
+    rdfs:label "título del recurso"@es;
+    rdfs:domain upm:RecursoDidactico;
+    rdfs:range xsd:string .
+
+upm:tipoRecurso a rdf:Property;
+    rdfs:label "tipo del recurso"@es;
+    rdfs:domain upm:RecursoDidactico;
+    rdfs:range xsd:string .
+
+upm:observacionesRecurso a rdf:Property;
+    rdfs:label "observaciones del recurso"@es;
+    rdfs:domain upm:RecursoDidactico;
+    rdfs:range xsd:string .
+
+upm:impartidaPor a rdf:Property;
+    rdfs:label "impartida por"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range upm:Profesor .
+
+upm:parteDelPlan a rdf:Property;
+    rdfs:label "parte del plan de estudios"@es;
+    rdfs:domain upm:Asignatura;
+    rdfs:range upm:PlanEstudios .
+
+upm:evaluadaPor a rdf:Property;
+    rdfs:label "evaluada por"@es;
+    rdfs:domain upm:ActividadEvaluacion;
+    rdfs:range upm:Competencia .
+
+upm:contribuyeA a rdf:Property;
+  rdfs:label "contribuye a"@es;
+  rdfs:domain upm:ActividadEvaluacion;
+  rdfs:range upm:ResultadoAprendizaje.
+
+upm:tieneCronograma a rdf:Property;
+  rdfs:label "tiene cronograma"@es;
+  rdfs:domain upm:Asignatura;
+  rdfs:range upm:Cronograma.
+
+upm:recursoPara a rdf:Property;
+    rdfs:label "recurso para"@es;
+    rdfs:domain upm:RecursoDidactico;
+    rdfs:range upm:Asignatura.
+
+upm:semanaDe a rdf:Property;
+    rdfs:label "semana de"@es;
+    rdfs:domain upm:SemanaCronograma;
+    rdfs:range upm:Cronograma.
+
+# Instances
+
+upm:asignaturaGestionProyectos
+  a upm:Asignatura;
+  upm:codigoAsignatura "615000258";
+  upm:nombreAsignatura "Gestion De Proyectos Y Del Riesgo";
+  upm:creditos 6;
+  upm:caracter "Obligatoria";
+  upm:curso "Cuarto curso";
+  upm:semestre "Séptimo semestre";
+  upm:periodoImparticion "Septiembre-Enero";
+  upm:idiomaImparticion "Castellano";
+  upm:titulacion "61IW - Grado En Ingenieria Del Software";
+  upm:centroResponsable "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos";
+  upm:cursoAcademico "2024-25" .
+
+upm:planEstudios61IW
+  a upm:PlanEstudios;
+  upm:codigoPlan "61IW";
+  upm:nombrePlan "Grado En Ingenieria Del Software" .
+
+upm:asignaturaGestionProyectos upm:parteDelPlan upm:planEstudios61IW .
+
+upm:profesorGordillo
+  a upm:Profesor;
+  upm:despacho "1219";
+  upm:correoElectronico "a.gordillo@upm.es";
+  upm:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+upm:profesorOttaviano
+  a upm:Profesor;
+  upm:despacho "1212";
+  upm:correoElectronico "manuel.ottaviano@upm.es";
+  upm:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+upm:profesorSerrano
+  a upm:Profesor;
+  upm:despacho "4219";
+  upm:correoElectronico "javier.serrano@upm.es";
+  upm:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+upm:asignaturaGestionProyectos upm:impartidaPor upm:profesorGordillo, upm:profesorOttaviano, upm:profesorSerrano.
+
+upm:competenciaCC2 a upm:Competencia;
+    upm:codigoCompetencia "CC2";
+    upm:descripcionCompetencia "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social".
+
+upm:competenciaCC3 a upm:Competencia;
+    upm:codigoCompetencia "CC3";
+    upm:descripcionCompetencia "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software.".
+
+upm:competenciaCE6 a upm:Competencia;
+    upm:codigoCompetencia "CE6";
+    upm:descripcionCompetencia "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos.".
+
+upm:competenciaCT11 a upm:Competencia;
+    upm:codigoCompetencia "CT11";
+    upm:descripcionCompetencia "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista.".
+
+upm:competenciaCT5 a upm:Competencia;
+    upm:codigoCompetencia "CT5";
+    upm:descripcionCompetencia "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos.".
+
+upm:resultadoRA111 a upm:ResultadoAprendizaje;
+    upm:codigoResultado "RA111";
+    upm:descripcionResultado "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar".
+
+upm:resultadoRA112 a upm:ResultadoAprendizaje;
+    upm:codigoResultado "RA112";
+    upm:descripcionResultado "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software".
+
+upm:resultadoRA116 a upm:ResultadoAprendizaje;
+    upm:codigoResultado "RA116";
+    upm:descripcionResultado "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas.".
+
+upm:resultadoRA118 a upm:ResultadoAprendizaje;
+    upm:codigoResultado "RA118";
+    upm:descripcionResultado "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista.".
+
+upm:actividadEjercicioTradicional a upm:ActividadEvaluacion;
+    upm:tipoActividad "Trabajo Individual";
+    upm:duracionActividad "00:00";
+    upm:pesoNota "10%";
+    upm:notaMinima "/ 10";
+    upm:evaluadaPor upm:competenciaCT5, upm:competenciaCC2, upm:competenciaCE6;
+    upm:contribuyeA upm:resultadoRA111, upm:resultadoRA112, upm:resultadoRA116 .
+
+upm:actividadPractica1 a upm:ActividadEvaluacion;
+    upm:tipoActividad "Trabajo en Grupo";
+    upm:duracionActividad "00:00";
+    upm:pesoNota "23%";
+    upm:notaMinima "/ 10";
+    upm:evaluadaPor upm:competenciaCT5, upm:competenciaCT11, upm:competenciaCC2, upm:competenciaCC3, upm:competenciaCE6;
+    upm:contribuyeA upm:resultadoRA111, upm:resultadoRA112, upm:resultadoRA116, upm:resultadoRA118.
+
+upm:actividadEjercicioAgil a upm:ActividadEvaluacion;
+    upm:tipoActividad "Trabajo Individual";
+    upm:duracionActividad "00:00";
+    upm:pesoNota "5%";
+    upm:notaMinima "/ 10";
+    upm:evaluadaPor upm:competenciaCT5, upm:competenciaCC2, upm:competenciaCE6;
+    upm:contribuyeA upm:resultadoRA112, upm:resultadoRA116.
+
+upm:actividadPractica2 a upm:ActividadEvaluacion;
+    upm:tipoActividad "Trabajo en Grupo";
+    upm:duracionActividad "00:00";
+    upm:pesoNota "12%";
+    upm:notaMinima "/ 10";
+    upm:evaluadaPor upm:competenciaCT5, upm:competenciaCT11, upm:competenciaCC2, upm:competenciaCC3, upm:competenciaCE6;
+    upm:contribuyeA upm:resultadoRA112, upm:resultadoRA116, upm:resultadoRA118.
+
+upm:actividadExamenFinal a upm:ActividadEvaluacion;
+    upm:tipoActividad "Examen Escrito";
+    upm:duracionActividad "02:30";
+    upm:pesoNota "50%";
+    upm:notaMinima "4.5/10";
+    upm:evaluadaPor upm:competenciaCT5, upm:competenciaCT11, upm:competenciaCC2, upm:competenciaCC3, upm:competenciaCE6;
+    upm:contribuyeA upm:resultadoRA111, upm:resultadoRA112, upm:resultadoRA116, upm:resultadoRA118.
+
+upm:cronogramaAsignatura a upm:Cronograma.
+
+upm:semana1 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 1;
+    upm:actividadTipo1 "Presentación de la asignatura Duración: 00:30 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 " ";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana2 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 2;
+    upm:actividadTipo1 "Tema 1: Introducción a la gestión de proyectos. Duración: 01:30 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 " ";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana3 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 3;
+    upm:actividadTipo1 "Tema 2: Procesos de la dirección de proyectos. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 " ";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana4 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 4;
+    upm:actividadTipo1 "Tema 3: Gestión del alcance. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Presentación Práctica 1 y formación de grupos de prácticas. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana5 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 5;
+    upm:actividadTipo1 "Tema 4: Planificación temporal de proyectos. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana6 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 6;
+    upm:actividadTipo1 "Tema 4: Planificación temporal de proyectos. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana7 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 7;
+    upm:actividadTipo1 "Tema 5: Estimación en proyectos de software. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana8 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 8;
+    upm:actividadTipo1 "Tema 5: Estimación en proyectos de software. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana9 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 9;
+    upm:actividadTipo1 "Tema 6: Gestión de riesgos. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana10 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 10;
+    upm:actividadTipo1 "Tema 7: Gestión de costes. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana11 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 11;
+    upm:actividadTipo1 "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116), Práctica 1. (RA111, RA112, RA116, RA118)".
+
+upm:semana12 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 12;
+    upm:actividadTipo1 "Tema 9: Prácticas ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Finalización de la Práctica 1. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana13 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 13;
+    upm:actividadTipo1 "Tema 9: Prácticas ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Presentación Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana14 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 14;
+    upm:actividadTipo1 "Tema 10: Scrum. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    upm:actividadTipo2 "Práctica 2. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana15 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 15;
+    upm:actividadTipo1 "Tema 10: Scrum. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    upm:actividadTipo2 "Resolución de ejercicios. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion " ".
+
+upm:semana16 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 16;
+    upm:actividadTipo1 " ";
+    upm:actividadTipo2 "Finalización de la Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118) ".
+
+upm:semana17 a upm:SemanaCronograma;
+    upm:semanaDe upm:cronogramaAsignatura;
+    upm:semana 17;
+    upm:actividadTipo1 " ";
+    upm:actividadTipo2 " ";
+    upm:teleEnsenanza " ";
+    upm:actividadesEvaluacion "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118) ".
+
+upm:asignaturaGestionProyectos upm:tieneCronograma upm:cronogramaAsignatura.
+
+upm:guiaPMBOK
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)";
+  upm:tipoRecurso "Bibliografía".
+
+upm:pmpExamPrep
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam";
+  upm:tipoRecurso "Bibliografía".
+
+upm:standardISO
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management";
+  upm:tipoRecurso "Bibliografía".
+
+upm:guiaPractica
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?";
+  upm:tipoRecurso "Bibliografía".
+
+upm:agileGuide
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "Agile Practice Guide";
+  upm:tipoRecurso "Bibliografía".
+
+upm:userStory
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "User Story Mapping: Discover the Whole Story, Build the Right Product";
+  upm:tipoRecurso "Bibliografía".
+
+upm:guiaScrum
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego.";
+  upm:tipoRecurso "Bibliografía".
+
+upm:agileProject
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "Agile Project Management with SCRUM";
+  upm:tipoRecurso "Bibliografía".
+
+upm:kanbanEsencial
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "Kanban Esencial Condensado";
+  upm:tipoRecurso "Bibliografía".
+
+upm:guiaKanban
+  a upm:RecursoDidactico;
+  upm:tituloRecurso "La Guía Kanban para Equipos Scrum";
+  upm:tipoRecurso "Bibliografía".
+
+upm:guiaPMBOK upm:recursoPara upm:asignaturaGestionProyectos.
+upm:pmpExamPrep upm:recursoPara upm:asignaturaGestionProyectos.
+upm:standardISO upm:recursoPara upm:asignaturaGestionProyectos.
+upm:guiaPractica upm:recursoPara upm:asignaturaGestionProyectos.
+upm:agileGuide upm:recursoPara upm:asignaturaGestionProyectos.
+upm:userStory upm:recursoPara upm:asignaturaGestionProyectos.
+upm:guiaScrum upm:recursoPara upm:asignaturaGestionProyectos.
+upm:agileProject upm:recursoPara upm:asignaturaGestionProyectos.
+upm:kanbanEsencial upm:recursoPara upm:asignaturaGestionProyectos.
+upm:guiaKanban upm:recursoPara upm:asignaturaGestionProyectos.

@@ -1,0 +1,1 @@
+Given the following base64 encoded pdf, first decode it, and then generate a precise, complete and coherent Ontology in Turtle RDFS (.ttl) representing the information that it contains. Do not make an ontology of the PDF structure itself, but of its contained information. The output must be only the content of the .ttl and not be inside a code block.

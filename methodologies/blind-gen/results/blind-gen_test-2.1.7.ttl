@@ -1,0 +1,572 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uni: <http://example.org/ontology/> .
+
+uni:Asignatura a rdfs:Class;
+    rdfs:label "Asignatura"@es, "Subject"@en.
+
+uni:PlanDeEstudios a rdfs:Class;
+    rdfs:label "Plan de Estudios"@es, "Study plan"@en.
+
+uni:Profesor a rdfs:Class;
+    rdfs:label "Profesor"@es, "Professor"@en.
+
+uni:Competencia a rdfs:Class;
+    rdfs:label "Competencia"@es, "Competency"@en.
+
+uni:ResultadoAprendizaje a rdfs:Class;
+    rdfs:label "Resultado de Aprendizaje"@es, "Learning outcome"@en.
+
+uni:Temario a rdfs:Class;
+    rdfs:label "Temario"@es, "Syllabus"@en.
+
+uni:Cronograma a rdfs:Class;
+    rdfs:label "Cronograma"@es, "Schedule"@en.
+
+uni:ActividadEvaluacion a rdfs:Class;
+    rdfs:label "Actividad de Evaluación"@es, "Evaluation Activity"@en.
+
+uni:RecursoDidactico a rdfs:Class;
+    rdfs:label "Recurso Didáctico"@es, "Teaching Resource"@en.
+
+uni:EscuelaTecnicaSuperior a rdfs:Class;
+    rdfs:label "Escuela Técnica Superior"@es, "Technical University School"@en.
+    
+uni:CursoAcademico a rdfs:Class;
+    rdfs:label "Curso Académico"@es, "Academic Course"@en.
+
+uni:GestionDeProyectosYRiesgo a rdfs:Class;
+    rdfs:subClassOf uni:Asignatura;
+    rdfs:label "Gestión de Proyectos y del Riesgo"@es, "Project and Risk Management"@en.
+
+uni:IngenieriaDelSoftware a rdfs:Class;
+    rdfs:label "Ingeniería del Software"@es, "Software Engineering"@en.
+
+uni:hasNombre a rdf:Property;
+    rdfs:label "tiene nombre"@es, "has name"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:hasCodigo a rdf:Property;
+    rdfs:label "tiene código"@es, "has code"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:hasCreditos a rdf:Property;
+    rdfs:label "tiene créditos"@es, "has credits"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:integer.
+
+uni:hasCarácter a rdf:Property;
+    rdfs:label "tiene carácter"@es, "has character"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:hasCurso a rdf:Property;
+    rdfs:label "tiene curso"@es, "has course"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:hasSemestre a rdf:Property;
+    rdfs:label "tiene semestre"@es, "has semester"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:hasPeriodoImparticion a rdf:Property;
+    rdfs:label "tiene periodo de impartición"@es, "has teaching period"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:hasIdiomaImparticion a rdf:Property;
+    rdfs:label "tiene idioma de impartición"@es, "has language of instruction"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:perteneceA a rdf:Property;
+    rdfs:label "pertenece a"@es, "belongs to"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:PlanDeEstudios.
+
+uni:esResponsableDe a rdf:Property;
+    rdfs:label "es responsable de"@es, "is responsible for"@en;
+    rdfs:domain uni:EscuelaTecnicaSuperior;
+    rdfs:range uni:PlanDeEstudios.
+
+uni:tieneProfesor a rdf:Property;
+    rdfs:label "tiene profesor"@es, "has professor"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Profesor.
+
+uni:tieneConocimientosPreviosRecomendados a rdf:Property;
+    rdfs:label "tiene conocimientos previos recomendados"@es, "has recommended prior knowledge"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string.
+
+uni:tieneCompetencia a rdf:Property;
+    rdfs:label "tiene competencia"@es, "has competence"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Competencia.
+
+uni:tieneResultadoAprendizaje a rdf:Property;
+    rdfs:label "tiene resultado de aprendizaje"@es, "has learning outcome"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:ResultadoAprendizaje.
+
+uni:tieneTemario a rdf:Property;
+    rdfs:label "tiene temario"@es, "has syllabus"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Temario.
+
+uni:tieneCronograma a rdf:Property;
+    rdfs:label "tiene cronograma"@es, "has schedule"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Cronograma.
+
+uni:tieneActividadEvaluacion a rdf:Property;
+    rdfs:label "tiene actividad de evaluación"@es, "has evaluation activity"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:ActividadEvaluacion.
+
+uni:tieneRecursoDidactico a rdf:Property;
+    rdfs:label "tiene recurso didáctico"@es, "has teaching resource"@en;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:RecursoDidactico.
+
+uni:hasNombreProfesor a rdf:Property;
+    rdfs:label "tiene nombre de profesor"@es, "has professor name"@en;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string.
+
+uni:hasDespacho a rdf:Property;
+    rdfs:label "tiene despacho"@es, "has office"@en;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string.
+
+uni:hasCorreoElectronico a rdf:Property;
+    rdfs:label "tiene correo electrónico"@es, "has email"@en;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string.
+
+uni:hasHorarioTutorias a rdf:Property;
+    rdfs:label "tiene horario de tutorías"@es, "has tutorial hours"@en;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string.
+    
+uni:hasDescripcion a rdf:Property;
+    rdfs:label "tiene descripción"@es, "has description"@en;
+    rdfs:domain uni:Competencia;
+    rdfs:range xsd:string.
+    
+uni:hasDescripcionResultado a rdf:Property;
+    rdfs:label "tiene descripción resultado"@es, "has result description"@en;
+    rdfs:domain uni:ResultadoAprendizaje;
+    rdfs:range xsd:string.
+
+uni:hasNumeroTema a rdf:Property;
+    rdfs:label "tiene número de tema"@es, "has theme number"@en;
+    rdfs:domain uni:Temario;
+    rdfs:range xsd:string.
+
+uni:hasTituloTema a rdf:Property;
+    rdfs:label "tiene título de tema"@es, "has theme title"@en;
+    rdfs:domain uni:Temario;
+    rdfs:range xsd:string.
+
+uni:hasSemana a rdf:Property;
+    rdfs:label "tiene semana"@es, "has week"@en;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:integer.
+
+uni:hasActividadTipo1 a rdf:Property;
+    rdfs:label "tiene actividad tipo 1"@es, "has activity type 1"@en;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string.
+
+uni:hasActividadTipo2 a rdf:Property;
+    rdfs:label "tiene actividad tipo 2"@es, "has activity type 2"@en;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string.
+
+uni:hasTeleEnsenanza a rdf:Property;
+    rdfs:label "tiene tele-enseñanza"@es, "has tele-teaching"@en;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string.
+
+uni:hasActividadesEvaluacionCronograma a rdf:Property;
+    rdfs:label "tiene actividades de evaluación"@es, "has evaluation activities"@en;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string.
+
+uni:hasDescripcionActividadEvaluacion a rdf:Property;
+    rdfs:label "tiene descripción de actividad de evaluación"@es, "has evaluation activity description"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string.
+
+uni:hasModalidad a rdf:Property;
+    rdfs:label "tiene modalidad"@es, "has modality"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string.
+
+uni:hasTipo a rdf:Property;
+    rdfs:label "tiene tipo"@es, "has type"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string.
+
+uni:hasDuracion a rdf:Property;
+    rdfs:label "tiene duración"@es, "has duration"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string.
+
+uni:hasPesoNota a rdf:Property;
+    rdfs:label "tiene peso en la nota"@es, "has grade weight"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string.
+
+uni:hasNotaMinima a rdf:Property;
+    rdfs:label "tiene nota mínima"@es, "has minimum grade"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string
+
+uni:hasCompetenciasEvaluadas a rdf:Property;
+    rdfs:label "tiene competencias evaluadas"@es, "has evaluated competencies"@en;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string.
+
+uni:hasNombreRecurso a rdf:Property;
+    rdfs:label "tiene nombre de recurso"@es, "has resource name"@en;
+    rdfs:domain uni:RecursoDidactico;
+    rdfs:range xsd:string
+
+uni:hasTipoRecurso a rdf:Property;
+    rdfs:label "tiene tipo de recurso"@es, "has resource type"@en;
+    rdfs:domain uni:RecursoDidactico;
+    rdfs:range xsd:string
+
+uni:hasObservacionesRecurso a rdf:Property;
+    rdfs:label "tiene observaciones de recurso"@es, "has resource observations"@en;
+    rdfs:domain uni:RecursoDidactico;
+    rdfs:range xsd:string
+
+uni:GestionProyectosYRiesgo_615000258 a uni:GestionDeProyectosYRiesgo;
+    uni:hasNombre "Gestion De Proyectos Y Del Riesgo"@es;
+    uni:hasCodigo "615000258";
+    uni:hasCreditos 6;
+    uni:hasCarácter "Obligatoria";
+    uni:hasCurso "Cuarto curso";
+    uni:hasSemestre "Séptimo semestre";
+    uni:hasPeriodoImparticion "Septiembre-Enero";
+    uni:hasIdiomaImparticion "Castellano";
+    uni:perteneceA uni:GradoIngenieriaSoftware_61IW.
+
+uni:GradoIngenieriaSoftware_61IW a uni:PlanDeEstudios;
+    uni:hasNombre "Grado En Ingenieria Del Software"@es;
+    uni:esResponsableDe uni:EscuelaTecnicaSuperior_61.
+
+uni:EscuelaTecnicaSuperior_61 a uni:EscuelaTecnicaSuperior;
+    uni:hasNombre "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"@es.
+    
+uni:CursoAcademico_2024_25 a uni:CursoAcademico;
+    rdfs:label "Curso Académico 2024-25"@es;
+    uni:hasNombre "2024-25".
+    
+uni:AldoGordilloMendez a uni:Profesor;
+    uni:hasNombreProfesor "Aldo Gordillo Mendez";
+    uni:hasDespacho "1219";
+    uni:hasCorreoElectronico "a.gordillo@upm.es";
+    uni:hasHorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI.".
+
+uni:ManuelOttaviano a uni:Profesor;
+    uni:hasNombreProfesor "Manuel Ottaviano";
+    uni:hasDespacho "1212";
+    uni:hasCorreoElectronico "manuel.ottaviano@upm.es";
+    uni:hasHorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI.".
+
+uni:JavierSerranoRomero a uni:Profesor;
+    uni:hasNombreProfesor "Javier Serrano Romero";
+    uni:hasDespacho "4219";
+    uni:hasCorreoElectronico "javier.serrano@upm.es";
+    uni:hasHorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI.".
+    
+uni:CC2 a uni:Competencia;
+    uni:hasDescripcion "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social".
+
+uni:CC3 a uni:Competencia;
+    uni:hasDescripcion "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software.".
+
+uni:CE6 a uni:Competencia;
+    uni:hasDescripcion "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos.".
+
+uni:CT11 a uni:Competencia;
+    uni:hasDescripcion "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista.".
+
+uni:CT5 a uni:Competencia;
+    uni:hasDescripcion "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos.".
+
+uni:RA112 a uni:ResultadoAprendizaje;
+    uni:hasDescripcionResultado "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software".
+
+uni:RA116 a uni:ResultadoAprendizaje;
+    uni:hasDescripcionResultado "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas.".
+
+uni:RA111 a uni:ResultadoAprendizaje;
+    uni:hasDescripcionResultado "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar".
+
+uni:RA118 a uni:ResultadoAprendizaje;
+    uni:hasDescripcionResultado "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista.".
+
+uni:Tema1 a uni:Temario;
+    uni:hasNumeroTema "1.1";
+    uni:hasTituloTema "Introducción a la gestión de proyectos.".
+
+uni:Tema2 a uni:Temario;
+    uni:hasNumeroTema "1.2";
+    uni:hasTituloTema "Procesos de la dirección de proyectos.".
+
+uni:Tema3 a uni:Temario;
+    uni:hasNumeroTema "1.3";
+    uni:hasTituloTema "Gestión del alcance.".
+
+uni:Tema4 a uni:Temario;
+    uni:hasNumeroTema "1.4";
+    uni:hasTituloTema "Planificación temporal de proyectos.".
+
+uni:Tema5 a uni:Temario;
+    uni:hasNumeroTema "1.5";
+    uni:hasTituloTema "Estimación en proyectos de software.".
+
+uni:Tema6 a uni:Temario;
+    uni:hasNumeroTema "1.6";
+    uni:hasTituloTema "Gestión de riesgos.".
+
+uni:Tema7 a uni:Temario;
+    uni:hasNumeroTema "1.7";
+    uni:hasTituloTema "Gestión de costes.".
+
+uni:Tema8 a uni:Temario;
+    uni:hasNumeroTema "2.1";
+    uni:hasTituloTema "Introducción a la gestión de proyectos con metodologías ágiles.".
+
+uni:Tema9 a uni:Temario;
+    uni:hasNumeroTema "2.2";
+    uni:hasTituloTema "Prácticas ágiles.".
+
+uni:Tema10 a uni:Temario;
+    uni:hasNumeroTema "2.3";
+    uni:hasTituloTema "Scrum.".
+
+uni:CronogramaSemana1 a uni:Cronograma;
+    uni:hasSemana 1;
+    uni:hasActividadTipo1 "Presentación de la asignatura Duración: 00:30 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana2 a uni:Cronograma;
+    uni:hasSemana 2;
+    uni:hasActividadTipo1 "Tema 3: Gestión del alcance. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Presentación Práctica 1 y formación de grupos de prácticas. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana3 a uni:Cronograma;
+    uni:hasSemana 3;
+    uni:hasActividadTipo1 "Tema 4: Planificación temporal de proyectos. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana4 a uni:Cronograma;
+    uni:hasSemana 4;
+    uni:hasActividadTipo1 "Tema 4: Planificación temporal de proyectos. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana5 a uni:Cronograma;
+    uni:hasSemana 5;
+    uni:hasActividadTipo1 "Tema 5: Estimación en proyectos de software. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana6 a uni:Cronograma;
+    uni:hasSemana 6;
+    uni:hasActividadTipo1 "Tema 5: Estimación en proyectos de software. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana7 a uni:Cronograma;
+    uni:hasSemana 7;
+    uni:hasActividadTipo1 "Tema 6: Gestión de riesgos. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana8 a uni:Cronograma;
+    uni:hasSemana 8;
+    uni:hasActividadTipo1 "Tema 7: Gestión de costes. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana9 a uni:Cronograma;
+    uni:hasSemana 9;
+    uni:hasActividadTipo1 "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana10 a uni:Cronograma;
+    uni:hasSemana 10;
+    uni:hasActividadTipo1 "Tema 9: Prácticas ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana11 a uni:Cronograma;
+    uni:hasSemana 11;
+    uni:hasActividadTipo1 "Tema 9: Prácticas ágiles. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    uni:hasActividadTipo2 "Finalización de la Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116) TI: Técnica del tipo Trabajo Individual Evaluación Progresiva No presencial Duración: 00:00 Práctica 1. (RA111, RA112, RA116, RA118) TG: Técnica del tipo Trabajo en Grupo Evaluación Progresiva No presencial Duración: 00:00".
+
+uni:CronogramaSemana12 a uni:Cronograma;
+    uni:hasSemana 12;
+    uni:hasActividadTipo1 "Tema 10: Scrum. Duración: 02:00 LM: Actividad del tipo Lección Magistral";
+    uni:hasActividadTipo2 "Presentación Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana13 a uni:Cronograma;
+    uni:hasSemana 13;
+    uni:hasActividadTipo1 "Tema 10: Scrum. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    uni:hasActividadTipo2 "Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana14 a uni:Cronograma;
+    uni:hasSemana 14;
+    uni:hasActividadTipo1 "Resolución de ejercicios. Duración: 02:00 PR: Actividad del tipo Clase de Problemas";
+    uni:hasActividadTipo2 "Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "".
+
+uni:CronogramaSemana15 a uni:Cronograma;
+    uni:hasSemana 15;
+    uni:hasActividadTipo1 "Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasActividadTipo2 "Finalización de la Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116) TI: Técnica del tipo Trabajo Individual Evaluación Progresiva No presencial Duración: 00:00 Práctica 2. (RA112, RA116, RA118) TG: Técnica del tipo Trabajo en Grupo Evaluación Progresiva No presencial Duración: 00:00".
+
+uni:CronogramaSemana17 a uni:Cronograma;
+    uni:hasSemana 17;
+    uni:hasActividadTipo1 "";
+    uni:hasActividadTipo2 "";
+    uni:hasTeleEnsenanza "";
+    uni:hasActividadesEvaluacionCronograma "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118) EX: Técnica del tipo Examen Escrito Evaluación Global Presencial Duración: 02:30".
+
+uni:ActividadEvaluacion1 a uni:ActividadEvaluacion;
+    uni:hasDescripcionActividadEvaluacion "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116)";
+    uni:hasModalidad "No Presencial";
+    uni:hasTipo "Trabajo Individual";
+    uni:hasDuracion "00:00";
+    uni:hasPesoNota "10%";
+    uni:hasNotaMinima "/ 10";
+    uni:hasCompetenciasEvaluadas "CT5 CC2 CE6".
+
+uni:ActividadEvaluacion2 a uni:ActividadEvaluacion;
+    uni:hasDescripcionActividadEvaluacion "Práctica 1. (RA111, RA112, RA116, RA118)";
+    uni:hasModalidad "No Presencial";
+    uni:hasTipo "Trabajo en Grupo";
+    uni:hasDuracion "00:00";
+    uni:hasPesoNota "23%";
+    uni:hasNotaMinima "/ 10";
+    uni:hasCompetenciasEvaluadas "CT5 CT11 CC2 CC3 CE6".
+
+uni:ActividadEvaluacion3 a uni:ActividadEvaluacion;
+    uni:hasDescripcionActividadEvaluacion "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116)";
+    uni:hasModalidad "No Presencial";
+    uni:hasTipo "Trabajo Individual";
+    uni:hasDuracion "00:00";
+    uni:hasPesoNota "5%";
+    uni:hasNotaMinima "/ 10";
+    uni:hasCompetenciasEvaluadas "CT5 CC2 CE6".
+
+uni:ActividadEvaluacion4 a uni:ActividadEvaluacion;
+    uni:hasDescripcionActividadEvaluacion "Práctica 2. (RA112, RA116, RA118)";
+    uni:hasModalidad "No Presencial";
+    uni:hasTipo "Trabajo en Grupo";
+    uni:hasDuracion "00:00";
+    uni:hasPesoNota "12%";
+    uni:hasNotaMinima "/ 10";
+    uni:hasCompetenciasEvaluadas "CT5 CT11 CC2 CC3 CE6".
+
+uni:ActividadEvaluacion5 a uni:ActividadEvaluacion;
+    uni:hasDescripcionActividadEvaluacion "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118)";
+    uni:hasModalidad "Presencial";
+    uni:hasTipo "Examen Escrito";
+    uni:hasDuracion "02:30";
+    uni:hasPesoNota "50%";
+    uni:hasNotaMinima "4.5 / 10";
+    uni:hasCompetenciasEvaluadas "CT5 CT11 CC2 CC3 CE6".
+
+uni:ActividadEvaluacion6 a uni:ActividadEvaluacion;
+    uni:hasDescripcionActividadEvaluacion "Examen final (Convocatoria extraordinaria). (RA111, RA112, RA116, RA118)";
+    uni:hasModalidad "Presencial";
+    uni:hasTipo "Examen Escrito";
+    uni:hasDuracion "02:30";
+    uni:hasPesoNota "100%";
+    uni:hasNotaMinima "5 / 10";
+    uni:hasCompetenciasEvaluadas "CT5 CT11 CC2 CC3 CE6".
+
+uni:RecursoDidactico1 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico2 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico3 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico4 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico5 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "Agile Practice Guide";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico6 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "User Story Mapping: Discover the Whole Story, Build the Right Product";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico7 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego.";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico8 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "Agile Project Management with SCRUM";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico9 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "Kanban Esencial Condensado";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".
+
+uni:RecursoDidactico10 a uni:RecursoDidactico;
+    uni:hasNombreRecurso "La Guía Kanban para Equipos Scrum";
+    uni:hasTipoRecurso "Bibliografía";
+    uni:hasObservacionesRecurso "".

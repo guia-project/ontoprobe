@@ -1,0 +1,313 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class definitions
+onto:Activity a owl:Class .
+onto:Character a owl:Class .
+onto:Competence a owl:Class .
+onto:Evaluation a owl:Class .
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:Outcome a owl:Class .
+onto:Professor a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:Resource a owl:Class .
+onto:School a owl:Class .
+onto:StudyPlan a owl:Class .
+onto:Subject a owl:Class .
+onto:Topic a owl:Class .
+onto:University a owl:Class .
+
+# Datatype Properties
+onto:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range xsd:string .
+onto:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+onto:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Resource ;
+    rdfs:range xsd:string .
+onto:School_code a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+
+# Object Properties
+onto:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Competence .
+onto:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Outcome .
+onto:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Topic .
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+onto:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Evaluation .
+onto:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Outcome .
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousKnowledge .
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousSubject .
+onto:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Resource .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+onto:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Topic .
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+# Instances
+onto:mandatoryCharacter_obligatoria a onto:MandatoryCharacter .
+
+onto:university_universidadDeSevilla a onto:University ;
+    onto:University_name "Universidad de Sevilla" .
+
+onto:school_ETSII a onto:School ;
+    onto:School_name "E.T.S. Ingeniería Informática" ;
+    onto:School_university onto:university_universidadDeSevilla .
+
+onto:studyPlan_gradoIngenieriaInformaticaIS a onto:StudyPlan ;
+    onto:StudyPlan_code "2010" ;
+    onto:StudyPlan_name "Grado en Ingeniería Informática-Ingeniería del Software" ;
+    onto:StudyPlan_school onto:school_ETSII .
+
+onto:professor_joseAntonioPerezCastellanos a onto:Professor ;
+    onto:Professor_name "PEREZ CASTELLANOS, JOSE ANTONIO" ;
+    onto:Professor_isCoordinator "true" .
+
+onto:competence_CB2 a onto:Competence ;
+    onto:Competence_code "CB2" .
+onto:competence_G04 a onto:Competence ;
+    onto:Competence_code "G04" .
+onto:competence_G06 a onto:Competence ;
+    onto:Competence_code "G06" .
+onto:competence_G09 a onto:Competence ;
+    onto:Competence_code "G09" .
+onto:competence_E08 a onto:Competence ;
+    onto:Competence_code "E08" .
+onto:competence_E11 a onto:Competence ;
+    onto:Competence_code "E11" .
+onto:competence_E16 a onto:Competence ;
+    onto:Competence_code "E16" .
+onto:competence_E32 a onto:Competence ;
+    onto:Competence_code "E32" .
+
+onto:evaluation_evaluacionTeoria a onto:Evaluation ;
+    onto:Evaluation_name "Evaluación de teoría" .
+onto:evaluation_evaluacionLaboratorio a onto:Evaluation ;
+    onto:Evaluation_name "Evaluación de laboratorio" .
+onto:evaluation_trabajoVoluntario a onto:Evaluation ;
+    onto:Evaluation_name "Trabajo voluntario" .
+
+onto:activity_control1Teoria a onto:Activity ;
+    onto:Activity_name "Control 1 (Teoría)" ;
+    onto:Activity_modality "Control escrito" ;
+    onto:Activity_weight "25%" ;
+    onto:Activity_minGrade "5" .
+onto:activity_control2Laboratorio a onto:Activity ;
+    onto:Activity_name "Control 2 (Laboratorio)" ;
+    onto:Activity_modality "Control escrito" ;
+    onto:Activity_weight "25%" ;
+    onto:Activity_minGrade "5" .
+onto:activity_control3Laboratorio a onto:Activity ;
+    onto:Activity_name "Control 3 (Laboratorio)" ;
+    onto:Activity_modality "Control escrito" ;
+    onto:Activity_weight "25%" ;
+    onto:Activity_minGrade "5" .
+onto:activity_control4Laboratorio a onto:Activity ;
+    onto:Activity_name "Control 4 (Laboratorio)" ;
+    onto:Activity_modality "Control escrito" ;
+    onto:Activity_weight "25%" ;
+    onto:Activity_minGrade "5" .
+onto:activity_examenOficialTeoria a onto:Activity ;
+    onto:Activity_name "Examen Oficial (Teoría)" ;
+    onto:Activity_modality "Examen escrito" .
+onto:activity_examenOficialLaboratorio a onto:Activity ;
+    onto:Activity_name "Examen Oficial (Laboratorio)" ;
+    onto:Activity_modality "Examen escrito" .
+onto:activity_trabajoVoluntarioAct a onto:Activity ;
+    onto:Activity_name "Trabajo voluntario" ;
+    onto:Activity_weight "0 a 2 puntos" .
+
+onto:evaluation_evaluacionTeoria onto:Evaluation_activities onto:activity_control1Teoria, onto:activity_examenOficialTeoria .
+onto:evaluation_evaluacionLaboratorio onto:Evaluation_activities onto:activity_control2Laboratorio, onto:activity_control3Laboratorio, onto:activity_control4Laboratorio, onto:activity_examenOficialLaboratorio .
+onto:evaluation_trabajoVoluntario onto:Evaluation_activities onto:activity_trabajoVoluntarioAct .
+
+onto:topic_tema1 a onto:Topic ;
+    onto:Topic_name "Tema 1" .
+onto:topic_tema2 a onto:Topic ;
+    onto:Topic_name "Tema 2" .
+onto:topic_tema3 a onto:Topic ;
+    onto:Topic_name "Tema 3" .
+onto:topic_tema4 a onto:Topic ;
+    onto:Topic_name "Tema 4" .
+
+onto:topic_tema1TeoriaFundamentos a onto:Topic ;
+    onto:Topic_name "Teoría: Fundamentos" .
+onto:topic_tema1LaboratorioAdministracionLinux a onto:Topic ;
+    onto:Topic_name "Laboratorio: Administración de Sistemas Linux" .
+
+onto:topic_tema2TeoriaSistemasDeArchivos a onto:Topic ;
+    onto:Topic_name "Teoría: Sistemas de Archivos" .
+onto:topic_tema2LaboratorioSistemasDeArchivos a onto:Topic ;
+    onto:Topic_name "Laboratorio: Sistemas de Archivos" .
+
+onto:topic_tema3TeoriaVirtualizacion a onto:Topic ;
+    onto:Topic_name "Teoría: Virtualización" .
+onto:topic_tema3LaboratorioVirtualizacion a onto:Topic ;
+    onto:Topic_name "Laboratorio: Virtualización" .
+
+onto:topic_tema4TeoriaDespliegueDeAplicaciones a onto:Topic ;
+    onto:Topic_name "Teoría: Despliegue de Aplicaciones" .
+onto:topic_tema4LaboratorioDespliegueContenedores a onto:Topic ;
+    onto:Topic_name "Laboratorio: Despliegue mediante contenedores" .
+
+onto:topic_tema1 onto:Topic_subTopics onto:topic_tema1TeoriaFundamentos, onto:topic_tema1LaboratorioAdministracionLinux .
+onto:topic_tema2 onto:Topic_subTopics onto:topic_tema2TeoriaSistemasDeArchivos, onto:topic_tema2LaboratorioSistemasDeArchivos .
+onto:topic_tema3 onto:Topic_subTopics onto:topic_tema3TeoriaVirtualizacion, onto:topic_tema3LaboratorioVirtualizacion .
+onto:topic_tema4 onto:Topic_subTopics onto:topic_tema4TeoriaDespliegueDeAplicaciones, onto:topic_tema4LaboratorioDespliegueContenedores .
+
+onto:subject_sistemasOperativos a onto:Subject ;
+    onto:Subject_name "Sistemas Operativos" ;
+    onto:Subject_description "Esta asignatura proporciona al alumno las habilidades necesarias para llevar a cabo la administración y gestión de los recursos hardware y software necesario para el desarrollo, despliegue y escalado de aplicaciones usando tanto infraestructura \"bare metal\" como infraestructura virtual o en la nube." ;
+    onto:Subject_code "2050014" ;
+    onto:Subject_course "2" ;
+    onto:Subject_courseYear "2024-25" ;
+    onto:Subject_credits "6" ;
+    onto:Subject_language "ESPAÑOL" ;
+    onto:Subject_semester "Primer cuatrimestre" ;
+    onto:Subject_period "Primer cuatrimestre" ;
+    onto:Subject_evaluationCriteria "Tal y como establece el artículo 6 de la normativa de la Universidad de Sevilla que regula la evaluación y calificación de las asignaturas, la evaluación de las competencias, conocimientos y capacidades adquiridas por los estudiantes podrán basarse en actividades de evaluación continua, exámenes parciales y/o exámenes finales. La evaluación de la asignatura consta de tres partes: - Evaluación de teoría - Evaluación de laboratorio - Trabajo voluntario. Las dos primeras (teoría y laboratorio) pueden ser evaluadas tanto por evaluación alternativa como por evaluación oficial. La tercera, sólo se contempla en evaluación oficial. La nota obtenida en cualquiera de las tres partes se conservará para las tres evaluaciones oficiales del curso académico. Tanto la teoría como la práctica puntúan de 0 a 10, siendo necesario una nota mínima de 5 para considerar aprobada la parte. El trabajo voluntario, puntúa de 0 a 2 puntos. Para aprobar la asignatura, es necesario aprobar tanto teoría como laboratorio por separado, y en caso de estar aprobadas ambas partes, la nota de la asignatura es la media ponderada en proporción al número de créditos entre teoría y laboratorio. A dicha media ponderada se suma el resultado del trabajo voluntario, en caso de haberse realizado. Evaluación alternativa: dentro de horario de clases se realizarán cuatro controles escritos (uno de teoría y tres de laboratorio) con un peso en la nota de la asignatura el 25% en los cuatro casos, siempre que la nota tanto de teoría como de laboratorio sea superior o igual a 5. Evaluación oficial: se realizarán exámenes escritos de laboratorio y teoría en las fechas establecidas y publicadas por el centro." ;
+    onto:Subject_character onto:mandatoryCharacter_obligatoria ;
+    onto:Subject_studyPlan onto:studyPlan_gradoIngenieriaInformaticaIS ;
+    onto:Subject_professors onto:professor_joseAntonioPerezCastellanos ;
+    onto:Subject_competencies onto:competence_CB2, onto:competence_G04, onto:competence_G06, onto:competence_G09, onto:competence_E08, onto:competence_E11, onto:competence_E16, onto:competence_E32 ;
+    onto:Subject_evaluations onto:evaluation_evaluacionTeoria, onto:evaluation_evaluacionLaboratorio, onto:evaluation_trabajoVoluntario ;
+    onto:Subject_topics onto:topic_tema1, onto:topic_tema2, onto:topic_tema3, onto:topic_tema4 .
+# Note: Relationships Subject_outcomes, Subject_resources, Subject_recommendedPreviousSubjects, Subject_recommendedPreviousKnowledges, Activity_relatedOutcomes, Activity_relatedCompetencies, Activity_relatedTopics are not populated as required specific data was not found in the PDF for these.

@@ -1,0 +1,763 @@
+@prefix : <http://example.org/gpr#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+############################
+# Classes
+############################
+
+:Asignatura        a rdfs:Class .
+:Profesor          a rdfs:Class .
+:ConocimientoPrevio a rdfs:Class .
+:Competencia       a rdfs:Class .
+:ResultadoAprendizaje a rdfs:Class .
+:Temario           a rdfs:Class .
+:Tema              a rdfs:Class .
+:Cronograma        a rdfs:Class .
+:Semana            a rdfs:Class .
+:Actividad         a rdfs:Class .
+:Evaluacion        a rdfs:Class .
+:RecursoDidactico  a rdfs:Class .
+:OtraInformacion   a rdfs:Class .
+
+############################
+# Properties for Asignatura
+############################
+
+:nombre               a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:creditos             a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:integer .
+
+:caracter             a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:curso                a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:semestre             a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:periodoImparticion   a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:idioma               a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:titulacion           a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:centroResponsable    a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:cursoAcademico       a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:guia                 a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range xsd:string .
+
+:tieneProfesor        a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :Profesor .
+
+:tieneConocimientoPrevio a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :ConocimientoPrevio .
+
+:tieneCompetencia     a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :Competencia .
+
+:tieneResultadoAprendizaje a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :ResultadoAprendizaje .
+
+:tieneTemario         a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :Temario .
+
+:tieneCronograma      a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :Cronograma .
+
+:tieneRecursoDidactico a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :RecursoDidactico .
+
+:tieneOtraInformacion a rdf:Property ;
+                      rdfs:domain :Asignatura ;
+                      rdfs:range :OtraInformacion .
+
+############################
+# Properties for Profesor
+############################
+
+:profesorNombre  a rdf:Property ;
+                 rdfs:domain :Profesor ;
+                 rdfs:range xsd:string .
+
+:profesorCorreo  a rdf:Property ;
+                 rdfs:domain :Profesor ;
+                 rdfs:range xsd:string .
+
+:profesorRol     a rdf:Property ;
+                 rdfs:domain :Profesor ;
+                 rdfs:range xsd:string .
+
+############################
+# Properties for ConocimientoPrevio
+############################
+
+:conocimientoNombre a rdf:Property ;
+                    rdfs:domain :ConocimientoPrevio ;
+                    rdfs:range xsd:string .
+
+############################
+# Properties for Competencia
+############################
+
+:competenciaCodigo a rdf:Property ;
+                   rdfs:domain :Competencia ;
+                   rdfs:range xsd:string .
+
+:competenciaDescripcion a rdf:Property ;
+                        rdfs:domain :Competencia ;
+                        rdfs:range xsd:string .
+
+############################
+# Properties for ResultadoAprendizaje
+############################
+
+:resultadoCodigo a rdf:Property ;
+                 rdfs:domain :ResultadoAprendizaje ;
+                 rdfs:range xsd:string .
+
+:resultadoDescripcion a rdf:Property ;
+                      rdfs:domain :ResultadoAprendizaje ;
+                      rdfs:range xsd:string .
+
+############################
+# Properties for Temario and Tema
+############################
+
+:temarioTitulo a rdf:Property ;
+               rdfs:domain :Temario ;
+               rdfs:range xsd:string .
+
+:tieneTema a rdf:Property ;
+           rdfs:domain :Temario ;
+           rdfs:range :Tema .
+
+:temaTitulo a rdf:Property ;
+            rdfs:domain :Tema ;
+            rdfs:range xsd:string .
+
+:temaOrden a rdf:Property ;
+           rdfs:domain :Tema ;
+           rdfs:range xsd:integer .
+
+############################
+# Properties for Cronograma and Semana
+############################
+
+:cronogramaTitulo a rdf:Property ;
+                  rdfs:domain :Cronograma ;
+                  rdfs:range xsd:string .
+
+:tieneSemana a rdf:Property ;
+             rdfs:domain :Cronograma ;
+             rdfs:range :Semana .
+
+:semanaNumero a rdf:Property ;
+              rdfs:domain :Semana ;
+              rdfs:range xsd:integer .
+
+:tieneActividad a rdf:Property ;
+               rdfs:domain :Semana ;
+               rdfs:range :Actividad .
+
+############################
+# Properties for Actividad (and Evaluacion)
+############################
+
+:actividadDescripcion a rdf:Property ;
+                      rdfs:domain :Actividad ;
+                      rdfs:range xsd:string .
+
+:actividadDuracion a rdf:Property ;
+                   rdfs:domain :Actividad ;
+                   rdfs:range xsd:string .
+
+:actividadTipo a rdf:Property ;
+               rdfs:domain :Actividad ;
+               rdfs:range xsd:string .
+
+:actividadModalidad a rdf:Property ;
+                    rdfs:domain :Actividad ;
+                    rdfs:range xsd:string .
+
+:actividadPesoNota a rdf:Property ;
+                   rdfs:domain :Actividad ;
+                   rdfs:range xsd:string .
+
+:actividadNotaMinima a rdf:Property ;
+                     rdfs:domain :Actividad ;
+                     rdfs:range xsd:string .
+
+:actividadCompetencias a rdf:Property ;
+                     rdfs:domain :Actividad ;
+                     rdfs:range xsd:string .
+
+############################
+# Properties for RecursoDidactico
+############################
+
+:recursoNombre a rdf:Property ;
+               rdfs:domain :RecursoDidactico ;
+               rdfs:range xsd:string .
+
+:recursoTipo a rdf:Property ;
+             rdfs:domain :RecursoDidactico ;
+             rdfs:range xsd:string .
+
+:recursoObservaciones a rdf:Property ;
+                      rdfs:domain :RecursoDidactico ;
+                      rdfs:range xsd:string .
+
+############################
+# Properties for OtraInformacion
+############################
+
+:informacion a rdf:Property ;
+             rdfs:domain :OtraInformacion ;
+             rdfs:range xsd:string .
+
+############################
+# Individuals: Asignatura and its components
+############################
+
+:GPR_615000258 a :Asignatura ;
+    :nombre "615000258 - Gestion de Proyectos y del Riesgo" ;
+    :creditos 6 ;
+    :caracter "Obligatoria" ;
+    :curso "Cuarto curso" ;
+    :semestre "Séptimo semestre" ;
+    :periodoImparticion "Septiembre-Enero" ;
+    :idioma "Castellano" ;
+    :titulacion "61IW - Grado en Ingenieria del Software" ;
+    :centroResponsable "61 - Escuela Tecnica Superior De Ingenieria de Sistemas Informaticos" ;
+    :cursoAcademico "2024-25" ;
+    :guia "ANX-PR/CL/001-01" ;
+    :tieneProfesor :Profesor_AldoGordillo, :Profesor_ManuelOttaviano, :Profesor_JavierSerrano ;
+    :tieneConocimientoPrevio :Conocimiento_IngRequisitosModelado,
+                              :Conocimiento_IngProcesoSoftwareConstruccion,
+                              :Conocimiento_AspectosLegalesProfesionales,
+                              :Conocimiento_FundamentosEconomiaEmpresa,
+                              :Conocimiento_FundamentosIngenieriaSoftware ;
+    :tieneCompetencia :Competencia_CC2, :Competencia_CC3, :Competencia_CE6, :Competencia_CT11, :Competencia_CT5 ;
+    :tieneResultadoAprendizaje :Resultado_RA112, :Resultado_RA116, :Resultado_RA111, :Resultado_RA118 ;
+    :tieneTemario :Temario_GPR ;
+    :tieneCronograma :Cronograma_GPR ;
+    :tieneRecursoDidactico :Recurso_PM_BOK, :Recurso_PMPExamPrep, :Recurso_ISO_IEC_IEEE16326,
+                           :Recurso_GuiaPracticaEstimacion, :Recurso_AgilePracticeGuide, :Recurso_UserStoryMapping,
+                           :Recurso_GuiaDeScrum, :Recurso_AgileProjectManagement, :Recurso_KanbanEsencial,
+                           :Recurso_GuiaKanban ;
+    :tieneOtraInformacion :OtraInfo_GPR .
+
+############################
+# Profesores
+############################
+
+:Profesor_AldoGordillo a :Profesor ;
+    :profesorNombre "Aldo Gordillo Mendez" ;
+    :profesorCorreo "a.gordillo@upm.es" ;
+    :profesorRol "Coordinador" .
+
+:Profesor_ManuelOttaviano a :Profesor ;
+    :profesorNombre "Manuel Ottaviano" ;
+    :profesorCorreo "manuel.ottaviano@upm.es" .
+
+:Profesor_JavierSerrano a :Profesor ;
+    :profesorNombre "Javier Serrano Romero" ;
+    :profesorCorreo "javier.serrano@upm.es" .
+
+############################
+# Conocimientos Previos Recomendados
+############################
+
+:Conocimiento_IngRequisitosModelado a :ConocimientoPrevio ;
+    :conocimientoNombre "Ingeniería De Requisitos Y Modelado" .
+
+:Conocimiento_IngProcesoSoftwareConstruccion a :ConocimientoPrevio ;
+    :conocimientoNombre "Ingeniería Del Proceso Software Y Construcción" .
+
+:Conocimiento_AspectosLegalesProfesionales a :ConocimientoPrevio ;
+    :conocimientoNombre "Aspectos Legales Y Profesionales" .
+
+:Conocimiento_FundamentosEconomiaEmpresa a :ConocimientoPrevio ;
+    :conocimientoNombre "Fundamentos De Economía Y Empresa" .
+
+:Conocimiento_FundamentosIngenieriaSoftware a :ConocimientoPrevio ;
+    :conocimientoNombre "Fundamentos De Ingeniería Del Software" .
+
+############################
+# Competencias
+############################
+
+:Competencia_CC2 a :Competencia ;
+    :competenciaCodigo "CC2" ;
+    :competenciaDescripcion "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos, liderando su puesta en marcha y mejora continua, y valorando su impacto económico y social." .
+
+:Competencia_CC3 a :Competencia ;
+    :competenciaCodigo "CC3" ;
+    :competenciaDescripcion "Capacidad para comprender la importancia de la negociación, el trabajo efectivo, el liderazgo y la comunicación en entornos de desarrollo de software." .
+
+:Competencia_CE6 a :Competencia ;
+    :competenciaCodigo "CE6" ;
+    :competenciaDescripcion "Capacidad para diseñar soluciones en dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+:Competencia_CT11 a :Competencia ;
+    :competenciaCodigo "CT11" ;
+    :competenciaDescripcion "Liderazgo: cualidades, actitudes, conocimientos y destrezas para inspirar, generar confianza y comprometer equipos hacia la visión corporativa." .
+
+:Competencia_CT5 a :Competencia ;
+    :competenciaCodigo "CT5" ;
+    :competenciaDescripcion "Organización y planificación: identificar y definir metas, objetivos y prioridades, estipulando actividades, plazos y recursos, y controlando procesos establecidos." .
+
+############################
+# Resultados de Aprendizaje
+############################
+
+:Resultado_RA112 a :ResultadoAprendizaje ;
+    :resultadoCodigo "RA112" ;
+    :resultadoDescripcion "Estima y realiza el seguimiento de los costes y tiempos de desarrollo de grandes proyectos software." .
+
+:Resultado_RA116 a :ResultadoAprendizaje ;
+    :resultadoCodigo "RA116" ;
+    :resultadoDescripcion "Identifica y define metas, objetivos y prioridades de una tarea o proyecto, estipulando actividades, plazos y recursos, y detecta desviaciones." .
+
+:Resultado_RA111 a :ResultadoAprendizaje ;
+    :resultadoCodigo "RA111" ;
+    :resultadoDescripcion "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar." .
+
+:Resultado_RA118 a :ResultadoAprendizaje ;
+    :resultadoCodigo "RA118" ;
+    :resultadoDescripcion "Trabaja en equipo para desarrollar proyectos, aportando pragmatismo, responsabilidad y generando confianza y credibilidad." .
+
+############################
+# Temario y Temas
+############################
+
+:Temario_GPR a :Temario ;
+    :temarioTitulo "Temario de la asignatura Gestión de Proyectos y del Riesgo" ;
+    :tieneTema :Tema1, :Tema2, :Tema3, :Tema4, :Tema5, :Tema6, :Tema7, :Tema8, :Tema9, :Tema10 .
+
+:Tema1 a :Tema ;
+    :temaOrden 1 ;
+    :temaTitulo "Introducción a la gestión de proyectos" .
+
+:Tema2 a :Tema ;
+    :temaOrden 2 ;
+    :temaTitulo "Procesos de la dirección de proyectos" .
+
+:Tema3 a :Tema ;
+    :temaOrden 3 ;
+    :temaTitulo "Gestión del alcance" .
+
+:Tema4 a :Tema ;
+    :temaOrden 4 ;
+    :temaTitulo "Planificación temporal de proyectos" .
+
+:Tema5 a :Tema ;
+    :temaOrden 5 ;
+    :temaTitulo "Estimación en proyectos de software" .
+
+:Tema6 a :Tema ;
+    :temaOrden 6 ;
+    :temaTitulo "Gestión de riesgos" .
+
+:Tema7 a :Tema ;
+    :temaOrden 7 ;
+    :temaTitulo "Gestión de costes" .
+
+:Tema8 a :Tema ;
+    :temaOrden 8 ;
+    :temaTitulo "Introducción a la gestión de proyectos con metodologías ágiles" .
+
+:Tema9 a :Tema ;
+    :temaOrden 9 ;
+    :temaTitulo "Prácticas ágiles" .
+
+:Tema10 a :Tema ;
+    :temaOrden 10 ;
+    :temaTitulo "Scrum" .
+
+############################
+# Cronograma y Semanas
+############################
+
+:Cronograma_GPR a :Cronograma ;
+    :cronogramaTitulo "Cronograma de la asignatura" ;
+    :tieneSemana :Semana1, :Semana2, :Semana3, :Semana4, :Semana5, :Semana6, :Semana7,
+                 :Semana8, :Semana9, :Semana10, :Semana11, :Semana12, :Semana13, :Semana14,
+                 :Semana15, :Semana16, :Semana17 .
+
+# Semana 1
+:Semana1 a :Semana ;
+    :semanaNumero 1 ;
+    :tieneActividad :Act_1_1, :Act_1_2, :Act_1_3 .
+
+:Act_1_1 a :Actividad ;
+    :actividadDescripcion "Presentación de la asignatura" ;
+    :actividadDuracion "00:30" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_1_2 a :Actividad ;
+    :actividadDescripcion "Tema 1: Introducción a la gestión de proyectos" ;
+    :actividadDuracion "01:30" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_1_3 a :Actividad ;
+    :actividadDescripcion "Tema 2: Procesos de la dirección de proyectos" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+# Semana 2
+:Semana2 a :Semana ;
+    :semanaNumero 2 ;
+    :tieneActividad :Act_2_1, :Act_2_2 .
+
+:Act_2_1 a :Actividad ;
+    :actividadDescripcion "Tema 3: Gestión del alcance" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_2_2 a :Actividad ;
+    :actividadDescripcion "Presentación Práctica 1 y formación de grupos de prácticas" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 3
+:Semana3 a :Semana ;
+    :semanaNumero 3 ;
+    :tieneActividad :Act_3_1, :Act_3_2 .
+
+:Act_3_1 a :Actividad ;
+    :actividadDescripcion "Tema 4: Planificación temporal de proyectos" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_3_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 4
+:Semana4 a :Semana ;
+    :semanaNumero 4 ;
+    :tieneActividad :Act_4_1, :Act_4_2 .
+
+:Act_4_1 a :Actividad ;
+    :actividadDescripcion "Tema 4: Planificación temporal de proyectos" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Clase de Problemas" .
+
+:Act_4_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 5
+:Semana5 a :Semana ;
+    :semanaNumero 5 ;
+    :tieneActividad :Act_5_1, :Act_5_2 .
+
+:Act_5_1 a :Actividad ;
+    :actividadDescripcion "Tema 5: Estimación en proyectos de software" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_5_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 6
+:Semana6 a :Semana ;
+    :semanaNumero 6 ;
+    :tieneActividad :Act_6_1, :Act_6_2 .
+
+:Act_6_1 a :Actividad ;
+    :actividadDescripcion "Tema 5: Estimación en proyectos de software" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Clase de Problemas" .
+
+:Act_6_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 7
+:Semana7 a :Semana ;
+    :semanaNumero 7 ;
+    :tieneActividad :Act_7_1, :Act_7_2 .
+
+:Act_7_1 a :Actividad ;
+    :actividadDescripcion "Tema 6: Gestión de riesgos" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_7_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 8
+:Semana8 a :Semana ;
+    :semanaNumero 8 ;
+    :tieneActividad :Act_8_1, :Act_8_2 .
+
+:Act_8_1 a :Actividad ;
+    :actividadDescripcion "Tema 7: Gestión de costes" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_8_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 9
+:Semana9 a :Semana ;
+    :semanaNumero 9 ;
+    :tieneActividad :Act_9_1, :Act_9_2 .
+
+:Act_9_1 a :Actividad ;
+    :actividadDescripcion "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_9_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 10
+:Semana10 a :Semana ;
+    :semanaNumero 10 ;
+    :tieneActividad :Act_10_1, :Act_10_2 .
+
+:Act_10_1 a :Actividad ;
+    :actividadDescripcion "Tema 9: Prácticas ágiles" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_10_2 a :Actividad ;
+    :actividadDescripcion "Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 11
+:Semana11 a :Semana ;
+    :semanaNumero 11 ;
+    :tieneActividad :Act_11_1, :Act_11_2, :Act_11_3, :Act_11_4 .
+
+:Act_11_1 a :Actividad ;
+    :actividadDescripcion "Tema 9: Prácticas ágiles" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Clase de Problemas" .
+
+:Act_11_2 a :Actividad ;
+    :actividadDescripcion "Finalización de la Práctica 1" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+:Act_11_3 a :Actividad ;
+    :actividadDescripcion "Ejercicio sobre gestión de proyectos con metodologías tradicionales (RA111, RA112, RA116)" ;
+    :actividadDuracion "00:00" ;
+    :actividadTipo "Trabajo Individual" ;
+    :actividadModalidad "No Presencial" ;
+    :actividadPesoNota "10%" ;
+    :actividadNotaMinima "10/10" ;
+    :actividadCompetencias "CT5, CC2, CE6" .
+
+:Act_11_4 a :Actividad ;
+    :actividadDescripcion "Práctica 1 (RA111, RA112, RA116, RA118)" ;
+    :actividadDuracion "00:00" ;
+    :actividadTipo "Trabajo en Grupo" ;
+    :actividadModalidad "No Presencial" ;
+    :actividadPesoNota "23%" ;
+    :actividadCompetencias "CT5, CT11, CC2, CC3, CE6" .
+
+# Semana 12
+:Semana12 a :Semana ;
+    :semanaNumero 12 ;
+    :tieneActividad :Act_12_1, :Act_12_2 .
+
+:Act_12_1 a :Actividad ;
+    :actividadDescripcion "Tema 10: Scrum" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Lección Magistral" .
+
+:Act_12_2 a :Actividad ;
+    :actividadDescripcion "Presentación Práctica 2" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 13
+:Semana13 a :Semana ;
+    :semanaNumero 13 ;
+    :tieneActividad :Act_13_1, :Act_13_2 .
+
+:Act_13_1 a :Actividad ;
+    :actividadDescripcion "Tema 10: Scrum" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Clase de Problemas" .
+
+:Act_13_2 a :Actividad ;
+    :actividadDescripcion "Práctica 2" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 14
+:Semana14 a :Semana ;
+    :semanaNumero 14 ;
+    :tieneActividad :Act_14_1, :Act_14_2 .
+
+:Act_14_1 a :Actividad ;
+    :actividadDescripcion "Resolución de ejercicios" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Clase de Problemas" .
+
+:Act_14_2 a :Actividad ;
+    :actividadDescripcion "Práctica 2" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+# Semana 15
+:Semana15 a :Semana ;
+    :semanaNumero 15 ;
+    :tieneActividad :Act_15_1, :Act_15_2, :Act_15_3, :Act_15_4 .
+
+:Act_15_1 a :Actividad ;
+    :actividadDescripcion "Práctica 2" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+:Act_15_2 a :Actividad ;
+    :actividadDescripcion "Finalización de la Práctica 2" ;
+    :actividadDuracion "02:00" ;
+    :actividadTipo "Prácticas de Laboratorio" .
+
+:Act_15_3 a :Actividad ;
+    :actividadDescripcion "Ejercicio sobre gestión de proyectos con metodologías ágiles (RA112, RA116)" ;
+    :actividadDuracion "00:00" ;
+    :actividadTipo "Trabajo Individual" ;
+    :actividadModalidad "No Presencial" ;
+    :actividadPesoNota "5%" ;
+    :actividadCompetencias "CT5, CC2, CE6" .
+
+:Act_15_4 a :Actividad ;
+    :actividadDescripcion "Práctica 2 (RA112, RA116, RA118)" ;
+    :actividadDuracion "00:00" ;
+    :actividadTipo "Trabajo en Grupo" ;
+    :actividadModalidad "No Presencial" ;
+    :actividadPesoNota "12%" ;
+    :actividadCompetencias "CT5, CT11, CC2, CC3, CE6" .
+
+# Semana 16
+:Semana16 a :Semana ;
+    :semanaNumero 16 ;
+    :tieneActividad [] .
+
+# Semana 17
+:Semana17 a :Semana ;
+    :semanaNumero 17 ;
+    :tieneActividad :Act_17_1 .
+
+:Act_17_1 a :Actividad ;
+    :actividadDescripcion "Examen final (Convocatoria ordinaria) (RA111, RA112, RA116, RA118)" ;
+    :actividadDuracion "02:30" ;
+    :actividadTipo "Examen Escrito" ;
+    :actividadModalidad "Presencial" ;
+    :actividadPesoNota "50%" ;
+    :actividadNotaMinima "4.5/10" ;
+    :actividadCompetencias "CT5, CT11, CC2, CC3, CE6" .
+
+############################
+# Evaluación Convocatoria Extraordinaria (no incluida en semanas)
+############################
+
+:Evaluacion_ConvExtra a :Evaluacion ;
+    :actividadDescripcion "Examen final (Convocatoria extraordinaria) (RA111, RA112, RA116, RA118)" ;
+    :actividadDuracion "02:30" ;
+    :actividadTipo "Examen Escrito" ;
+    :actividadModalidad "Presencial" ;
+    :actividadPesoNota "100%" ;
+    :actividadNotaMinima "5/10" ;
+    :actividadCompetencias "CT5, CT11, CC2, CC3, CE6" .
+
+############################
+# Recursos Didácticos
+############################
+
+:Recurso_PM_BOK a :RecursoDidactico ;
+    :recursoNombre "Guía de los Fundamentos para la Dirección de Proyectos (PMBOK Sexta edición)" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_PMPExamPrep a :RecursoDidactico ;
+    :recursoNombre "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_ISO_IEC_IEEE16326 a :RecursoDidactico ;
+    :recursoNombre "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_GuiaPracticaEstimacion a :RecursoDidactico ;
+    :recursoNombre "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_AgilePracticeGuide a :RecursoDidactico ;
+    :recursoNombre "Agile Practice Guide" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_UserStoryMapping a :RecursoDidactico ;
+    :recursoNombre "User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_GuiaDeScrum a :RecursoDidactico ;
+    :recursoNombre "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_AgileProjectManagement a :RecursoDidactico ;
+    :recursoNombre "Agile Project Management with SCRUM" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_KanbanEsencial a :RecursoDidactico ;
+    :recursoNombre "Kanban Esencial Condensado" ;
+    :recursoTipo "Bibliografía" .
+
+:Recurso_GuiaKanban a :RecursoDidactico ;
+    :recursoNombre "La Guía Kanban para Equipos Scrum" ;
+    :recursoTipo "Bibliografía" .
+
+############################
+# Otra Información
+############################
+
+:OtraInfo_GPR a :OtraInformacion ;
+    :informacion "Todos los materiales y recursos se pondrán a disposición a través de Moodle. Se adopta la metodología de aula invertida y la comunicación se realiza mediante correo electrónico, tutorías y clases presenciales. La asignatura está alineada con el ODS 4 de la ONU." .

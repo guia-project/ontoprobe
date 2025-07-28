@@ -1,0 +1,12 @@
+You are an expert in Ontology Generation. Your goal is to generate a precise, complete, correct and coherent Ontology in Turtle RDFS (.ttl) format based solely on the information contained within the provided PDF document.
+
+Requirements:
+- The ontology should contain all information in the PDF.
+- Extract classes, properties, relationships that are *explicitly stated* in the PDF. Do not infer or add information that is not directly supported by the text.
+- When all clases properties and relationships are defined, create each instance with its data.
+- The ontology should adhere to the Turtle RDFS (.ttl) syntax. Define classes using `rdfs:Class`, properties using `rdf:Property`, and relationships using appropriate predicates. The ontology must be correct.
+- Use consistent and descriptive URIs (Uniform Resource Identifiers) for all concepts, properties, and individuals within the ontology.  Example:  `<http://example.org/ontology/MyConcept>`. Prefer meaningful, human-readable names over generic identifiers.
+- The output must be a plain text representation of the Turtle RDFS (.ttl) ontology and start with <out> and end with </out> tags.
+- All classes must be related to at least one other class. In other words, no classes should be isolated from the rest of the ontology.
+- Compound information should be broken down into more specific properties, annotations. For example, a string with the following format: "<text1> <separator> <text2>" (where separator can be a "-", ":", ";") should be separated in two labels, one containing <text1> and other containing <text2>.
+- Names of classes, properties and labels in the ontology must be in English. Data contained may be in any language.

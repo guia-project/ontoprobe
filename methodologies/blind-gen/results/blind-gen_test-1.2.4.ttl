@@ -1,0 +1,540 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix guia: <http://example.org/guia_aprendizaje/> .
+
+guia:Course rdfs:label "Course" .
+guia:Degree rdfs:label "Degree" .
+guia:Department rdfs:label "Department" .
+guia:Professor rdfs:label "Professor" .
+guia:Competency rdfs:label "Competency" .
+guia:LearningOutcome rdfs:label "Learning Outcome" .
+guia:Topic rdfs:label "Topic" .
+guia:Activity rdfs:label "Activity" .
+guia:Assessment rdfs:label "Assessment" .
+guia:Resource rdfs:label "Resource" .
+guia:AcademicYear rdfs:label "Academic Year" .
+guia:Semester rdfs:label "Semester" .
+guia:ECTSCredits rdfs:label "ECTS Credits" .
+guia:CourseType rdfs:label "Course Type" .
+guia:TeachingPeriod rdfs:label "Teaching Period" .
+guia:Language rdfs:label "Language" .
+guia:TutorHours rdfs:label "Tutor Hours" .
+guia:ActivityType rdfs:label "Activity Type" .
+guia:AssessmentType rdfs:label "Assessment Type" .
+guia:EvaluationType rdfs:label "Evaluation Type" .
+guia:CompetencyCode rdfs:label "Competency Code" .
+guia:LearningOutcomeCode rdfs:label "Learning Outcome Code" .
+guia:ActivityDuration rdfs:label "Activity Duration" .
+guia:AssessmentWeight rdfs:label "Assessment Weight" .
+guia:MinimumGrade rdfs:label "Minimum Grade" .
+guia:DayOfWeek rdfs:label "Day of Week" .
+guia:Time rdfs:label "Time" .
+
+guia:hasCourseCode rdfs:domain guia:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has course code" .
+
+guia:hasCourseName rdfs:domain guia:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has course name" .
+
+guia:hasECTSCredits rdfs:domain guia:Course ;
+    rdfs:range guia:ECTSCredits ;
+    rdfs:label "has ECTS credits" .
+
+guia:hasCourseType rdfs:domain guia:Course ;
+    rdfs:range guia:CourseType ;
+    rdfs:label "has course type" .
+
+guia:hasCourseYear rdfs:domain guia:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has course year" .
+
+guia:hasSemester rdfs:domain guia:Course ;
+    rdfs:range guia:Semester ;
+    rdfs:label "has semester" .
+
+guia:hasTeachingPeriod rdfs:domain guia:Course ;
+    rdfs:range guia:TeachingPeriod ;
+    rdfs:label "has teaching period" .
+
+guia:hasLanguage rdfs:domain guia:Course ;
+    rdfs:range guia:Language ;
+    rdfs:label "has language" .
+
+guia:isPartOfDegree rdfs:domain guia:Course ;
+    rdfs:range guia:Degree ;
+    rdfs:label "is part of degree" .
+
+guia:isOfferedByDepartment rdfs:domain guia:Course ;
+    rdfs:range guia:Department ;
+    rdfs:label "is offered by department" .
+
+guia:hasAcademicYear rdfs:domain guia:Course, guia:Degree ;
+    rdfs:range guia:AcademicYear ;
+    rdfs:label "has academic year" .
+
+guia:hasTopic rdfs:domain guia:Course ;
+    rdfs:range guia:Topic ;
+    rdfs:label "has topic" .
+
+guia:taughtBy rdfs:domain guia:Course ;
+    rdfs:range guia:Professor ;
+    rdfs:label "taught by" .
+
+guia:recommendsPreviousKnowledge rdfs:domain guia:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "recommends previous knowledge" .
+
+guia:recommendsPreviousSubject rdfs:domain guia:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "recommends previous subject" .
+
+guia:hasCompetency rdfs:domain guia:Course ;
+    rdfs:range guia:Competency ;
+    rdfs:label "has competency" .
+
+guia:hasLearningOutcome rdfs:domain guia:Course ;
+    rdfs:range guia:LearningOutcome ;
+    rdfs:label "has learning outcome" .
+
+guia:hasDescription rdfs:domain guia:Course, guia:Competency, guia:LearningOutcome ;
+    rdfs:range xsd:string ;
+    rdfs:label "has description" .
+
+guia:hasSyllabusItem rdfs:domain guia:Topic ;
+    rdfs:range xsd:string ;
+    rdfs:label "has syllabus item" .
+
+guia:hasActivity rdfs:domain guia:Topic ;
+    rdfs:range guia:Activity ;
+    rdfs:label "has activity" .
+
+guia:hasActivityType rdfs:domain guia:Activity ;
+    rdfs:range guia:ActivityType ;
+    rdfs:label "has activity type" .
+
+guia:hasActivityDuration rdfs:domain guia:Activity ;
+    rdfs:range guia:ActivityDuration ;
+    rdfs:label "has activity duration" .
+
+guia:hasProfessorName rdfs:domain guia:Professor ;
+    rdfs:range xsd:string ;
+    rdfs:label "has professor name" .
+
+guia:hasOffice rdfs:domain guia:Professor ;
+    rdfs:range xsd:string ;
+    rdfs:label "has office" .
+
+guia:hasEmail rdfs:domain guia:Professor ;
+    rdfs:range xsd:string ;
+    rdfs:label "has email" .
+
+guia:hasTutorHours rdfs:domain guia:Professor ;
+    rdfs:range guia:TutorHours ;
+    rdfs:label "has tutor hours" .
+
+guia:hasAssessment rdfs:domain guia:Course ;
+    rdfs:range guia:Assessment ;
+    rdfs:label "has assessment" .
+
+guia:hasAssessmentType rdfs:domain guia:Assessment ;
+    rdfs:range guia:AssessmentType ;
+    rdfs:label "has assessment type" .
+
+guia:hasEvaluationType rdfs:domain guia:Assessment ;
+    rdfs:range guia:EvaluationType ;
+    rdfs:label "has evaluation type" .
+
+guia:hasAssessmentWeight rdfs:domain guia:Assessment ;
+    rdfs:range guia:AssessmentWeight ;
+    rdfs:label "has assessment weight" .
+
+guia:hasMinimumGrade rdfs:domain guia:Assessment ;
+    rdfs:range guia:MinimumGrade ;
+    rdfs:label "has minimum grade" .
+
+guia:evaluatesCompetency rdfs:domain guia:Assessment ;
+    rdfs:range guia:Competency ;
+    rdfs:label "evaluates competency" .
+
+guia:hasCompetencyCode rdfs:domain guia:Competency ;
+    rdfs:range guia:CompetencyCode;
+    rdfs:label "has competency code" .
+
+guia:hasLearningOutcomeCode rdfs:domain guia:LearningOutcome ;
+    rdfs:range guia:LearningOutcomeCode;
+    rdfs:label "has learning outcome code" .
+
+guia:usesResource rdfs:domain guia:Course;
+    rdfs:range guia:Resource;
+    rdfs:label "uses resource".
+
+guia:resourceName rdfs:domain guia:Resource;
+    rdfs:range xsd:string;
+    rdfs:label "resource name".
+
+guia:resourceType rdfs:domain guia:Resource;
+    rdfs:range xsd:string;
+    rdfs:label "resource type".
+
+
+guia:GestionProyectosRiesgo
+    a guia:Course ;
+    guia:hasCourseCode "615000258" ;
+    guia:hasCourseName "Gestion De Proyectos Y Del Riesgo" ;
+    guia:hasECTSCredits "6"^^xsd:integer ;
+    guia:hasCourseType "Obligatoria" ;
+    guia:hasCourseYear "Cuarto curso" ;
+    guia:hasSemester "Séptimo semestre" ;
+    guia:hasTeachingPeriod "Septiembre-Enero" ;
+    guia:hasLanguage "Castellano" ;
+    guia:isPartOfDegree guia:GradoIngenieriaSoftware ;
+    guia:isOfferedByDepartment guia:ETSISI ;
+    guia:hasAcademicYear "2024-25" ;
+    guia:hasDescription "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. \nEl objetivo de esta asignatura es capacitar a los estudiantes para que puedan  planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles .\nEl temario de la asignatura se basa principalmente, aunque no exclusivamente, en la Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK)  elaborada por el PMI (Project Management Institute) y en la Agile Practice Guide , desarrollada por el PMI en colaboración con la Agile Alliance." ;
+    guia:hasTopic guia:Topic1, guia:Topic2 ;
+    guia:taughtBy guia:AldoGordilloMendez, guia:ManuelOttaviano, guia:JavierSerranoRomero ;
+    guia:recommendsPreviousSubject "Ingenieria De Requisitos Y Modelado", "Ingenieria Del Proceso Software Y Construccion", "Aspectos Legales Y Profesionales", "Fundamentos De Economia Y Empresa", "Fundamentos De Ingenieria Del Software" ;
+    guia:hasCompetency guia:CC2, guia:CC3, guia:CE6, guia:CT11, guia:CT5 ;
+    guia:hasLearningOutcome guia:RA112, guia:RA116, guia:RA111, guia:RA118 ;
+    guia:hasAssessment guia:EjercicioGestionProyectosTradicionales, guia:Practica1, guia:EjercicioGestionProyectosAgiles, guia:Practica2, guia:ExamenFinalOrdinario, guia:ExamenFinalExtraordinario ;
+    guia:usesResource guia:GuiaPMBOK, guia:PMPExamPrep, guia:ISO_IEC_IEEE_16326_2019, guia:GuiaPracticaEstimacion, guia:AgilePracticeGuideResource, guia:UserStoryMapping, guia:GuiaScrum, guia:AgileProjectManagementScrum, guia:KanbanEsencialCondensado, guia:GuiaKanbanEquiposScrum .
+
+
+guia:GradoIngenieriaSoftware
+    a guia:Degree ;
+    guia:hasCourseCode "61IW" ;
+    guia:hasCourseName "Grado En Ingenieria Del Software" ;
+    guia:isOfferedByDepartment guia:ETSISI ;
+    guia:hasAcademicYear "2024-25" .
+
+guia:ETSISI
+    a guia:Department ;
+    guia:hasCourseCode "61" ;
+    guia:hasCourseName "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .
+
+guia:AldoGordilloMendez
+    a guia:Professor ;
+    guia:hasProfessorName "Aldo Gordillo Mendez" ;
+    guia:hasOffice "1219" ;
+    guia:hasEmail "a.gordillo@upm.es" ;
+    guia:hasTutorHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+guia:ManuelOttaviano
+    a guia:Professor ;
+    guia:hasProfessorName "Manuel Ottaviano" ;
+    guia:hasOffice "1212" ;
+    guia:hasEmail "manuel.ottaviano@upm.es" ;
+    guia:hasTutorHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+guia:JavierSerranoRomero
+    a guia:Professor ;
+    guia:hasProfessorName "Javier Serrano Romero" ;
+    guia:hasOffice "4219" ;
+    guia:hasEmail "javier.serrano@upm.es" ;
+    guia:hasTutorHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+guia:CC2
+    a guia:Competency ;
+    guia:hasCompetencyCode "CC2" ;
+    guia:hasDescription "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+guia:CC3
+    a guia:Competency ;
+    guia:hasCompetencyCode "CC3" ;
+    guia:hasDescription "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+guia:CE6
+    a guia:Competency ;
+    guia:hasCompetencyCode "CE6" ;
+    guia:hasDescription "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+guia:CT11
+    a guia:Competency ;
+    guia:hasCompetencyCode "CT11" ;
+    guia:hasDescription "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+guia:CT5
+    a guia:Competency ;
+    guia:hasCompetencyCode "CT5" ;
+    guia:hasDescription "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+guia:RA112
+    a guia:LearningOutcome ;
+    guia:hasLearningOutcomeCode "RA112" ;
+    guia:hasDescription "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+guia:RA116
+    a guia:LearningOutcome ;
+    guia:hasLearningOutcomeCode "RA116" ;
+    guia:hasDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+guia:RA111
+    a guia:LearningOutcome ;
+    guia:hasLearningOutcomeCode "RA111" ;
+    guia:hasDescription "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+guia:RA118
+    a guia:LearningOutcome ;
+    guia:hasLearningOutcomeCode "RA118" ;
+    guia:hasDescription "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+guia:Topic1
+    a guia:Topic ;
+    guia:hasSyllabusItem "1. Fundamentos de la gestión de proyectos." ;
+    guia:hasTopic guia:Topic1_1, guia:Topic1_2, guia:Topic1_3, guia:Topic1_4, guia:Topic1_5, guia:Topic1_6, guia:Topic1_7 .
+
+guia:Topic1_1
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.1. Tema 1: Introducción a la gestión de proyectos." ;
+    guia:hasActivity guia:Actividad1_1_1, guia:Actividad1_1_2 .
+
+guia:Topic1_2
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.2. Tema 2: Procesos de la dirección de proyectos." ;
+    guia:hasActivity guia:Actividad1_2_1 .
+
+guia:Topic1_3
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.3. Tema 3: Gestión del alcance." ;
+    guia:hasActivity guia:Actividad1_3_1 .
+
+guia:Topic1_4
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.4. Tema 4: Planificación temporal de proyectos." ;
+    guia:hasActivity guia:Actividad1_4_1, guia:Actividad1_4_2 .
+
+guia:Topic1_5
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.5. Tema 5: Estimación en proyectos de software." ;
+    guia:hasActivity guia:Actividad1_5_1, guia:Actividad1_5_2 .
+
+guia:Topic1_6
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.6. Tema 6: Gestión de riesgos." ;
+    guia:hasActivity guia:Actividad1_6_1 .
+
+guia:Topic1_7
+    a guia:Topic ;
+    guia:hasSyllabusItem "1.7. Tema 7: Gestión de costes." ;
+    guia:hasActivity guia:Actividad1_7_1 .
+
+
+guia:Topic2
+    a guia:Topic ;
+    guia:hasSyllabusItem "2. Gestión de proyectos con metodologías ágiles." ;
+    guia:hasTopic guia:Topic2_1, guia:Topic2_2, guia:Topic2_3 .
+
+guia:Topic2_1
+    a guia:Topic ;
+    guia:hasSyllabusItem "2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." ;
+    guia:hasActivity guia:Actividad2_1_1 .
+
+guia:Topic2_2
+    a guia:Topic ;
+    guia:hasSyllabusItem "2.2. Tema 9: Prácticas ágiles." ;
+    guia:hasActivity guia:Actividad2_2_1, guia:Actividad2_2_2 .
+
+guia:Topic2_3
+    a guia:Topic ;
+    guia:hasSyllabusItem "2.3. Tema 10: Scrum." ;
+    guia:hasActivity guia:Actividad2_3_1, guia:Actividad2_3_2 .
+
+
+guia:Actividad1_1_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "00:30"^^xsd:duration ;
+    guia:hasDescription "Presentación de la asignatura" .
+
+guia:Actividad1_1_2
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "01:30"^^xsd:duration ;
+    guia:hasDescription "Tema 1: Introducción a la gestión de proyectos." .
+
+guia:Actividad1_2_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 2: Procesos de la dirección de proyectos." .
+
+guia:Actividad1_3_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 3: Gestión del alcance." .
+
+guia:Actividad1_4_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 4: Planificación temporal de proyectos." .
+
+guia:Actividad1_4_2
+    a guia:Activity ;
+    guia:hasActivityType "PR" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 4: Planificación temporal de proyectos." .
+
+guia:Actividad1_5_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 5: Estimación en proyectos de software." .
+
+guia:Actividad1_5_2
+    a guia:Activity ;
+    guia:hasActivityType "PR" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 5: Estimación en proyectos de software." .
+
+guia:Actividad1_6_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 6: Gestión de riesgos." .
+
+guia:Actividad1_7_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 7: Gestión de costes." .
+
+guia:Actividad2_1_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+guia:Actividad2_2_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 9: Prácticas ágiles." .
+
+guia:Actividad2_2_2
+    a guia:Activity ;
+    guia:hasActivityType "PR" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 9: Prácticas ágiles." .
+
+guia:Actividad2_3_1
+    a guia:Activity ;
+    guia:hasActivityType "LM" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 10: Scrum." .
+
+guia:Actividad2_3_2
+    a guia:Activity ;
+    guia:hasActivityType "PR" ;
+    guia:hasActivityDuration "02:00"^^xsd:duration ;
+    guia:hasDescription "Tema 10: Scrum." .
+
+
+guia:Practica1
+    a guia:Assessment ;
+    guia:hasAssessmentType "TG" ;
+    guia:hasEvaluationType "Evaluación Progresiva" ;
+    guia:hasAssessmentWeight "23%" ;
+    guia:hasMinimumGrade "/" ;
+    guia:evaluatesCompetency guia:CT5, guia:CT11, guia:CC2, guia:CC3, guia:CE6 ;
+    guia:hasDescription "Práctica 1. (RA111, RA112, RA116, RA118)" .
+
+guia:Practica2
+    a guia:Assessment ;
+    guia:hasAssessmentType "TG" ;
+    guia:hasEvaluationType "Evaluación Progresiva" ;
+    guia:hasAssessmentWeight "12%" ;
+    guia:hasMinimumGrade "/" ;
+    guia:evaluatesCompetency guia:CT5, guia:CT11, guia:CC2, guia:CC3, guia:CE6 ;
+    guia:hasDescription "Práctica 2. (RA112, RA116, RA118)" .
+
+guia:EjercicioGestionProyectosTradicionales
+    a guia:Assessment ;
+    guia:hasAssessmentType "TI" ;
+    guia:hasEvaluationType "Evaluación Progresiva" ;
+    guia:hasAssessmentWeight "10%" ;
+    guia:hasMinimumGrade "/" ;
+    guia:evaluatesCompetency guia:CT5, guia:CC2, guia:CE6 ;
+    guia:hasDescription "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116)" .
+
+guia:EjercicioGestionProyectosAgiles
+    a guia:Assessment ;
+    guia:hasAssessmentType "TI" ;
+    guia:hasEvaluationType "Evaluación Progresiva" ;
+    guia:hasAssessmentWeight "5%" ;
+    guia:hasMinimumGrade "/" ;
+    guia:evaluatesCompetency guia:CT5, guia:CC2, guia:CE6 ;
+    guia:hasDescription "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116)" .
+
+guia:ExamenFinalOrdinario
+    a guia:Assessment ;
+    guia:hasAssessmentType "EX" ;
+    guia:hasEvaluationType "Evaluación Global" ;
+    guia:hasAssessmentWeight "50%" ;
+    guia:hasMinimumGrade "4.5" ;
+    guia:evaluatesCompetency guia:CT5, guia:CT11, guia:CC2, guia:CC3, guia:CE6 ;
+    guia:hasDescription "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118)" .
+
+guia:ExamenFinalExtraordinario
+    a guia:Assessment ;
+    guia:hasAssessmentType "EX" ;
+    guia:hasEvaluationType "Evaluación Global" ;
+    guia:hasAssessmentWeight "100%" ;
+    guia:hasMinimumGrade "5" ;
+    guia:evaluatesCompetency guia:CT5, guia:CT11, guia:CC2, guia:CC3, guia:CE6 ;
+    guia:hasDescription "Examen final (Convocatoria extraordinaria). (RA111, RA112, RA116, RA118)" .
+
+guia:GuiaPMBOK
+    a guia:Resource;
+    guia:resourceName "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)";
+    guia:resourceType "Bibliografía".
+
+guia:PMPExamPrep
+    a guia:Resource;
+    guia:resourceName "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam";
+    guia:resourceType "Bibliografía".
+
+guia:ISO_IEC_IEEE_16326_2019
+    a guia:Resource;
+    guia:resourceName "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management";
+    guia:resourceType "Bibliografía".
+
+guia:GuiaPracticaEstimacion
+    a guia:Resource;
+    guia:resourceName "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?";
+    guia:resourceType "Bibliografía".
+
+guia:AgilePracticeGuideResource
+    a guia:Resource;
+    guia:resourceName "Agile Practice Guide";
+    guia:resourceType "Bibliografía".
+
+guia:UserStoryMapping
+    a guia:Resource;
+    guia:resourceName "User Story Mapping: Discover the Whole Story, Build the Right Product";
+    guia:resourceType "Bibliografía".
+
+guia:GuiaScrum
+    a guia:Resource;
+    guia:resourceName "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego.";
+    guia:resourceType "Bibliografía".
+
+guia:AgileProjectManagementScrum
+    a guia:Resource;
+    guia:resourceName "Agile Project Management with SCRUM";
+    guia:resourceType "Bibliografía".
+
+guia:KanbanEsencialCondensado
+    a guia:Resource;
+    guia:resourceName "Kanban Esencial Condensado";
+    guia:resourceType "Bibliografía".
+
+guia:GuiaKanbanEquiposScrum
+    a guia:Resource;
+    guia:resourceName "La Guía Kanban para Equipos Scrum";
+    guia:resourceType "Bibliografía".

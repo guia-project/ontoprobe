@@ -1,0 +1,379 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Ontology URI
+<http://example.org/ontology/> a owl:Ontology .
+
+# Class definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class ; rdfs:subClassOf onto:Character .
+onto:OptionalCharacter a owl:Class ; rdfs:subClassOf onto:Character .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_description a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ; rdfs:domain onto:Subject ; rdfs:range xsd:string .
+
+onto:StudyPlan_code a owl:DatatypeProperty ; rdfs:domain onto:StudyPlan ; rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ; rdfs:domain onto:StudyPlan ; rdfs:range xsd:string .
+
+onto:School_code a owl:DatatypeProperty ; rdfs:domain onto:School ; rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ; rdfs:domain onto:School ; rdfs:range xsd:string .
+
+onto:University_name a owl:DatatypeProperty ; rdfs:domain onto:University ; rdfs:range xsd:string .
+
+onto:Professor_email a owl:DatatypeProperty ; rdfs:domain onto:Professor ; rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ; rdfs:domain onto:Professor ; rdfs:range xsd:string .
+onto:Professor_office a owl:DatatypeProperty ; rdfs:domain onto:Professor ; rdfs:range xsd:string .
+onto:Professor_hours a owl:DatatypeProperty ; rdfs:domain onto:Professor ; rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ; rdfs:domain onto:Professor ; rdfs:range xsd:string .
+
+onto:Competence_code a owl:DatatypeProperty ; rdfs:domain onto:Competence ; rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ; rdfs:domain onto:Competence ; rdfs:range xsd:string .
+
+onto:Outcome_code a owl:DatatypeProperty ; rdfs:domain onto:Outcome ; rdfs:range xsd:string .
+onto:Outcome_description a owl:DatatypeProperty ; rdfs:domain onto:Outcome ; rdfs:range xsd:string .
+
+onto:Evaluation_name a owl:DatatypeProperty ; rdfs:domain onto:Evaluation ; rdfs:range xsd:string .
+
+onto:Activity_name a owl:DatatypeProperty ; rdfs:domain onto:Activity ; rdfs:range xsd:string .
+onto:Activity_modality a owl:DatatypeProperty ; rdfs:domain onto:Activity ; rdfs:range xsd:string .
+onto:Activity_weight a owl:DatatypeProperty ; rdfs:domain onto:Activity ; rdfs:range xsd:string .
+onto:Activity_duration a owl:DatatypeProperty ; rdfs:domain onto:Activity ; rdfs:range xsd:string .
+onto:Activity_minGrade a owl:DatatypeProperty ; rdfs:domain onto:Activity ; rdfs:range xsd:string .
+
+onto:Topic_name a owl:DatatypeProperty ; rdfs:domain onto:Topic ; rdfs:range xsd:string .
+
+onto:Resource_name a owl:DatatypeProperty ; rdfs:domain onto:Resource ; rdfs:range xsd:string .
+
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ; rdfs:domain onto:RecommendedPreviousSubject ; rdfs:range xsd:string .
+
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ; rdfs:domain onto:RecommendedPreviousKnowledge ; rdfs:range xsd:string .
+
+# Object Properties
+onto:Subject_character a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Professor .
+onto:Subject_resources a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Resource .
+onto:Subject_competencies a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Competence .
+onto:Subject_outcomes a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Outcome .
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:RecommendedPreviousSubject .
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ; rdfs:domain onto:RecommendedPreviousKnowledge ; rdfs:range onto:RecommendedPreviousKnowledge .
+onto:Subject_topics a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Topic .
+onto:Subject_evaluations a owl:ObjectProperty ; rdfs:domain onto:Subject ; rdfs:range onto:Evaluation .
+
+onto:StudyPlan_school a owl:ObjectProperty ; rdfs:domain onto:StudyPlan ; rdfs:range onto:School .
+
+onto:School_university a owl:ObjectProperty ; rdfs:domain onto:School ; rdfs:range onto:University .
+
+onto:Evaluation_activities a owl:ObjectProperty ; rdfs:domain onto:Evaluation ; rdfs:range onto:Activity .
+
+onto:Activity_relatedOutcomes a owl:ObjectProperty ; rdfs:domain onto:Activity ; rdfs:range onto:Outcome .
+onto:Activity_relatedCompetencies a owl:ObjectProperty ; rdfs:domain onto:Activity ; rdfs:range onto:Competence .
+onto:Activity_relatedTopics a owl:ObjectProperty ; rdfs:domain onto:Activity ; rdfs:range onto:Topic .
+
+onto:Topic_subTopics a owl:ObjectProperty ; rdfs:domain onto:Topic ; rdfs:range onto:Topic .
+
+# Instances
+
+# University Instance
+onto:upmUniversity a onto:University .
+
+# School Instance
+onto:etsisiSchool a onto:School ;
+    onto:School_code "61" ;
+    onto:School_name "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" ;
+    onto:School_university onto:upmUniversity .
+
+# Study Plan Instance
+onto:gradoIngenieriaSoftwareStudyPlan a onto:StudyPlan ;
+    onto:StudyPlan_code "61IW" ;
+    onto:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    onto:StudyPlan_school onto:etsisiSchool .
+
+# Character Instance
+onto:obligatoriaCharacter a onto:MandatoryCharacter .
+
+# Professor Instances
+onto:aldoGordilloProfessor a onto:Professor ;
+    onto:Professor_name "Aldo Gordillo Mendez" ;
+    onto:Professor_office "1219" ;
+    onto:Professor_email "a.gordillo@upm.es" ;
+    onto:Professor_hours "Sin horario." ;
+    onto:Professor_isCoordinator "true" .
+
+onto:manuelOttavianoProfessor a onto:Professor ;
+    onto:Professor_name "Manuel Ottaviano" ;
+    onto:Professor_office "1212" ;
+    onto:Professor_email "manuel.ottaviano@upm.es" ;
+    onto:Professor_hours "Sin horario." ;
+    onto:Professor_isCoordinator "false" .
+
+onto:javierSerranoProfessor a onto:Professor ;
+    onto:Professor_name "Javier Serrano Romero" ;
+    onto:Professor_office "4219" ;
+    onto:Professor_email "javier.serrano@upm.es" ;
+    onto:Professor_hours "Sin horario." ;
+    onto:Professor_isCoordinator "false" .
+
+# Competence Instances
+onto:cc2Competence a onto:Competence ;
+    onto:Competence_code "CC2" ;
+    onto:Competence_description "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+onto:cc3Competence a onto:Competence ;
+    onto:Competence_code "CC3" ;
+    onto:Competence_description "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+onto:ce6Competence a onto:Competence ;
+    onto:Competence_code "CE6" ;
+    onto:Competence_description "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+onto:ct11Competence a onto:Competence ;
+    onto:Competence_code "CT11" ;
+    onto:Competence_description "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+onto:ct5Competence a onto:Competence ;
+    onto:Competence_code "CT5" ;
+    onto:Competence_description "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+# Outcome Instances
+onto:ra112Outcome a onto:Outcome ;
+    onto:Outcome_code "RA112" ;
+    onto:Outcome_description "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+onto:ra116Outcome a onto:Outcome ;
+    onto:Outcome_code "RA116" ;
+    onto:Outcome_description "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+onto:ra111Outcome a onto:Outcome ;
+    onto:Outcome_code "RA111" ;
+    onto:Outcome_description "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+onto:ra118Outcome a onto:Outcome ;
+    onto:Outcome_code "RA118" ;
+    onto:Outcome_description "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+# Activity Instances (related to Outcomes, Competencies)
+onto:ejercicioTradicionalActivity a onto:Activity ;
+    onto:Activity_name "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    onto:Activity_modality "No Presencial" ;
+    onto:Activity_weight "10%" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedOutcomes onto:ra111Outcome, onto:ra112Outcome, onto:ra116Outcome ;
+    onto:Activity_relatedCompetencies onto:ct5Competence, onto:cc2Competence, onto:ce6Competence .
+
+onto:practica1Activity a onto:Activity ;
+    onto:Activity_name "Práctica 1." ;
+    onto:Activity_modality "No Presencial" ;
+    onto:Activity_weight "23%" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedOutcomes onto:ra111Outcome, onto:ra112Outcome, onto:ra116Outcome, onto:ra118Outcome ;
+    onto:Activity_relatedCompetencies onto:ct5Competence, onto:ct11Competence, onto:cc2Competence, onto:cc3Competence, onto:ce6Competence .
+
+onto:ejercicioAgilesActivity a onto:Activity ;
+    onto:Activity_name "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    onto:Activity_modality "No Presencial" ;
+    onto:Activity_weight "5%" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedOutcomes onto:ra112Outcome, onto:ra116Outcome ;
+    onto:Activity_relatedCompetencies onto:ct5Competence, onto:cc2Competence, onto:ce6Competence .
+
+onto:practica2Activity a onto:Activity ;
+    onto:Activity_name "Práctica 2." ;
+    onto:Activity_modality "No Presencial" ;
+    onto:Activity_weight "12%" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedOutcomes onto:ra112Outcome, onto:ra116Outcome, onto:ra118Outcome ;
+    onto:Activity_relatedCompetencies onto:ct5Competence, onto:ct11Competence, onto:cc2Competence, onto:cc3Competence, onto:ce6Competence .
+
+onto:examenFinalOrdinariaActivity a onto:Activity ;
+    onto:Activity_name "Examen final (Convocatoria ordinaria)." ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_weight "50%" ;
+    onto:Activity_duration "02:30" ;
+    onto:Activity_minGrade "4.5 / 10" ;
+    onto:Activity_relatedOutcomes onto:ra111Outcome, onto:ra112Outcome, onto:ra116Outcome, onto:ra118Outcome ;
+    onto:Activity_relatedCompetencies onto:ct5Competence, onto:ct11Competence, onto:cc2Competence, onto:cc3Competence, onto:ce6Competence .
+
+onto:examenFinalExtraordinariaActivity a onto:Activity ;
+    onto:Activity_name "Examen final (Convocatoria extraordinaria)." ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_weight "100%" ;
+    onto:Activity_duration "02:30" ;
+    onto:Activity_minGrade "5 / 10" ;
+    onto:Activity_relatedOutcomes onto:ra111Outcome, onto:ra112Outcome, onto:ra116Outcome, onto:ra118Outcome ;
+    onto:Activity_relatedCompetencies onto:ct5Competence, onto:ct11Competence, onto:cc2Competence, onto:cc3Competence, onto:ce6Competence .
+
+# Evaluation Instances (related to Activities)
+onto:evaluacionProgresivaEvaluation a onto:Evaluation ;
+    onto:Evaluation_name "Evaluación (progresiva)" ;
+    onto:Evaluation_activities onto:ejercicioTradicionalActivity, onto:practica1Activity, onto:ejercicioAgilesActivity, onto:practica2Activity .
+
+onto:pruebaEvaluacionGlobalEvaluation a onto:Evaluation ;
+    onto:Evaluation_name "Prueba evaluación global" ;
+    onto:Evaluation_activities onto:examenFinalOrdinariaActivity .
+
+onto:evaluacionConvocatoriaExtraordinariaEvaluation a onto:Evaluation ;
+    onto:Evaluation_name "Evaluación convocatoria extraordinaria" ;
+    onto:Evaluation_activities onto:examenFinalExtraordinariaActivity .
+
+# Topic Instances (and subtopics)
+# Top level topics
+onto:temaFundamentosGestionProyectos a onto:Topic ; onto:Topic_name "Fundamentos de la gestión de proyectos." .
+onto:temaGestionProyectosMetodologiasAgiles a onto:Topic ; onto:Topic_name "Gestión de proyectos con metodologías ágiles." .
+
+# Subtopics of Fundamentos de la gestión de proyectos (1.)
+onto:temaIntroduccionGestionProyectos a onto:Topic ;
+    onto:Topic_name "Introducción a la gestión de proyectos." .
+onto:temaProcesosDireccionProyectos a onto:Topic ;
+    onto:Topic_name "Procesos de la dirección de proyectos." .
+onto:temaGestionAlcance a onto:Topic ;
+    onto:Topic_name "Gestión del alcance." .
+onto:temaPlanificacionTemporalProyectos a onto:Topic ;
+    onto:Topic_name "Planificación temporal de proyectos." .
+onto:temaEstimacionProyectosSoftware a onto:Topic ;
+    onto:Topic_name "Estimación en proyectos de software." .
+onto:temaGestionRiesgos a onto:Topic ;
+    onto:Topic_name "Gestión de riesgos." .
+onto:temaGestionCostes a onto:Topic ;
+    onto:Topic_name "Gestión de costes." .
+
+onto:temaFundamentosGestionProyectos onto:Topic_subTopics
+    onto:temaIntroduccionGestionProyectos,
+    onto:temaProcesosDireccionProyectos,
+    onto:temaGestionAlcance,
+    onto:temaPlanificacionTemporalProyectos,
+    onto:temaEstimacionProyectosSoftware,
+    onto:temaGestionRiesgos,
+    onto:temaGestionCostes .
+
+# Subtopics of Gestión de proyectos con metodologías ágiles (2.)
+onto:temaIntroduccionMetodologiasAgiles a onto:Topic ;
+    onto:Topic_name "Introducción a la gestión de proyectos con metodologías ágiles." .
+onto:temaPracticasAgiles a onto:Topic ;
+    onto:Topic_name "Prácticas ágiles." .
+onto:temaScrum a onto:Topic ;
+    onto:Topic_name "Scrum." .
+
+onto:temaGestionProyectosMetodologiasAgiles onto:Topic_subTopics
+    onto:temaIntroduccionMetodologiasAgiles,
+    onto:temaPracticasAgiles,
+    onto:temaScrum .
+
+# Resource Instances
+onto:guiaPmBokResource a onto:Resource ; onto:Resource_name "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" .
+onto:pmpExamPrepResource a onto:Resource ; onto:Resource_name "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" .
+onto:isoIecIeee16326Resource a onto:Resource ; onto:Resource_name "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" .
+onto:guiaEstimacionMedicionProyectosSoftwareResource a onto:Resource ; onto:Resource_name "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" .
+onto:agilePracticeGuideResource a onto:Resource ; onto:Resource_name "Agile Practice Guide" .
+onto:userStoryMappingResource a onto:Resource ; onto:Resource_name "User Story Mapping: Discover the Whole Story, Build the Right Product" .
+onto:guiaScrumResource a onto:Resource ; onto:Resource_name "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." .
+onto:agileProjectManagementScrumResource a onto:Resource ; onto:Resource_name "Agile Project Management with SCRUM" .
+onto:kanbanEsencialCondensadoResource a onto:Resource ; onto:Resource_name "Kanban Esencial Condensado" .
+onto:guiaKanbanEquiposScrumResource a onto:Resource ; onto:Resource_name "La Guía Kanban para Equipos Scrum" .
+# Resource from section 9.1
+onto:moodlePlatformResource a onto:Resource ; onto:Resource_name "Moodle platform" .
+
+
+# Recommended Previous Subject Instances
+onto:ingenieriaRequisitosModeladoRPS a onto:RecommendedPreviousSubject ; onto:RecommendedPreviousSubject_description "Ingenieria De Requisitos Y Modelado" .
+onto:ingenieriaProcesoSoftwareConstruccionRPS a onto:RecommendedPreviousSubject ; onto:RecommendedPreviousSubject_description "Ingenieria Del Proceso Software Y Construccion" .
+onto:aspectosLegalesProfesionalesRPS a onto:RecommendedPreviousSubject ; onto:RecommendedPreviousSubject_description "Aspectos Legales Y Profesionales" .
+onto:fundamentosEconomiaEmpresaRPS a onto:RecommendedPreviousSubject ; onto:RecommendedPreviousSubject_description "Fundamentos De Economia Y Empresa" .
+onto:fundamentosIngenieriaSoftwareRPS a onto:RecommendedPreviousSubject ; onto:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+# Recommended Previous Knowledge Instances
+onto:noOtherKnowledgeRPK a onto:RecommendedPreviousKnowledge ; onto:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+
+# Subject Instance
+onto:gestionDeProyectosYDelRiesgo a onto:Subject ;
+    onto:Subject_name "Gestion De Proyectos Y Del Riesgo" ;
+    onto:Subject_description "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. El objetivo de esta asignatura es capacitar a los estudiantes para que puedan planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles." ;
+    onto:Subject_code "615000258" ;
+    onto:Subject_courseYear "Cuarto curso" ;
+    onto:Subject_credits "6 ECTS" ;
+    onto:Subject_language "Castellano" ;
+    onto:Subject_semester "Primer semestre" ;
+    onto:Subject_period "Septiembre-Enero" ;
+    onto:Subject_evaluationCriteria "Para aprobar la asignatura en la convocatoria ordinaria un estudiante deberá cumplir las siguientes dos condiciones: 1) Obtener una calificación final igual o superior a 5. 2) Obtener, en el examen final de la convocatoria ordinaria, una calificación igual o superior a su nota mínima. En el caso de que un estudiante no cumpla la segunda condición, su calificación final será como máximo la obtenida en el examen final de la convocatoria ordinaria. Por lo tanto, de acuerdo a la información previamente indicada, no es posible aprobar la asignatura en la convocatoria ordinaria mediante evaluación progresiva. En la convocatoria ordinaria solo es posible aprobar la asignatura mediante evaluación global, para lo cual se deberán cumplir las dos condiciones indicadas previamente. Para aprobar la asignatura en la convocatoria extraordinaria , un estudiante deberá obtener una calificación igual o superior a 5 en el examen final de dicha convocatoria." ;
+    onto:Subject_character onto:obligatoriaCharacter ;
+    onto:Subject_studyPlan onto:gradoIngenieriaSoftwareStudyPlan ;
+    onto:Subject_professors onto:aldoGordilloProfessor, onto:manuelOttavianoProfessor, onto:javierSerranoProfessor ;
+    onto:Subject_resources
+        onto:guiaPmBokResource,
+        onto:pmpExamPrepResource,
+        onto:isoIecIeee16326Resource,
+        onto:guiaEstimacionMedicionProyectosSoftwareResource,
+        onto:agilePracticeGuideResource,
+        onto:userStoryMappingResource,
+        onto:guiaScrumResource,
+        onto:agileProjectManagementScrumResource,
+        onto:kanbanEsencialCondensadoResource,
+        onto:guiaKanbanEquiposScrumResource,
+        onto:moodlePlatformResource ;
+    onto:Subject_competencies
+        onto:cc2Competence,
+        onto:cc3Competence,
+        onto:ce6Competence,
+        onto:ct11Competence,
+        onto:ct5Competence ;
+    onto:Subject_outcomes
+        onto:ra112Outcome,
+        onto:ra116Outcome,
+        onto:ra111Outcome,
+        onto:ra118Outcome ;
+    onto:Subject_recommendedPreviousSubjects
+        onto:ingenieriaRequisitosModeladoRPS,
+        onto:ingenieriaProcesoSoftwareConstruccionRPS,
+        onto:aspectosLegalesProfesionalesRPS,
+        onto:fundamentosEconomiaEmpresaRPS,
+        onto:fundamentosIngenieriaSoftwareRPS ;
+    onto:Subject_recommendedPreviousKnowledges onto:noOtherKnowledgeRPK ;
+    onto:Subject_topics
+        onto:temaFundamentosGestionProyectos,
+        onto:temaGestionProyectosMetodologiasAgiles,
+        onto:temaIntroduccionGestionProyectos,
+        onto:temaProcesosDireccionProyectos,
+        onto:temaGestionAlcance,
+        onto:temaPlanificacionTemporalProyectos,
+        onto:temaEstimacionProyectosSoftware,
+        onto:temaGestionRiesgos,
+        onto:temaGestionCostes,
+        onto:temaIntroduccionMetodologiasAgiles,
+        onto:temaPracticasAgiles,
+        onto:temaScrum ;
+    onto:Subject_evaluations
+        onto:evaluacionProgresivaEvaluation,
+        onto:pruebaEvaluacionGlobalEvaluation,
+        onto:evaluacionConvocatoriaExtraordinariaEvaluation .
+

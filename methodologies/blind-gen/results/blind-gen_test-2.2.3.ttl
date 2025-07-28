@@ -1,0 +1,588 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix onto: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> rdfs:label "Ontology for Course Guide" .
+
+# Classes
+onto:Document rdfs:label "Document" ;
+    rdfs:comment "A document." ;
+    a rdfs:Class .
+
+onto:Subject rdfs:label "Subject" ;
+    rdfs:comment "A subject or asignatura." ;
+    a rdfs:Class ;
+    rdfs:subClassOf [ rdfs:label "AcademicEntity" ] .
+
+onto:StudyPlan rdfs:label "Study Plan" ;
+    rdfs:comment "A plan of studies or titulación." ;
+    a rdfs:Class ;
+    rdfs:subClassOf [ rdfs:label "AcademicEntity" ] .
+
+onto:School rdfs:label "School" ;
+    rdfs:comment "A school or centro responsable." ;
+    a rdfs:Class ;
+    rdfs:subClassOf [ rdfs:label "AcademicEntity" ] .
+
+onto:Course rdfs:label "Course" ;
+    rdfs:comment "A course within a study plan." ;
+    a rdfs:Class .
+
+onto:Semester rdfs:label "Semester" ;
+    rdfs:comment "A semester within an academic year." ;
+    a rdfs:Class .
+
+onto:AcademicYear rdfs:label "Academic Year" ;
+    rdfs:comment "An academic year." ;
+    a rdfs:Class .
+
+onto:Professor rdfs:label "Professor" ;
+    rdfs:comment "A professor or profesor." ;
+    a rdfs:Class .
+
+onto:SubjectArea rdfs:label "Subject Area" ;
+    rdfs:comment "A topic or tema within a subject." ;
+    a rdfs:Class .
+
+onto:Competency rdfs:label "Competency" ;
+    rdfs:comment "A competency or competencia." ;
+    a rdfs:Class .
+
+onto:LearningOutcome rdfs:label "Learning Outcome" ;
+    rdfs:comment "A learning outcome or resultado de aprendizaje." ;
+    a rdfs:Class .
+
+onto:EvaluationActivity rdfs:label "Evaluation Activity" ;
+    rdfs:comment "An evaluation activity or actividad de evaluación." ;
+    a rdfs:Class .
+
+onto:DidacticResource rdfs:label "Didactic Resource" ;
+    rdfs:comment "A didactic resource or recurso didáctico." ;
+    a rdfs:Class .
+
+onto:ActivityType rdfs:label "Activity Type" ;
+    rdfs:comment "Type of activity." ;
+    a rdfs:Class .
+
+onto:EvaluationType rdfs:label "Evaluation Type" ;
+    rdfs:comment "Type of evaluation." ;
+    a rdfs:Class .
+
+# Properties
+onto:hasDocumentCode rdfs:label "has document code" ;
+    rdfs:domain onto:Document ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasAnnexDocumentCode rdfs:label "has annex document code" ;
+    rdfs:domain onto:Document ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasDocumentType rdfs:label "has document type" ;
+    rdfs:domain onto:Document ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasSubjectCode rdfs:label "has subject code" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasSubjectName rdfs:label "has subject name" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasStudyPlanCode rdfs:label "has study plan code" ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasStudyPlanName rdfs:label "has study plan name" ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasAcademicYearValue rdfs:label "has academic year value" ;
+    rdfs:domain onto:AcademicYear ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasSemesterValue rdfs:label "has semester value" ;
+    rdfs:domain onto:Semester ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasCredits rdfs:label "has credits" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasCharacter rdfs:label "has character" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasTeachingPeriod rdfs:label "has teaching period" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasTeachingLanguage rdfs:label "has teaching language" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasProfessorName rdfs:label "has professor name" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasOffice rdfs:label "has office" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasEmail rdfs:label "has email" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasTutoringHours rdfs:label "has tutoring hours" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasRecommendedPriorSubject rdfs:label "has recommended prior subject" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasRecommendedPriorKnowledge rdfs:label "has recommended prior knowledge" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasCompetencyCode rdfs:label "has competency code" ;
+    rdfs:domain onto:Competency ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasCompetencyDescription rdfs:label "has competency description" ;
+    rdfs:domain onto:Competency ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasLearningOutcomeCode rdfs:label "has learning outcome code" ;
+    rdfs:domain onto:LearningOutcome ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasLearningOutcomeDescription rdfs:label "has learning outcome description" ;
+    rdfs:domain onto:LearningOutcome ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasTopicName rdfs:label "has topic name" ;
+    rdfs:domain onto:SubjectArea ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasActivityTypeLabel rdfs:label "has activity type label" ;
+    rdfs:domain onto:ActivityType ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasActivityDuration rdfs:label "has activity duration" ;
+    rdfs:domain onto:EvaluationActivity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasEvaluationWeight rdfs:label "has evaluation weight" ;
+    rdfs:domain onto:EvaluationActivity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasMinimumGrade rdfs:label "has minimum grade" ;
+    rdfs:domain onto:EvaluationActivity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasResourceName rdfs:label "has resource name" ;
+    rdfs:domain onto:DidacticResource ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasResourceTypeName rdfs:label "has resource type name" ;
+    rdfs:domain onto:DidacticResource ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasCourseNumber rdfs:label "has course number" ;
+    rdfs:domain onto:Course ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasSemesterNumber rdfs:label "has semester number" ;
+    rdfs:domain onto:Semester ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+onto:hasEvaluationTypeName rdfs:label "has evaluation type name" ;
+    rdfs:domain onto:EvaluationType ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+# Relationships
+onto:hasSubject rdfs:label "has subject" ;
+    rdfs:domain onto:Document ;
+    rdfs:range onto:Subject ;
+    a rdf:Property .
+
+onto:hasStudyPlan rdfs:label "has study plan" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan ;
+    a rdf:Property .
+
+onto:isOfferedBy rdfs:label "is offered by" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:School ;
+    a rdf:Property .
+
+onto:teachesSubject rdfs:label "teaches subject" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range onto:Subject ;
+    a rdf:Property .
+
+onto:recommendsPriorSubject rdfs:label "recommends prior subject" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Subject ;
+    a rdf:Property .
+
+onto:hasCompetency rdfs:label "has competency" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competency ;
+    a rdf:Property .
+
+onto:hasLearningOutcome rdfs:label "has learning outcome" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:LearningOutcome ;
+    a rdf:Property .
+
+onto:hasSyllabus rdfs:label "has syllabus" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range rdfs:Bag ;
+    a rdf:Property .
+
+onto:includesTopic rdfs:label "includes topic" ;
+    rdfs:domain rdfs:Bag ;
+    rdfs:range onto:SubjectArea ;
+    a rdf:Property .
+
+onto:hasEvaluationActivity rdfs:label "has evaluation activity" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:EvaluationActivity ;
+    a rdf:Property .
+
+onto:evaluatesCompetency rdfs:label "evaluates competency" ;
+    rdfs:domain onto:EvaluationActivity ;
+    rdfs:range onto:Competency ;
+    a rdf:Property .
+
+onto:usesResource rdfs:label "uses resource" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:DidacticResource ;
+    a rdf:Property .
+
+onto:hasActivityType rdfs:label "has activity type" ;
+    rdfs:domain onto:EvaluationActivity ;
+    rdfs:range onto:ActivityType ;
+    a rdf:Property .
+
+onto:hasEvaluationType rdfs:label "has evaluation type" ;
+    rdfs:domain onto:EvaluationActivity ;
+    rdfs:range onto:EvaluationType ;
+    a rdf:Property .
+
+onto:isInCourse rdfs:label "is in course" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Course ;
+    a rdf:Property .
+
+onto:isInSemester rdfs:label "is in semester" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Semester ;
+    a rdf:Property .
+
+onto:isInAcademicYear rdfs:label "is in academic year" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:AcademicYear ;
+    a rdf:Property .
+
+# Instances
+onto:document_pr_cl_001 rdfs:label "Document PR/CL/001" ;
+    a onto:Document ;
+    onto:hasDocumentCode "PR/CL/001" ;
+    onto:hasAnnexDocumentCode "ANX-PR/CL/001-01" ;
+    onto:hasDocumentType "Guía de Aprendizaje" .
+
+onto:subject_615000258 rdfs:label "Subject Gestion De Proyectos Y Del Riesgo" ;
+    a onto:Subject ;
+    onto:hasSubjectCode "615000258" ;
+    onto:hasSubjectName "Gestion De Proyectos Y Del Riesgo" ;
+    onto:hasCredits "6 ECTS" ;
+    onto:hasCharacter "Obligatoria" ;
+    onto:hasTeachingPeriod "Septiembre-Enero" ;
+    onto:hasTeachingLanguage "Castellano" ;
+    onto:isOfferedBy onto:school_etsisi ;
+    onto:hasStudyPlan onto:studyplan_61iw ;
+    onto:isInCourse onto:course_cuarto ;
+    onto:isInSemester onto:semester_septimo ;
+    onto:isInAcademicYear onto:academic_year_2024_25 ;
+    onto:hasRecommendedPriorSubject "Ingenieria De Requisitos Y Modelado", "Ingenieria Del Proceso Software Y Construccion", "Aspectos Legales Y Profesionales", "Fundamentos De Economia Y Empresa", "Fundamentos De Ingenieria Del Software" ;
+    onto:hasCompetency onto:competency_cc2, onto:competency_cc3, onto:competency_ce6, onto:competency_ct11, onto:competency_ct5 ;
+    onto:hasLearningOutcome onto:learning_outcome_ra112, onto:learning_outcome_ra116, onto:learning_outcome_ra111, onto:learning_outcome_ra118 ;
+    onto:hasSyllabus [ a rdfs:Bag ;
+            rdf:_1 onto:topic_fundamentos_gestion_proyectos ;
+            rdf:_2 onto:topic_gestion_proyectos_metodologias_agiles ] ;
+    onto:usesResource onto:resource_guia_pmbok, onto:resource_pmp_exam_prep, onto:resource_iso_iec_ieee_16326, onto:resource_guia_practica_estimacion, onto:resource_agile_practice_guide, onto:resource_user_story_mapping, onto:resource_guia_scrum, onto:resource_agile_project_management_scrum, onto:resource_kanban_esencial_condensado, onto:resource_guia_kanban_equipos_scrum ;
+    onto:hasEvaluationActivity onto:evaluation_ejercicio_tradicional, onto:evaluation_practica1, onto:evaluation_ejercicio_agiles, onto:evaluation_practica2, onto:evaluation_examen_final_ordinario, onto:evaluation_examen_final_extraordinario .
+
+onto:studyplan_61iw rdfs:label "Study Plan Grado En Ingenieria Del Software" ;
+    a onto:StudyPlan ;
+    onto:hasStudyPlanCode "61IW" ;
+    onto:hasStudyPlanName "Grado En Ingenieria Del Software" .
+
+onto:school_etsisi rdfs:label "School E.T.S. de Ingenieria de Sistemas Informaticos" ;
+    a onto:School ;
+    rdfs:label "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .
+
+onto:course_cuarto rdfs:label "Course Cuarto curso" ;
+    a onto:Course ;
+    onto:hasCourseNumber "Cuarto" ;
+    rdfs:label "Cuarto curso" .
+
+onto:semester_septimo rdfs:label "Semester Séptimo semestre" ;
+    a onto:Semester ;
+    onto:hasSemesterNumber "Séptimo" ;
+    rdfs:label "Séptimo semestre" .
+
+onto:academic_year_2024_25 rdfs:label "Academic Year 2024/25" ;
+    a onto:AcademicYear ;
+    onto:hasAcademicYearValue "2024/25" ;
+    rdfs:label "2024/25" .
+
+onto:professor_aldo_gordillo_mendez rdfs:label "Professor Aldo Gordillo Mendez" ;
+    a onto:Professor ;
+    onto:hasProfessorName "Aldo Gordillo Mendez" ;
+    onto:hasOffice "1219" ;
+    onto:hasEmail "a.gordillo@upm.es" ;
+    onto:hasTutoringHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    onto:teachesSubject onto:subject_615000258 .
+
+onto:professor_manuel_ottaviano rdfs:label "Professor Manuel Ottaviano" ;
+    a onto:Professor ;
+    onto:hasProfessorName "Manuel Ottaviano" ;
+    onto:hasOffice "1212" ;
+    onto:hasEmail "manuel.ottaviano@upm.es" ;
+    onto:hasTutoringHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    onto:teachesSubject onto:subject_615000258 .
+
+onto:professor_javier_serrano_romero rdfs:label "Professor Javier Serrano Romero" ;
+    a onto:Professor ;
+    onto:hasProfessorName "Javier Serrano Romero" ;
+    onto:hasOffice "4219" ;
+    onto:hasEmail "javier.serrano@upm.es" ;
+    onto:hasTutoringHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    onto:teachesSubject onto:subject_615000258 .
+
+onto:competency_cc2 rdfs:label "Competency CC2" ;
+    a onto:Competency ;
+    onto:hasCompetencyCode "CC2" ;
+    onto:hasCompetencyDescription "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+onto:competency_cc3 rdfs:label "Competency CC3" ;
+    a onto:Competency ;
+    onto:hasCompetencyCode "CC3" ;
+    onto:hasCompetencyDescription "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+onto:competency_ce6 rdfs:label "Competency CE6" ;
+    a onto:Competency ;
+    onto:hasCompetencyCode "CE6" ;
+    onto:hasCompetencyDescription "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+onto:competency_ct11 rdfs:label "Competency CT11" ;
+    a onto:Competency ;
+    onto:hasCompetencyCode "CT11" ;
+    onto:hasCompetencyDescription "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+onto:competency_ct5 rdfs:label "Competency CT5" ;
+    a onto:Competency ;
+    onto:hasCompetencyCode "CT5" ;
+    onto:hasCompetencyDescription "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+onto:learning_outcome_ra112 rdfs:label "Learning Outcome RA112" ;
+    a onto:LearningOutcome ;
+    onto:hasLearningOutcomeCode "RA112" ;
+    onto:hasLearningOutcomeDescription "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+onto:learning_outcome_ra116 rdfs:label "Learning Outcome RA116" ;
+    a onto:LearningOutcome ;
+    onto:hasLearningOutcomeCode "RA116" ;
+    onto:hasLearningOutcomeDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+onto:learning_outcome_ra111 rdfs:label "Learning Outcome RA111" ;
+    a onto:LearningOutcome ;
+    onto:hasLearningOutcomeCode "RA111" ;
+    onto:hasLearningOutcomeDescription "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+onto:learning_outcome_ra118 rdfs:label "Learning Outcome RA118" ;
+    a onto:LearningOutcome ;
+    onto:hasLearningOutcomeCode "RA118" ;
+    onto:hasLearningOutcomeDescription "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+onto:topic_fundamentos_gestion_proyectos rdfs:label "Topic Fundamentos de la gestión de proyectos" ;
+    a onto:SubjectArea ;
+    onto:hasTopicName "Fundamentos de la gestión de proyectos" .
+
+onto:topic_gestion_proyectos_metodologias_agiles rdfs:label "Topic Gestión de proyectos con metodologías ágiles" ;
+    a onto:SubjectArea ;
+    onto:hasTopicName "Gestión de proyectos con metodologías ágiles" .
+
+onto:resource_guia_pmbok rdfs:label "Resource Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_pmp_exam_prep rdfs:label "Resource PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_iso_iec_ieee_16326 rdfs:label "Resource ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_guia_practica_estimacion rdfs:label "Resource Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_agile_practice_guide rdfs:label "Resource Agile Practice Guide" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "Agile Practice Guide" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_user_story_mapping rdfs:label "Resource User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_guia_scrum rdfs:label "Resource La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_agile_project_management_scrum rdfs:label "Resource Agile Project Management with SCRUM" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "Agile Project Management with SCRUM" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_kanban_esencial_condensado rdfs:label "Resource Kanban Esencial Condensado" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "Kanban Esencial Condensado" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:resource_guia_kanban_equipos_scrum rdfs:label "Resource La Guía Kanban para Equipos Scrum" ;
+    a onto:DidacticResource ;
+    onto:hasResourceName "La Guía Kanban para Equipos Scrum" ;
+    onto:hasResourceTypeName "Bibliografía" .
+
+onto:activity_type_leccion_magistral rdfs:label "Activity Type Lección Magistral" ;
+    a onto:ActivityType ;
+    onto:hasActivityTypeLabel "Lección Magistral" .
+
+onto:activity_type_practicas_laboratorio rdfs:label "Activity Type Prácticas de Laboratorio" ;
+    a onto:ActivityType ;
+    onto:hasActivityTypeLabel "Prácticas de Laboratorio" .
+
+onto:activity_type_clase_problemas rdfs:label "Activity Type Clase de Problemas" ;
+    a onto:ActivityType ;
+    onto:hasActivityTypeLabel "Clase de Problemas" .
+
+onto:activity_type_trabajo_individual rdfs:label "Activity Type Trabajo Individual" ;
+    a onto:ActivityType ;
+    onto:hasActivityTypeLabel "Trabajo Individual" .
+
+onto:activity_type_trabajo_grupo rdfs:label "Activity Type Trabajo en Grupo" ;
+    a onto:ActivityType ;
+    onto:hasActivityTypeLabel "Trabajo en Grupo" .
+
+onto:activity_type_examen_escrito rdfs:label "Activity Type Examen Escrito" ;
+    a onto:ActivityType ;
+    onto:hasActivityTypeLabel "Examen Escrito" .
+
+onto:evaluation_type_progresiva rdfs:label "Evaluation Type Evaluación Progresiva" ;
+    a onto:EvaluationType ;
+    onto:hasEvaluationTypeName "Evaluación Progresiva" .
+
+onto:evaluation_type_global rdfs:label "Evaluation Type Evaluación Global" ;
+    a onto:EvaluationType ;
+    onto:hasEvaluationTypeName "Evaluación Global" .
+
+onto:evaluation_ejercicio_tradicional rdfs:label "Evaluation Ejercicio sobre gestión de proyectos con metodologías tradicionales" ;
+    a onto:EvaluationActivity ;
+    onto:hasEvaluationType onto:evaluation_type_progresiva ;
+    onto:hasActivityType onto:activity_type_trabajo_individual ;
+    onto:hasActivityDuration "00:00" ;
+    onto:hasEvaluationWeight "10%" ;
+    onto:hasMinimumGrade "/" ;
+    onto:evaluatesCompetency onto:competency_ct5, onto:competency_cc2, onto:competency_ce6 .
+
+onto:evaluation_practica1 rdfs:label "Evaluation Práctica 1" ;
+    a onto:EvaluationActivity ;
+    onto:hasEvaluationType onto:evaluation_type_progresiva ;
+    onto:hasActivityType onto:activity_type_trabajo_grupo ;
+    onto:hasActivityDuration "00:00" ;
+    onto:hasEvaluationWeight "23%" ;
+    onto:hasMinimumGrade "/" ;
+    onto:evaluatesCompetency onto:competency_ct5, onto:competency_ct11, onto:competency_cc2, onto:competency_cc3, onto:competency_ce6 .
+
+onto:evaluation_ejercicio_agiles rdfs:label "Evaluation Ejercicio sobre gestión de proyectos con metodologías ágiles" ;
+    a onto:EvaluationActivity ;
+    onto:hasEvaluationType onto:evaluation_type_progresiva ;
+    onto:hasActivityType onto:activity_type_trabajo_individual ;
+    onto:hasActivityDuration "00:00" ;
+    onto:hasEvaluationWeight "5%" ;
+    onto:hasMinimumGrade "/" ;
+    onto:evaluatesCompetency onto:competency_ct5, onto:competency_cc2, onto:competency_ce6 .
+
+onto:evaluation_practica2 rdfs:label "Evaluation Práctica 2" ;
+    a onto:EvaluationActivity ;
+    onto:hasEvaluationType onto:evaluation_type_progresiva ;
+    onto:hasActivityType onto:activity_type_trabajo_grupo ;
+    onto:hasActivityDuration "00:00" ;
+    onto:hasEvaluationWeight "12%" ;
+    onto:hasMinimumGrade "/" ;
+    onto:evaluatesCompetency onto:competency_ct5, onto:competency_ct11, onto:competency_cc2, onto:competency_cc3, onto:competency_ce6 .
+
+onto:evaluation_examen_final_ordinario rdfs:label "Evaluation Examen final (Convocatoria ordinaria)" ;
+    a onto:EvaluationActivity ;
+    onto:hasEvaluationType onto:evaluation_type_global ;
+    onto:hasActivityType onto:activity_type_examen_escrito ;
+    onto:hasActivityDuration "02:30" ;
+    onto:hasEvaluationWeight "50%" ;
+    onto:hasMinimumGrade "4.5/10" ;
+    onto:evaluatesCompetency onto:competency_ct5, onto:competency_ct11, onto:competency_cc2, onto:competency_cc3, onto:competency_ce6 .
+
+onto:evaluation_examen_final_extraordinario rdfs:label "Evaluation Examen final (Convocatoria extraordinaria)" ;
+    a onto:EvaluationActivity ;
+    onto:hasEvaluationType onto:evaluation_type_global ;
+    onto:hasActivityType onto:activity_type_examen_escrito ;
+    onto:hasActivityDuration "02:30" ;
+    onto:hasEvaluationWeight "100%" ;
+    onto:hasMinimumGrade "5/10" ;
+    onto:evaluatesCompetency onto:competency_ct5, onto:competency_ct11, onto:competency_cc2, onto:competency_cc3, onto:competency_ce6 .

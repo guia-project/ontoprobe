@@ -1,0 +1,35 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_cours

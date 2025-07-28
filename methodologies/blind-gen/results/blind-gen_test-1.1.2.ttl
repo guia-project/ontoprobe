@@ -1,0 +1,479 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix etsisistemas: <http://example.org/etsisistemas#> .
+
+# Ontology Definition
+<http://example.org/etsisistemas> a owl:Ontology ;
+  rdfs:comment "Ontology for representing the 'Gestion de Proyectos y del Riesgo' course information from the annexed PDF document." .
+
+# Classes
+etsisistemas:Asignatura a owl:Class ;
+  rdfs:label "Asignatura" .
+
+etsisistemas:Profesor a owl:Class ;
+  rdfs:label "Profesor" .
+
+etsisistemas:ConocimientoPrevio a owl:Class ;
+  rdfs:label "ConocimientoPrevio" .
+
+etsisistemas:Competencia a owl:Class ;
+  rdfs:label "Competencia" .
+
+etsisistemas:ResultadoAprendizaje a owl:Class ;
+  rdfs:label "ResultadoAprendizaje" .
+
+etsisistemas:Tema a owl:Class ;
+  rdfs:label "Tema" .
+
+etsisistemas:Actividad a owl:Class ;
+  rdfs:label "Actividad" .
+
+etsisistemas:RecursoDidactico a owl:Class ;
+  rdfs:label "RecursoDidactico" .
+
+etsisistemas:PlanEstudios a owl:Class ;
+  rdfs:label "Plan de Estudios" .
+
+# Properties
+etsisistemas:nombreAsignatura a owl:DatatypeProperty ;
+  rdfs:label "nombreAsignatura" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:noCreditos a owl:DatatypeProperty ;
+  rdfs:label "noCreditos" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:integer .
+
+etsisistemas:caracter a owl:DatatypeProperty ;
+  rdfs:label "caracter" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:curso a owl:DatatypeProperty ;
+  rdfs:label "curso" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:semestre a owl:DatatypeProperty ;
+  rdfs:label "semestre" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:periodoImparticion a owl:DatatypeProperty ;
+  rdfs:label "periodoImparticion" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:idiomaImparticion a owl:DatatypeProperty ;
+  rdfs:label "idiomaImparticion" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:titulacion a owl:DatatypeProperty ;
+  rdfs:label "titulacion" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:centroResponsable a owl:DatatypeProperty ;
+  rdfs:label "centroResponsable" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:cursoAcademico a owl:DatatypeProperty ;
+  rdfs:label "cursoAcademico" ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range xsd:string .
+
+etsisistemas:nombreProfesor a owl:DatatypeProperty ;
+  rdfs:label "nombreProfesor" ;
+  rdfs:domain etsisistemas:Profesor ;
+  rdfs:range xsd:string .
+
+etsisistemas:despacho a owl:DatatypeProperty ;
+  rdfs:label "despacho" ;
+  rdfs:domain etsisistemas:Profesor ;
+  rdfs:range xsd:string .
+
+etsisistemas:correoElectronico a owl:DatatypeProperty ;
+  rdfs:label "correoElectronico" ;
+  rdfs:domain etsisistemas:Profesor ;
+  rdfs:range xsd:string .
+
+etsisistemas:horarioTutorias a owl:DatatypeProperty ;
+  rdfs:label "horarioTutorias" ;
+  rdfs:domain etsisistemas:Profesor ;
+  rdfs:range xsd:string .
+
+etsisistemas:nombreConocimientoPrevio a owl:DatatypeProperty ;
+  rdfs:label "nombreConocimientoPrevio" ;
+  rdfs:domain etsisistemas:ConocimientoPrevio ;
+  rdfs:range xsd:string .
+
+etsisistemas:codigoCompetencia a owl:DatatypeProperty ;
+  rdfs:label "codigoCompetencia" ;
+  rdfs:domain etsisistemas:Competencia ;
+  rdfs:range xsd:string .
+
+etsisistemas:descripcionCompetencia a owl:DatatypeProperty ;
+  rdfs:label "descripcionCompetencia" ;
+  rdfs:domain etsisistemas:Competencia ;
+  rdfs:range xsd:string .
+
+etsisistemas:codigoResultadoAprendizaje a owl:DatatypeProperty ;
+  rdfs:label "codigoResultadoAprendizaje" ;
+  rdfs:domain etsisistemas:ResultadoAprendizaje ;
+  rdfs:range xsd:string .
+
+etsisistemas:descripcionResultadoAprendizaje a owl:DatatypeProperty ;
+  rdfs:label "descripcionResultadoAprendizaje" ;
+  rdfs:domain etsisistemas:ResultadoAprendizaje ;
+  rdfs:range xsd:string .
+
+etsisistemas:numeroTema a owl:DatatypeProperty ;
+  rdfs:label "numeroTema" ;
+  rdfs:domain etsisistemas:Tema ;
+  rdfs:range xsd:string .
+
+etsisistemas:nombreTema a owl:DatatypeProperty ;
+  rdfs:label "nombreTema" ;
+  rdfs:domain etsisistemas:Tema ;
+  rdfs:range xsd:string .
+
+etsisistemas:tipoActividad a owl:DatatypeProperty ;
+  rdfs:label "tipoActividad" ;
+  rdfs:domain etsisistemas:Actividad ;
+  rdfs:range xsd:string .
+
+etsisistemas:duracionActividad a owl:DatatypeProperty ;
+  rdfs:label "duracionActividad" ;
+  rdfs:domain etsisistemas:Actividad ;
+  rdfs:range xsd:string .
+
+etsisistemas:teleEnsenanza a owl:DatatypeProperty ;
+  rdfs:label "teleEnsenanza" ;
+  rdfs:domain etsisistemas:Actividad ;
+  rdfs:range xsd:string .
+
+etsisistemas:actividadesEvaluacion a owl:DatatypeProperty ;
+  rdfs:label "actividadesEvaluacion" ;
+  rdfs:domain etsisistemas:Actividad ;
+  rdfs:range xsd:string .
+
+etsisistemas:tipoRecursoDidactico a owl:DatatypeProperty ;
+  rdfs:label "tipoRecursoDidactico" ;
+  rdfs:domain etsisistemas:RecursoDidactico ;
+  rdfs:range xsd:string .
+
+etsisistemas:nombreRecursoDidactico a owl:DatatypeProperty ;
+  rdfs:label "nombreRecursoDidactico" ;
+  rdfs:domain etsisistemas:RecursoDidactico ;
+  rdfs:range xsd:string .
+
+etsisistemas:observacionesRecursoDidactico a owl:DatatypeProperty ;
+  rdfs:label "observacionesRecursoDidactico" ;
+  rdfs:domain etsisistemas:RecursoDidactico ;
+  rdfs:range xsd:string .
+
+etsisistemas:codigoPlanEstudios a owl:DatatypeProperty ;
+  rdfs:label "codigoPlanEstudios" ;
+  rdfs:domain etsisistemas:PlanEstudios ;
+  rdfs:range xsd:string .
+
+etsisistemas:nombrePlanEstudios a owl:DatatypeProperty ;
+  rdfs:label "nombrePlanEstudios" ;
+  rdfs:domain etsisistemas:PlanEstudios ;
+  rdfs:range xsd:string .
+
+etsisistemas:asignaturaPertenecePlan a owl:ObjectProperty;
+    rdfs:domain etsisistemas:Asignatura;
+    rdfs:range etsisistemas:PlanEstudios;
+    rdfs:label "asignaturaPertenecePlan".
+
+etsisistemas:impartidaPor a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range etsisistemas:Profesor ;
+  rdfs:label "impartidaPor" .
+
+etsisistemas:requiereConocimiento a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range etsisistemas:ConocimientoPrevio ;
+  rdfs:label "requiereConocimiento" .
+
+etsisistemas:desarrollaCompetencia a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range etsisistemas:Competencia ;
+  rdfs:label "desarrollaCompetencia" .
+
+etsisistemas:contribuyeResultado a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range etsisistemas:ResultadoAprendizaje ;
+  rdfs:label "contribuyeResultado" .
+
+etsisistemas:tieneTema a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range etsisistemas:Tema ;
+  rdfs:label "tieneTema" .
+
+etsisistemas:temaTieneActividad a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Tema ;
+  rdfs:range etsisistemas:Actividad ;
+  rdfs:label "temaTieneActividad" .
+
+etsisistemas:utilizaRecurso a owl:ObjectProperty ;
+  rdfs:domain etsisistemas:Asignatura ;
+  rdfs:range etsisistemas:RecursoDidactico ;
+  rdfs:label "utilizaRecurso" .
+
+# Instances
+etsisistemas:Asignatura_615000258 a etsisistemas:Asignatura ;
+  etsisistemas:nombreAsignatura "615000258 - Gestion de Proyectos y del Riesgo" ;
+  etsisistemas:noCreditos 6 ;
+  etsisistemas:caracter "Obligatoria" ;
+  etsisistemas:curso "Cuarto curso" ;
+  etsisistemas:semestre "Séptimo semestre" ;
+  etsisistemas:periodoImparticion "Septiembre-Enero" ;
+  etsisistemas:idiomaImparticion "Castellano" ;
+  etsisistemas:titulacion "61IW - Grado En Ingenieria del Software" ;
+  etsisistemas:centroResponsable "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" ;
+  etsisistemas:cursoAcademico "2024-25";
+  etsisistemas:asignaturaPertenecePlan etsisistemas:PlanEstudios_61IW.
+
+etsisistemas:Profesor_AGordillo a etsisistemas:Profesor ;
+  etsisistemas:nombreProfesor "Aldo Gordillo Mendez" ;
+  etsisistemas:despacho "1219" ;
+  etsisistemas:correoElectronico "a.gordillo@upm.es" ;
+  etsisistemas:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+etsisistemas:Profesor_MOttaviano a etsisistemas:Profesor ;
+  etsisistemas:nombreProfesor "Manuel Ottaviano" ;
+  etsisistemas:despacho "1212" ;
+  etsisistemas:correoElectronico "manuel.ottaviano@upm.es" ;
+  etsisistemas:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+etsisistemas:Profesor_JSerrano a etsisistemas:Profesor ;
+  etsisistemas:nombreProfesor "Javier Serrano Romero" ;
+  etsisistemas:despacho "4219" ;
+  etsisistemas:correoElectronico "javier.serrano@upm.es" ;
+  etsisistemas:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+etsisistemas:Conocimiento_ReqModelado a etsisistemas:ConocimientoPrevio;
+    etsisistemas:nombreConocimientoPrevio "Ingenieria De Requisitos Y Modelado".
+
+etsisistemas:Conocimiento_ProcesoSoftware a etsisistemas:ConocimientoPrevio;
+    etsisistemas:nombreConocimientoPrevio "Ingenieria Del Proceso Software Y Construccion".
+
+etsisistemas:Conocimiento_AspectosLegales a etsisistemas:ConocimientoPrevio;
+    etsisistemas:nombreConocimientoPrevio "Aspectos Legales Y Profesionales".
+
+etsisistemas:Conocimiento_FundamentosEconomia a etsisistemas:ConocimientoPrevio;
+    etsisistemas:nombreConocimientoPrevio "Fundamentos De Economia Y Empresa".
+
+etsisistemas:Conocimiento_FundamentosIngenieria a etsisistemas:ConocimientoPrevio;
+    etsisistemas:nombreConocimientoPrevio "Fundamentos De Ingenieria Del Software".
+
+etsisistemas:Competencia_CC2 a etsisistemas:Competencia ;
+  etsisistemas:codigoCompetencia "CC2" ;
+  etsisistemas:descripcionCompetencia "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+etsisistemas:Competencia_CC3 a etsisistemas:Competencia ;
+  etsisistemas:codigoCompetencia "CC3" ;
+  etsisistemas:descripcionCompetencia "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+etsisistemas:Competencia_CE6 a etsisistemas:Competencia ;
+  etsisistemas:codigoCompetencia "CE6" ;
+  etsisistemas:descripcionCompetencia "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+etsisistemas:Competencia_CT11 a etsisistemas:Competencia ;
+  etsisistemas:codigoCompetencia "CT11" ;
+  etsisistemas:descripcionCompetencia "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+etsisistemas:Competencia_CT5 a etsisistemas:Competencia ;
+  etsisistemas:codigoCompetencia "CT5" ;
+  etsisistemas:descripcionCompetencia "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+etsisistemas:Resultado_RA112 a etsisistemas:ResultadoAprendizaje ;
+  etsisistemas:codigoResultadoAprendizaje "RA112" ;
+  etsisistemas:descripcionResultadoAprendizaje "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+etsisistemas:Resultado_RA116 a etsisistemas:ResultadoAprendizaje ;
+  etsisistemas:codigoResultadoAprendizaje "RA116" ;
+  etsisistemas:descripcionResultadoAprendizaje "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+etsisistemas:Resultado_RA111 a etsisistemas:ResultadoAprendizaje ;
+  etsisistemas:codigoResultadoAprendizaje "RA111" ;
+  etsisistemas:descripcionResultadoAprendizaje "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+etsisistemas:Resultado_RA118 a etsisistemas:ResultadoAprendizaje ;
+  etsisistemas:codigoResultadoAprendizaje "RA118" ;
+  etsisistemas:descripcionResultadoAprendizaje "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+etsisistemas:Tema_1_1 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.1" ;
+  etsisistemas:nombreTema "Tema 1: Introducción a la gestión de proyectos." .
+
+etsisistemas:Tema_1_2 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.2" ;
+  etsisistemas:nombreTema "Tema 2: Procesos de la dirección de proyectos." .
+
+etsisistemas:Tema_1_3 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.3" ;
+  etsisistemas:nombreTema "Tema 3: Gestión del alcance." .
+
+etsisistemas:Tema_1_4 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.4" ;
+  etsisistemas:nombreTema "Tema 4: Planificación temporal de proyectos." .
+
+etsisistemas:Tema_1_5 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.5" ;
+  etsisistemas:nombreTema "Tema 5: Estimación en proyectos de software." .
+
+etsisistemas:Tema_1_6 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.6" ;
+  etsisistemas:nombreTema "Tema 6: Gestión de riesgos." .
+
+etsisistemas:Tema_1_7 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "1.7" ;
+  etsisistemas:nombreTema "Tema 7: Gestión de costes." .
+
+etsisistemas:Tema_2_1 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "2.1" ;
+  etsisistemas:nombreTema "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+etsisistemas:Tema_2_2 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "2.2" ;
+  etsisistemas:nombreTema "Tema 9: Prácticas ágiles." .
+
+etsisistemas:Tema_2_3 a etsisistemas:Tema ;
+  etsisistemas:numeroTema "2.3" ;
+  etsisistemas:nombreTema "Tema 10: Scrum." .
+
+etsisistemas:Actividad_PresentacionAsignatura a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "00:30" .
+
+etsisistemas:Actividad_Tema1 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "01:30" .
+
+etsisistemas:Actividad_Tema2 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema3 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema4_LM a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema4_PR a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Clase de Problemas" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema5_LM a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema5_PR a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Clase de Problemas" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema6 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema7 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema8 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema9_LM a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Lección Magistral" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Tema10 a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Clase de Problemas" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Practica1_PL a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Prácticas de Laboratorio" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_Practica2_PL a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Prácticas de Laboratorio" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Actividad_ResolucionEjercicios a etsisistemas:Actividad ;
+  etsisistemas:tipoActividad "Clase de Problemas" ;
+  etsisistemas:duracionActividad "02:00" .
+
+etsisistemas:Recurso_GuiaPMBOK a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_PMPExamPrep a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_ISOIEEE16326 a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_GuiaPracticaEstimacion a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_AgilePracticeGuide a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "Agile Practice Guide" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_UserStoryMapping a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_GuiaScrum a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_AgileProjectManagement a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "Agile Project Management with SCRUM" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_KanbanEsencial a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "Kanban Esencial Condensado" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:Recurso_GuiaKanbanEquipos a etsisistemas:RecursoDidactico ;
+  etsisistemas:nombreRecursoDidactico "La Guía Kanban para Equipos Scrum" ;
+  etsisistemas:tipoRecursoDidactico "Bibliografía" .
+
+etsisistemas:PlanEstudios_61IW a etsisistemas:PlanEstudios;
+    etsisistemas:codigoPlanEstudios "61IW";
+    etsisistemas:nombrePlanEstudios "Grado En Ingenieria Del Software".
+
+# Connect instances to the Asignatura
+etsisistemas:Asignatura_615000258
+  etsisistemas:impartidaPor etsisistemas:Profesor_AGordillo, etsisistemas:Profesor_MOttaviano, etsisistemas:Profesor_JSerrano ;
+  etsisistemas:requiereConocimiento etsisistemas:Conocimiento_ReqModelado, etsisistemas:Conocimiento_ProcesoSoftware, etsisistemas:Conocimiento_AspectosLegales, etsisistemas:Conocimiento_FundamentosEconomia, etsisistemas:Conocimiento_FundamentosIngenieria;
+  etsisistemas:desarrollaCompetencia etsisistemas:Competencia_CC2, etsisistemas:Competencia_CC3, etsisistemas:Competencia_CE6, etsisistemas:Competencia_CT11, etsisistemas:Competencia_CT5 ;
+  etsisistemas:contribuyeResultado etsisistemas:Resultado_RA112, etsisistemas:Resultado_RA116, etsisistemas:Resultado_RA111, etsisistemas:Resultado_RA118 ;
+  etsisistemas:tieneTema etsisistemas:Tema_1_1, etsisistemas:Tema_1_2, etsisistemas:Tema_1_3, etsisistemas:Tema_1_4, etsisistemas:Tema_1_5, etsisistemas:Tema_1_6, etsisistemas:Tema_1_7, etsisistemas:Tema_2_1, etsisistemas:Tema_2_2, etsisistemas:Tema_2_3 ;
+  etsisistemas:utilizaRecurso etsisistemas:Recurso_GuiaPMBOK, etsisistemas:Recurso_PMPExamPrep, etsisistemas:Recurso_ISOIEEE16326, etsisistemas:Recurso_GuiaPracticaEstimacion, etsisistemas:Recurso_AgilePracticeGuide, etsisistemas:Recurso_UserStoryMapping, etsisistemas:Recurso_GuiaScrum, etsisistemas:Recurso_AgileProjectManagement, etsisistemas:Recurso_KanbanEsencial, etsisistemas:Recurso_GuiaKanbanEquipos.
+
+etsisistemas:Tema_1_1 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema1 .
+etsisistemas:Tema_1_2 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema2 .
+etsisistemas:Tema_1_3 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema3 .
+etsisistemas:Tema_1_4 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema4_LM, etsisistemas:Actividad_Tema4_PR .
+etsisistemas:Tema_1_5 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema5_LM, etsisistemas:Actividad_Tema5_PR .
+etsisistemas:Tema_1_6 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema6 .
+etsisistemas:Tema_1_7 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema7 .
+etsisistemas:Tema_2_1 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema8 .
+etsisistemas:Tema_2_2 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema9_LM, etsisistemas:Actividad_Practica1_PL .
+etsisistemas:Tema_2_3 etsisistemas:temaTieneActividad etsisistemas:Actividad_Tema10, etsisistemas:Actividad_Practica2_PL.

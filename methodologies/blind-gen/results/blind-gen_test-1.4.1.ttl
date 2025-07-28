@@ -1,0 +1,180 @@
+@prefix : <http://example.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Clases
+:Course a rdfs:Class ;
+    rdfs:label "Course" ;
+    rdfs:comment "A university course" .
+
+:Professor a rdfs:Class ;
+    rdfs:label "Professor" ;
+    rdfs:comment "A professor teaching a course" .
+
+:Competency a rdfs:Class ;
+    rdfs:label "Competency" ;
+    rdfs:comment "A competency or skill learned in the course" .
+
+:LearningOutcome a rdfs:Class ;
+    rdfs:label "Learning Outcome" ;
+    rdfs:comment "Expected learning outcomes of the course" .
+
+:Topic a rdfs:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "A topic covered in the course" .
+
+:EvaluationActivity a rdfs:Class ;
+    rdfs:label "Evaluation Activity" ;
+    rdfs:comment "An evaluation method for the course" .
+
+:Resource a rdfs:Class ;
+    rdfs:label "Resource" ;
+    rdfs:comment "A resource or bibliography for the course" .
+
+# Propiedades
+:hasProfessor a rdf:Property ;
+    rdfs:domain :Course ;
+    rdfs:range :Professor ;
+    rdfs:label "has professor" .
+
+:hasCompetency a rdf:Property ;
+    rdfs:domain :Course ;
+    rdfs:range :Competency ;
+    rdfs:label "has competency" .
+
+:hasLearningOutcome a rdf:Property ;
+    rdfs:domain :Course ;
+    rdfs:range :LearningOutcome ;
+    rdfs:label "has learning outcome" .
+
+:hasTopic a rdf:Property ;
+    rdfs:domain :Course ;
+    rdfs:range :Topic ;
+    rdfs:label "has topic" .
+
+:hasEvaluation a rdf:Property ;
+    rdfs:domain :Course ;
+    rdfs:range :EvaluationActivity ;
+    rdfs:label "has evaluation activity" .
+
+:hasResource a rdf:Property ;
+    rdfs:domain :Course ;
+    rdfs:range :Resource ;
+    rdfs:label "has resource" .
+
+# Instancias
+:GestionProyectosRiesgo a :Course ;
+    rdfs:label "Gestión de Proyectos y del Riesgo" ;
+    :hasProfessor :AldoGordillo, :ManuelOttaviano, :JavierSerrano ;
+    :hasCompetency :CC2, :CC3, :CE6, :CT11, :CT5 ;
+    :hasLearningOutcome :RA112, :RA116, :RA111, :RA118 ;
+    :hasTopic :T1, :T2, :T3, :T4, :T5, :T6, :T7, :T8, :T9, :T10 ;
+    :hasEvaluation :Eval1, :Eval2, :Eval3, :Eval4, :FinalExam ;
+    :hasResource :PMBOK, :AgilePracticeGuide, :ISO16326, :ScrumGuide .
+
+# Profesores
+:AldoGordillo a :Professor ;
+    rdfs:label "Aldo Gordillo Mendez" ;
+    :email "a.gordillo@upm.es" .
+
+:ManuelOttaviano a :Professor ;
+    rdfs:label "Manuel Ottaviano" ;
+    :email "manuel.ottaviano@upm.es" .
+
+:JavierSerrano a :Professor ;
+    rdfs:label "Javier Serrano Romero" ;
+    :email "javier.serrano@upm.es" .
+
+# Competencias
+:CC2 a :Competency ;
+    rdfs:label "Capacidad para planificar y dirigir proyectos informáticos" .
+
+:CC3 a :Competency ;
+    rdfs:label "Habilidades de negociación, liderazgo y comunicación" .
+
+:CE6 a :Competency ;
+    rdfs:label "Diseño de soluciones software con enfoque ético y económico" .
+
+:CT11 a :Competency ;
+    rdfs:label "Liderazgo en gestión de proyectos" .
+
+:CT5 a :Competency ;
+    rdfs:label "Organización y planificación de proyectos" .
+
+# Resultados de Aprendizaje
+:RA112 a :LearningOutcome ;
+    rdfs:label "Estimación y seguimiento de costes y tiempos en proyectos" .
+
+:RA116 a :LearningOutcome ;
+    rdfs:label "Definir y controlar metas y objetivos de proyectos" .
+
+:RA111 a :LearningOutcome ;
+    rdfs:label "Identificación y gestión de riesgos en proyectos software" .
+
+:RA118 a :LearningOutcome ;
+    rdfs:label "Trabajo en equipo en proyectos de software" .
+
+# Temario
+:T1 a :Topic ;
+    rdfs:label "Introducción a la gestión de proyectos" .
+
+:T2 a :Topic ;
+    rdfs:label "Procesos de la dirección de proyectos" .
+
+:T3 a :Topic ;
+    rdfs:label "Gestión del alcance" .
+
+:T4 a :Topic ;
+    rdfs:label "Planificación temporal de proyectos" .
+
+:T5 a :Topic ;
+    rdfs:label "Estimación en proyectos de software" .
+
+:T6 a :Topic ;
+    rdfs:label "Gestión de riesgos" .
+
+:T7 a :Topic ;
+    rdfs:label "Gestión de costes" .
+
+:T8 a :Topic ;
+    rdfs:label "Introducción a la gestión ágil de proyectos" .
+
+:T9 a :Topic ;
+    rdfs:label "Prácticas ágiles" .
+
+:T10 a :Topic ;
+    rdfs:label "Scrum" .
+
+# Evaluaciones
+:Eval1 a :EvaluationActivity ;
+    rdfs:label "Ejercicio sobre gestión de proyectos tradicionales" ;
+    :weight 10 .
+
+:Eval2 a :EvaluationActivity ;
+    rdfs:label "Práctica 1 (Trabajo en grupo)" ;
+    :weight 23 .
+
+:Eval3 a :EvaluationActivity ;
+    rdfs:label "Ejercicio sobre metodologías ágiles" ;
+    :weight 5 .
+
+:Eval4 a :EvaluationActivity ;
+    rdfs:label "Práctica 2 (Trabajo en grupo)" ;
+    :weight 12 .
+
+:FinalExam a :EvaluationActivity ;
+    rdfs:label "Examen final" ;
+    :weight 50 .
+
+# Recursos
+:PMBOK a :Resource ;
+    rdfs:label "Guía de los Fundamentos para la Dirección de Proyectos (PMBOK)" .
+
+:AgilePracticeGuide a :Resource ;
+    rdfs:label "Agile Practice Guide" .
+
+:ISO16326 a :Resource ;
+    rdfs:label "ISO/IEC/IEEE 16326:2019 Project Management Standard" .
+
+:ScrumGuide a :Resource ;
+    rdfs:label "La Guía de Scrum" .

@@ -1,0 +1,1 @@
+{"error": "at line 299 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'ty_modality \"Presencial\" ;\\n    ex:Activity_duration \"00:00\" '^b';\\n    ex:Activity_weight \"3%\" ;\\n    ex:eval-progresiva ex:Ev'...\""}

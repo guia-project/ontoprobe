@@ -1,0 +1,117 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix etsis: <http://www.example.org/etsis#> .
+
+etsis:Asignatura a owl:Class ;
+    rdfs:label "Asignatura" .
+
+etsis:Profesor a owl:Class ;
+    rdfs:label "Profesor" .
+
+etsis:ActividadEvaluacion a owl:Class ;
+    rdfs:label "Actividad de Evaluación" .
+
+etsis:PlanEstudios a owl:Class ;
+    rdfs:label "Plan de Estudios" .
+
+etsis:CursoAcademico a owl:Class ;
+    rdfs:label "Curso Académico" .
+
+etsis:DatosDescriptivos a owl:Class ;
+    rdfs:label "Datos Descriptivos" .
+
+etsis:GestionDeProyectosYDelsRiesgo a etsis:Asignatura ;
+    rdfs:label "Gestion De Proyectos Y Del Riesgo" ;
+    etsis:nombre "615000258 - Gestion de Proyectos y del Riesgo" ;
+    etsis:creditos "6 ECTS" ;
+    etsis:caracter "Obligatoria" ;
+    etsis:curso "Cuarto curso" ;
+    etsis:semestre "Séptimo semestre" ;
+    etsis:periodoImparticion "Septiembre-Enero" ;
+    etsis:idiomaImparticion "Castellano" ;
+    etsis:perteneceA <http://www.example.org/etsis#GradoIngenieriaSoftware> .
+
+<http://www.example.org/etsis#GradoIngenieriaSoftware> a etsis:PlanEstudios;
+    rdfs:label "Grado en Ingenieria del Software";
+    etsis:nombre "61IW - Grado En Ingenieria Del Software".
+
+etsis:CursoAcademico2024_2025 a etsis:CursoAcademico ;
+    rdfs:label "Curso Académico 2024/25" ;
+    etsis:nombre "2024/25 - Primer semestre" .
+
+etsis:AldoGordilloMendez a etsis:Profesor ;
+    rdfs:label "Aldo Gordillo Mendez" ;
+    etsis:despacho "1219" ;
+    etsis:correoElectronico "a.gordillo@upm.es" ;
+    etsis:esCoordinador "true" .
+
+etsis:ManuelOttaviano a etsis:Profesor ;
+    rdfs:label "Manuel Ottaviano" ;
+    etsis:despacho "1212" ;
+    etsis:correoElectronico "manuel.ottaviano@upm.es" .
+
+etsis:JavierSerranoRomero a etsis:Profesor ;
+    rdfs:label "Javier Serrano Romero" ;
+    etsis:despacho "4219" ;
+    etsis:correoElectronico "javier.serrano@upm.es" .
+
+etsis:EjercicioGestionProyectosTradicionales a etsis:ActividadEvaluacion ;
+    rdfs:label "Ejercicio sobre gestión de proyectos con metodologías tradicionales" ;
+    etsis:semana "11" ;
+    etsis:modalidad "TI: Técnica del tipo Trabajo Individual" ;
+    etsis:tipo "No Presencial" ;
+    etsis:duracion "00:00" ;
+    etsis:pesoNota "10%" ;
+    etsis:notaMinima "/ 10" ;
+    etsis:competenciasEvaluadas "CT5, CC2, CE6" .
+
+etsis:Practica1 a etsis:ActividadEvaluacion ;
+    rdfs:label "Práctica 1" ;
+    etsis:semana "11" ;
+    etsis:modalidad "TG: Técnica del tipo Trabajo en Grupo" ;
+    etsis:tipo "No Presencial" ;
+    etsis:duracion "00:00" ;
+    etsis:pesoNota "23%" ;
+    etsis:notaMinima "/ 10" ;
+    etsis:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6" .
+
+etsis:EjercicioGestionProyectosAgiles a etsis:ActividadEvaluacion ;
+    rdfs:label "Ejercicio sobre gestión de proyectos con metodologías ágiles" ;
+    etsis:semana "15" ;
+    etsis:modalidad "TI: Técnica del tipo Trabajo Individual" ;
+    etsis:tipo "No Presencial" ;
+    etsis:duracion "00:00" ;
+    etsis:pesoNota "5%" ;
+    etsis:notaMinima "/ 10" ;
+    etsis:competenciasEvaluadas "CT5, CC2, CE6" .
+
+etsis:Practica2 a etsis:ActividadEvaluacion ;
+    rdfs:label "Práctica 2" ;
+    etsis:semana "15" ;
+    etsis:modalidad "TG: Técnica del tipo Trabajo en Grupo" ;
+    etsis:tipo "No Presencial" ;
+    etsis:duracion "00:00" ;
+    etsis:pesoNota "12%" ;
+    etsis:notaMinima "/ 10" ;
+    etsis:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6" .
+
+etsis:ExamenFinalOrdinaria a etsis:ActividadEvaluacion ;
+    rdfs:label "Examen final (Convocatoria ordinaria)" ;
+    etsis:semana "17" ;
+    etsis:modalidad "EX: Técnica del tipo Examen Escrito" ;
+    etsis:tipo "Presencial" ;
+    etsis:duracion "02:30" ;
+    etsis:pesoNota "50%" ;
+    etsis:notaMinima "4.5/10" ;
+    etsis:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6" .
+
+etsis:ExamenFinalExtraordinaria a etsis:ActividadEvaluacion ;
+    rdfs:label "Examen final (Convocatoria extraordinaria)" ;
+    etsis:modalidad "EX: Técnica del tipo Examen Escrito" ;
+    etsis:tipo "Presencial" ;
+    etsis:duracion "02:30" ;
+    etsis:pesoNota "100%" ;
+    etsis:notaMinima "5/10" ;
+    etsis:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6" .

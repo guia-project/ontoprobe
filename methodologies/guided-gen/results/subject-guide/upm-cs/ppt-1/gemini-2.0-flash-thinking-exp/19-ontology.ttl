@@ -1,0 +1,608 @@
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> a owl:Ontology .
+
+# Classes
+ex:Subject a owl:Class .
+ex:Character a owl:Class .
+ex:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:StudyPlan a owl:Class .
+ex:School a owl:Class .
+ex:University a owl:Class .
+ex:Professor a owl:Class .
+ex:Competence a owl:Class .
+ex:Outcome a owl:Class .
+ex:Evaluation a owl:Class .
+ex:Activity a owl:Class .
+ex:Topic a owl:Class .
+ex:Resource a owl:Class .
+ex:RecommendedPreviousSubject a owl:Class .
+ex:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+ex:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range rdfs:Literal .
+ex:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range rdfs:Literal .
+ex:School_code a owl:DatatypeProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal .
+ex:School_name a owl:DatatypeProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal .
+ex:University_name a owl:DatatypeProperty ;
+    rdfs:domain ex:University ;
+    rdfs:range rdfs:Literal .
+ex:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Competence ;
+    rdfs:range rdfs:Literal .
+ex:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Competence ;
+    rdfs:range rdfs:Literal .
+ex:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Outcome ;
+    rdfs:range rdfs:Literal .
+ex:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Outcome ;
+    rdfs:range rdfs:Literal .
+ex:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range rdfs:Literal .
+ex:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Resource ;
+    rdfs:range rdfs:Literal .
+ex:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain ex:RecommendedPreviousSubject ;
+    rdfs:range rdfs:Literal .
+ex:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain ex:RecommendedPreviousKnowledge ;
+    rdfs:range rdfs:Literal .
+
+# Object Properties
+ex:Subject_character a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Character .
+ex:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:StudyPlan .
+ex:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Professor .
+ex:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Resource .
+ex:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Competence .
+ex:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Outcome .
+ex:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousSubject .
+ex:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousKnowledge .
+ex:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Topic .
+ex:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Evaluation .
+ex:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range ex:School .
+ex:School_university a owl:ObjectProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range ex:University .
+ex:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:Activity .
+ex:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Outcome .
+ex:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Competence .
+ex:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Topic .
+ex:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Topic .
+
+# Instances
+ex:subject_calidadDelSoftware a ex:Subject ;
+    ex:Subject_name "Calidad Del Software" ;
+    ex:Subject_description "La asignatura presenta técnicas y mediciones de calidad, modelos y procesos para la gestión de la calidad en el ámbito de la ingeniería del software." ;
+    ex:Subject_code "615000259" ;
+    ex:Subject_course "Cuarto curso" ;
+    ex:Subject_courseYear "2024/25" ;
+    ex:Subject_credits "6 ECTS" ;
+    ex:Subject_language "Castellano" ;
+    ex:Subject_semester "Primer semestre" ;
+    ex:Subject_semester "Séptimo semestre" ;
+    ex:Subject_semester "1S" ;
+    ex:Subject_period "Septiembre-Enero" .
+
+ex:character_obligatoria a ex:MandatoryCharacter ;
+    a ex:Character .
+
+ex:subject_calidadDelSoftware ex:Subject_character ex:character_obligatoria .
+
+ex:studyPlan_ingenieriaDelSoftware a ex:StudyPlan ;
+    ex:StudyPlan_code "61IW" ;
+    ex:StudyPlan_name "Grado En Ingenieria Del Software" .
+
+ex:subject_calidadDelSoftware ex:Subject_studyPlan ex:studyPlan_ingenieriaDelSoftware .
+
+ex:school_etsisi a ex:School ;
+    ex:School_code "61" ;
+    ex:School_name "E.T.S De Ing. De Sistemas Informáticos" ;
+    ex:School_name "E.T.S. de Ing. de Sistemas Informáticos" .
+
+ex:studyPlan_ingenieriaDelSoftware ex:StudyPlan_school ex:school_etsisi .
+
+ex:university_upm a ex:University ;
+    ex:University_name "UPM" .
+
+ex:school_etsisi ex:School_university ex:university_upm .
+
+ex:professor_carolinaGallardo a ex:Professor ;
+    ex:Professor_name "Carolina Gallardo Perez" ;
+    ex:Professor_email "carolina.gallardop@upm.es" ;
+    ex:Professor_office "1209" ;
+    ex:Professor_isCoordinator "true" .
+
+ex:professor_juanGarbajosa a ex:Professor ;
+    ex:Professor_name "Juan Garbajosa Sopeña" ;
+    ex:Professor_email "juan.garbajosa@upm.es" .
+
+ex:professor_javierAlegre a ex:Professor ;
+    ex:Professor_name "Javier Alegre Landaburu" ;
+    ex:Professor_email "javier.alegre.landaburu@upm.es" .
+
+ex:subject_calidadDelSoftware ex:Subject_professors ex:professor_carolinaGallardo, ex:professor_juanGarbajosa, ex:professor_javierAlegre .
+
+ex:competence_CC1 a ex:Competence ;
+    ex:Competence_code "CC1" ;
+    ex:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando\nsu fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+
+ex:competence_CC4 a ex:Competence ;
+    ex:Competence_code "CC4" ;
+    ex:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los\nestándares y normativas vigentes" .
+
+ex:competence_CE1 a ex:Competence ;
+    ex:Competence_code "CE1" ;
+    ex:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los\nrequisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y\ncumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+
+ex:competence_CT6 a ex:Competence ;
+    ex:Competence_code "CT6" ;
+    ex:Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar\ndispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las\nexperiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta\nhabilidad en la aplicación de esos métodos." .
+
+ex:subject_calidadDelSoftware ex:Subject_competencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 .
+
+ex:outcome_RA113 a ex:Outcome ;
+    ex:Outcome_code "RA113" ;
+    ex:Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a\ndesarrollar" .
+
+ex:outcome_RA109 a ex:Outcome ;
+    ex:Outcome_code "RA109" ;
+    ex:Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+
+ex:outcome_RA83 a ex:Outcome ;
+    ex:Outcome_code "RA83" ;
+    ex:Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para\nabordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información,\nmaneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e\ninteracción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las\ndecisiones oportunas para lograr su propósito." .
+
+ex:outcome_RA114 a ex:Outcome ;
+    ex:Outcome_code "RA114" ;
+    ex:Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de\nmanera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones.\nIdentifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos\nniveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+ex:subject_calidadDelSoftware ex:Subject_outcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 .
+
+ex:recommendedPreviousSubject_fundamentosIngenieriaSoftware a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "- Fundamentos De Ingenieria Del Software" .
+
+ex:subject_calidadDelSoftware ex:Subject_recommendedPreviousSubjects ex:recommendedPreviousSubject_fundamentosIngenieriaSoftware .
+
+ex:recommendedPreviousKnowledge_none a ex:RecommendedPreviousKnowledge ;
+    ex:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta\nasignatura." .
+
+ex:subject_calidadDelSoftware ex:Subject_recommendedPreviousKnowledges ex:recommendedPreviousKnowledge_none .
+
+ex:topic_tema1 a ex:Topic ;
+    ex:Topic_name "1. Introducción e historia de la calidad" .
+
+ex:topic_tema1_1 a ex:Topic ;
+    ex:Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." .
+ex:topic_tema1 ex:Topic_subTopics ex:topic_tema1_1 .
+
+ex:topic_tema1_2 a ex:Topic ;
+    ex:Topic_name "1.2. Evolución de la calidad." .
+ex:topic_tema1 ex:Topic_subTopics ex:topic_tema1_2 .
+
+ex:topic_tema2 a ex:Topic ;
+    ex:Topic_name "2. Técnicas de la calidad" .
+
+ex:topic_tema2_1 a ex:Topic ;
+    ex:Topic_name "2.1. Técnicas básicas." .
+ex:topic_tema2 ex:Topic_subTopics ex:topic_tema2_1 .
+
+ex:topic_tema2_2 a ex:Topic ;
+    ex:Topic_name "2.2. Técnicas estadísticas." .
+ex:topic_tema2 ex:Topic_subTopics ex:topic_tema2_2 .
+
+ex:topic_tema2_3 a ex:Topic ;
+    ex:Topic_name "2.3. Técnicas avanzadas." .
+ex:topic_tema2 ex:Topic_subTopics ex:topic_tema2_3 .
+
+ex:topic_tema3 a ex:Topic ;
+    ex:Topic_name "3. Mediciones de calidad del software" .
+
+ex:topic_tema3_1 a ex:Topic ;
+    ex:Topic_name "3.1. Medidas y métricas." .
+ex:topic_tema3 ex:Topic_subTopics ex:topic_tema3_1 .
+
+ex:topic_tema3_2 a ex:Topic ;
+    ex:Topic_name "3.2. Medición del producto." .
+ex:topic_tema3 ex:Topic_subTopics ex:topic_tema3_2 .
+
+ex:topic_tema4 a ex:Topic ;
+    ex:Topic_name "4. Costes y consideraciones éticas" .
+
+ex:topic_tema4_1 a ex:Topic ;
+    ex:Topic_name "4.1. Costes de la calidad. Modelos de costes." .
+ex:topic_tema4 ex:Topic_subTopics ex:topic_tema4_1 .
+
+ex:topic_tema4_2 a ex:Topic ;
+    ex:Topic_name "4.2. Caracterización de defectos." .
+ex:topic_tema4 ex:Topic_subTopics ex:topic_tema4_2 .
+
+ex:topic_tema4_3 a ex:Topic ;
+    ex:Topic_name "4.3. Código ético del ingeniero de software." .
+ex:topic_tema4 ex:Topic_subTopics ex:topic_tema4_3 .
+
+ex:topic_tema5 a ex:Topic ;
+    ex:Topic_name "5. Procesos de gestión de la calidad" .
+
+ex:topic_tema5_1 a ex:Topic ;
+    ex:Topic_name "5.1. Estándares de calidad" .
+ex:topic_tema5 ex:Topic_subTopics ex:topic_tema5_1 .
+
+ex:topic_tema5_2 a ex:Topic ;
+    ex:Topic_name "5.2. Gestión de la calidad por procesos" .
+ex:topic_tema5 ex:Topic_subTopics ex:topic_tema5_2 .
+
+ex:topic_tema6 a ex:Topic ;
+    ex:Topic_name "6. Estándares de calidad del software: SQUARE" .
+
+ex:topic_tema6_1 a ex:Topic ;
+    ex:Topic_name "6.1. Estándares y modelos para la calidad del software." .
+ex:topic_tema6 ex:Topic_subTopics ex:topic_tema6_1 .
+
+ex:topic_tema6_2 a ex:Topic ;
+    ex:Topic_name "6.2. Serie ISO 25000n" .
+ex:topic_tema6 ex:Topic_subTopics ex:topic_tema6_2 .
+
+ex:topic_tema7 a ex:Topic ;
+    ex:Topic_name "7. Aseguramiento de la calidad del software" .
+
+ex:topic_tema7_1 a ex:Topic ;
+    ex:Topic_name "7.1. Aseguramiento del proceso software" .
+ex:topic_tema7 ex:Topic_subTopics ex:topic_tema7_1 .
+
+ex:topic_tema7_2 a ex:Topic ;
+    ex:Topic_name "7.2. Aseguramiento del producto software" .
+ex:topic_tema7 ex:Topic_subTopics ex:topic_tema7_2 .
+
+ex:topic_tema8 a ex:Topic ;
+    ex:Topic_name "8. Mejora de procesos SW" .
+
+ex:topic_tema8_1 a ex:Topic ;
+    ex:Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" .
+ex:topic_tema8 ex:Topic_subTopics ex:topic_tema8_1 .
+
+ex:topic_tema8_2 a ex:Topic ;
+    ex:Topic_name "8.2. Modelos de referencia para mejora de procesos SW" .
+ex:topic_tema8 ex:Topic_subTopics ex:topic_tema8_2 .
+
+ex:subject_calidadDelSoftware ex:Subject_topics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 .
+
+ex:evaluation_progresiva a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación Progresiva" .
+ex:evaluation_global a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación Global" .
+ex:evaluation_extraordinaria a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación convocatoria extraordinaria" .
+
+ex:subject_calidadDelSoftware ex:Subject_evaluations ex:evaluation_progresiva, ex:evaluation_global, ex:evaluation_extraordinaria .
+
+ex:activity_actividadPresencial_sem2 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "3%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper outcome and competence linking based on evaluation criteria section
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper outcome and competence linking based on evaluation criteria section
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper topic linking
+
+ex:activity_actividadPresencial_sem3 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "3%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_actividadPresencial_sem4 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_actividadPresencial_sem5 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_actividadPresencial_sem7_1 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_examenTemas1_2_3_4 a ex:Activity ;
+    ex:Activity_name "Examen Temas 1-2-3-4" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "30%" ;
+    ex:Activity_minGrade "3" ;
+    ex:Activity_relatedCompetencies ex:competence_CE1, ex:competence_CT6 ;
+    ex:Activity_relatedOutcomes ex:outcome_RA114 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4 .
+
+ex:activity_actividadPresencial_sem9 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_actividadPresencial_sem10 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_actividadPresencial_sem11 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_actividadPresencial_sem12 a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA113, ex:outcome_RA109, ex:outcome_RA83, ex:outcome_RA114 ; #Example, needs proper linking
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ; #Example, needs proper linking
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_trabajoFinalValoracionMemoria_sem15_progresiva a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "4" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1 ;
+    ex:Activity_relatedOutcomes ex:outcome_RA83 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_trabajoFinalDefensaExposicion_sem15_progresiva a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Defensa y exposición" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "5%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CT6 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_examenTemas5_6_7_8_sem15_progresiva a ex:Activity ;
+    ex:Activity_name "Examen Temas 5-6-7-8" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "30%" ;
+    ex:Activity_minGrade "3" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4 ;
+    ex:Activity_relatedTopics ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 .
+
+ex:evaluation_progresiva ex:Evaluation_activities
+    ex:activity_actividadPresencial_sem2, ex:activity_actividadPresencial_sem3, ex:activity_actividadPresencial_sem4, ex:activity_actividadPresencial_sem5, ex:activity_actividadPresencial_sem7_1, ex:activity_actividadPresencial_sem9, ex:activity_actividadPresencial_sem10, ex:activity_actividadPresencial_sem11, ex:activity_actividadPresencial_sem12, ex:activity_examenTemas1_2_3_4, ex:activity_examenTemas5_6_7_8_sem15_progresiva, ex:activity_trabajoFinalValoracionMemoria_sem15_progresiva, ex:activity_trabajoFinalDefensaExposicion_sem15_progresiva .
+
+ex:activity_examenFinalEscenario2_sem17_global a ex:Activity ;
+    ex:Activity_name "Examen Final (Escenario 2)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "03:00" ;
+    ex:Activity_weight "80%" ;
+    ex:Activity_minGrade "4" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 .
+
+ex:activity_trabajoFinalValoracionMemoria_sem17_global a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "4" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1 ;
+    ex:Activity_relatedOutcomes ex:outcome_RA83 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_trabajoFinalDefensaExposicion_sem17_global a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Defensa y exposición" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "5%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CT6 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:evaluation_global ex:Evaluation_activities
+    ex:activity_examenFinalEscenario2_sem17_global, ex:activity_trabajoFinalValoracionMemoria_sem17_global, ex:activity_trabajoFinalDefensaExposicion_sem17_global .
+
+ex:activity_examenExtraordinario a ex:Activity ;
+    ex:Activity_name "Examen extraordinario (RA83, RA109, RA113, RA114)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "80%" ;
+    ex:Activity_minGrade "4" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ;
+    ex:Activity_relatedOutcomes ex:outcome_RA83, ex:outcome_RA109, ex:outcome_RA113, ex:outcome_RA114 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:activity_trabajoFinalDocumentacion_extraordinaria a ex:Activity ;
+    ex:Activity_name "Trabajo final: documentación" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "5" ;
+    ex:Activity_relatedCompetencies ex:competence_CT6, ex:competence_CC4, ex:competence_CE1 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+
+ex:activity_defensaOralPractica_extraordinaria a ex:Activity ;
+    ex:Activity_name "Defensa oral de la práctica" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:05" ;
+    ex:Activity_weight "5%" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedCompetencies ex:competence_CC1, ex:competence_CC4, ex:competence_CE1, ex:competence_CT6 ;
+    ex:Activity_relatedTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7, ex:topic_tema8 . #Example, needs proper linking
+
+ex:evaluation_extraordinaria ex:Evaluation_activities
+    ex:activity_examenExtraordinario, ex:activity_trabajoFinalDocumentacion_extraordinaria, ex:activity_defensaOralPractica_extraordinaria .
+
+ex:resource_softwareQualityAssurance_laporte a ex:Resource ;
+    ex:Resource_name "Software Quality Assurance BibliografíaSoftware Quality Assurance. Claude Y.\nLaporte, Alain April\n.ISBN: 978-1-118-50182-5 January 2018\nWiley-IEEE Computer Society Press" .
+
+ex:resource_softwareQualityConceptsPractice_galin a ex:Resource ;
+    ex:Resource_name "Software Quality: Concepts and\nPracticeBibliografíaSoftware Quality: Concepts and Practice.<br\n/>\nDaniel Galin. ISBN: 978-1-119-13452-7 May\n2018 Wiley-IEEE Computer Society Press" .
+
+ex:resource_sevvocab a ex:Resource ;
+    ex:Resource_name "Sevocab Recursos webhttps://pascal.computer.org/sev_display/index\n.action<br/>\nVocabulario autorizado de términos de\nIngeniería del Software" .
+
+ex:resource_delAseguramientoGestionCalidad_hoyle a ex:Resource ;
+    ex:Resource_name "\"Del aseguramiento a la gestión de la\ncalidad: El enfoque basado en\nprocesos\".  David Hoyle, John\nThompson. AENORBibliografía Bibliografía específica 1" .
+
+ex:resource_totalQualityManagement_besterfield a ex:Resource ;
+    ex:Resource_name "\"Total Quality Management\".  Dale H.\nBesterfield, Carol Besterfield-Michna,\nGlen H. Besterfield, Mary Besterfield-\nSacre. Prentice HallBibliografía Bibliografía específica 4" .
+
+ex:resource_medicionGestionIngenieriaSoftware_dolado a ex:Resource ;
+    ex:Resource_name "\"Medición para la Gestión en la\nIngeniería del Software\". José J.\nDolado, Luís Fernández. Ed Ra-Ma.Bibliografía Bibliografía Básica 3" .
+
+ex:resource_aula a ex:Resource ;
+    ex:Resource_name "Aula EquipamientoAula de la ETSISI con cañón de luz\nconectado a PC en la mesa del profesor y\nsistema de audio inalámbrico. Pizarra\nclásica." .
+
+ex:resource_moodle a ex:Resource ;
+    ex:Resource_name "Plataforma de enseñanza MOODLE Recursos webInformación general, documentación,\nactividades, información complementaria,\

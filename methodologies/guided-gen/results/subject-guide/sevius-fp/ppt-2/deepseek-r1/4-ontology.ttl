@@ -1,0 +1,78 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class definitions
+onto:Subject a owl:Class ;
+    rdfs:label "Subject" .
+
+onto:Character a owl:Class ;
+    rdfs:label "Character" .
+
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character ;
+    rdfs:label "MandatoryCharacter" .
+
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character ;
+    rdfs:label "OptionalCharacter" .
+
+onto:StudyPlan a owl:Class ;
+    rdfs:label "StudyPlan" .
+
+onto:School a owl:Class ;
+    rdfs:label "School" .
+
+onto:University a owl:Class ;
+    rdfs:label "University" .
+
+onto:Professor a owl:Class ;
+    rdfs:label "Professor" .
+
+onto:Competence a owl:Class ;
+    rdfs:label "Competence" .
+
+onto:Outcome a owl:Class ;
+    rdfs:label "Outcome" .
+
+onto:Evaluation a owl:Class ;
+    rdfs:label "Evaluation" .
+
+onto:Activity a owl:Class ;
+    rdfs:label "Activity" .
+
+onto:Topic a owl:Class ;
+    rdfs:label "Topic" .
+
+onto:Resource a owl:Class ;
+    rdfs:label "Resource" .
+
+onto:RecommendedPreviousSubject a owl:Class ;
+    rdfs:label "RecommendedPreviousSubject" .
+
+onto:RecommendedPreviousKnowledge a owl:Class ;
+    rdfs:label "RecommendedPreviousKnowledge" .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:rang

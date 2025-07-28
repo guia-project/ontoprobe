@@ -1,0 +1,1 @@
+{"error": "at line 1 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"b''^b'urtle\\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-'...\""}

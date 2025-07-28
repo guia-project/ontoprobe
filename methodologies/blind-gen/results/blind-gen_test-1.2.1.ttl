@@ -1,0 +1,584 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uni: <http://example.org/ontology/university#> .
+
+<http://example.org/resource/subject/615000258> a uni:Subject ;
+    uni:subjectCode "615000258" ;
+    uni:subjectName "Gestion De Proyectos Y Del Riesgo" ;
+    uni:hasCredits "6 ECTS" ;
+    uni:hasCharacter "Obligatoria" ;
+    uni:inCourse "Cuarto curso" ;
+    uni:inSemester "Séptimo semestre" ;
+    uni:taughtInPeriod "Septiembre-Enero" ;
+    uni:taughtInLanguage "Castellano" ;
+    uni:belongsToDegree <http://example.org/resource/degree/61IW> ;
+    uni:offeredByDepartment <http://example.org/resource/department/61> ;
+    uni:inAcademicYear <http://example.org/resource/academicYear/2024-25> ;
+    uni:hasProfessor <http://example.org/resource/professor/aldoGordilloMendez> ,
+        <http://example.org/resource/professor/manuelOttaviano> ,
+        <http://example.org/resource/professor/javierSerranoRomero> ;
+    uni:recommendsPreviousSubject <http://example.org/resource/subject/ingenieriaDeRequisitosYModelado> ,
+        <http://example.org/resource/subject/ingenieriaDelProcesoSoftwareYConstruccion> ,
+        <http://example.org/resource/subject/aspectosLegalesYProfesionales> ,
+        <http://example.org/resource/subject/fundamentosDeEconomiaYEmpresa> ,
+        <http://example.org/resource/subject/fundamentosDeIngenieriaDelSoftware> ;
+    uni:hasCompetency <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CC3> ,
+        <http://example.org/resource/competency/CE6> ,
+        <http://example.org/resource/competency/CT11> ,
+        <http://example.org/resource/competency/CT5> ;
+    uni:hasLearningOutcome <http://example.org/resource/learningOutcome/RA112> ,
+        <http://example.org/resource/learningOutcome/RA116> ,
+        <http://example.org/resource/learningOutcome/RA111> ,
+        <http://example.org/resource/learningOutcome/RA118> ;
+    uni:hasSyllabusTopic <http://example.org/resource/syllabusTopic/1> ,
+        <http://example.org/resource/syllabusTopic/2> ;
+    uni:hasActivity <http://example.org/resource/activity/presentacionAsignatura_Sem1> ,
+        <http://example.org/resource/activity/tema1_Sem1> ,
+        <http://example.org/resource/activity/tema2_Sem1> ,
+        <http://example.org/resource/activity/tema3_Sem2> ,
+        <http://example.org/resource/activity/presentacionPractica1_formacionGrupos_Sem2> ,
+        <http://example.org/resource/activity/tema4_Sem3> ,
+        <http://example.org/resource/activity/practica1_Sem3> ,
+        <http://example.org/resource/activity/tema4_Sem4_PR> ,
+        <http://example.org/resource/activity/practica1_Sem4> ,
+        <http://example.org/resource/activity/tema5_Sem5> ,
+        <http://example.org/resource/activity/practica1_Sem5> ,
+        <http://example.org/resource/activity/tema5_Sem6_PR> ,
+        <http://example.org/resource/activity/practica1_Sem6> ,
+        <http://example.org/resource/activity/tema6_Sem7> ,
+        <http://example.org/resource/activity/practica1_Sem7> ,
+        <http://example.org/resource/activity/tema7_Sem8> ,
+        <http://example.org/resource/activity/practica1_Sem8> ,
+        <http://example.org/resource/activity/tema8_Sem9> ,
+        <http://example.org/resource/activity/practica1_Sem9> ,
+        <http://example.org/resource/activity/tema9_Sem10> ,
+        <http://example.org/resource/activity/practica1_Sem10> ,
+        <http://example.org/resource/activity/tema9_Sem11_PR> ,
+        <http://example.org/resource/activity/finalizacionPractica1_Sem11> ,
+        <http://example.org/resource/activity/ejercicioGestionTradicional_Sem11> ,
+        <http://example.org/resource/activity/practica1_evaluacion_Sem11> ,
+        <http://example.org/resource/activity/tema10_Sem12> ,
+        <http://example.org/resource/activity/presentacionPractica2_Sem12> ,
+        <http://example.org/resource/activity/tema10_Sem13_PR> ,
+        <http://example.org/resource/activity/practica2_Sem13> ,
+        <http://example.org/resource/activity/resolucionEjercicios_Sem14_PR> ,
+        <http://example.org/resource/activity/practica2_Sem14> ,
+        <http://example.org/resource/activity/practica2_Sem15> ,
+        <http://example.org/resource/activity/finalizacionPractica2_Sem15> ,
+        <http://example.org/resource/activity/ejercicioGestionAgiles_Sem15> ,
+        <http://example.org/resource/activity/practica2_evaluacion_Sem15> ,
+        <http://example.org/resource/activity/examenFinalOrdinaria_Sem17> ;
+    uni:hasEvaluation <http://example.org/resource/evaluation/ejercicioGestionTradicional_Sem11_eval> ,
+        <http://example.org/resource/evaluation/practica1_Sem11_eval> ,
+        <http://example.org/resource/evaluation/ejercicioGestionAgiles_Sem15_eval> ,
+        <http://example.org/resource/evaluation/practica2_Sem15_eval> ,
+        <http://example.org/resource/evaluation/examenFinalOrdinaria_Sem17_eval> ,
+        <http://example.org/resource/evaluation/examenExtraordinaria_eval> ;
+   .
+
+<http://example.org/resource/degree/61IW> a uni:Degree ;
+    uni:degreeCode "61IW" ;
+    uni:degreeName "Grado En Ingenieria Del Software" ;
+    uni:offeredByDepartment <http://example.org/resource/department/61> ;
+    uni:partOfAcademicYear <http://example.org/resource/academicYear/2024-25> .
+
+<http://example.org/resource/department/61> a uni:Department ;
+    uni:departmentCode "61" ;
+    uni:departmentName "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .
+
+<http://example.org/resource/academicYear/2024-25> a uni:AcademicYear ;
+    uni:academicYearValue "2024-25" .
+
+<http://example.org/resource/semester/primerSemestre> a uni:Semester ;
+    uni:semesterValue "Primer semestre" .
+
+<http://example.org/resource/professor/aldoGordilloMendez> a uni:Professor ;
+    uni:professorName "Aldo Gordillo Mendez" ;
+    uni:professorOffice "1219" ;
+    uni:professorEmail "a.gordillo@upm.es" ;
+    uni:professorTutorialHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+<http://example.org/resource/professor/manuelOttaviano> a uni:Professor ;
+    uni:professorName "Manuel Ottaviano" ;
+    uni:professorOffice "1212" ;
+    uni:professorEmail "manuel.ottaviano@upm.es" ;
+    uni:professorTutorialHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+<http://example.org/resource/professor/javierSerranoRomero> a uni:Professor ;
+    uni:professorName "Javier Serrano Romero" ;
+    uni:professorOffice "4219" ;
+    uni:professorEmail "javier.serrano@upm.es" ;
+    uni:professorTutorialHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+<http://example.org/resource/subject/ingenieriaDeRequisitosYModelado> a uni:Subject ;
+    uni:subjectName "Ingenieria De Requisitos Y Modelado" .
+
+<http://example.org/resource/subject/ingenieriaDelProcesoSoftwareYConstruccion> a uni:Subject ;
+    uni:subjectName "Ingenieria Del Proceso Software Y Construccion" .
+
+<http://example.org/resource/subject/aspectosLegalesYProfesionales> a uni:Subject ;
+    uni:subjectName "Aspectos Legales Y Profesionales" .
+
+<http://example.org/resource/subject/fundamentosDeEconomiaYEmpresa> a uni:Subject ;
+    uni:subjectName "Fundamentos De Economia Y Empresa" .
+
+<http://example.org/resource/subject/fundamentosDeIngenieriaDelSoftware> a uni:Subject ;
+    uni:subjectName "Fundamentos De Ingenieria Del Software" .
+
+<http://example.org/resource/competency/CC2> a uni:Competency ;
+    uni:competencyCode "CC2" ;
+    uni:competencyDescription "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+<http://example.org/resource/competency/CC3> a uni:Competency ;
+    uni:competencyCode "CC3" ;
+    uni:competencyDescription "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+<http://example.org/resource/competency/CE6> a uni:Competency ;
+    uni:competencyCode "CE6" ;
+    uni:competencyDescription "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+<http://example.org/resource/competency/CT11> a uni:Competency ;
+    uni:competencyCode "CT11" ;
+    uni:competencyDescription "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+<http://example.org/resource/competency/CT5> a uni:Competency ;
+    uni:competencyCode "CT5" ;
+    uni:competencyDescription "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+<http://example.org/resource/learningOutcome/RA112> a uni:LearningOutcome ;
+    uni:learningOutcomeCode "RA112" ;
+    uni:learningOutcomeDescription "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+<http://example.org/resource/learningOutcome/RA116> a uni:LearningOutcome ;
+    uni:learningOutcomeCode "RA116" ;
+    uni:learningOutcomeDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+<http://example.org/resource/learningOutcome/RA111> a uni:LearningOutcome ;
+    uni:learningOutcomeCode "RA111" ;
+    uni:learningOutcomeDescription "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+<http://example.org/resource/learningOutcome/RA118> a uni:LearningOutcome ;
+    uni:learningOutcomeCode "RA118" ;
+    uni:learningOutcomeDescription "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+<http://example.org/resource/syllabusTopic/1> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1" ;
+    uni:syllabusTopicTitle "Fundamentos de la gestión de proyectos." ;
+    uni:hasSubTopic <http://example.org/resource/syllabusTopic/1.1> ,
+        <http://example.org/resource/syllabusTopic/1.2> ,
+        <http://example.org/resource/syllabusTopic/1.3> ,
+        <http://example.org/resource/syllabusTopic/1.4> ,
+        <http://example.org/resource/syllabusTopic/1.5> ,
+        <http://example.org/resource/syllabusTopic/1.6> ,
+        <http://example.org/resource/syllabusTopic/1.7> .
+
+<http://example.org/resource/syllabusTopic/1.1> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.1" ;
+    uni:syllabusTopicTitle "Tema 1: Introducción a la gestión de proyectos." .
+
+<http://example.org/resource/syllabusTopic/1.2> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.2" ;
+    uni:syllabusTopicTitle "Tema 2: Procesos de la dirección de proyectos." .
+
+<http://example.org/resource/syllabusTopic/1.3> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.3" ;
+    uni:syllabusTopicTitle "Tema 3: Gestión del alcance." .
+
+<http://example.org/resource/syllabusTopic/1.4> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.4" ;
+    uni:syllabusTopicTitle "Tema 4: Planificación temporal de proyectos." .
+
+<http://example.org/resource/syllabusTopic/1.5> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.5" ;
+    uni:syllabusTopicTitle "Tema 5: Estimación en proyectos de software." .
+
+<http://example.org/resource/syllabusTopic/1.6> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.6" ;
+    uni:syllabusTopicTitle "Tema 6: Gestión de riesgos." .
+
+<http://example.org/resource/syllabusTopic/1.7> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "1.7" ;
+    uni:syllabusTopicTitle "Tema 7: Gestión de costes." .
+
+<http://example.org/resource/syllabusTopic/2> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "2" ;
+    uni:syllabusTopicTitle "Gestión de proyectos con metodologías ágiles." ;
+    uni:hasSubTopic <http://example.org/resource/syllabusTopic/2.1> ,
+        <http://example.org/resource/syllabusTopic/2.2> ,
+        <http://example.org/resource/syllabusTopic/2.3> .
+
+<http://example.org/resource/syllabusTopic/2.1> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "2.1" ;
+    uni:syllabusTopicTitle "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+<http://example.org/resource/syllabusTopic/2.2> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "2.2" ;
+    uni:syllabusTopicTitle "Tema 9: Prácticas ágiles." .
+
+<http://example.org/resource/syllabusTopic/2.3> a uni:SyllabusTopic ;
+    uni:syllabusTopicNumber "2.3" ;
+    uni:syllabusTopicTitle "Tema 10: Scrum." .
+
+<http://example.org/resource/activity/presentacionAsignatura_Sem1> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "1" ;
+    uni:activityDuration "00:30" ;
+    uni:activityDescription "Presentación de la asignatura" .
+
+<http://example.org/resource/activity/tema1_Sem1> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "1" ;
+    uni:activityDuration "01:30" ;
+    uni:activityDescription "Tema 1: Introducción a la gestión de proyectos." .
+
+<http://example.org/resource/activity/tema2_Sem1> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "1" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 2: Procesos de la dirección de proyectos." .
+
+<http://example.org/resource/activity/tema3_Sem2> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "2" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 3: Gestión del alcance." .
+
+<http://example.org/resource/activity/presentacionPractica1_formacionGrupos_Sem2> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "2" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Presentación Práctica 1 y formación de grupos de prácticas." .
+
+<http://example.org/resource/activity/tema4_Sem3> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "3" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 4: Planificación temporal de proyectos." .
+
+<http://example.org/resource/activity/practica1_Sem3> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "3" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema4_Sem4_PR> a uni:Activity ;
+    uni:activityType "Clase de Problemas" ;
+    uni:activityWeek "4" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 4: Planificación temporal de proyectos." .
+
+<http://example.org/resource/activity/practica1_Sem4> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "4" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema5_Sem5> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "5" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 5: Estimación en proyectos de software." .
+
+<http://example.org/resource/activity/practica1_Sem5> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "5" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema5_Sem6_PR> a uni:Activity ;
+    uni:activityType "Clase de Problemas" ;
+    uni:activityWeek "6" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 5: Estimación en proyectos de software." .
+
+<http://example.org/resource/activity/practica1_Sem6> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "6" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema6_Sem7> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "7" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 6: Gestión de riesgos." .
+
+<http://example.org/resource/activity/practica1_Sem7> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "7" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema7_Sem8> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "8" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 7: Gestión de costes." .
+
+<http://example.org/resource/activity/practica1_Sem8> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "8" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema8_Sem9> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "9" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+<http://example.org/resource/activity/practica1_Sem9> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "9" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema9_Sem10> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "10" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 9: Prácticas ágiles." .
+
+<http://example.org/resource/activity/practica1_Sem10> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "10" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 1." .
+
+<http://example.org/resource/activity/tema9_Sem11_PR> a uni:Activity ;
+    uni:activityType "Clase de Problemas" ;
+    uni:activityWeek "11" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 9: Prácticas ágiles." .
+
+<http://example.org/resource/activity/finalizacionPractica1_Sem11> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "11" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Finalización de la Práctica 1." .
+
+<http://example.org/resource/activity/ejercicioGestionTradicional_Sem11> a uni:Activity ;
+    uni:activityType "Trabajo Individual" ;
+    uni:activityWeek "11" ;
+    uni:activityDuration "00:00" ;
+    uni:activityDescription "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    uni:activityLearningOutcome <http://example.org/resource/learningOutcome/RA111> ,
+        <http://example.org/resource/learningOutcome/RA112> ,
+        <http://example.org/resource/learningOutcome/RA116> .
+
+<http://example.org/resource/activity/practica1_evaluacion_Sem11> a uni:Activity ;
+    uni:activityType "Trabajo en Grupo" ;
+    uni:activityWeek "11" ;
+    uni:activityDuration "00:00" ;
+    uni:activityDescription "Práctica 1." ;
+    uni:activityLearningOutcome <http://example.org/resource/learningOutcome/RA111> ,
+        <http://example.org/resource/learningOutcome/RA112> ,
+        <http://example.org/resource/learningOutcome/RA116> ,
+        <http://example.org/resource/learningOutcome/RA118> .
+
+<http://example.org/resource/activity/tema10_Sem12> a uni:Activity ;
+    uni:activityType "Lección Magistral" ;
+    uni:activityWeek "12" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 10: Scrum." .
+
+<http://example.org/resource/activity/presentacionPractica2_Sem12> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "12" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Presentación Práctica 2." .
+
+<http://example.org/resource/activity/tema10_Sem13_PR> a uni:Activity ;
+    uni:activityType "Clase de Problemas" ;
+    uni:activityWeek "13" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Tema 10: Scrum." .
+
+<http://example.org/resource/activity/practica2_Sem13> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "13" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 2." .
+
+<http://example.org/resource/activity/resolucionEjercicios_Sem14_PR> a uni:Activity ;
+    uni:activityType "Clase de Problemas" ;
+    uni:activityWeek "14" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Resolución de ejercicios." .
+
+<http://example.org/resource/activity/practica2_Sem14> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "14" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 2." .
+
+<http://example.org/resource/activity/practica2_Sem15> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "15" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Práctica 2." .
+
+<http://example.org/resource/activity/finalizacionPractica2_Sem15> a uni:Activity ;
+    uni:activityType "Prácticas de Laboratorio" ;
+    uni:activityWeek "15" ;
+    uni:activityDuration "02:00" ;
+    uni:activityDescription "Finalización de la Práctica 2." .
+
+<http://example.org/resource/activity/ejercicioGestionAgiles_Sem15> a uni:Activity ;
+    uni:activityType "Trabajo Individual" ;
+    uni:activityWeek "15" ;
+    uni:activityDuration "00:00" ;
+    uni:activityDescription "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    uni:activityLearningOutcome <http://example.org/resource/learningOutcome/RA112> ,
+        <http://example.org/resource/learningOutcome/RA116> .
+
+<http://example.org/resource/activity/practica2_evaluacion_Sem15> a uni:Activity ;
+    uni:activityType "Trabajo en Grupo" ;
+    uni:activityWeek "15" ;
+    uni:activityDuration "00:00" ;
+    uni:activityDescription "Práctica 2." ;
+    uni:activityLearningOutcome <http://example.org/resource/learningOutcome/RA112> ,
+        <http://example.org/resource/learningOutcome/RA116> ,
+        <http://example.org/resource/learningOutcome/RA118> .
+
+<http://example.org/resource/activity/examenFinalOrdinaria_Sem17> a uni:Activity ;
+    uni:activityType "Examen Escrito" ;
+    uni:activityWeek "17" ;
+    uni:activityDuration "02:30" ;
+    uni:activityDescription "Examen final (Convocatoria ordinaria)." ;
+    uni:activityLearningOutcome <http://example.org/resource/learningOutcome/RA111> ,
+        <http://example.org/resource/learningOutcome/RA112> ,
+        <http://example.org/resource/learningOutcome/RA116> ,
+        <http://example.org/resource/learningOutcome/RA118> .
+
+<http://example.org/resource/evaluation/ejercicioGestionTradicional_Sem11_eval> a uni:Evaluation ;
+    uni:evaluationType "Evaluación Progresiva" ;
+    uni:evaluationDescription "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    uni:evaluationWeight "10%" ;
+    uni:evaluationMinimumGrade "/" ;
+    uni:evaluationCompetencies <http://example.org/resource/competency/CT5> ,
+        <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CE6> .
+
+<http://example.org/resource/evaluation/practica1_Sem11_eval> a uni:Evaluation ;
+    uni:evaluationType "Evaluación Progresiva" ;
+    uni:evaluationDescription "Práctica 1." ;
+    uni:evaluationWeight "23%" ;
+    uni:evaluationMinimumGrade "/" ;
+    uni:evaluationCompetencies <http://example.org/resource/competency/CT5> ,
+        <http://example.org/resource/competency/CT11> ,
+        <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CC3> ,
+        <http://example.org/resource/competency/CE6> .
+
+<http://example.org/resource/evaluation/ejercicioGestionAgiles_Sem15_eval> a uni:Evaluation ;
+    uni:evaluationType "Evaluación Progresiva" ;
+    uni:evaluationDescription "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    uni:evaluationWeight "5%" ;
+    uni:evaluationMinimumGrade "/" ;
+    uni:evaluationCompetencies <http://example.org/resource/competency/CT5> ,
+        <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CE6> .
+
+<http://example.org/resource/evaluation/practica2_Sem15_eval> a uni:Evaluation ;
+    uni:evaluationType "Evaluación Progresiva" ;
+    uni:evaluationDescription "Práctica 2." ;
+    uni:evaluationWeight "12%" ;
+    uni:evaluationMinimumGrade "/" ;
+    uni:evaluationCompetencies <http://example.org/resource/competency/CT5> ,
+        <http://example.org/resource/competency/CT11> ,
+        <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CC3> ,
+        <http://example.org/resource/competency/CE6> .
+
+<http://example.org/resource/evaluation/examenFinalOrdinaria_Sem17_eval> a uni:Evaluation ;
+    uni:evaluationType "Evaluación Global" ;
+    uni:evaluationDescription "Examen final (Convocatoria ordinaria)." ;
+    uni:evaluationWeight "50%" ;
+    uni:evaluationMinimumGrade "4.5 / 10" ;
+    uni:evaluationCompetencies <http://example.org/resource/competency/CT5> ,
+        <http://example.org/resource/competency/CT11> ,
+        <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CC3> ,
+        <http://example.org/resource/competency/CE6> .
+
+<http://example.org/resource/evaluation/examenExtraordinaria_eval> a uni:Evaluation ;
+    uni:evaluationType "Evaluación convocatoria extraordinaria" ;
+    uni:evaluationDescription "Examen final (Convocatoria extraordinaria)." ;
+    uni:evaluationWeight "100%" ;
+    uni:evaluationMinimumGrade "5 / 10" ;
+    uni:evaluationCompetencies <http://example.org/resource/competency/CT5> ,
+        <http://example.org/resource/competency/CT11> ,
+        <http://example.org/resource/competency/CC2> ,
+        <http://example.org/resource/competency/CC3> ,
+        <http://example.org/resource/competency/CE6> .
+
+uni:Subject rdfs:label "Subject" .
+uni:subjectCode rdfs:label "Subject Code" .
+uni:subjectName rdfs:label "Subject Name" .
+uni:hasCredits rdfs:label "Has Credits" .
+uni:hasCharacter rdfs:label "Has Character" .
+uni:inCourse rdfs:label "In Course" .
+uni:inSemester rdfs:label "In Semester" .
+uni:taughtInPeriod rdfs:label "Taught In Period" .
+uni:taughtInLanguage rdfs:label "Taught In Language" .
+uni:belongsToDegree rdfs:label "Belongs To Degree" .
+uni:offeredByDepartment rdfs:label "Offered By Department" .
+uni:inAcademicYear rdfs:label "In Academic Year" .
+uni:hasProfessor rdfs:label "Has Professor" .
+uni:recommendsPreviousSubject rdfs:label "Recommends Previous Subject" .
+uni:hasCompetency rdfs:label "Has Competency" .
+uni:hasLearningOutcome rdfs:label "Has Learning Outcome" .
+uni:hasSyllabusTopic rdfs:label "Has Syllabus Topic" .
+uni:hasActivity rdfs:label "Has Activity" .
+uni:hasEvaluation rdfs:label "Has Evaluation" .
+uni:recommendsSubject rdfs:label "Recommends Subject" .
+uni:hasSubTopic rdfs:label "Has Sub Topic" .
+uni:activityLearningOutcome rdfs:label "Activity Learning Outcome" .
+uni:evaluationCompetencies rdfs:label "Evaluation Competencies" .
+
+uni:Degree rdfs:label "Degree" .
+uni:degreeCode rdfs:label "Degree Code" .
+uni:degreeName rdfs:label "Degree Name" .
+uni:partOfAcademicYear rdfs:label "Part Of Academic Year" .
+
+uni:Department rdfs:label "Department" .
+uni:departmentCode rdfs:label "Department Code" .
+uni:departmentName rdfs:label "Department Name" .
+
+uni:AcademicYear rdfs:label "Academic Year" .
+uni:academicYearValue rdfs:label "Academic Year Value" .
+
+uni:Semester rdfs:label "Semester" .
+uni:semesterValue rdfs:label "Semester Value" .
+
+uni:Professor rdfs:label "Professor" .
+uni:professorName rdfs:label "Professor Name" .
+uni:professorOffice rdfs:label "Professor Office" .
+uni:professorEmail rdfs:label "Professor Email" .
+uni:professorTutorialHours rdfs:label "Professor Tutorial Hours" .
+
+uni:Competency rdfs:label "Competency" .
+uni:competencyCode rdfs:label "Competency Code" .
+uni:competencyDescription rdfs:label "Competency Description" .
+
+uni:LearningOutcome rdfs:label "Learning Outcome" .
+uni:learningOutcomeCode rdfs:label "Learning Outcome Code" .
+uni:learningOutcomeDescription rdfs:label "Learning Outcome Description" .
+
+uni:SyllabusTopic rdfs:label "Syllabus Topic" .
+uni:syllabusTopicNumber rdfs:label "Syllabus Topic Number" .
+uni:syllabusTopicTitle rdfs:label "Syllabus Topic Title" .
+
+uni:Activity rdfs:label "Activity" .
+uni:activityType rdfs:label "Activity Type" .
+uni:activityWeek rdfs:label "Activity Week" .
+uni:activityDuration rdfs:label "Activity Duration" .
+uni:activityDescription rdfs:label "Activity Description" .
+
+uni:Evaluation rdfs:label "Evaluation" .
+uni:evaluationType rdfs:label "Evaluation Type" .
+uni:evaluationDescription rdfs:label "Evaluation Description" .
+uni:evaluationWeight rdfs:label "Evaluation Weight" .
+uni:evaluationMinimumGrade rdfs:label "Evaluation Minimum Grade" .

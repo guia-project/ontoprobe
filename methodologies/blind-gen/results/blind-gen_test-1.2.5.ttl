@@ -1,0 +1,755 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gpr: <http://example.org/ontology/GestionDeProyectosYDelRiesgo#> .
+
+gpr:Course a owl:Class ;
+    rdfs:label "Course" ;
+    rdfs:comment "A course of study." .
+
+gpr:DegreeProgram a owl:Class ;
+    rdfs:label "Degree Program" ;
+    rdfs:comment "An academic degree program." .
+
+gpr:Department a owl:Class ;
+    rdfs:label "Department" ;
+    rdfs:comment "An academic department or school." .
+
+gpr:AcademicYear a owl:Class ;
+    rdfs:label "Academic Year" ;
+    rdfs:comment "The academic year." .
+
+gpr:Semester a owl:Class ;
+    rdfs:label "Semester" ;
+    rdfs:comment "A semester within an academic year." .
+
+gpr:Professor a owl:Class ;
+    rdfs:label "Professor" ;
+    rdfs:comment "A teaching professor." .
+
+gpr:Competency a owl:Class ;
+    rdfs:label "Competency" ;
+    rdfs:comment "A skill or ability." .
+
+gpr:LearningOutcome a owl:Class ;
+    rdfs:label "Learning Outcome" ;
+    rdfs:comment "Expected learning outcome for students." .
+
+gpr:PreviousCourse a owl:Class ;
+    rdfs:label "Previous Course" ;
+    rdfs:comment "A recommended previous course." .
+
+gpr:Topic a owl:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "A topic covered in the course." .
+
+gpr:Activity a owl:Class ;
+    rdfs:label "Activity" ;
+    rdfs:comment "An activity in the course cronogram." .
+
+gpr:EvaluationActivity a owl:Class ;
+    rdfs:label "Evaluation Activity" ;
+    rdfs:comment "An activity for evaluating student performance." .
+
+gpr:DidacticResource a owl:Class ;
+    rdfs:label "Didactic Resource" ;
+    rdfs:comment "A resource used for teaching." .
+
+gpr:hasCourseCode a owl:DatatypeProperty ;
+    rdfs:label "has course code" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasCourseName a owl:DatatypeProperty ;
+    rdfs:label "has course name" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasCredits a owl:DatatypeProperty ;
+    rdfs:label "has credits" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasCharacter a owl:DatatypeProperty ;
+    rdfs:label "has character" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasCourseYear a owl:DatatypeProperty ;
+    rdfs:label "has course year" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasSemesterNumber a owl:DatatypeProperty ;
+    rdfs:label "has semester number" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasPeriodOfImpartment a owl:DatatypeProperty ;
+    rdfs:label "has period of impartment" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasLanguageOfImpartment a owl:DatatypeProperty ;
+    rdfs:label "has language of impartment" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range rdfs:Literal .
+
+gpr:isPartOfDegreeProgram a owl:ObjectProperty ;
+    rdfs:label "is part of degree program" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:DegreeProgram .
+
+gpr:isOfferedByDepartment a owl:ObjectProperty ;
+    rdfs:label "is offered by department" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:Department .
+
+gpr:isForAcademicYear a owl:ObjectProperty ;
+    rdfs:label "is for academic year" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:AcademicYear .
+
+gpr:teachesCourse a owl:ObjectProperty ;
+    rdfs:label "teaches course" ;
+    rdfs:domain gpr:Professor ;
+    rdfs:range gpr:Course .
+
+gpr:hasProfessor a owl:ObjectProperty ;
+    rdfs:label "has professor" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:Professor .
+
+gpr:recommendsPreviousCourse a owl:ObjectProperty ;
+    rdfs:label "recommends previous course" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:PreviousCourse .
+
+gpr:hasCompetency a owl:ObjectProperty ;
+    rdfs:label "has competency" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:Competency .
+
+gpr:hasLearningOutcome a owl:ObjectProperty ;
+    rdfs:label "has learning outcome" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:LearningOutcome .
+
+gpr:hasTopic a owl:ObjectProperty ;
+    rdfs:label "has topic" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:Topic .
+
+gpr:hasChronogramActivity a owl:ObjectProperty ;
+    rdfs:label "has cronogram activity" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:Activity .
+
+gpr:hasEvaluationActivity a owl:ObjectProperty ;
+    rdfs:label "has evaluation activity" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:EvaluationActivity .
+
+gpr:usesDidacticResource a owl:ObjectProperty ;
+    rdfs:label "uses didactic resource" ;
+    rdfs:domain gpr:Course ;
+    rdfs:range gpr:DidacticResource .
+
+gpr:evaluatesCompetency a owl:ObjectProperty ;
+    rdfs:label "evaluates competency" ;
+    rdfs:domain gpr:EvaluationActivity ;
+    rdfs:range gpr:Competency .
+
+gpr:evaluatesLearningOutcome a owl:ObjectProperty ;
+    rdfs:label "evaluates learning outcome" ;
+    rdfs:domain gpr:EvaluationActivity ;
+    rdfs:range gpr:LearningOutcome .
+
+gpr:hasDegreeProgramCode a owl:DatatypeProperty ;
+    rdfs:label "has degree program code" ;
+    rdfs:domain gpr:DegreeProgram ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasDegreeProgramName a owl:DatatypeProperty ;
+    rdfs:label "has degree program name" ;
+    rdfs:domain gpr:DegreeProgram ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasDepartmentCode a owl:DatatypeProperty ;
+    rdfs:label "has department code" ;
+    rdfs:domain gpr:Department ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasDepartmentName a owl:DatatypeProperty ;
+    rdfs:label "has department name" ;
+    rdfs:domain gpr:Department ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasAcademicYearValue a owl:DatatypeProperty ;
+    rdfs:label "has academic year value" ;
+    rdfs:domain gpr:AcademicYear ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasSemesterValue a owl:DatatypeProperty ;
+    rdfs:label "has semester value" ;
+    rdfs:domain gpr:Semester ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasProfessorName a owl:DatatypeProperty ;
+    rdfs:label "has professor name" ;
+    rdfs:domain gpr:Professor ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasOffice a owl:DatatypeProperty ;
+    rdfs:label "has office" ;
+    rdfs:domain gpr:Professor ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasEmail a owl:DatatypeProperty ;
+    rdfs:label "has email" ;
+    rdfs:domain gpr:Professor ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasTutoringHours a owl:DatatypeProperty ;
+    rdfs:label "has tutoring hours" ;
+    rdfs:domain gpr:Professor ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasCompetencyCode a owl:DatatypeProperty ;
+    rdfs:label "has competency code" ;
+    rdfs:domain gpr:Competency ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasCompetencyDescription a owl:DatatypeProperty ;
+    rdfs:label "has competency description" ;
+    rdfs:domain gpr:Competency ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasLearningOutcomeCode a owl:DatatypeProperty ;
+    rdfs:label "has learning outcome code" ;
+    rdfs:domain gpr:LearningOutcome ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasLearningOutcomeDescription a owl:DatatypeProperty ;
+    rdfs:label "has learning outcome description" ;
+    rdfs:domain gpr:LearningOutcome ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasPreviousCourseName a owl:DatatypeProperty ;
+    rdfs:label "has previous course name" ;
+    rdfs:domain gpr:PreviousCourse ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasTopicNumber a owl:DatatypeProperty ;
+    rdfs:label "has topic number" ;
+    rdfs:domain gpr:Topic ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasTopicName a owl:DatatypeProperty ;
+    rdfs:label "has topic name" ;
+    rdfs:domain gpr:Topic ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasActivityType a owl:DatatypeProperty ;
+    rdfs:label "has activity type" ;
+    rdfs:domain gpr:Activity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasActivityDescription a owl:DatatypeProperty ;
+    rdfs:label "has activity description" ;
+    rdfs:domain gpr:Activity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasActivityDuration a owl:DatatypeProperty ;
+    rdfs:label "has activity duration" ;
+    rdfs:domain gpr:Activity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasEvaluationModality a owl:DatatypeProperty ;
+    rdfs:label "has evaluation modality" ;
+    rdfs:domain gpr:EvaluationActivity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasEvaluationType a owl:DatatypeProperty ;
+    rdfs:label "has evaluation type" ;
+    rdfs:domain gpr:EvaluationActivity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasEvaluationWeight a owl:DatatypeProperty ;
+    rdfs:label "has evaluation weight" ;
+    rdfs:domain gpr:EvaluationActivity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasMinimumGrade a owl:DatatypeProperty ;
+    rdfs:label "has minimum grade" ;
+    rdfs:domain gpr:EvaluationActivity ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasDidacticResourceName a owl:DatatypeProperty ;
+    rdfs:label "has didactic resource name" ;
+    rdfs:domain gpr:DidacticResource ;
+    rdfs:range rdfs:Literal .
+
+gpr:hasDidacticResourceType a owl:DatatypeProperty ;
+    rdfs:label "has didactic resource type" ;
+    rdfs:domain gpr:DidacticResource ;
+    rdfs:range rdfs:Literal .
+
+gpr:GestionDeProyectosYDelRiesgoCourse a gpr:Course ;
+    gpr:hasCourseCode "615000258" ;
+    gpr:hasCourseName "Gestion De Proyectos Y Del Riesgo" ;
+    gpr:hasCredits "6 ECTS" ;
+    gpr:hasCharacter "Obligatoria" ;
+    gpr:hasCourseYear "Cuarto curso" ;
+    gpr:hasSemesterNumber "Séptimo semestre" ;
+    gpr:hasPeriodOfImpartment "Septiembre-Enero" ;
+    gpr:hasLanguageOfImpartment "Castellano" ;
+    gpr:isPartOfDegreeProgram gpr:GradoEnIngenieriaDelSoftwareDegree ;
+    gpr:isOfferedByDepartment gpr:ETSISI_Department ;
+    gpr:isForAcademicYear gpr:AcademicYear_2024_25 .
+
+gpr:GradoEnIngenieriaDelSoftwareDegree a gpr:DegreeProgram ;
+    gpr:hasDegreeProgramCode "61IW" ;
+    gpr:hasDegreeProgramName "Grado En Ingenieria Del Software" .
+
+gpr:ETSISI_Department a gpr:Department ;
+    gpr:hasDepartmentCode "61" ;
+    gpr:hasDepartmentName "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .
+
+gpr:AcademicYear_2024_25 a gpr:AcademicYear ;
+    gpr:hasAcademicYearValue "2024-25" .
+
+gpr:PrimerSemestre a gpr:Semester ;
+    gpr:hasSemesterValue "Primer semestre" .
+
+gpr:AldoGordilloMendezProfessor a gpr:Professor ;
+    gpr:hasProfessorName "Aldo Gordillo Mendez" ;
+    gpr:hasOffice "1219" ;
+    gpr:hasEmail "a.gordillo@upm.es" ;
+    gpr:hasTutoringHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    gpr:teachesCourse gpr:GestionDeProyectosYDelRiesgoCourse .
+
+gpr:ManuelOttavianoProfessor a gpr:Professor ;
+    gpr:hasProfessorName "Manuel Ottaviano" ;
+    gpr:hasOffice "1212" ;
+    gpr:hasEmail "manuel.ottaviano@upm.es" ;
+    gpr:hasTutoringHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    gpr:teachesCourse gpr:GestionDeProyectosYDelRiesgoCourse .
+
+gpr:JavierSerranoRomeroProfessor a gpr:Professor ;
+    gpr:hasProfessorName "Javier Serrano Romero" ;
+    gpr:hasOffice "4219" ;
+    gpr:hasEmail "javier.serrano@upm.es" ;
+    gpr:hasTutoringHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    gpr:teachesCourse gpr:GestionDeProyectosYDelRiesgoCourse .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:hasProfessor gpr:AldoGordilloMendezProfessor, gpr:ManuelOttavianoProfessor, gpr:JavierSerranoRomeroProfessor .
+
+gpr:IngenieriaDeRequisitosYModeladoPreviousCourse a gpr:PreviousCourse ;
+    gpr:hasPreviousCourseName "Ingenieria De Requisitos Y Modelado" .
+
+gpr:IngenieriaDelProcesoSoftwareYConstruccionPreviousCourse a gpr:PreviousCourse ;
+    gpr:hasPreviousCourseName "Ingenieria Del Proceso Software Y Construccion" .
+
+gpr:AspectosLegalesYProfesionalesPreviousCourse a gpr:PreviousCourse ;
+    gpr:hasPreviousCourseName "Aspectos Legales Y Profesionales" .
+
+gpr:FundamentosDeEconomiaYEmpresaPreviousCourse a gpr:PreviousCourse ;
+    gpr:hasPreviousCourseName "Fundamentos De Economia Y Empresa" .
+
+gpr:FundamentosDeIngenieriaDelSoftwarePreviousCourse a gpr:PreviousCourse ;
+    gpr:hasPreviousCourseName "Fundamentos De Ingenieria Del Software" .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:recommendsPreviousCourse gpr:IngenieriaDeRequisitosYModeladoPreviousCourse, gpr:IngenieriaDelProcesoSoftwareYConstruccionPreviousCourse, gpr:AspectosLegalesYProfesionalesPreviousCourse, gpr:FundamentosDeEconomiaYEmpresaPreviousCourse, gpr:FundamentosDeIngenieriaDelSoftwarePreviousCourse .
+
+gpr:CC2_Competency a gpr:Competency ;
+    gpr:hasCompetencyCode "CC2" ;
+    gpr:hasCompetencyDescription "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+gpr:CC3_Competency a gpr:Competency ;
+    gpr:hasCompetencyCode "CC3" ;
+    gpr:hasCompetencyDescription "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+gpr:CE6_Competency a gpr:Competency ;
+    gpr:hasCompetencyCode "CE6" ;
+    gpr:hasCompetencyDescription "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+gpr:CT11_Competency a gpr:Competency ;
+    gpr:hasCompetencyCode "CT11" ;
+    gpr:hasCompetencyDescription "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+gpr:CT5_Competency a gpr:Competency ;
+    gpr:hasCompetencyCode "CT5" ;
+    gpr:hasCompetencyDescription "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:hasCompetency gpr:CC2_Competency, gpr:CC3_Competency, gpr:CE6_Competency, gpr:CT11_Competency, gpr:CT5_Competency .
+
+gpr:RA112_LearningOutcome a gpr:LearningOutcome ;
+    gpr:hasLearningOutcomeCode "RA112" ;
+    gpr:hasLearningOutcomeDescription "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+gpr:RA116_LearningOutcome a gpr:LearningOutcome ;
+    gpr:hasLearningOutcomeCode "RA116" ;
+    gpr:hasLearningOutcomeDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+gpr:RA111_LearningOutcome a gpr:LearningOutcome ;
+    gpr:hasLearningOutcomeCode "RA111" ;
+    gpr:hasLearningOutcomeDescription "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+gpr:RA118_LearningOutcome a gpr:LearningOutcome ;
+    gpr:hasLearningOutcomeCode "RA118" ;
+    gpr:hasLearningOutcomeDescription "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:hasLearningOutcome gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome, gpr:RA111_LearningOutcome, gpr:RA118_LearningOutcome .
+
+gpr:Topic1 a gpr:Topic ;
+    gpr:hasTopicNumber "1" ;
+    gpr:hasTopicName "Fundamentos de la gestión de proyectos." .
+
+gpr:Topic1_1 a gpr:Topic ;
+    gpr:hasTopicNumber "1.1" ;
+    gpr:hasTopicName "Tema 1: Introducción a la gestión de proyectos." .
+
+gpr:Topic1_2 a gpr:Topic ;
+    gpr:hasTopicNumber "1.2" ;
+    gpr:hasTopicName "Tema 2: Procesos de la dirección de proyectos." .
+
+gpr:Topic1_3 a gpr:Topic ;
+    gpr:hasTopicNumber "1.3" ;
+    gpr:hasTopicName "Tema 3: Gestión del alcance." .
+
+gpr:Topic1_4 a gpr:Topic ;
+    gpr:hasTopicNumber "1.4" ;
+    gpr:hasTopicName "Tema 4: Planificación temporal de proyectos." .
+
+gpr:Topic1_5 a gpr:Topic ;
+    gpr:hasTopicNumber "1.5" ;
+    gpr:hasTopicName "Tema 5: Estimación en proyectos de software." .
+
+gpr:Topic1_6 a gpr:Topic ;
+    gpr:hasTopicNumber "1.6" ;
+    gpr:hasTopicName "Tema 6: Gestión de riesgos." .
+
+gpr:Topic1_7 a gpr:Topic ;
+    gpr:hasTopicNumber "1.7" ;
+    gpr:hasTopicName "Tema 7: Gestión de costes." .
+
+gpr:Topic2 a gpr:Topic ;
+    gpr:hasTopicNumber "2" ;
+    gpr:hasTopicName "Gestión de proyectos con metodologías ágiles." .
+
+gpr:Topic2_1 a gpr:Topic ;
+    gpr:hasTopicNumber "2.1" ;
+    gpr:hasTopicName "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+gpr:Topic2_2 a gpr:Topic ;
+    gpr:hasTopicNumber "2.2" ;
+    gpr:hasTopicName "Tema 9: Prácticas ágiles." .
+
+gpr:Topic2_3 a gpr:Topic ;
+    gpr:hasTopicNumber "2.3" ;
+    gpr:hasTopicName "Tema 10: Scrum." .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:hasTopic gpr:Topic1, gpr:Topic1_1, gpr:Topic1_2, gpr:Topic1_3, gpr:Topic1_4, gpr:Topic1_5, gpr:Topic1_6, gpr:Topic1_7, gpr:Topic2, gpr:Topic2_1, gpr:Topic2_2, gpr:Topic2_3 .
+
+gpr:PresentacionAsignatura_ActivityWeek1 a gpr:Activity ;
+    gpr:hasActivityDescription "Presentación de la asignatura" ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "00:30" .
+
+gpr:Tema1_ActivityWeek1 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 1: Introducción a la gestión de proyectos." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "01:30" .
+
+gpr:Tema2_ActivityWeek1 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 2: Procesos de la dirección de proyectos." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema3_ActivityWeek2 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 3: Gestión del alcance." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1Presentacion_ActivityWeek2 a gpr:Activity ;
+    gpr:hasActivityDescription "Presentación Práctica 1 y formación de grupos de prácticas." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema4_ActivityWeek3 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 4: Planificación temporal de proyectos." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek3 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema4_Problemas_ActivityWeek4 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 4: Planificación temporal de proyectos." ;
+    gpr:hasActivityType "Clase de Problemas" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek4 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema5_ActivityWeek5 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 5: Estimación en proyectos de software." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek5 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema5_Problemas_ActivityWeek6 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 5: Estimación en proyectos de software." ;
+    gpr:hasActivityType "Clase de Problemas" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek6 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema6_ActivityWeek7 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 6: Gestión de riesgos." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek7 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema7_ActivityWeek8 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 7: Gestión de costes." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek8 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema8_ActivityWeek9 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek9 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema9_ActivityWeek10 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 9: Prácticas ágiles." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1_ActivityWeek10 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema9_Problemas_ActivityWeek11 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 9: Prácticas ágiles." ;
+    gpr:hasActivityType "Clase de Problemas" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica1Finalizacion_ActivityWeek11 a gpr:Activity ;
+    gpr:hasActivityDescription "Finalización de la Práctica 1." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema10_ActivityWeek12 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 10: Scrum." ;
+    gpr:hasActivityType "Lección Magistral" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica2Presentacion_ActivityWeek12 a gpr:Activity ;
+    gpr:hasActivityDescription "Presentación Práctica 2." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Tema10_Problemas_ActivityWeek13 a gpr:Activity ;
+    gpr:hasActivityDescription "Tema 10: Scrum." ;
+    gpr:hasActivityType "Clase de Problemas" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica2_ActivityWeek13 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 2." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:ResolucionEjercicios_ActivityWeek14 a gpr:Activity ;
+    gpr:hasActivityDescription "Resolución de ejercicios." ;
+    gpr:hasActivityType "Clase de Problemas" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica2_ActivityWeek14 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 2." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica2_ActivityWeek15 a gpr:Activity ;
+    gpr:hasActivityDescription "Práctica 2." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:Practica2Finalizacion_ActivityWeek15 a gpr:Activity ;
+    gpr:hasActivityDescription "Finalización de la Práctica 2." ;
+    gpr:hasActivityType "Prácticas de Laboratorio" ;
+    gpr:hasActivityDuration "02:00" .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:hasChronogramActivity
+    gpr:PresentacionAsignatura_ActivityWeek1,
+    gpr:Tema1_ActivityWeek1,
+    gpr:Tema2_ActivityWeek1,
+    gpr:Tema3_ActivityWeek2,
+    gpr:Practica1Presentacion_ActivityWeek2,
+    gpr:Tema4_ActivityWeek3,
+    gpr:Practica1_ActivityWeek3,
+    gpr:Tema4_Problemas_ActivityWeek4,
+    gpr:Practica1_ActivityWeek4,
+    gpr:Tema5_ActivityWeek5,
+    gpr:Practica1_ActivityWeek5,
+    gpr:Tema5_Problemas_ActivityWeek6,
+    gpr:Practica1_ActivityWeek6,
+    gpr:Tema6_ActivityWeek7,
+    gpr:Practica1_ActivityWeek7,
+    gpr:Tema7_ActivityWeek8,
+    gpr:Practica1_ActivityWeek8,
+    gpr:Tema8_ActivityWeek9,
+    gpr:Practica1_ActivityWeek9,
+    gpr:Tema9_ActivityWeek10,
+    gpr:Practica1_ActivityWeek10,
+    gpr:Tema9_Problemas_ActivityWeek11,
+    gpr:Practica1Finalizacion_ActivityWeek11,
+    gpr:Tema10_ActivityWeek12,
+    gpr:Practica2Presentacion_ActivityWeek12,
+    gpr:Tema10_Problemas_ActivityWeek13,
+    gpr:Practica2_ActivityWeek13,
+    gpr:ResolucionEjercicios_ActivityWeek14,
+    gpr:Practica2_ActivityWeek14,
+    gpr:Practica2_ActivityWeek15,
+    gpr:Practica2Finalizacion_ActivityWeek15 .
+
+gpr:EjercicioGestionProyectosTradicionales_EvalActivityWeek11 a gpr:EvaluationActivity ;
+    gpr:hasEvaluationModality "No Presencial" ;
+    gpr:hasEvaluationType "Trabajo Individual" ;
+    gpr:hasEvaluationWeight "10%" ;
+    gpr:hasMinimumGrade "/" ;
+    gpr:evaluatesLearningOutcome gpr:RA111_LearningOutcome, gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome ;
+    gpr:evaluatesCompetency gpr:CT5_Competency, gpr:CC2_Competency, gpr:CE6_Competency ;
+    rdfs:label "Ejercicio sobre gestión de proyectos con metodologías tradicionales." .
+
+gpr:Practica1_EvalActivityWeek11 a gpr:EvaluationActivity ;
+    gpr:hasEvaluationModality "No Presencial" ;
+    gpr:hasEvaluationType "Trabajo en Grupo" ;
+    gpr:hasEvaluationWeight "23%" ;
+    gpr:hasMinimumGrade "/" ;
+    gpr:evaluatesLearningOutcome gpr:RA111_LearningOutcome, gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome, gpr:RA118_LearningOutcome ;
+    gpr:evaluatesCompetency gpr:CT5_Competency, gpr:CT11_Competency, gpr:CC2_Competency, gpr:CC3_Competency, gpr:CE6_Competency ;
+    rdfs:label "Práctica 1." .
+
+gpr:EjercicioGestionProyectosAgiles_EvalActivityWeek15 a gpr:EvaluationActivity ;
+    gpr:hasEvaluationModality "No Presencial" ;
+    gpr:hasEvaluationType "Trabajo Individual" ;
+    gpr:hasEvaluationWeight "5%" ;
+    gpr:hasMinimumGrade "/" ;
+    gpr:evaluatesLearningOutcome gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome ;
+    gpr:evaluatesCompetency gpr:CT5_Competency, gpr:CC2_Competency, gpr:CE6_Competency ;
+    rdfs:label "Ejercicio sobre gestión de proyectos con metodologías ágiles." .
+
+gpr:Practica2_EvalActivityWeek15 a gpr:EvaluationActivity ;
+    gpr:hasEvaluationModality "No Presencial" ;
+    gpr:hasEvaluationType "Trabajo en Grupo" ;
+    gpr:hasEvaluationWeight "12%" ;
+    gpr:hasMinimumGrade "/" ;
+    gpr:evaluatesLearningOutcome gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome, gpr:RA118_LearningOutcome ;
+    gpr:evaluatesCompetency gpr:CT5_Competency, gpr:CT11_Competency, gpr:CC2_Competency, gpr:CC3_Competency, gpr:CE6_Competency ;
+    rdfs:label "Práctica 2." .
+
+gpr:ExamenFinalOrdinario_EvalActivityWeek17 a gpr:EvaluationActivity ;
+    gpr:hasEvaluationModality "Presencial" ;
+    gpr:hasEvaluationType "Examen Escrito" ;
+    gpr:hasEvaluationWeight "50%" ;
+    gpr:hasMinimumGrade "4.5 / 10" ;
+    gpr:evaluatesLearningOutcome gpr:RA111_LearningOutcome, gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome, gpr:RA118_LearningOutcome ;
+    gpr:evaluatesCompetency gpr:CT5_Competency, gpr:CT11_Competency, gpr:CC2_Competency, gpr:CC3_Competency, gpr:CE6_Competency ;
+    rdfs:label "Examen final (Convocatoria ordinaria)." .
+
+gpr:ExamenFinalExtraordinario_EvalActivityExtra a gpr:EvaluationActivity ;
+    gpr:hasEvaluationModality "Presencial" ;
+    gpr:hasEvaluationType "Examen Escrito" ;
+    gpr:hasEvaluationWeight "100%" ;
+    gpr:hasMinimumGrade "5 / 10" ;
+    gpr:evaluatesLearningOutcome gpr:RA111_LearningOutcome, gpr:RA112_LearningOutcome, gpr:RA116_LearningOutcome, gpr:RA118_LearningOutcome ;
+    gpr:evaluatesCompetency gpr:CT5_Competency, gpr:CT11_Competency, gpr:CC2_Competency, gpr:CC3_Competency, gpr:CE6_Competency ;
+    rdfs:label "Examen final (Convocatoria extraordinaria)." .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:hasEvaluationActivity
+    gpr:EjercicioGestionProyectosTradicionales_EvalActivityWeek11,
+    gpr:Practica1_EvalActivityWeek11,
+    gpr:EjercicioGestionProyectosAgiles_EvalActivityWeek15,
+    gpr:Practica2_EvalActivityWeek15,
+    gpr:ExamenFinalOrdinario_EvalActivityWeek17,
+    gpr:ExamenFinalExtraordinario_EvalActivityExtra .
+
+gpr:GuiaPMBOK_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:PMPExamPrep_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:ISO_IEC_IEEE_16326_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:GuiaPracticaEstimacion_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:AgilePracticeGuide_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "Agile Practice Guide" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:UserStoryMapping_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:GuiaScrum_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:AgileProjectManagementSCRUM_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "Agile Project Management with SCRUM" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:KanbanEsencialCondensado_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "Kanban Esencial Condensado" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:GuiaKanbanEquiposScrum_Resource a gpr:DidacticResource ;
+    gpr:hasDidacticResourceName "La Guía Kanban para Equipos Scrum" ;
+    gpr:hasDidacticResourceType "Bibliografía" .
+
+gpr:GestionDeProyectosYDelRiesgoCourse gpr:usesDidacticResource
+    gpr:GuiaPMBOK_Resource,
+    gpr:PMPExamPrep_Resource,
+    gpr:ISO_IEC_IEEE_16326_Resource,
+    gpr:GuiaPracticaEstimacion_Resource,
+    gpr:AgilePracticeGuide_Resource,
+    gpr:UserStoryMapping_Resource,
+    gpr:GuiaScrum_Resource,
+    gpr:AgileProjectManagementSCRUM_Resource,
+    gpr:KanbanEsencialCondensado_Resource,
+    gpr:GuiaKanbanEquiposScrum_Resource .

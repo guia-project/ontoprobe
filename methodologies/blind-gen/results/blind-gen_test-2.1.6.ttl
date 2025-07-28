@@ -1,0 +1,461 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ontology/> .
+
+ex:Asignatura a rdfs:Class .
+    rdfs:label "Asignatura"@es .
+    rdfs:comment "Una unidad de enseñanza dentro de un plan de estudios."@es.
+
+ex:GestionDeProyectosYDelRiesgo a rdfs:Class;
+    rdfs:label "Gestión De Proyectos Y Del Riesgo"@es;
+    rdfs:subClassOf ex:Asignatura.
+
+ex:PlanDeEstudios a rdfs:Class .
+    rdfs:label "Plan de Estudios"@es .
+    rdfs:comment "Estructura curricular de un programa académico."@es.
+
+ex:GradoEnIngenieriaDelSoftware a rdfs:Class;
+    rdfs:label "Grado En Ingenieria Del Software"@es;
+    rdfs:subClassOf ex:PlanDeEstudios.
+
+ex:Profesor a rdfs:Class .
+    rdfs:label "Profesor"@es .
+    rdfs:comment "Persona que imparte enseñanza."@es.
+
+ex:Competencia a rdfs:Class .
+    rdfs:label "Competencia"@es .
+    rdfs:comment "Capacidad o habilidad para realizar una tarea."@es.
+
+ex:ResultadoDeAprendizaje a rdfs:Class .
+    rdfs:label "Resultado de Aprendizaje"@es .
+    rdfs:comment "Declaración de lo que se espera que un estudiante sepa, comprenda o pueda hacer al completar un proceso de aprendizaje."@es.
+
+ex:Tema a rdfs:Class .
+    rdfs:label "Tema"@es.
+    rdfs:comment "Unidad dentro del temario de una asignatura."@es.
+
+ex:Actividad a rdfs:Class .
+    rdfs:label "Actividad"@es .
+    rdfs:comment "Tarea o acción realizada dentro de la asignatura."@es.
+
+ex:Evaluacion a rdfs:Class .
+    rdfs:label "Evaluación"@es.
+    rdfs:comment "Proceso para valorar el conocimiento o habilidades."@es.
+
+ex:RecursoDidactico a rdfs:Class .
+    rdfs:label "Recurso Didáctico"@es.
+    rdfs:comment "Material o herramienta utilizada para facilitar el aprendizaje."@es.
+
+ex:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos a rdfs:Class;
+    rdfs:label "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"@es.
+
+ex:tieneAsignatura a rdf:Property;
+    rdfs:domain ex:PlanDeEstudios;
+    rdfs:range ex:Asignatura;
+    rdfs:label "tiene asignatura"@es.
+
+ex:impartidaPor a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:Profesor;
+    rdfs:label "impartida por"@es.
+
+ex:tieneCompetencia a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:Competencia;
+    rdfs:label "tiene competencia"@es.
+
+ex:tieneResultadoDeAprendizaje a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:ResultadoDeAprendizaje;
+    rdfs:label "tiene resultado de aprendizaje"@es.
+
+ex:tieneTema a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:Tema;
+    rdfs:label "tiene tema"@es.
+
+ex:realizaActividad a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:Actividad;
+    rdfs:label "realiza actividad"@es.
+
+ex:esEvaluadaPor a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:Evaluacion;
+    rdfs:label "es evaluada por"@es.
+
+ex:utilizaRecursoDidactico a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:RecursoDidactico;
+    rdfs:label "utiliza recurso didactico"@es.
+
+ex:asignaturaDe a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range ex:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos;
+    rdfs:label "asignatura de"@es.
+
+ex:nombreAsignatura a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:string;
+    rdfs:label "nombre de la asignatura"@es.
+
+ex:numeroDeCreditos a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:integer;
+    rdfs:label "número de créditos"@es.
+
+ex:caracter a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:string;
+    rdfs:label "carácter"@es.
+
+ex:curso a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:string;
+    rdfs:label "curso"@es.
+
+ex:semestre a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:string;
+    rdfs:label "semestre"@es.
+
+ex:periodoDeImparticion a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:string;
+    rdfs:label "período de impartición"@es.
+
+ex:idiomaDeImparticion a rdf:Property;
+    rdfs:domain ex:Asignatura;
+    rdfs:range xsd:string;
+    rdfs:label "idioma de impartición"@es.
+
+ex:nombreProfesor a rdf:Property;
+    rdfs:domain ex:Profesor;
+    rdfs:range xsd:string;
+    rdfs:label "nombre del profesor"@es.
+
+ex:despachoProfesor a rdf:Property;
+    rdfs:domain ex:Profesor;
+    rdfs:range xsd:string;
+    rdfs:label "despacho del profesor"@es.
+
+ex:correoElectronicoProfesor a rdf:Property;
+    rdfs:domain ex:Profesor;
+    rdfs:range xsd:string;
+    rdfs:label "correo electrónico del profesor"@es.
+
+ex:horarioDeTutorias a rdf:Property;
+    rdfs:domain ex:Profesor;
+    rdfs:range xsd:string;
+    rdfs:label "horario de tutorías"@es.
+
+ex:descripcionCompetencia a rdf:Property;
+    rdfs:domain ex:Competencia;
+    rdfs:range xsd:string;
+    rdfs:label "descripción de la competencia"@es.
+
+ex:descripcionResultadoAprendizaje a rdf:Property;
+    rdfs:domain ex:ResultadoDeAprendizaje;
+    rdfs:range xsd:string;
+    rdfs:label "descripción del resultado de aprendizaje"@es.
+
+ex:nombreTema a rdf:Property;
+    rdfs:domain ex:Tema;
+    rdfs:range xsd:string;
+    rdfs:label "nombre del tema"@es.
+
+ex:tipoActividad a rdf:Property;
+    rdfs:domain ex:Actividad;
+    rdfs:range xsd:string;
+    rdfs:label "tipo de actividad"@es.
+
+ex:duracionActividad a rdf:Property;
+    rdfs:domain ex:Actividad;
+    rdfs:range xsd:string;
+    rdfs:label "duración de la actividad"@es.
+
+ex:modalidadEvaluacion a rdf:Property;
+    rdfs:domain ex:Evaluacion;
+    rdfs:range xsd:string;
+    rdfs:label "modalidad de evaluación"@es.
+
+ex:tipoEvaluacion a rdf:Property;
+    rdfs:domain ex:Evaluacion;
+    rdfs:range xsd:string;
+    rdfs:label "tipo de evaluación"@es.
+
+ex:duracionEvaluacion a rdf:Property;
+    rdfs:domain ex:Evaluacion;
+    rdfs:range xsd:string;
+    rdfs:label "duración de la evaluación"@es.
+
+ex:pesoEnLaNota a rdf:Property;
+    rdfs:domain ex:Evaluacion;
+    rdfs:range xsd:string;
+    rdfs:label "peso en la nota"@es.
+
+ex:notaMinima a rdf:Property;
+    rdfs:domain ex:Evaluacion;
+    rdfs:range xsd:string;
+    rdfs:label "nota mínima"@es.
+
+ex:nombreRecursoDidactico a rdf:Property;
+    rdfs:domain ex:RecursoDidactico;
+    rdfs:range xsd:string;
+    rdfs:label "nombre del recurso didáctico"@es.
+
+ex:tipoRecursoDidactico a rdf:Property;
+    rdfs:domain ex:RecursoDidactico;
+    rdfs:range xsd:string;
+    rdfs:label "tipo de recurso didáctico"@es.
+
+ex:observacionesRecursoDidactico a rdf:Property;
+    rdfs:domain ex:RecursoDidactico;
+    rdfs:range xsd:string;
+    rdfs:label "observaciones del recurso didáctico"@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258 a ex:GestionDeProyectosYDelRiesgo;
+    ex:nombreAsignatura "615000258 - Gestion de Proyectos y del Riesgo"@es;
+    ex:numeroDeCreditos 6;
+    ex:caracter "Obligatoria"@es;
+    ex:curso "Cuarto curso"@es;
+    ex:semestre "Séptimo semestre"@es;
+    ex:periodoDeImparticion "Septiembre-Enero"@es;
+    ex:idiomaDeImparticion "Castellano"@es;
+    ex:asignaturaDe ex:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos_61.
+
+ex:GradoEnIngenieriaDelSoftware_61IW a ex:GradoEnIngenieriaDelSoftware;
+    ex:tieneAsignatura ex:GestionDeProyectosYDelRiesgo_615000258.
+
+ex:AldoGordilloMendez a ex:Profesor;
+    ex:nombreProfesor "Aldo Gordillo Mendez"@es;
+    ex:despachoProfesor "1219"@es;
+    ex:correoElectronicoProfesor "a.gordillo@upm.es"@es;
+    ex:horarioDeTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es.
+
+ex:ManuelOttaviano a ex:Profesor;
+    ex:nombreProfesor "Manuel Ottaviano"@es;
+    ex:despachoProfesor "1212"@es;
+    ex:correoElectronicoProfesor "manuel.ottaviano@upm.es"@es;
+    ex:horarioDeTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es.
+
+ex:JavierSerranoRomero a ex:Profesor;
+    ex:nombreProfesor "Javier Serrano Romero"@es;
+    ex:despachoProfesor "4219"@es;
+    ex:correoElectronicoProfesor "javier.serrano@upm.es"@es;
+    ex:horarioDeTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:impartidaPor ex:AldoGordilloMendez, ex:ManuelOttaviano, ex:JavierSerranoRomero.
+
+ex:CC2 a ex:Competencia;
+    ex:descripcionCompetencia "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social"@es.
+
+ex:CC3 a ex:Competencia;
+    ex:descripcionCompetencia "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software."@es.
+
+ex:CE6 a ex:Competencia;
+    ex:descripcionCompetencia "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos."@es.
+
+ex:CT11 a ex:Competencia;
+    ex:descripcionCompetencia "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista."@es.
+
+ex:CT5 a ex:Competencia;
+    ex:descripcionCompetencia "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos."@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:tieneCompetencia ex:CC2, ex:CC3, ex:CE6, ex:CT11, ex:CT5.
+
+ex:RA112 a ex:ResultadoDeAprendizaje;
+    ex:descripcionResultadoAprendizaje "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software"@es.
+
+ex:RA116 a ex:ResultadoDeAprendizaje;
+    ex:descripcionResultadoAprendizaje "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas."@es.
+
+ex:RA111 a ex:ResultadoDeAprendizaje;
+    ex:descripcionResultadoAprendizaje "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar"@es.
+
+ex:RA118 a ex:ResultadoDeAprendizaje;
+    ex:descripcionResultadoAprendizaje "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista."@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:tieneResultadoDeAprendizaje ex:RA112, ex:RA116, ex:RA111, ex:RA118.
+
+ex:Tema1 a ex:Tema;
+    ex:nombreTema "Tema 1: Introducción a la gestión de proyectos."@es.
+
+ex:Tema2 a ex:Tema;
+    ex:nombreTema "Tema 2: Procesos de la dirección de proyectos."@es.
+
+ex:Tema3 a ex:Tema;
+    ex:nombreTema "Tema 3: Gestión del alcance."@es.
+
+ex:Tema4 a ex:Tema;
+    ex:nombreTema "Tema 4: Planificación temporal de proyectos."@es.
+
+ex:Tema5 a ex:Tema;
+    ex:nombreTema "Tema 5: Estimación en proyectos de software."@es.
+
+ex:Tema6 a ex:Tema;
+    ex:nombreTema "Tema 6: Gestión de riesgos."@es.
+
+ex:Tema7 a ex:Tema;
+    ex:nombreTema "Tema 7: Gestión de costes."@es.
+
+ex:Tema8 a ex:Tema;
+    ex:nombreTema "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles."@es.
+
+ex:Tema9 a ex:Tema;
+    ex:nombreTema "Tema 9: Prácticas ágiles."@es.
+
+ex:Tema10 a ex:Tema;
+    ex:nombreTema "Tema 10: Scrum."@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:tieneTema ex:Tema1, ex:Tema2, ex:Tema3, ex:Tema4, ex:Tema5, ex:Tema6, ex:Tema7, ex:Tema8, ex:Tema9, ex:Tema10.
+
+ex:PresentacionAsignatura a ex:Actividad;
+    ex:tipoActividad "Lección Magistral"@es;
+    ex:duracionActividad "00:30"@es.
+
+ex:PresentacionPractica1 a ex:Actividad;
+    ex:tipoActividad "Prácticas de Laboratorio"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:Practica1 a ex:Actividad;
+    ex:tipoActividad "Prácticas de Laboratorio"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:ClaseDeProblemasPractica1 a ex:Actividad;
+    ex:tipoActividad "Clase de Problemas"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:FinalizacionPractica1 a ex:Actividad;
+    ex:tipoActividad "Prácticas de Laboratorio"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:PresentacionPractica2 a ex:Actividad;
+    ex:tipoActividad "Prácticas de Laboratorio"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:Practica2 a ex:Actividad;
+    ex:tipoActividad "Prácticas de Laboratorio"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:ClaseDeProblemasPractica2 a ex:Actividad;
+    ex:tipoActividad "Clase de Problemas"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:FinalizacionPractica2 a ex:Actividad;
+    ex:tipoActividad "Prácticas de Laboratorio"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:ResolucionEjercicios a ex:Actividad;
+    ex:tipoActividad "Clase de Problemas"@es;
+    ex:duracionActividad "02:00"@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:realizaActividad ex:PresentacionAsignatura, ex:PresentacionPractica1, ex:Practica1, ex:ClaseDeProblemasPractica1, ex:FinalizacionPractica1, ex:PresentacionPractica2, ex:Practica2, ex:ClaseDeProblemasPractica2, ex:FinalizacionPractica2, ex:ResolucionEjercicios.
+
+ex:EjercicioGestionProyectosTradicionales a ex:Evaluacion;
+    ex:modalidadEvaluacion "No Presencial"@es;
+    ex:tipoEvaluacion "Trabajo Individual"@es;
+    ex:duracionEvaluacion "00:00"@es;
+    ex:pesoEnLaNota "10%"@es;
+    ex:notaMinima "/ 10"@es.
+
+ex:Practica1Evaluacion a ex:Evaluacion;
+    ex:modalidadEvaluacion "No Presencial"@es;
+    ex:tipoEvaluacion "Trabajo en Grupo"@es;
+    ex:duracionEvaluacion "00:00"@es;
+    ex:pesoEnLaNota "23%"@es;
+    ex:notaMinima "/ 10"@es.
+
+ex:EjercicioGestionProyectosAgiles a ex:Evaluacion;
+    ex:modalidadEvaluacion "No Presencial"@es;
+    ex:tipoEvaluacion "Trabajo Individual"@es;
+    ex:duracionEvaluacion "00:00"@es;
+    ex:pesoEnLaNota "5%"@es;
+    ex:notaMinima "/ 10"@es.
+
+ex:Practica2Evaluacion a ex:Evaluacion;
+    ex:modalidadEvaluacion "No Presencial"@es;
+    ex:tipoEvaluacion "Trabajo en Grupo"@es;
+    ex:duracionEvaluacion "00:00"@es;
+    ex:pesoEnLaNota "12%"@es;
+    ex:notaMinima "/ 10"@es.
+
+ex:ExamenFinalOrdinario a ex:Evaluacion;
+    ex:modalidadEvaluacion "Presencial"@es;
+    ex:tipoEvaluacion "Examen Escrito"@es;
+    ex:duracionEvaluacion "02:30"@es;
+    ex:pesoEnLaNota "50%"@es;
+    ex:notaMinima "4.5 / 10"@es.
+
+ex:ExamenFinalExtraordinario a ex:Evaluacion;
+    ex:modalidadEvaluacion "Presencial"@es;
+    ex:tipoEvaluacion "Examen Escrito"@es;
+    ex:duracionEvaluacion "02:30"@es;
+    ex:pesoEnLaNota "100%"@es;
+    ex:notaMinima "5 / 10"@es.
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:esEvaluadaPor ex:EjercicioGestionProyectosTradicionales, ex:Practica1Evaluacion, ex:EjercicioGestionProyectosAgiles, ex:Practica2Evaluacion, ex:ExamenFinalOrdinario, ex:ExamenFinalExtraordinario.
+
+ex:GuiaPMBOK a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:PMPExamPrep a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:ISO_IEC_IEEE_16326_2019 a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:GuiaPracticaEstimacionMedicion a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:AgilePracticeGuide a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "Agile Practice Guide"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:UserStoryMapping a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "User Story Mapping: Discover the Whole Story, Build the Right Product"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:LaGuiaDeScrum a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego."@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:AgileProjectManagementWithSCRUM a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "Agile Project Management with SCRUM"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:KanbanEsencialCondensado a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "Kanban Esencial Condensado"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:LaGuiaKanbanParaEquiposScrum a ex:RecursoDidactico;
+    ex:nombreRecursoDidactico "La Guía Kanban para Equipos Scrum"@es;
+    ex:tipoRecursoDidactico "Bibliografía"@es;
+    ex:observacionesRecursoDidactico "".
+
+ex:GestionDeProyectosYDelRiesgo_615000258
+    ex:utilizaRecursoDidactico ex:GuiaPMBOK, ex:PMPExamPrep, ex:ISO_IEC_IEEE_16326_2019, ex:GuiaPracticaEstimacionMedicion, ex:AgilePracticeGuide, ex:UserStoryMapping, ex:LaGuiaDeScrum, ex:AgileProjectManagementWithSCRUM, ex:KanbanEsencialCondensado, ex:LaGuiaKanbanParaEquiposScrum.
+
+ex:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos_61 a ex:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos;
+    rdfs:label "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"@es.

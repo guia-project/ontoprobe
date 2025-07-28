@@ -1,0 +1,310 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix upm: <http://www.example.org/upm#> .
+
+# Ontology for "Gestion de Proyectos y del Riesgo" course
+
+upm:Course a rdfs:Class ;
+    rdfs:label "Course" .
+
+upm:AcademicProgram a rdfs:Class ;
+    rdfs:label "Academic Program" .
+
+upm:Competence a rdfs:Class ;
+    rdfs:label "Competence" .
+
+upm:LearningOutcome a rdfs:Class ;
+    rdfs:label "Learning Outcome" .
+
+upm:Topic a rdfs:Class ;
+    rdfs:label "Topic" .
+
+upm:Professor a rdfs:Class ;
+    rdfs:label "Professor" .
+
+upm:Activity a rdfs:Class ;
+    rdfs:label "Activity" .
+
+upm:Evaluation a rdfs:Class ;
+    rdfs:label "Evaluation" .
+
+upm:Resource a rdfs:Class ;
+    rdfs:label "Resource" .
+
+
+upm:hasCode a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has code" .
+
+upm:hasName a rdf:Property ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range xsd:string ;
+    rdfs:label "has name" .
+
+upm:hasCredits a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has credits" .
+
+upm:hasCharacter a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has character" .
+
+upm:belongsToCourse a rdf:Property ;
+    rdfs:domain upm:Topic ;
+    rdfs:range upm:Course ;
+    rdfs:label "belongs to course" .
+
+upm:isTaughtBy a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range upm:Professor ;
+    rdfs:label "is taught by" .
+
+upm:teaches a rdf:Property ;
+    rdfs:domain upm:Professor ;
+    rdfs:range upm:Course ;
+    rdfs:label "teaches" .
+
+upm:requiresPrevious a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range upm:Course ;
+    rdfs:label "requires previous" .
+
+upm:developsCompetence a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range upm:Competence ;
+    rdfs:label "develops competence" .
+
+upm:hasLearningOutcome a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range upm:LearningOutcome ;
+    rdfs:label "has learning outcome" .
+
+upm:year a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "Year" .
+
+upm:semester a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "Semester" .
+
+upm:language a rdf:Property ;
+    rdfs:domain upm:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "Language" .
+
+upm:belongsToProgram a rdf:Property;
+    rdfs:domain upm:Course;
+    rdfs:range upm:AcademicProgram;
+    rdfs:label "belongs to program".
+
+upm:coordinator a rdf:Property;
+    rdfs:domain upm:Course;
+    rdfs:range upm:Professor;
+    rdfs:label "coordinator".
+
+upm:hasActivity a rdf:Property;
+    rdfs:domain upm:Course;
+    rdfs:range upm:Activity;
+    rdfs:label "has activity".
+
+upm:hasEvaluation a rdf:Property;
+    rdfs:domain upm:Course;
+    rdfs:range upm:Evaluation;
+    rdfs:label "has evaluation".
+
+upm:hasResource a rdf:Property;
+    rdfs:domain upm:Course;
+    rdfs:range upm:Resource;
+    rdfs:label "has resource".
+
+upm:type a rdf:Property;
+    rdfs:domain upm:Activity;
+    rdfs:range xsd:string;
+    rdfs:label "type".
+
+upm:duration a rdf:Property;
+    rdfs:domain upm:Activity;
+    rdfs:range xsd:string;
+    rdfs:label "duration".
+
+upm:mode a rdf:Property;
+    rdfs:domain upm:Evaluation;
+    rdfs:range xsd:string;
+    rdfs:label "mode".
+
+upm:evaluationType a rdf:Property;
+    rdfs:domain upm:Evaluation;
+    rdfs:range xsd:string;
+    rdfs:label "evaluation type".
+
+upm:weight a rdf:Property;
+    rdfs:domain upm:Evaluation;
+    rdfs:range xsd:string;
+    rdfs:label "weight".
+
+upm:minimumGrade a rdf:Property;
+    rdfs:domain upm:Evaluation;
+    rdfs:range xsd:string;
+    rdfs:label "minimum grade".
+
+
+# Instances
+
+upm:GestionDeProyectosYDelRiesgo a upm:Course ;
+    upm:hasCode "615000258" ;
+    upm:hasName "Gestion de Proyectos y del Riesgo" ;
+    upm:hasCredits 6 ;
+    upm:hasCharacter "Obligatoria" ;
+    upm:year "2024-25" ;
+    upm:semester "Primer semestre" ;
+    upm:language "Castellano" ;
+    upm:belongsToProgram upm:GradoEnIngenieriaDelSoftware ;
+    upm:isTaughtBy upm:AldoGordilloMendez ;
+    upm:isTaughtBy upm:ManuelOttaviano ;
+    upm:isTaughtBy upm:JavierSerranoRomero ;
+    upm:coordinator upm:AldoGordilloMendez ;
+    upm:hasLearningOutcome upm:RA112 ;
+    upm:hasLearningOutcome upm:RA116 ;
+    upm:hasLearningOutcome upm:RA111 ;
+    upm:hasLearningOutcome upm:RA118 ;
+    upm:developsCompetence upm:CC2 ;
+    upm:developsCompetence upm:CC3 ;
+    upm:developsCompetence upm:CE6 ;
+    upm:developsCompetence upm:CT11 ;
+    upm:developsCompetence upm:CT5.
+
+upm:GradoEnIngenieriaDelSoftware a upm:AcademicProgram ;
+    upm:hasName "Grado En Ingenieria Del Software" .
+
+upm:IngenieriaDeRequisitosYModelado a upm:Course ;
+    upm:hasName "Ingenieria De Requisitos Y Modelado" .
+
+upm:IngenieriaDelProcesoSoftwareYConstruccion a upm:Course ;
+    upm:hasName "Ingenieria Del Proceso Software Y Construccion" .
+
+upm:AspectosLegalesYProfesionales a upm:Course ;
+    upm:hasName "Aspectos Legales Y Profesionales" .
+
+upm:FundamentosDeEconomiaYEmpresa a upm:Course ;
+    upm:hasName "Fundamentos De Economia Y Empresa" .
+
+upm:FundamentosDeIngenieriaDelSoftware a upm:Course ;
+    upm:hasName "Fundamentos De Ingenieria Del Software" .
+
+upm:GestionDelAlcance a upm:Topic;
+    upm:hasName "Gestion del Alcance";
+    upm:belongsToCourse upm:GestionDeProyectosYDelRiesgo.
+
+upm:AldoGordilloMendez a upm:Professor ;
+    upm:hasName "Aldo Gordillo Mendez" .
+
+upm:ManuelOttaviano a upm:Professor ;
+    upm:hasName "Manuel Ottaviano" .
+
+upm:JavierSerranoRomero a upm:Professor ;
+    upm:hasName "Javier Serrano Romero" .
+
+upm:CC2 a upm:Competence;
+    upm:hasName "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social".
+
+upm:CC3 a upm:Competence;
+    upm:hasName "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software.".
+
+upm:CE6 a upm:Competence;
+    upm:hasName "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos.".
+
+upm:CT11 a upm:Competence;
+    upm:hasName "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista.".
+
+upm:CT5 a upm:Competence;
+    upm:hasName "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos.".
+
+upm:RA112 a upm:LearningOutcome;
+    upm:hasName "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software".
+
+upm:RA116 a upm:LearningOutcome;
+    upm:hasName "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas.".
+
+upm:RA111 a upm:LearningOutcome;
+    upm:hasName "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar".
+
+upm:RA118 a upm:LearningOutcome;
+    upm:hasName "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista.".
+
+upm:GuiaPMBOK a upm:Resource;
+    upm:hasName "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)".
+
+upm:PMPExamPrep a upm:Resource;
+    upm:hasName "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam".
+
+upm:ISO_IEC_IEEE_16326_2019 a upm:Resource;
+    upm:hasName "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management".
+
+upm:GuiaEstimacionMedicionProyectosSoftware a upm:Resource;
+    upm:hasName "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?".
+
+upm:AgilePracticeGuide a upm:Resource;
+    upm:hasName "Agile Practice Guide".
+
+upm:UserStoryMapping a upm:Resource;
+    upm:hasName "User Story Mapping: Discover the Whole Story, Build the Right Product".
+
+upm:LaGuiaDeScrum a upm:Resource;
+    upm:hasName "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego.".
+
+upm:AgileProjectManagementWithSCRUM a upm:Resource;
+    upm:hasName "Agile Project Management with SCRUM".
+
+upm:KanbanEsencialCondensado a upm:Resource;
+    upm:hasName "Kanban Esencial Condensado".
+
+upm:LaGuiaKanbanParaEquiposScrum a upm:Resource;
+    upm:hasName "La Guía Kanban para Equipos Scrum".
+
+upm:EjercicioGestionProyectosTradicionales a upm:Evaluation;
+    upm:hasName "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116)";
+    upm:mode "No Presencial";
+    upm:evaluationType "Trabajo Individual";
+    upm:weight "10%";
+    upm:minimumGrade "/ 10".
+
+upm:Practica1 a upm:Evaluation;
+    upm:hasName "Práctica 1. (RA111, RA112, RA116, RA118)";
+    upm:mode "No Presencial";
+    upm:evaluationType "Trabajo en Grupo";
+    upm:weight "23%";
+    upm:minimumGrade "/ 10".
+
+upm:EjercicioGestionProyectosAgiles a upm:Evaluation;
+    upm:hasName "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116)";
+    upm:mode "No Presencial";
+    upm:evaluationType "Trabajo Individual";
+    upm:weight "5%";
+    upm:minimumGrade "/ 10".
+
+upm:Practica2 a upm:Evaluation;
+    upm:hasName "Práctica 2. (RA112, RA116, RA118)";
+    upm:mode "No Presencial";
+    upm:evaluationType "Trabajo en Grupo";
+    upm:weight "12%";
+    upm:minimumGrade "/ 10".
+
+upm:ExamenFinalOrdinaria a upm:Evaluation;
+    upm:hasName "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118)";
+    upm:mode "Presencial";
+    upm:evaluationType "Examen Escrito";
+    upm:weight "50%";
+    upm:minimumGrade "4.5 / 10".
+
+upm:ExamenFinalExtraordinaria a upm:Evaluation;
+    upm:hasName "Examen final (Convocatoria extraordinaria). (RA111, RA112, RA116, RA118)";
+    upm:mode "Presencial";
+    upm:evaluationType "Examen Escrito";
+    upm:weight "100%";
+    upm:minimumGrade "5 / 10".

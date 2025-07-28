@@ -1,0 +1,539 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://example.org/ontology/courseGuide#> .
+
+guide:Course rdfs:label "Course" .
+guide:Degree rdfs:label "Degree" .
+guide:Department rdfs:label "Department" .
+guide:Professor rdfs:label "Professor" .
+guide:Prerequisite rdfs:label "Prerequisite" .
+guide:Competence rdfs:label "Competence" .
+guide:LearningOutcome rdfs:label "Learning Outcome" .
+guide:Topic rdfs:label "Topic" .
+guide:Activity rdfs:label "Activity" .
+guide:Evaluation rdfs:label "Evaluation" .
+guide:Resource rdfs:label "Resource" .
+guide:AcademicYear rdfs:label "Academic Year" .
+guide:Semester rdfs:label "Semester" .
+guide:Week rdfs:label "Week" .
+guide:EvaluationActivityType rdfs:label "Evaluation Activity Type" .
+guide:ActivityType rdfs:label "Activity Type" .
+guide:TutoringHour rdfs:label "Tutoring Hour" .
+
+guide:hasCourseCode rdfs:label "has course code" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:hasCourseName rdfs:label "has course name" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:isOfferedInDegree rdfs:label "is offered in degree" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Degree .
+guide:isOfferedByDepartment rdfs:label "is offered by department" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Department .
+guide:inAcademicYear rdfs:label "in academic year" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:AcademicYear .
+guide:inSemester rdfs:label "in semester" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Semester .
+guide:hasCredits rdfs:label "has credits" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:hasCharacter rdfs:label "has character" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:taughtBy rdfs:label "taught by" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Professor .
+guide:isCoordinatorOf rdfs:label "is coordinator of" ;
+    rdfs:domain guide:Professor ;
+    rdfs:range guide:Course .
+guide:hasPrerequisiteCourse rdfs:label "has prerequisite course" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Course .
+guide:hasPrerequisiteKnowledge rdfs:label "has prerequisite knowledge" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:hasCompetence rdfs:label "has competence" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Competence .
+guide:hasLearningOutcome rdfs:label "has learning outcome" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:LearningOutcome .
+guide:hasCourseDescription rdfs:label "has course description" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:hasSyllabus rdfs:label "has syllabus" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:includesTopic rdfs:label "includes topic" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Topic .
+guide:isScheduledInWeek rdfs:label "is scheduled in week" ;
+    rdfs:domain guide:Activity ;
+    rdfs:range guide:Week .
+guide:hasActivityType rdfs:label "has activity type" ;
+    rdfs:domain guide:Activity ;
+    rdfs:range guide:ActivityType .
+guide:hasDuration rdfs:label "has duration" ;
+    rdfs:domain guide:Activity ;
+    rdfs:range rdfs:Literal .
+guide:isEvaluationActivity rdfs:label "is evaluation activity" ;
+    rdfs:domain guide:Activity ;
+    rdfs:range guide:Evaluation .
+guide:hasWeight rdfs:label "has weight" ;
+    rdfs:domain guide:Evaluation ;
+    rdfs:range rdfs:Literal .
+guide:hasMinimumGrade rdfs:label "has minimum grade" ;
+    rdfs:domain guide:Evaluation ;
+    rdfs:range rdfs:Literal .
+guide:evaluatesCompetence rdfs:label "evaluates competence" ;
+    rdfs:domain guide:Evaluation ;
+    rdfs:range guide:Competence .
+guide:usesResource rdfs:label "uses resource" ;
+    rdfs:domain guide:Course ;
+    rdfs:range guide:Resource .
+guide:hasOtherInformation rdfs:label "has other information" ;
+    rdfs:domain guide:Course ;
+    rdfs:range rdfs:Literal .
+guide:hasOffice rdfs:label "has office" ;
+    rdfs:domain guide:Professor ;
+    rdfs:range rdfs:Literal .
+guide:hasEmail rdfs:label "has email" ;
+    rdfs:domain guide:Professor ;
+    rdfs:range rdfs:Literal .
+guide:hasTutoringHour rdfs:label "has tutoring hour" ;
+    rdfs:domain guide:Professor ;
+    rdfs:range rdfs:Literal .
+guide:hasActivityName rdfs:label "has activity name" ;
+    rdfs:domain guide:Activity ;
+    rdfs:range rdfs:Literal .
+guide:hasActivityDescription rdfs:label "has activity description" ;
+    rdfs:domain guide:Activity ;
+    rdfs:range rdfs:Literal .
+guide:hasModality rdfs:label "has modality" ;
+    rdfs:domain guide:Evaluation ;
+    rdfs:range rdfs:Literal .
+guide:hasEvaluationType rdfs:label "has evaluation type" ;
+    rdfs:domain guide:Evaluation ;
+    rdfs:range rdfs:Literal .
+
+guide:gestionDeProyectosYDelRiesgoCourse a guide:Course ;
+    guide:hasCourseCode "615000258" ;
+    guide:hasCourseName "Gestion De Proyectos Y Del Riesgo" ;
+    guide:isOfferedInDegree guide:gradoEnIngenieriaDelSoftwareDegree ;
+    guide:isOfferedByDepartment guide:etsisiDepartment ;
+    guide:inAcademicYear guide:academicYear_2024_25 ;
+    guide:inSemester guide:primerSemestreSemester ;
+    guide:hasCredits "6 ECTS" ;
+    guide:hasCharacter "Obligatoria" ;
+    guide:taughtBy guide:aldoGordilloMendezProfessor , guide:manuelOttavianoProfessor , guide:javierSerranoRomeroProfessor ;
+    guide:hasCourseDescription "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. El objetivo de esta asignatura es capacitar a los estudiantes para que puedan  planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles . El temario de la asignatura se basa principalmente, aunque no exclusivamente, en la Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK)  elaborada por el PMI (Project Management Institute) y en la Agile Practice Guide , desarrollada por el PMI en colaboración con la Agile Alliance." ;
+    guide:hasSyllabus "1. Fundamentos de la gestión de proyectos.\n1.1. Tema 1: Introducción a la gestión de proyectos.\n1.2. Tema 2: Procesos de la dirección de proyectos.\n1.3. Tema 3: Gestión del alcance.\n1.4. Tema 4: Planificación temporal de proyectos.\n1.5. Tema 5: Estimación en proyectos de software.\n1.6. Tema 6: Gestión de riesgos.\n1.7. Tema 7: Gestión de costes.\n2. Gestión de proyectos con metodologías ágiles.\n2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles.\n2.2. Tema 9: Prácticas ágiles.\n2.3. Tema 10: Scrum." ;
+    guide:includesTopic guide:tema1Topic , guide:tema2Topic , guide:tema3Topic , guide:tema4Topic , guide:tema5Topic , guide:tema6Topic , guide:tema7Topic , guide:tema8Topic , guide:tema9Topic , guide:tema10Topic ;
+    guide:hasPrerequisiteCourse guide:ingenieriaDeRequisitosYModeladoCourse , guide:ingenieriaDelProcesoSoftwareYConstruccionCourse , guide:aspectosLegalesYProfesionalesCourse , guide:fundamentosDeEconomiaYEmpresaCourse , guide:fundamentosDeIngenieriaDelSoftwareCourse ;
+    guide:hasCompetence guide:cc2Competence , guide:cc3Competence , guide:ce6Competence , guide:ct11Competence , guide:ct5Competence ;
+    guide:hasLearningOutcome guide:ra112LearningOutcome , guide:ra116LearningOutcome , guide:ra111LearningOutcome , guide:ra118LearningOutcome ;
+    guide:usesResource guide:guiaPMBOKResource , guide:pmpExamPrepResource , guide:isoIeee16326Resource , guide:guiaPracticaEstimacionResource , guide:agilePracticeGuideResource , guide:userStoryMappingResource , guide:guiaScrumResource , guide:agileProjectManagementScrumResource , guide:kanbanEsencialResource , guide:guiaKanbanScrumResource ;
+    guide:hasOtherInformation "Todos los materiales y recursos de la asignatura se pondrán a disposición del estudiantado a través de la plataforma Moodle del curso. Esta misma plataforma se utilizará para gestionar las entregas de todos los ejercicios y prácticas de la asignatura, así como para la realización de diferentes actividades. Se adoptará la metodología de aula invertida para la impartición de ciertos temas de la asignatura de modo que parte del temario deberá ser estudiado fuera del aula y algunas lecciones magistrales se combinarán con actividades de resolución de problemas. El profesorado de la asignatura indicará durante el curso qué partes del temario deberán ser estudiadas fuera del aula. La comunicación con el profesorado de la asignatura se realizará a través de correo electrónico, tutorías y durante las clases presenciales planificadas. Los horarios de tutorías se publicarán en la web de la ETSISI. Antes de acudir a una tutoría, se deberá enviar un correo electrónico al profesor correspondiente para confirmar dicha tutoría. Esta asignatura está alineada con el Objetivo 4 'Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos' definido dentro de los Objetivos de Desarrollo Sostenible (ODS) establecidos por la Organización de las Naciones Unidas (ONU)." .
+
+guide:gradoEnIngenieriaDelSoftwareDegree a guide:Degree ;
+    rdfs:label "Grado En Ingenieria Del Software" .
+
+guide:etsisiDepartment a guide:Department ;
+    rdfs:label "E.T.S. de Ingenieria de Sistemas Informaticos" .
+
+guide:academicYear_2024_25 a guide:AcademicYear ;
+    rdfs:label "2024/25" .
+
+guide:primerSemestreSemester a guide:Semester ;
+    rdfs:label "Primer semestre" .
+
+guide:aldoGordilloMendezProfessor a guide:Professor ;
+    guide:hasOffice "1219" ;
+    guide:hasEmail "a.gordillo@upm.es" ;
+    guide:hasTutoringHour "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    guide:isCoordinatorOf guide:gestionDeProyectosYDelRiesgoCourse ;
+    rdfs:label "Aldo Gordillo Mendez" .
+
+guide:manuelOttavianoProfessor a guide:Professor ;
+    guide:hasOffice "1212" ;
+    guide:hasEmail "manuel.ottaviano@upm.es" ;
+    guide:hasTutoringHour "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    rdfs:label "Manuel Ottaviano" .
+
+guide:javierSerranoRomeroProfessor a guide:Professor ;
+    guide:hasOffice "4219" ;
+    guide:hasEmail "javier.serrano@upm.es" ;
+    guide:hasTutoringHour "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    rdfs:label "Javier Serrano Romero" .
+
+guide:ingenieriaDeRequisitosYModeladoCourse a guide:Course ;
+    rdfs:label "Ingenieria De Requisitos Y Modelado" .
+
+guide:ingenieriaDelProcesoSoftwareYConstruccionCourse a guide:Course ;
+    rdfs:label "Ingenieria Del Proceso Software Y Construccion" .
+
+guide:aspectosLegalesYProfesionalesCourse a guide:Course ;
+    rdfs:label "Aspectos Legales Y Profesionales" .
+
+guide:fundamentosDeEconomiaYEmpresaCourse a guide:Course ;
+    rdfs:label "Fundamentos De Economia Y Empresa" .
+
+guide:fundamentosDeIngenieriaDelSoftwareCourse a guide:Course ;
+    rdfs:label "Fundamentos De Ingenieria Del Software" .
+
+guide:cc2Competence a guide:Competence ;
+    rdfs:label "CC2 - Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+guide:cc3Competence a guide:Competence ;
+    rdfs:label "CC3 - Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+guide:ce6Competence a guide:Competence ;
+    rdfs:label "CE6 - Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+guide:ct11Competence a guide:Competence ;
+    rdfs:label "CT11 - Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+guide:ct5Competence a guide:Competence ;
+    rdfs:label "CT5 - Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+guide:ra112LearningOutcome a guide:LearningOutcome ;
+    rdfs:label "RA112 - Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+guide:ra116LearningOutcome a guide:LearningOutcome ;
+    rdfs:label "RA116 - Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+guide:ra111LearningOutcome a guide:LearningOutcome ;
+    rdfs:label "RA111 - Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+guide:ra118LearningOutcome a guide:LearningOutcome ;
+    rdfs:label "RA118 - Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+guide:tema1Topic a guide:Topic ;
+    rdfs:label "Tema 1: Introducción a la gestión de proyectos." .
+guide:tema2Topic a guide:Topic ;
+    rdfs:label "Tema 2: Procesos de la dirección de proyectos." .
+guide:tema3Topic a guide:Topic ;
+    rdfs:label "Tema 3: Gestión del alcance." .
+guide:tema4Topic a guide:Topic ;
+    rdfs:label "Tema 4: Planificación temporal de proyectos." .
+guide:tema5Topic a guide:Topic ;
+    rdfs:label "Tema 5: Estimación en proyectos de software." .
+guide:tema6Topic a guide:Topic ;
+    rdfs:label "Tema 6: Gestión de riesgos." .
+guide:tema7Topic a guide:Topic ;
+    rdfs:label "Tema 7: Gestión de costes." .
+guide:tema8Topic a guide:Topic ;
+    rdfs:label "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+guide:tema9Topic a guide:Topic ;
+    rdfs:label "Tema 9: Prácticas ágiles." .
+guide:tema10Topic a guide:Topic ;
+    rdfs:label "Tema 10: Scrum." .
+
+guide:guiaPMBOKResource a guide:Resource ;
+    rdfs:label "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" .
+guide:pmpExamPrepResource a guide:Resource ;
+    rdfs:label "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" .
+guide:isoIeee16326Resource a guide:Resource ;
+    rdfs:label "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" .
+guide:guiaPracticaEstimacionResource a guide:Resource ;
+    rdfs:label "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" .
+guide:agilePracticeGuideResource a guide:Resource ;
+    rdfs:label "Agile Practice Guide" .
+guide:userStoryMappingResource a guide:Resource ;
+    rdfs:label "User Story Mapping: Discover the Whole Story, Build the Right Product" .
+guide:guiaScrumResource a guide:Resource ;
+    rdfs:label "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." .
+guide:agileProjectManagementScrumResource a guide:Resource ;
+    rdfs:label "Agile Project Management with SCRUM" .
+guide:kanbanEsencialResource a guide:Resource ;
+    rdfs:label "Kanban Esencial Condensado" .
+guide:guiaKanbanScrumResource a guide:Resource ;
+    rdfs:label "La Guía Kanban para Equipos Scrum" .
+
+guide:week1 a guide:Week ; rdfs:label "Week 1" .
+guide:week2 a guide:Week ; rdfs:label "Week 2" .
+guide:week3 a guide:Week ; rdfs:label "Week 3" .
+guide:week4 a guide:Week ; rdfs:label "Week 4" .
+guide:week5 a guide:Week ; rdfs:label "Week 5" .
+guide:week6 a guide:Week ; rdfs:label "Week 6" .
+guide:week7 a guide:Week ; rdfs:label "Week 7" .
+guide:week8 a guide:Week ; rdfs:label "Week 8" .
+guide:week9 a guide:Week ; rdfs:label "Week 9" .
+guide:week10 a guide:Week ; rdfs:label "Week 10" .
+guide:week11 a guide:Week ; rdfs:label "Week 11" .
+guide:week12 a guide:Week ; rdfs:label "Week 12" .
+guide:week13 a guide:Week ; rdfs:label "Week 13" .
+guide:week14 a guide:Week ; rdfs:label "Week 14" .
+guide:week15 a guide:Week ; rdfs:label "Week 15" .
+guide:week16 a guide:Week ; rdfs:label "Week 16" .
+guide:week17 a guide:Week ; rdfs:label "Week 17" .
+
+guide:leccionMagistralType a guide:ActivityType ; rdfs:label "Lección Magistral" .
+guide:practicasLaboratorioType a guide:ActivityType ; rdfs:label "Prácticas de Laboratorio" .
+guide:claseProblemasType a guide:ActivityType ; rdfs:label "Clase de Problemas" .
+guide:trabajoIndividualType a guide:ActivityType ; rdfs:label "Trabajo Individual" .
+guide:trabajoGrupoType a guide:ActivityType ; rdfs:label "Trabajo en Grupo" .
+guide:examenEscritoType a guide:ActivityType ; rdfs:label "Examen Escrito" .
+
+guide:presentacionAsignaturaActivity_week1 a guide:Activity ;
+    guide:isScheduledInWeek guide:week1 ;
+    guide:hasActivityName "Presentación de la asignatura" ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "00:30" .
+
+guide:tema1Activity_week1 a guide:Activity ;
+    guide:isScheduledInWeek guide:week1 ;
+    guide:hasActivityName "Tema 1: Introducción a la gestión de proyectos." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "01:30" .
+
+guide:tema2Activity_week1 a guide:Activity ;
+    guide:isScheduledInWeek guide:week1 ;
+    guide:hasActivityName "Tema 2: Procesos de la dirección de\nproyectos." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:tema3Activity_week2 a guide:Activity ;
+    guide:isScheduledInWeek guide:week2 ;
+    guide:hasActivityName "Tema 3: Gestión del alcance." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:presentacionPractica1_week2 a guide:Activity ;
+    guide:isScheduledInWeek guide:week2 ;
+    guide:hasActivityName "Presentación Práctica 1 y formación de grupos de prácticas." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema4Activity_week3_LM a guide:Activity ;
+    guide:isScheduledInWeek guide:week3 ;
+    guide:hasActivityName "Tema 4: Planificación temporal de proyectos." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week3 a guide:Activity ;
+    guide:isScheduledInWeek guide:week3 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema4Activity_week4_PR a guide:Activity ;
+    guide:isScheduledInWeek guide:week4 ;
+    guide:hasActivityName "Tema 4: Planificación temporal de proyectos." ;
+    guide:hasActivityType guide:claseProblemasType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week4 a guide:Activity ;
+    guide:isScheduledInWeek guide:week4 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema5Activity_week5_LM a guide:Activity ;
+    guide:isScheduledInWeek guide:week5 ;
+    guide:hasActivityName "Tema 5: Estimación en proyectos de software." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week5 a guide:Activity ;
+    guide:isScheduledInWeek guide:week5 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema5Activity_week6_PR a guide:Activity ;
+    guide:isScheduledInWeek guide:week6 ;
+    guide:hasActivityName "Tema 5: Estimación en proyectos de software." ;
+    guide:hasActivityType guide:claseProblemasType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week6 a guide:Activity ;
+    guide:isScheduledInWeek guide:week6 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema6Activity_week7 a guide:Activity ;
+    guide:isScheduledInWeek guide:week7 ;
+    guide:hasActivityName "Tema 6: Gestión de riesgos." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week7 a guide:Activity ;
+    guide:isScheduledInWeek guide:week7 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema7Activity_week8 a guide:Activity ;
+    guide:isScheduledInWeek guide:week8 ;
+    guide:hasActivityName "Tema 7: Gestión de costes." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week8 a guide:Activity ;
+    guide:isScheduledInWeek guide:week8 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema8Activity_week9 a guide:Activity ;
+    guide:isScheduledInWeek guide:week9 ;
+    guide:hasActivityName "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week9 a guide:Activity ;
+    guide:isScheduledInWeek guide:week9 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema9Activity_week10 a guide:Activity ;
+    guide:isScheduledInWeek guide:week10 ;
+    guide:hasActivityName "Tema 9: Prácticas ágiles." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:practica1_week10 a guide:Activity ;
+    guide:isScheduledInWeek guide:week10 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema9Activity_week11_PR a guide:Activity ;
+    guide:isScheduledInWeek guide:week11 ;
+    guide:hasActivityName "Tema 9: Prácticas ágiles." ;
+    guide:hasActivityType guide:claseProblemasType ;
+    guide:hasDuration "02:00" .
+
+guide:finalizacionPractica1_week11 a guide:Activity ;
+    guide:isScheduledInWeek guide:week11 ;
+    guide:hasActivityName "Finalización de la Práctica 1." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:ejercicioGestionProyectosTradicionales_week11 a guide:Activity ;
+    guide:isScheduledInWeek guide:week11 ;
+    guide:hasActivityName "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    guide:hasActivityType guide:trabajoIndividualType ;
+    guide:isEvaluationActivity guide:evaluacionProgresiva_ejercicioGestionProyectosTradicionales ;
+    guide:hasDuration "00:00" .
+
+guide:practica1Evaluacion_week11 a guide:Activity ;
+    guide:isScheduledInWeek guide:week11 ;
+    guide:hasActivityName "Práctica 1." ;
+    guide:hasActivityType guide:trabajoGrupoType ;
+    guide:isEvaluationActivity guide:evaluacionProgresiva_practica1 ;
+    guide:hasDuration "00:00" .
+
+guide:tema10Activity_week12 a guide:Activity ;
+    guide:isScheduledInWeek guide:week12 ;
+    guide:hasActivityName "Tema 10: Scrum." ;
+    guide:hasActivityType guide:leccionMagistralType ;
+    guide:hasDuration "02:00" .
+
+guide:presentacionPractica2_week12 a guide:Activity ;
+    guide:isScheduledInWeek guide:week12 ;
+    guide:hasActivityName "Presentación Práctica 2." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:tema10Activity_week13_PR a guide:Activity ;
+    guide:isScheduledInWeek guide:week13 ;
+    guide:hasActivityName "Tema 10: Scrum." ;
+    guide:hasActivityType guide:claseProblemasType ;
+    guide:hasDuration "02:00" .
+
+guide:practica2_week13 a guide:Activity ;
+    guide:isScheduledInWeek guide:week13 ;
+    guide:hasActivityName "Práctica 2." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:resolucionEjercicios_week14 a guide:Activity ;
+    guide:isScheduledInWeek guide:week14 ;
+    guide:hasActivityName "Resolución de ejercicios." ;
+    guide:hasActivityType guide:claseProblemasType ;
+    guide:hasDuration "02:00" .
+
+guide:practica2_week14 a guide:Activity ;
+    guide:isScheduledInWeek guide:week14 ;
+    guide:hasActivityName "Práctica 2." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:practica2_week15 a guide:Activity ;
+    guide:isScheduledInWeek guide:week15 ;
+    guide:hasActivityName "Práctica 2." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:finalizacionPractica2_week15 a guide:Activity ;
+    guide:isScheduledInWeek guide:week15 ;
+    guide:hasActivityName "Finalización de la Práctica 2." ;
+    guide:hasActivityType guide:practicasLaboratorioType ;
+    guide:hasDuration "02:00" .
+
+guide:ejercicioGestionProyectosAgiles_week15 a guide:Activity ;
+    guide:isScheduledInWeek guide:week15 ;
+    guide:hasActivityName "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    guide:hasActivityType guide:trabajoIndividualType ;
+    guide:isEvaluationActivity guide:evaluacionProgresiva_ejercicioGestionProyectosAgiles ;
+    guide:hasDuration "00:00" .
+
+guide:practica2Evaluacion_week15 a guide:Activity ;
+    guide:isScheduledInWeek guide:week15 ;
+    guide:hasActivityName "Práctica 2." ;
+    guide:hasActivityType guide:trabajoGrupoType ;
+    guide:isEvaluationActivity guide:evaluacionProgresiva_practica2 ;
+    guide:hasDuration "00:00" .
+
+guide:examenFinalOrdinario_week17 a guide:Activity ;
+    guide:isScheduledInWeek guide:week17 ;
+    guide:hasActivityName "Examen final (Convocatoria ordinaria)." ;
+    guide:hasActivityType guide:examenEscritoType ;
+    guide:isEvaluationActivity guide:evaluacionGlobal_examenFinalOrdinario ;
+    guide:hasDuration "02:30" .
+
+guide:evaluacionProgresiva_ejercicioGestionProyectosTradicionales a guide:Evaluation ;
+    guide:hasEvaluationType "Evaluación Progresiva" ;
+    guide:hasWeight "10%" ;
+    guide:hasMinimumGrade "/" ;
+    guide:evaluatesCompetence guide:ct5Competence , guide:cc2Competence , guide:ce6Competence .
+
+guide:evaluacionProgresiva_practica1 a guide:Evaluation ;
+    guide:hasEvaluationType "Evaluación Progresiva" ;
+    guide:hasWeight "23%" ;
+    guide:hasMinimumGrade "/" ;
+    guide:evaluatesCompetence guide:ct5Competence , guide:ct11Competence , guide:cc2Competence , guide:cc3Competence , guide:ce6Competence .
+
+guide:evaluacionProgresiva_ejercicioGestionProyectosAgiles a guide:Evaluation ;
+    guide:hasEvaluationType "Evaluación Progresiva" ;
+    guide:hasWeight "5%" ;
+    guide:hasMinimumGrade "/" ;
+    guide:evaluatesCompetence guide:ct5Competence , guide:cc2Competence , guide:ce6Competence .
+
+guide:evaluacionProgresiva_practica2 a guide:Evaluation ;
+    guide:hasEvaluationType "Evaluación Progresiva" ;
+    guide:hasWeight "12%" ;
+    guide:hasMinimumGrade "/" ;
+    guide:evaluatesCompetence guide:ct5Competence , guide:ct11Competence , guide:cc2Competence , guide:cc3Competence , guide:ce6Competence .
+
+guide:evaluacionGlobal_examenFinalOrdinario a guide:Evaluation ;
+    guide:hasEvaluationType "Evaluación Global" ;
+    guide:hasModality "Presencial" ;
+    guide:hasWeight "50%" ;
+    guide:hasMinimumGrade "4.5 / 10" ;
+    guide:evaluatesCompetence guide:ct5Competence , guide:ct11Competence , guide:cc2Competence , guide:cc3Competence , guide:ce6Competence .
+
+guide:evaluacionExtraordinaria_examenFinalExtraordinario a guide:Evaluation ;
+    guide:hasEvaluationType "Evaluación convocatoria extraordinaria" ;
+    guide:hasModality "Presencial" ;
+    guide:hasWeight "100%" ;
+    guide:hasMinimumGrade "5 / 10" ;
+    guide:evaluatesCompetence guide:ct5Competence , guide:ct11Competence , guide:cc2Competence , guide:cc3Competence , guide:ce6Competence .

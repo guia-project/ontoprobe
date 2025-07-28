@@ -1,0 +1,1 @@
+{"error": "at line 507 of <>:\nBad syntax (bad escape) at ^ in:\n\"...b'\\xc3\\xada del Software\" .\\n\\nonto:recurso_del_aseguramiento_gestion_'^b'calidad_aenor a onto:Resource ;\\n    onto:Resource_name \"\\\\\"De'...\""}

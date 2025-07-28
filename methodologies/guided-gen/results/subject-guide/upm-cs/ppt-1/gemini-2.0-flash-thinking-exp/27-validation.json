@@ -1,0 +1,1 @@
+{"error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'a#> .\\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\\n\\n: '^b'Ontology a owl:Ontology .\\n\\n# Classes\\n: Subject a owl:Class .'...\""}

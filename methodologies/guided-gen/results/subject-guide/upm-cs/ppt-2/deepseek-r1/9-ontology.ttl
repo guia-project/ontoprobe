@@ -1,0 +1,212 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class Definitions
+onto:Subject a owl:Class ;
+    rdfs:label "Subject" .
+
+onto:Character a owl:Class ;
+    rdfs:label "Character" .
+
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character ;
+    rdfs:label "MandatoryCharacter" .
+
+onto:StudyPlan a owl:Class ;
+    rdfs:label "StudyPlan" .
+
+onto:School a owl:Class ;
+    rdfs:label "School" .
+
+onto:University a owl:Class ;
+    rdfs:label "University" .
+
+onto:Professor a owl:Class ;
+    rdfs:label "Professor" .
+
+onto:Competence a owl:Class ;
+    rdfs:label "Competence" .
+
+onto:Outcome a owl:Class ;
+    rdfs:label "Outcome" .
+
+onto:Evaluation a owl:Class ;
+    rdfs:label "Evaluation" .
+
+onto:Activity a owl:Class ;
+    rdfs:label "Activity" .
+
+onto:Topic a owl:Class ;
+    rdfs:label "Topic" .
+
+onto:Resource a owl:Class ;
+    rdfs:label "Resource" .
+
+onto:RecommendedPreviousSubject a owl:Class ;
+    rdfs:label "RecommendedPreviousSubject" .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+
+onto:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+
+onto:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+
+# Object Properties
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+
+onto:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Outcome .
+
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousSubject .
+
+# Instances
+onto:CalidadDelSoftware a onto:Subject ;
+    onto:Subject_name "Calidad Del Software" ;
+    onto:Subject_code "615000259" ;
+    onto:Subject_credits "6 ECTS" ;
+    onto:Subject_course "Cuarto curso" ;
+    onto:Subject_semester "Séptimo semestre" ;
+    onto:Subject_period "Septiembre-Enero" ;
+    onto:Subject_language "Castellano" ;
+    onto:Subject_character onto:Obligatoria ;
+    onto:Subject_studyPlan onto:GradoIngenieriaSoftware ;
+    onto:Subject_professors onto:CarolinaGallardoPerez, onto:JuanGarbajosaSopena, onto:JavierAlegreLandaburu ;
+    onto:Subject_competencies onto:CC1, onto:CC4, onto:CE1, onto:CT6 ;
+    onto:Subject_outcomes onto:RA113, onto:RA109, onto:RA83, onto:RA114 ;
+    onto:Subject_recommendedPreviousSubjects onto:FundamentosIngenieriaSoftware .
+
+onto:Obligatoria a onto:MandatoryCharacter ;
+    rdfs:label "Obligatoria" .
+
+onto:GradoIngenieriaSoftware a onto:StudyPlan ;
+    onto:code "61IW" ;
+    onto:name "Grado en Ingenieria del Software" ;
+    onto:StudyPlan_school onto:ETSISI .
+
+onto:ETSISI a onto:School ;
+    onto:code "61" ;
+    onto:name "E.T.S. de Ing. de Sistemas Informáticos" ;
+    onto:School_university onto:UPM .
+
+onto:UPM a onto:University ;
+    onto:name "Universidad Politécnica de Madrid" .
+
+onto:CarolinaGallardoPerez a onto:Professor ;
+    onto:Professor_name "Carolina Gallardo Perez" ;
+    onto:Professor_email "carolina.gallardop@upm.es" ;
+    onto:Professor_office "1209" .
+
+onto:JuanGarbajosaSopena a onto:Professor ;
+    onto:Professor_name "Juan Garbajosa Sopeña" ;
+    onto:Professor_email "juan.garbajosa@upm.es" .
+
+onto:JavierAlegreLandaburu a onto:Professor ;
+    onto:Professor_name "Javier Alegre Landaburu" ;
+    onto:Professor_email "javier.alegre.landaburu@upm.es" .
+
+onto:CC1 a onto:Competence ;
+    onto:Competence_code "CC1" ;
+    onto:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad" .
+
+onto:CC4 a onto:Competence ;
+    onto:Competence_code "CC4" ;
+    onto:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática" .
+
+onto:CE1 a onto:Competence ;
+    onto:Competence_code "CE1" ;
+    onto:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario" .
+
+onto:CT6 a onto:Competence ;
+    onto:Competence_code "CT6" ;
+    onto:Competence_description "Razonamiento crítico" .
+
+onto:RA113 a onto:Outcome ;
+    onto:Outcome_code "RA113" ;
+    onto:Outcome_description "Selecciona y evalúa métricas para controlar la calidad del software" .
+
+onto:RA109 a onto:Outcome ;
+    onto:Outcome_code "RA109" ;
+    onto:Outcome_description "Maneja procesos de la gestión de calidad y normas" .
+
+onto:FundamentosIngenieriaSoftware a onto:RecommendedPreviousSubject ;
+    rdfs:label "Fundamentos De Ingenieria Del Software" .

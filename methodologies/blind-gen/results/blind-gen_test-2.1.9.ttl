@@ -1,0 +1,548 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix course: <http://example.org/ontology/> .
+
+course:Asignatura rdfs:Class ;
+    rdfs:label "Asignatura"@es, "Subject"@en .
+
+course:PlanDeEstudios rdfs:Class ;
+    rdfs:label "Plan de Estudios"@es, "Study Plan"@en .
+
+course:Profesor rdfs:Class ;
+    rdfs:label "Profesor"@es, "Professor"@en .
+
+course:Competencia rdfs:Class ;
+    rdfs:label "Competencia"@es, "Competence"@en .
+
+course:ResultadoAprendizaje rdfs:Class ;
+    rdfs:label "Resultado de Aprendizaje"@es, "Learning Outcome"@en .
+
+course:Temario rdfs:Class ;
+    rdfs:label "Temario"@es, "Syllabus"@en .
+
+course:Tema rdfs:Class ;
+    rdfs:label "Tema"@es, "Theme"@en .
+
+course:Cronograma rdfs:Class ;
+    rdfs:label "Cronograma"@es, "Schedule"@en .
+
+course:Actividad rdfs:Class ;
+    rdfs:label "Actividad"@es, "Activity"@en .
+
+course:Evaluacion rdfs:Class ;
+    rdfs:label "Evaluacion"@es, "Evaluation"@en .
+
+course:RecursoDidactico rdfs:Class ;
+    rdfs:label "Recurso Didáctico"@es, "Didactic Resource"@en .
+
+course:DatosDescriptivos rdfs:Class ;
+    rdfs:label "Datos Descriptivos"@es, "Descriptive Data"@en .
+
+course:hasNombre rdfs:Property ;
+    rdfs:domain course:Asignatura, course:Profesor ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Nombre"@es, "has Name"@en .
+
+course:hasCodigo rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Código"@es, "has Code"@en .
+
+course:hasCreditos rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:integer ;
+    rdfs:label "tiene Créditos"@es, "has Credits"@en .
+
+course:hasCarácter rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Carácter"@es, "has Character"@en .
+
+course:hasCurso rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Curso"@es, "has Course"@en .
+
+course:hasSemestre rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Semestre"@es, "has Semester"@en .
+
+course:hasPeriodoImparticion rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Período de Impartición"@es, "has Teaching Period"@en .
+
+course:hasIdiomaImparticion rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Idioma de Impartición"@es, "has Language of Instruction"@en .
+
+course:perteneceA rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range course:PlanDeEstudios ;
+    rdfs:label "pertenece a"@es, "belongs to"@en .
+
+course:esDictadaPor rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range course:Profesor ;
+    rdfs:label "es dictada por"@es, "is taught by"@en .
+
+course:hasDespacho rdfs:Property ;
+    rdfs:domain course:Profesor ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Despacho"@es, "has Office"@en .
+
+course:hasCorreoElectronico rdfs:Property ;
+    rdfs:domain course:Profesor ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Correo Electrónico"@es, "has Email"@en .
+
+course:hasHorarioTutorias rdfs:Property ;
+    rdfs:domain course:Profesor ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Horario de Tutorías"@es, "has Tutoring Hours"@en .
+
+course:tieneCompetencia rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range course:Competencia ;
+    rdfs:label "tiene Competencia"@es, "has Competence"@en .
+
+course:tieneResultadoAprendizaje rdfs:Property ;
+    rdfs:domain course:Asignatura ;
+    rdfs:range course:ResultadoAprendizaje ;
+    rdfs:label "tiene Resultado de Aprendizaje"@es, "has Learning Outcome"@en .
+
+course:incluyeTema rdfs:Property ;
+    rdfs:domain course:Temario ;
+    rdfs:range course:Tema ;
+    rdfs:label "incluye Tema"@es, "includes Theme"@en .
+
+course:hasDescripcion rdfs:Property ;
+    rdfs:domain course:Asignatura, course:RecursoDidactico, course:Evaluacion ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Descripción"@es, "has Description"@en .
+
+course:hasDuracion rdfs:Property ;
+    rdfs:domain course:Actividad, course:Evaluacion ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Duración"@es, "has Duration"@en .
+
+course:hasTipo rdfs:Property ;
+    rdfs:domain course:Actividad, course:Evaluacion, course:RecursoDidactico ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Tipo"@es, "has Type"@en .
+
+course:hasPesoNota rdfs:Property ;
+    rdfs:domain course:Evaluacion ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Peso en la Nota"@es, "has Weight in Grade"@en .
+
+course:hasNotaMinima rdfs:Property ;
+    rdfs:domain course:Evaluacion ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Nota Mínima"@es, "has Minimum Grade"@en .
+
+course:evaluaCompetencia rdfs:Property ;
+    rdfs:domain course:Evaluacion ;
+    rdfs:range course:Competencia ;
+    rdfs:label "evalúa Competencia"@es, "evaluates Competence"@en .
+
+course:isActividadDe rdfs:Property ;
+    rdfs:domain course:Actividad ;
+    rdfs:range course:Cronograma ;
+    rdfs:label "es Actividad de"@es, "is Activity of"@en .
+
+course:hasObservaciones rdfs:Property ;
+    rdfs:domain course:RecursoDidactico ;
+    rdfs:range xsd:string ;
+    rdfs:label "tiene Observaciones"@es, "has Observations"@en .
+
+course:asignatura_615000258 a course:Asignatura ;
+    course:hasNombre "Gestion de Proyectos y del Riesgo" ;
+    course:hasCodigo "615000258" ;
+    course:hasCreditos 6 ;
+    course:hasCarácter "Obligatoria" ;
+    course:hasCurso "Cuarto curso" ;
+    course:hasSemestre "Séptimo semestre" ;
+    course:hasPeriodoImparticion "Septiembre-Enero" ;
+    course:hasIdiomaImparticion "Castellano" ;
+    course:perteneceA course:plan_61IW ;
+    course:esDictadaPor course:profesor_agordillo, course:profesor_mottaviano, course:profesor_jserrano ;
+    course:tieneCompetencia course:competencia_CC2, course:competencia_CC3, course:competencia_CE6, course:competencia_CT11, course:competencia_CT5 ;
+    course:tieneResultadoAprendizaje course:ra_112, course:ra_116, course:ra_111, course:ra_118 .
+
+course:plan_61IW a course:PlanDeEstudios ;
+    rdfs:label "61IW - Grado En Ingenieria Del Software" .
+
+course:profesor_agordillo a course:Profesor ;
+    course:hasNombre "Aldo Gordillo Mendez" ;
+    course:hasDespacho "1219" ;
+    course:hasCorreoElectronico "a.gordillo@upm.es" ;
+    course:hasHorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+course:profesor_mottaviano a course:Profesor ;
+    course:hasNombre "Manuel Ottaviano" ;
+    course:hasDespacho "1212" ;
+    course:hasCorreoElectronico "manuel.ottaviano@upm.es" ;
+    course:hasHorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+course:profesor_jserrano a course:Profesor ;
+    course:hasNombre "Javier Serrano Romero" ;
+    course:hasDespacho "4219" ;
+    course:hasCorreoElectronico "javier.serrano@upm.es" ;
+    course:hasHorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+course:competencia_CC2 a course:Competencia ;
+    rdfs:label "CC2 - Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+course:competencia_CC3 a course:Competencia ;
+    rdfs:label "CC3 - Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+course:competencia_CE6 a course:Competencia ;
+    rdfs:label "CE6 - Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+course:competencia_CT11 a course:Competencia ;
+    rdfs:label "CT11 - Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+course:competencia_CT5 a course:Competencia ;
+    rdfs:label "CT5 - Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+course:ra_112 a course:ResultadoAprendizaje ;
+    rdfs:label "RA112 - Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+course:ra_116 a course:ResultadoAprendizaje ;
+    rdfs:label "RA116 - Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+course:ra_111 a course:ResultadoAprendizaje ;
+    rdfs:label "RA111 - Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+course:ra_118 a course:ResultadoAprendizaje ;
+    rdfs:label "RA118 - Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+course:temario_gpr a course:Temario ;
+    rdfs:label "Temario de Gestión de Proyectos y del Riesgo" ;
+    course:incluyeTema course:tema_1, course:tema_2, course:tema_3, course:tema_4, course:tema_5, course:tema_6, course:tema_7, course:tema_8, course:tema_9, course:tema_10 .
+
+course:tema_1 a course:Tema ;
+    rdfs:label "Tema 1: Introducción a la gestión de proyectos." .
+
+course:tema_2 a course:Tema ;
+    rdfs:label "Tema 2: Procesos de la dirección de proyectos." .
+
+course:tema_3 a course:Tema ;
+    rdfs:label "Tema 3: Gestión del alcance." .
+
+course:tema_4 a course:Tema ;
+    rdfs:label "Tema 4: Planificación temporal de proyectos." .
+
+course:tema_5 a course:Tema ;
+    rdfs:label "Tema 5: Estimación en proyectos de software." .
+
+course:tema_6 a course:Tema ;
+    rdfs:label "Tema 6: Gestión de riesgos." .
+
+course:tema_7 a course:Tema ;
+    rdfs:label "Tema 7: Gestión de costes." .
+
+course:tema_8 a course:Tema ;
+    rdfs:label "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+course:tema_9 a course:Tema ;
+    rdfs:label "Tema 9: Prácticas ágiles." .
+
+course:tema_10 a course:Tema ;
+    rdfs:label "Tema 10: Scrum." .
+
+course:cronograma_gpr a course:Cronograma .
+
+course:actividad_presentacion a course:Actividad ;
+    rdfs:label "Presentación de la asignatura" ;
+    course:hasDuracion "00:30" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema1 a course:Actividad ;
+    rdfs:label "Tema 1: Introducción a la gestión de proyectos." ;
+    course:hasDuracion "01:30" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema2 a course:Actividad ;
+    rdfs:label "Tema 2: Procesos de la dirección de proyectos." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema3 a course:Actividad ;
+    rdfs:label "Tema 3: Gestión del alcance." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_presentacion_practica1 a course:Actividad ;
+    rdfs:label "Presentación Práctica 1 y formación de grupos de prácticas." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema4_1 a course:Actividad ;
+    rdfs:label "Tema 4: Planificación temporal de proyectos." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_1 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema4_2 a course:Actividad ;
+    rdfs:label "Tema 4: Planificación temporal de proyectos." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Clase de Problemas" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_2 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema5_1 a course:Actividad ;
+    rdfs:label "Tema 5: Estimación en proyectos de software." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_3 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema5_2 a course:Actividad ;
+    rdfs:label "Tema 5: Estimación en proyectos de software." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Clase de Problemas" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_4 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema6 a course:Actividad ;
+    rdfs:label "Tema 6: Gestión de riesgos." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_5 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema7 a course:Actividad ;
+    rdfs:label "Tema 7: Gestión de costes." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_6 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema8 a course:Actividad ;
+    rdfs:label "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_7 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema9_1 a course:Actividad ;
+    rdfs:label "Tema 9: Prácticas ágiles." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica1_8 a course:Actividad ;
+    rdfs:label "Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema9_2 a course:Actividad ;
+    rdfs:label "Tema 9: Prácticas ágiles." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Clase de Problemas" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_finalizacion_practica1 a course:Actividad ;
+    rdfs:label "Finalización de la Práctica 1." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema10_1 a course:Actividad ;
+    rdfs:label "Tema 10: Scrum." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Lección Magistral" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_presentacion_practica2 a course:Actividad ;
+    rdfs:label "Presentación Práctica 2." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_tema10_2 a course:Actividad ;
+    rdfs:label "Tema 10: Scrum." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Clase de Problemas" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica2_1 a course:Actividad ;
+    rdfs:label "Práctica 2." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_resolucion_ejercicios a course:Actividad ;
+    rdfs:label "Resolución de ejercicios." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Clase de Problemas" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica2_2 a course:Actividad ;
+    rdfs:label "Práctica 2." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_practica2_3 a course:Actividad ;
+    rdfs:label "Práctica 2." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:actividad_finalizacion_practica2 a course:Actividad ;
+    rdfs:label "Finalización de la Práctica 2." ;
+    course:hasDuracion "02:00" ;
+    course:hasTipo "Prácticas de Laboratorio" ;
+    course:isActividadDe course:cronograma_gpr .
+
+course:evaluacion_ejercicio_tradicionales a course:Evaluacion ;
+    rdfs:label "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    course:hasDescripcion "(RA111, RA112, RA116)" ;
+    course:hasTipo "Trabajo Individual" ;
+    course:hasDuracion "00:00" ;
+    course:hasPesoNota "10%" ;
+    course:hasNotaMinima "/" ;
+    course:evaluaCompetencia course:competencia_CT5, course:competencia_CC2, course:competencia_CE6 .
+
+course:evaluacion_practica1 a course:Evaluacion ;
+    rdfs:label "Práctica 1." ;
+    course:hasDescripcion "(RA111, RA112, RA116, RA118)" ;
+    course:hasTipo "Trabajo en Grupo" ;
+    course:hasDuracion "00:00" ;
+    course:hasPesoNota "23%" ;
+    course:hasNotaMinima "/" ;
+    course:evaluaCompetencia course:competencia_CT5, course:competencia_CT11, course:competencia_CC2, course:competencia_CC3, course:competencia_CE6 .
+
+course:evaluacion_ejercicio_agiles a course:Evaluacion ;
+    rdfs:label "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    course:hasDescripcion "(RA112, RA116)" ;
+    course:hasTipo "Trabajo Individual" ;
+    course:hasDuracion "00:00" ;
+    course:hasPesoNota "5%" ;
+    course:hasNotaMinima "/" ;
+    course:evaluaCompetencia course:competencia_CT5, course:competencia_CC2, course:competencia_CE6 .
+
+course:evaluacion_practica2 a course:Evaluacion ;
+    rdfs:label "Práctica 2." ;
+    course:hasDescripcion "(RA112, RA116, RA118)" ;
+    course:hasTipo "Trabajo en Grupo" ;
+    course:hasDuracion "00:00" ;
+    course:hasPesoNota "12%" ;
+    course:hasNotaMinima "/" ;
+    course:evaluaCompetencia course:competencia_CT5, course:competencia_CT11, course:competencia_CC2, course:competencia_CC3, course:competencia_CE6 .
+
+course:evaluacion_examen_ordinario a course:Evaluacion ;
+    rdfs:label "Examen final (Convocatoria ordinaria)." ;
+    course:hasDescripcion "(RA111, RA112, RA116, RA118)" ;
+    course:hasTipo "Examen Escrito" ;
+    course:hasDuracion "02:30" ;
+    course:hasPesoNota "50%" ;
+    course:hasNotaMinima "4.5 / 10" ;
+    course:evaluaCompetencia course:competencia_CT5, course:competencia_CT11, course:competencia_CC2, course:competencia_CC3, course:competencia_CE6 .
+
+course:evaluacion_examen_extraordinario a course:Evaluacion ;
+    rdfs:label "Examen final (Convocatoria extraordinaria)." ;
+    course:hasDescripcion "(RA111, RA112, RA116, RA118)" ;
+    course:hasTipo "Examen Escrito" ;
+    course:hasDuracion "02:30" ;
+    course:hasPesoNota "100%" ;
+    course:hasNotaMinima "5 / 10" ;
+    course:evaluaCompetencia course:competencia_CT5, course:competencia_CT11, course:competencia_CC2, course:competencia_CC3, course:competencia_CE6 .
+
+course:recurso_guia_pmbok a course:RecursoDidactico ;
+    rdfs:label "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_pmp_exam_prep a course:RecursoDidactico ;
+    rdfs:label "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_iso_iec_ieee_16326 a course:RecursoDidactico ;
+    rdfs:label "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_guia_practica_estimacion a course:RecursoDidactico ;
+    rdfs:label "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_agile_practice_guide a course:RecursoDidactico ;
+    rdfs:label "Agile Practice Guide" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_user_story_mapping a course:RecursoDidactico ;
+    rdfs:label "User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_guia_scrum a course:RecursoDidactico ;
+    rdfs:label "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_agile_project_management_scrum a course:RecursoDidactico ;
+    rdfs:label "Agile Project Management with SCRUM" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_kanban_esencial_condensado a course:RecursoDidactico ;
+    rdfs:label "Kanban Esencial Condensado" ;
+    course:hasTipo "Bibliografía" .
+
+course:recurso_guia_kanban_equipos_scrum a course:RecursoDidactico ;
+    rdfs:label "La Guía Kanban para Equipos Scrum" ;
+    course:hasTipo "Bibliografía" .
+
+course:datos_asignatura a course:DatosDescriptivos ;
+    course:hasNombre "615000258 - Gestion de Proyectos y del Riesgo" ;
+    course:hasCreditos "6 ECTS" ;
+    course:hasCarácter "Obligatoria" ;
+    course:hasCurso "Cuarto curso" ;
+    course:hasSemestre "Séptimo semestre" ;
+    course:hasPeriodoImparticion "Septiembre-Enero" ;
+    course:hasIdiomaImparticion "Castellano" .

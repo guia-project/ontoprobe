@@ -1,0 +1,484 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.org/ontology/> .
+
+# Ontology Definition
+<http://example.org/ontology/> rdf:type owl:Ontology .
+
+# Class Definitions
+ex:Subject rdf:type owl:Class .
+ex:Character rdf:type owl:Class .
+ex:MandatoryCharacter rdf:type owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:OptionalCharacter rdf:type owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:StudyPlan rdf:type owl:Class .
+ex:School rdf:type owl:Class .
+ex:University rdf:type owl:Class .
+ex:Professor rdf:type owl:Class .
+ex:Competence rdf:type owl:Class .
+ex:Outcome rdf:type owl:Class .
+ex:Evaluation rdf:type owl:Class .
+ex:Activity rdf:type owl:Class .
+ex:Topic rdf:type owl:Class .
+ex:Resource rdf:type owl:Class .
+ex:RecommendedPreviousSubject rdf:type owl:Class .
+ex:RecommendedPreviousKnowledge rdf:type owl:Class .
+
+# Datatype Property Definitions
+ex:Subject_name rdf:type owl:DatatypeProperty .
+ex:Subject_description rdf:type owl:DatatypeProperty .
+ex:Subject_code rdf:type owl:DatatypeProperty .
+ex:Subject_course rdf:type owl:DatatypeProperty .
+ex:Subject_courseYear rdf:type owl:DatatypeProperty .
+ex:Subject_credits rdf:type owl:DatatypeProperty .
+ex:Subject_language rdf:type owl:DatatypeProperty .
+ex:Subject_semester rdf:type owl:DatatypeProperty .
+ex:Subject_period rdf:type owl:DatatypeProperty .
+ex:Subject_evaluationCriteria rdf:type owl:DatatypeProperty .
+ex:StudyPlan_code rdf:type owl:DatatypeProperty .
+ex:StudyPlan_name rdf:type owl:DatatypeProperty .
+ex:School_code rdf:type owl:DatatypeProperty .
+ex:School_name rdf:type owl:DatatypeProperty .
+ex:University_name rdf:type owl:DatatypeProperty .
+ex:Professor_email rdf:type owl:DatatypeProperty .
+ex:Professor_name rdf:type owl:DatatypeProperty .
+ex:Professor_office rdf:type owl:DatatypeProperty .
+ex:Professor_hours rdf:type owl:DatatypeProperty .
+ex:Professor_isCoordinator rdf:type owl:DatatypeProperty .
+ex:Competence_code rdf:type owl:DatatypeProperty .
+ex:Competence_description rdf:type owl:DatatypeProperty .
+ex:Outcome_code rdf:type owl:DatatypeProperty .
+ex:Outcome_description rdf:type owl:DatatypeProperty .
+ex:Evaluation_name rdf:type owl:DatatypeProperty .
+ex:Activity_name rdf:type owl:DatatypeProperty .
+ex:Activity_modality rdf:type owl:DatatypeProperty .
+ex:Activity_weight rdf:type owl:DatatypeProperty .
+ex:Activity_duration rdf:type owl:DatatypeProperty .
+ex:Activity_minGrade rdf:type owl:DatatypeProperty .
+ex:Topic_name rdf:type owl:DatatypeProperty .
+ex:Resource_name rdf:type owl:DatatypeProperty .
+ex:RecommendedPreviousSubject_description rdf:type owl:DatatypeProperty .
+ex:RecommendedPreviousKnowledge_description rdf:type owl:DatatypeProperty .
+
+# Object Property Definitions
+ex:Subject_character rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Character .
+ex:Subject_studyPlan rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:StudyPlan .
+ex:Subject_professors rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Professor .
+ex:Subject_resources rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Resource .
+ex:Subject_competencies rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Competence .
+ex:Subject_outcomes rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Outcome .
+ex:Subject_recommendedPreviousSubject rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousSubject .
+ex:Subject_recommendedPreviousKnowledge rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousKnowledge .
+ex:Subject_topics rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Topic .
+ex:Subject_evaluations rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Evaluation .
+ex:StudyPlan_school rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range ex:School .
+ex:School_university rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range ex:University .
+ex:Evaluation_activities rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:Activity .
+ex:Activity_relatedOutcomes rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Outcome .
+ex:Activity_relatedCompetencies rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Competence .
+ex:Activity_relatedTopics rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Topic .
+ex:Topic_subTopics rdf:type owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Topic .
+
+# Instance Data
+ex:uni-upm rdf:type ex:University ;
+    ex:University_name "UPM" .
+
+ex:school-61 rdf:type ex:School ;
+    ex:School_code "61" ;
+    ex:School_name "E.T.S De Ing. De Sistemas Informáticos" ;
+    ex:School_university ex:uni-upm .
+
+ex:sp-61IW rdf:type ex:StudyPlan ;
+    ex:StudyPlan_code "61IW" ;
+    ex:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    ex:StudyPlan_school ex:school-61 .
+
+ex:char-mandatory rdf:type ex:MandatoryCharacter .
+
+ex:prof-carolina-gallardo rdf:type ex:Professor ;
+    ex:Professor_name "Carolina Gallardo Perez" ;
+    ex:Professor_office "1209" ;
+    ex:Professor_email "carolina.gallardop@upm.es" ;
+    ex:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle" ;
+    ex:Professor_isCoordinator true .
+
+ex:prof-juan-garbajosa rdf:type ex:Professor ;
+    ex:Professor_name "Juan Garbajosa Sopeña" ;
+    ex:Professor_email "juan.garbajosa@upm.es" ;
+    ex:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." ;
+    ex:Professor_isCoordinator false .
+
+ex:prof-javier-alegre rdf:type ex:Professor ;
+    ex:Professor_name "Javier Alegre Landaburu" ;
+    ex:Professor_email "javier.alegre.landaburu@upm.es" ;
+    ex:Professor_hours "Sin horario." ;
+    ex:Professor_isCoordinator false .
+
+ex:comp-CC1 rdf:type ex:Competence ;
+    ex:Competence_code "CC1" ;
+    ex:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+
+ex:comp-CC4 rdf:type ex:Competence ;
+    ex:Competence_code "CC4" ;
+    ex:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los estándares y normativas vigentes" .
+
+ex:comp-CE1 rdf:type ex:Competence ;
+    ex:Competence_code "CE1" ;
+    ex:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+
+ex:comp-CT6 rdf:type ex:Competence ;
+    ex:Competence_code "CT6" ;
+    ex:Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar dispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las experiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta habilidad en la aplicación de esos métodos." .
+
+ex:out-RA113 rdf:type ex:Outcome ;
+    ex:Outcome_code "RA113" ;
+    ex:Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a desarrollar" .
+
+ex:out-RA109 rdf:type ex:Outcome ;
+    ex:Outcome_code "RA109" ;
+    ex:Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+
+ex:out-RA83 rdf:type ex:Outcome ;
+    ex:Outcome_code "RA83" ;
+    ex:Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para abordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información, maneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e interacción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las decisiones oportunas para lograr su propósito." .
+
+ex:out-RA114 rdf:type ex:Outcome ;
+    ex:Outcome_code "RA114" ;
+    ex:Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de manera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones. Identifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos niveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+ex:rec-prev-subject-fundamentos-is rdf:type ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+ex:rec-prev-knowledge-none rdf:type ex:RecommendedPreviousKnowledge ;
+    ex:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+ex:topic-1 rdf:type ex:Topic ;
+    ex:Topic_name "1. Introducción e historia de la calidad" .
+ex:topic-1-1 rdf:type ex:Topic ;
+    ex:Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." .
+ex:topic-1-2 rdf:type ex:Topic ;
+    ex:Topic_name "1.2. Evolución de la calidad." .
+ex:topic-1 ex:Topic_subTopics ex:topic-1-1, ex:topic-1-2 .
+
+ex:topic-2 rdf:type ex:Topic ;
+    ex:Topic_name "2. Técnicas de la calidad" .
+ex:topic-2-1 rdf:type ex:Topic ;
+    ex:Topic_name "2.1. Técnicas básicas." .
+ex:topic-2-2 rdf:type ex:Topic ;
+    ex:Topic_name "2.2. Técnicas estadísticas." .
+ex:topic-2-3 rdf:type ex:Topic ;
+    ex:Topic_name "2.3. Técnicas avanzadas." .
+ex:topic-2 ex:Topic_subTopics ex:topic-2-1, ex:topic-2-2, ex:topic-2-3 .
+
+ex:topic-3 rdf:type ex:Topic ;
+    ex:Topic_name "3. Mediciones de calidad del software" .
+ex:topic-3-1 rdf:type ex:Topic ;
+    ex:Topic_name "3.1. Medidas y métricas." .
+ex:topic-3-2 rdf:type ex:Topic ;
+    ex:Topic_name "3.2. Medición del producto." .
+ex:topic-3 ex:Topic_subTopics ex:topic-3-1, ex:topic-3-2 .
+
+ex:topic-4 rdf:type ex:Topic ;
+    ex:Topic_name "4. Costes y consideraciones éticas" .
+ex:topic-4-1 rdf:type ex:Topic ;
+    ex:Topic_name "4.1. Costes de la calidad. Modelos de costes." .
+ex:topic-4-2 rdf:type ex:Topic ;
+    ex:Topic_name "4.2. Caracterización de defectos." .
+ex:topic-4-3 rdf:type ex:Topic ;
+    ex:Topic_name "4.3. Código ético del ingeniero de software." .
+ex:topic-4 ex:Topic_subTopics ex:topic-4-1, ex:topic-4-2, ex:topic-4-3 .
+
+ex:topic-5 rdf:type ex:Topic ;
+    ex:Topic_name "5. Procesos de gestión de la calidad" .
+ex:topic-5-1 rdf:type ex:Topic ;
+    ex:Topic_name "5.1. Estándares de calidad" .
+ex:topic-5-2 rdf:type ex:Topic ;
+    ex:Topic_name "5.2. Gestión de la calidad por procesos" .
+ex:topic-5 ex:Topic_subTopics ex:topic-5-1, ex:topic-5-2 .
+
+ex:topic-6 rdf:type ex:Topic ;
+    ex:Topic_name "6. Estándares de calidad del software: SQUARE" .
+ex:topic-6-1 rdf:type ex:Topic ;
+    ex:Topic_name "6.1. Estándares y modelos para la calidad del software." .
+ex:topic-6-2 rdf:type ex:Topic ;
+    ex:Topic_name "6.2. Serie ISO 25000n" .
+ex:topic-6 ex:Topic_subTopics ex:topic-6-1, ex:topic-6-2 .
+
+ex:topic-7 rdf:type ex:Topic ;
+    ex:Topic_name "7. Aseguramiento de la calidad del software" .
+ex:topic-7-1 rdf:type ex:Topic ;
+    ex:Topic_name "7.1. Aseguramiento del proceso software" .
+ex:topic-7-2 rdf:type ex:Topic ;
+    ex:Topic_name "7.2. Aseguramiento del producto software" .
+ex:topic-7 ex:Topic_subTopics ex:topic-7-1, ex:topic-7-2 .
+
+ex:topic-8 rdf:type ex:Topic ;
+    ex:Topic_name "8. Mejora de procesos SW" .
+ex:topic-8-1 rdf:type ex:Topic ;
+    ex:Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" .
+ex:topic-8-2 rdf:type ex:Topic ;
+    ex:Topic_name "8.2. Modelos de referencia para mejora de procesos SW" .
+ex:topic-8 ex:Topic_subTopics ex:topic-8-1, ex:topic-8-2 .
+
+ex:resource-sqa-laporte rdf:type ex:Resource ;
+    ex:Resource_name "Software Quality Assurance. Claude Y. Laporte, Alain April" .
+
+ex:resource-sq-galin rdf:type ex:Resource ;
+    ex:Resource_name "Software Quality: Concepts and Practice. Daniel Galin" .
+
+ex:resource-sev-vocab rdf:type ex:Resource ;
+    ex:Resource_name "Sevocab" .
+
+ex:resource-aseguramiento-gestion-hoyle rdf:type ex:Resource ;
+    ex:Resource_name "\"Del aseguramiento a la gestión de la calidad: El enfoque basado en procesos\". David Hoyle, John Thompson. AENOR" .
+
+ex:resource-tqm-besterfield rdf:type ex:Resource ;
+    ex:Resource_name "\"Total Quality Management\". Dale H. Besterfield, Carol Besterfield-Michna, Glen H. Besterfield, Mary Besterfield-Sacre. Prentice Hall" .
+
+ex:resource-medicion-dolado rdf:type ex:Resource ;
+    ex:Resource_name "\"Medición para la Gestión en la Ingeniería del Software\". José J. Dolado, Luís Fernández. Ed Ra-Ma." .
+
+ex:resource-aula-etsisi rdf:type ex:Resource ;
+    ex:Resource_name "Aula Equipamiento" .
+
+ex:resource-moodle rdf:type ex:Resource ;
+    ex:Resource_name "Plataforma de enseñanza MOODLE" .
+
+ex:eval-progresiva rdf:type ex:Evaluation ;
+    ex:Evaluation_name "Evaluación (progresiva)" .
+
+ex:eval-global rdf:type ex:Evaluation ;
+    ex:Evaluation_name "Prueba evaluación global" .
+
+ex:eval-extraordinaria rdf:type ex:Evaluation ;
+    ex:Evaluation_name "Evaluación convocatoria extraordinaria" .
+
+# Activities for Evaluación progresiva (from Section 7.1.1)
+ex:act-prog-sem2-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "3%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem2-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem3-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "3%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem3-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem4-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem4-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem5-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem5-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem7-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem7-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem7-examen-t1-4 rdf:type ex:Activity ;
+    ex:Activity_name "Examen Temas 1-2-3-4" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "30%" ;
+    ex:Activity_minGrade "3 / 10" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem7-examen-t1-4 ;
+    ex:Activity_relatedCompetencies ex:comp-CE1, ex:comp-CT6 ;
+    ex:Activity_relatedOutcomes ex:out-RA114 ; # Based on 7.2 T1
+    ex:Activity_relatedTopics ex:topic-1, ex:topic-2, ex:topic-3, ex:topic-4 .
+
+ex:act-prog-sem9-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem9-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem10-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem10-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem11-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem11-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem12-ap rdf:type ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem12-ap ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113, ex:out-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:act-prog-sem15-tf-memoria rdf:type ex:Activity ;
+    ex:Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    ex:Activity_modality "Presencial" ; # Table says Presencial, Criteria says "entrega... a través de Moodle" - stick to table modality
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem15-tf-memoria ;
+    ex:Activity_relatedCompetencies ex:comp-CC1 ; # Based on 7.2 P.Doc
+    ex:Activity_relatedOutcomes ex:out-RA83 . # Based on 7.2 P.Doc (and name)
+
+ex:act-prog-sem15-tf-defensa rdf:type ex:Activity ;
+    ex:Activity_name "Trabajo Final. Defensa y exposición" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "5%" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem15-tf-defensa ;
+    ex:Activity_relatedCompetencies ex:comp-CC1, ex:comp-CT6 . # Based on 7.2 P.Oral
+
+ex:act-prog-sem15-examen-t5-8 rdf:type ex:Activity ;
+    ex:Activity_name "Examen Temas 5-6-7-8" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "30%" ;
+    ex:Activity_minGrade "3 / 10" ;
+    ex:eval-progresiva ex:Evaluation_activities ex:act-prog-sem15-examen-t5-8 ;
+    ex:Activity_relatedCompetencies ex:comp-CC1, ex:comp-CC4 ;
+    ex:Activity_relatedOutcomes ex:out-RA109, ex:out-RA113 ; # Based on 7.2 T2
+    ex:Activity_relatedTopics ex:topic-5, ex:topic-6, ex:topic-7, ex:topic-8 .
+
+# Activities for Prueba evaluación global (from Section 7.1.2)
+ex:act-global-sem17-examen rdf:type ex:Activity ;
+    ex:Activity_name "Examen Final (Escenario 2)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "03:00" ;
+    ex:Activity_weight "80%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:eval-global ex:Evaluation_activities ex:act-global-sem17-examen ;
+    ex:Activity_relatedCompetencies ex:comp-CC1, ex:comp-CC4, ex:comp-CE1, ex:comp-CT6 . # From table
+    # Note: Topics/Outcomes relationship in global exam not specified in table, only overall competencies.
+
+ex:act-global-sem17-tf-memoria rdf:type ex:Activity ;
+    ex:Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:eval-global ex:Evaluation_activities ex:act-global-sem17-tf-memoria ;
+    ex:Activity_relatedCompetencies ex:comp-CC1 ; # From table
+    ex:Activity_relatedOutcomes ex:out-RA83 . # Based on 7.2 Global Escenario 2 (maps P.Doc to RA83)
+
+ex:act-global-sem17-tf-defensa rdf:type ex:Activity ;
+    ex:Activity_name "Trabajo Final. Defensa y exposición" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "5%" ;
+    ex:eval-global ex:Evaluation_activities ex:act-global-sem17-tf-defensa ;
+    ex:Activity_relatedCompetencies ex:comp-CC1, ex:comp-CT6 . # From table
+
+# Activities for Evaluación convocatoria extraordinaria (from Section 7.1.3)
+ex:act-extra-examen rdf:type ex:Activity ;
+    ex:Activity_name "Examen extraordinario (RA83, RA109, RA113, RA114)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "80%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:eval-extraordinaria ex:Evaluation_activities ex:act-extra-examen ;
+    ex:Activity_relatedCompetencies ex:comp-CC1, ex:comp-CC4, ex:comp-CE1, ex:comp-CT6 ; # From table
+    ex:Activity_relatedOutcomes ex:out-RA83, ex:out-RA109, ex:out-RA113, ex:out-RA114 . # From name/table header
+
+ex:act-extra-tf-documentacion rdf:type ex:Activity ;
+    ex:Activity_name "Trabajo final: documentación" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "5 / 10" ;
+    ex:eval-extraordinaria ex:Evaluation_activities ex:act-extra-tf-documentacion ;
+    ex:Activity_relatedCompetencies ex:comp-CT6, ex:comp-CC4, ex:comp-CE1 . # From table
+
+ex:act-extra-tf-defensa-oral rdf:type ex:Activity ;
+    ex:Activity_name "Defensa oral de la práctica" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:05" ;
+    ex:Activity_weight "5%" ;
+    ex:eval-extraordinaria ex:Evaluation_activities ex:act-extra-tf-defensa-oral ;
+    ex:Activity_relatedCompetencies ex:comp-CC1, ex:comp-CC4, ex:comp-CE1, ex:comp-CT6 . # From table
+
+# Subject Instance
+ex:subj-calidad-software rdf:type ex:Subject ;
+    ex:Subject_name "Calidad Del Software" ;
+    ex:Subject_code "615000259" ;
+    ex:Subject_credits "6 ECTS" ;
+    ex:Subject_course "Cuarto curso" ;
+    ex:Subject_courseYear "2024-25" ;
+    ex:Subject_semester "Séptimo semestre" ; # Using 1.1 data
+    ex:Subject_period "Septiembre-Enero" ;
+    ex:Subject_language "Castellano" ;
+    ex:Subject_evaluationCriteria "Criterios de evaluación" ;
+    ex:Subject_character ex:char-mandatory ;
+    ex:Subject_studyPlan ex:sp-61IW ;
+    ex:Subject_professors ex:prof-carolina-gallardo, ex:prof-juan-garbajosa, ex:prof-javier-alegre ;
+    ex:Subject_resources ex:resource-sqa-laporte, ex:resource-sq-galin, ex:resource-sev-vocab, ex:resource-aseguramiento-gestion-hoyle, ex:resource-tqm-besterfield, ex:resource-medicion-dolado, ex:resource-aula-etsisi, ex:resource-moodle ;
+    ex:Subject_competencies ex:comp-CC1, ex:comp-CC4, ex:comp-CE1, ex:comp-CT6 ;
+    ex:Subject_outcomes ex:out-RA113, ex:out-RA109, ex:out-RA83, ex:out-RA114 ;
+    ex:Subject_recommendedPreviousSubject ex:rec-prev-subject-fundamentos-is ;
+    ex:Subject_recommendedPreviousKnowledge ex:rec-prev-knowledge-none ;
+    ex:Subject_topics ex:topic-1, ex:topic-2, ex:topic-3, ex:topic-4, ex:topic-5, ex:topic-6, ex:topic-7, ex:topic-8 ;
+    ex:Subject_evaluations ex:eval-progresiva, ex:eval-global, ex:eval-extraordinaria .
+

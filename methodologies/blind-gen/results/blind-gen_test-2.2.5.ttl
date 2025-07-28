@@ -1,0 +1,839 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sch: <http://schema.org/> .
+
+<http://example.org/ontology/>
+  rdf:type owl:Ontology ;
+  rdfs:label "Ontology for PROCESO DE COORDINACIÓN DE LAS ENSEÑANZAS Guide" ;
+.
+
+<http://example.org/ontology/Document> rdf:type rdfs:Class ;
+    rdfs:label "Document" ;
+    rdfs:comment "A document." .
+
+<http://example.org/ontology/StudyPlan> rdf:type rdfs:Class ;
+    rdfs:label "Study Plan" ;
+    rdfs:comment "A study plan." .
+
+<http://example.org/ontology/Subject> rdf:type rdfs:Class ;
+    rdfs:label "Subject" ;
+    rdfs:comment "A subject." .
+
+<http://example.org/ontology/School> rdf:type rdfs:Class ;
+    rdfs:label "School" ;
+    rdfs:comment "A school." .
+
+<http://example.org/ontology/AcademicYear> rdf:type rdfs:Class ;
+    rdfs:label "Academic Year" ;
+    rdfs:comment "An academic year." .
+
+<http://example.org/ontology/Semester> rdf:type rdfs:Class ;
+    rdfs:label "Semester" ;
+    rdfs:comment "A semester." .
+
+<http://example.org/ontology/Professor> rdf:type rdfs:Class ;
+    rdfs:label "Professor" ;
+    rdfs:comment "A professor." .
+
+<http://example.org/ontology/PriorKnowledge> rdf:type rdfs:Class ;
+    rdfs:label "Prior Knowledge" ;
+    rdfs:comment "Prior knowledge recommended for the subject." .
+
+<http://example.org/ontology/Competence> rdf:type rdfs:Class ;
+    rdfs:label "Competence" ;
+    rdfs:comment "A competence." .
+
+<http://example.org/ontology/LearningOutcome> rdf:type rdfs:Class ;
+    rdfs:label "Learning Outcome" ;
+    rdfs:comment "A learning outcome." .
+
+<http://example.org/ontology/Syllabus> rdf:type rdfs:Class ;
+    rdfs:label "Syllabus" ;
+    rdfs:comment "The syllabus of the subject." .
+
+<http://example.org/ontology/Topic> rdf:type rdfs:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "A topic within the syllabus." .
+
+<http://example.org/ontology/Schedule> rdf:type rdfs:Class ;
+    rdfs:label "Schedule" ;
+    rdfs:comment "The schedule of the subject." .
+
+<http://example.org/ontology/Activity> rdf:type rdfs:Class ;
+    rdfs:label "Activity" ;
+    rdfs:comment "An activity within the schedule." .
+
+<http://example.org/ontology/Evaluation> rdf:type rdfs:Class ;
+    rdfs:label "Evaluation" ;
+    rdfs:comment "An evaluation activity." .
+
+<http://example.org/ontology/EvaluationType> rdf:type rdfs:Class ;
+    rdfs:label "Evaluation Type" ;
+    rdfs:comment "The type of evaluation." .
+
+<http://example.org/ontology/EvaluationCriteria> rdf:type rdfs:Class ;
+    rdfs:label "Evaluation Criteria" ;
+    rdfs:comment "Criteria for evaluation." .
+
+<http://example.org/ontology/Resource> rdf:type rdfs:Class ;
+    rdfs:label "Resource" ;
+    rdfs:comment "A didactic resource." .
+
+<http://example.org/ontology/DocumentCode> rdf:type rdf:Property ;
+    rdfs:label "document code" ;
+    rdfs:domain <http://example.org/ontology/Document> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/DocumentAnnexCode> rdf:type rdf:Property ;
+    rdfs:label "document annex code" ;
+    rdfs:domain <http://example.org/ontology/Document> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/DocumentType> rdf:type rdf:Property ;
+    rdfs:label "document type" ;
+    rdfs:domain <http://example.org/ontology/Document> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasSubject> rdf:type rdf:Property ;
+    rdfs:label "has subject" ;
+    rdfs:domain <http://example.org/ontology/Document> ;
+    rdfs:range <http://example.org/ontology/Subject> .
+
+<http://example.org/ontology/studyPlanCode> rdf:type rdf:Property ;
+    rdfs:label "study plan code" ;
+    rdfs:domain <http://example.org/ontology/StudyPlan> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/studyPlanName> rdf:type rdf:Property ;
+    rdfs:label "study plan name" ;
+    rdfs:domain <http://example.org/ontology/StudyPlan> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/academicYearValue> rdf:type rdf:Property ;
+    rdfs:label "academic year value" ;
+    rdfs:domain <http://example.org/ontology/AcademicYear> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/semesterValue> rdf:type rdf:Property ;
+    rdfs:label "semester value" ;
+    rdfs:domain <http://example.org/ontology/Semester> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/schoolName> rdf:type rdf:Property ;
+    rdfs:label "school name" ;
+    rdfs:domain <http://example.org/ontology/School> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectCode> rdf:type rdf:Property ;
+    rdfs:label "subject code" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectName> rdf:type rdf:Property ;
+    rdfs:label "subject name" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectCredits> rdf:type rdf:Property ;
+    rdfs:label "subject credits" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectCharacter> rdf:type rdf:Property ;
+    rdfs:label "subject character" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectCourse> rdf:type rdf:Property ;
+    rdfs:label "subject course" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectSemester> rdf:type rdf:Property ;
+    rdfs:label "subject semester" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectTeachingPeriod> rdf:type rdf:Property ;
+    rdfs:label "subject teaching period" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/subjectLanguage> rdf:type rdf:Property ;
+    rdfs:label "subject language" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/isSubjectOfStudyPlan> rdf:type rdf:Property ;
+    rdfs:label "is subject of study plan" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/StudyPlan> .
+
+<http://example.org/ontology/isSubjectTaughtAtSchool> rdf:type rdf:Property ;
+    rdfs:label "is subject taught at school" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/School> .
+
+<http://example.org/ontology/hasProfessor> rdf:type rdf:Property ;
+    rdfs:label "has professor" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/Professor> .
+
+<http://example.org/ontology/professorName> rdf:type rdf:Property ;
+    rdfs:label "professor name" ;
+    rdfs:domain <http://example.org/ontology/Professor> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/professorOffice> rdf:type rdf:Property ;
+    rdfs:label "professor office" ;
+    rdfs:domain <http://example.org/ontology/Professor> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/professorEmail> rdf:type rdf:Property ;
+    rdfs:label "professor email" ;
+    rdfs:domain <http://example.org/ontology/Professor> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/professorTutoringHours> rdf:type rdf:Property ;
+    rdfs:label "professor tutoring hours" ;
+    rdfs:domain <http://example.org/ontology/Professor> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/recommendsPriorSubject> rdf:type rdf:Property ;
+    rdfs:label "recommends prior subject" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/PriorKnowledge> .
+
+<http://example.org/ontology/priorSubjectName> rdf:type rdf:Property ;
+    rdfs:label "prior subject name" ;
+    rdfs:domain <http://example.org/ontology/PriorKnowledge> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/recommendsPriorKnowledge> rdf:type rdf:Property ;
+    rdfs:label "recommends prior knowledge" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/PriorKnowledge> .
+
+<http://example.org/ontology/priorKnowledgeDescription> rdf:type rdf:Property ;
+    rdfs:label "prior knowledge description" ;
+    rdfs:domain <http://example.org/ontology/PriorKnowledge> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasCompetence> rdf:type rdf:Property ;
+    rdfs:label "has competence" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/Competence> .
+
+<http://example.org/ontology/competenceCode> rdf:type rdf:Property ;
+    rdfs:label "competence code" ;
+    rdfs:domain <http://example.org/ontology/Competence> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/competenceDescription> rdf:type rdf:Property ;
+    rdfs:label "competence description" ;
+    rdfs:domain <http://example.org/ontology/Competence> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasLearningOutcome> rdf:type rdf:Property ;
+    rdfs:label "has learning outcome" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/LearningOutcome> .
+
+<http://example.org/ontology/learningOutcomeCode> rdf:type rdf:Property ;
+    rdfs:label "learning outcome code" ;
+    rdfs:domain <http://example.org/ontology/LearningOutcome> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/learningOutcomeDescription> rdf:type rdf:Property ;
+    rdfs:label "learning outcome description" ;
+    rdfs:domain <http://example.org/ontology/LearningOutcome> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasSyllabus> rdf:type rdf:Property ;
+    rdfs:label "has syllabus" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/Syllabus> .
+
+<http://example.org/ontology/hasTopic> rdf:type rdf:Property ;
+    rdfs:label "has topic" ;
+    rdfs:domain <http://example.org/ontology/Syllabus> ;
+    rdfs:range <http://example.org/ontology/Topic> .
+
+<http://example.org/ontology/topicNumber> rdf:type rdf:Property ;
+    rdfs:label "topic number" ;
+    rdfs:domain <http://example.org/ontology/Topic> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/topicName> rdf:type rdf:Property ;
+    rdfs:label "topic name" ;
+    rdfs:domain <http://example.org/ontology/Topic> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasSchedule> rdf:type rdf:Property ;
+    rdfs:label "has schedule" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/Schedule> .
+
+<http://example.org/ontology/scheduleWeek> rdf:type rdf:Property ;
+    rdfs:label "schedule week" ;
+    rdfs:domain <http://example.org/ontology/Schedule> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasActivity> rdf:type rdf:Property ;
+    rdfs:label "has activity" ;
+    rdfs:domain <http://example.org/ontology/Schedule> ;
+    rdfs:range <http://example.org/ontology/Activity> .
+
+<http://example.org/ontology/activityTypeName> rdf:type rdf:Property ;
+    rdfs:label "activity type name" ;
+    rdfs:domain <http://example.org/ontology/Activity> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/activityDuration> rdf:type rdf:Property ;
+    rdfs:label "activity duration" ;
+    rdfs:domain <http://example.org/ontology/Activity> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/teleTeaching> rdf:type rdf:Property ;
+    rdfs:label "tele teaching" ;
+    rdfs:domain <http://example.org/ontology/Activity> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluationActivity> rdf:type rdf:Property ;
+    rdfs:label "evaluation activity" ;
+    rdfs:domain <http://example.org/ontology/Schedule> ;
+    rdfs:range <http://example.org/ontology/Evaluation> .
+
+<http://example.org/ontology/evaluationDescription> rdf:type rdf:Property ;
+    rdfs:label "evaluation description" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluationModality> rdf:type rdf:Property ;
+    rdfs:label "evaluation modality" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluationType> rdf:type rdf:Property ;
+    rdfs:label "evaluation type" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range <http://example.org/ontology/EvaluationType> .
+
+<http://example.org/ontology/evaluationTypeName> rdf:type rdf:Property ;
+    rdfs:label "evaluation type name" ;
+    rdfs:domain <http://example.org/ontology/EvaluationType> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluationDuration> rdf:type rdf:Property ;
+    rdfs:label "evaluation duration" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluationWeight> rdf:type rdf:Property ;
+    rdfs:label "evaluation weight" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluationMinimumGrade> rdf:type rdf:Property ;
+    rdfs:label "evaluation minimum grade" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/evaluatesCompetence> rdf:type rdf:Property ;
+    rdfs:label "evaluates competence" ;
+    rdfs:domain <http://example.org/ontology/Evaluation> ;
+    rdfs:range <http://example.org/ontology/Competence> .
+
+<http://example.org/ontology/evaluationCriteriaDescription> rdf:type rdf:Property ;
+    rdfs:label "evaluation criteria description" ;
+    rdfs:domain <http://example.org/ontology/EvaluationCriteria> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasResource> rdf:type rdf:Property ;
+    rdfs:label "has resource" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range <http://example.org/ontology/Resource> .
+
+<http://example.org/ontology/resourceName> rdf:type rdf:Property ;
+    rdfs:label "resource name" ;
+    rdfs:domain <http://example.org/ontology/Resource> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/resourceType> rdf:type rdf:Property ;
+    rdfs:label "resource type" ;
+    rdfs:domain <http://example.org/ontology/Resource> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/resourceObservation> rdf:type rdf:Property ;
+    rdfs:label "resource observation" ;
+    rdfs:domain <http://example.org/ontology/Resource> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/otherInformationText> rdf:type rdf:Property ;
+    rdfs:label "other information text" ;
+    rdfs:domain <http://example.org/ontology/Subject> ;
+    rdfs:range rdfs:Literal .
+
+<http://example.org/ontology/hasTopicReference> rdf:type rdf:Property ;
+    rdfs:label "has topic reference" ;
+    rdfs:domain <http://example.org/ontology/Activity> ;
+    rdfs:range <http://example.org/ontology/Topic> .
+
+
+<http://example.org/instance/document-pr-cl-001> rdf:type <http://example.org/ontology/Document> ;
+    <http://example.org/ontology/DocumentCode> "PR/CL/001E.T.S." ;
+    <http://example.org/ontology/DocumentAnnexCode> "ANX-PR/CL/001-01" ;
+    <http://example.org/ontology/DocumentType> "GUÍA DE APRENDIZAJE" ;
+    <http://example.org/ontology/hasSubject> <http://example.org/instance/subject-615000258> .
+
+<http://example.org/instance/studyplan-61IW> rdf:type <http://example.org/ontology/StudyPlan> ;
+    <http://example.org/ontology/studyPlanCode> "61IW" ;
+    <http://example.org/ontology/studyPlanName> "Grado En Ingenieria Del Software" .
+
+<http://example.org/instance/school-etsisi> rdf:type <http://example.org/ontology/School> ;
+    <http://example.org/ontology/schoolName> "E.T.S. de Ingenieria de Sistemas Informaticos" .
+
+<http://example.org/instance/school-etsisi-full> rdf:type <http://example.org/ontology/School> ;
+    <http://example.org/ontology/schoolName> "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .
+
+<http://example.org/instance/academic-year-2024-25> rdf:type <http://example.org/ontology/AcademicYear> ;
+    <http://example.org/ontology/academicYearValue> "2024-25" .
+
+<http://example.org/instance/semester-primer> rdf:type <http://example.org/ontology/Semester> ;
+    <http://example.org/ontology/semesterValue> "Primer semestre" .
+
+<http://example.org/instance/semester-septimo> rdf:type <http://example.org/ontology/Semester> ;
+    <http://example.org/ontology/semesterValue> "Séptimo semestre" .
+
+<http://example.org/instance/subject-615000258> rdf:type <http://example.org/ontology/Subject> ;
+    <http://example.org/ontology/subjectCode> "615000258" ;
+    <http://example.org/ontology/subjectName> "Gestion De Proyectos Y Del Riesgo" ;
+    <http://example.org/ontology/subjectCredits> "6 ECTS" ;
+    <http://example.org/ontology/subjectCharacter> "Obligatoria" ;
+    <http://example.org/ontology/subjectCourse> "Cuarto curso" ;
+    <http://example.org/ontology/subjectSemester> "Séptimo semestre" ;
+    <http://example.org/ontology/subjectTeachingPeriod> "Septiembre-Enero" ;
+    <http://example.org/ontology/subjectLanguage> "Castellano" ;
+    <http://example.org/ontology/isSubjectOfStudyPlan> <http://example.org/instance/studyplan-61IW> ;
+    <http://example.org/ontology/isSubjectTaughtAtSchool> <http://example.org/instance/school-etsisi-full> ;
+    <http://example.org/ontology/hasProfessor> <http://example.org/instance/professor-agordillo>, <http://example.org/instance/professor-mottaviano>, <http://example.org/instance/professor-jserrano> ;
+    <http://example.org/ontology/recommendsPriorSubject> <http://example.org/instance/priorknowledge-subjects> ;
+    <http://example.org/ontology/recommendsPriorKnowledge> <http://example.org/instance/priorknowledge-other> ;
+    <http://example.org/ontology/hasCompetence> <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-cc3>, <http://example.org/instance/competence-ce6>, <http://example.org/instance/competence-ct11>, <http://example.org/instance/competence-ct5> ;
+    <http://example.org/ontology/hasLearningOutcome> <http://example.org/instance/learningoutcome-ra112>, <http://example.org/instance/learningoutcome-ra116>, <http://example.org/instance/learningoutcome-ra111>, <http://example.org/instance/learningoutcome-ra118> ;
+    <http://example.org/ontology/hasSyllabus> <http://example.org/instance/syllabus-gestion-proyectos> ;
+    <http://example.org/ontology/hasSchedule> <http://example.org/instance/schedule-gestion-proyectos> ;
+    <http://example.org/ontology/hasEvaluation> <http://example.org/instance/evaluation-progresiva-1>, <http://example.org/instance/evaluation-progresiva-2>, <http://example.org/instance/evaluation-global>, <http://example.org/instance/evaluation-extraordinaria> ;
+    <http://example.org/ontology/hasResource> <http://example.org/instance/resource-pmbok>, <http://example.org/instance/resource-pmp-exam-prep>, <http://example.org/instance/resource-iso-16326>, <http://example.org/instance/resource-guia-practica-estimacion>, <http://example.org/instance/resource-agile-practice-guide>, <http://example.org/instance/resource-user-story-mapping>, <http://example.org/instance/resource-guia-scrum>, <http://example.org/instance/resource-agile-project-management>, <http://example.org/instance/resource-kanban-esencial>, <http://example.org/instance/resource-guia-kanban-scrum> ;
+    <http://example.org/ontology/otherInformationText> "Todos los materiales y recursos de la asignatura se pondrán a disposición del estudiantado a través de la plataforma Moodle del curso. Esta misma plataforma se utilizará para gestionar las entregas de todos los ejercicios y prácticas de la asignatura, así como para la realización de diferentes actividades. Se adoptará la metodología de aula invertida para la impartición de ciertos temas de la asignatura de modo que parte del temario deberá ser estudiado fuera del aula y algunas lecciones magistrales se combinarán con actividades de resolución de problemas. El profesorado de la asignatura indicará durante el curso qué partes del temario deberán ser estudiadas fuera del aula. La comunicación con el profesorado de la asignatura se realizará a través de correo electrónico, tutorías y durante las clases presenciales planificadas. Los horarios de tutorías se publicarán en la web de la ETSISI. Antes de acudir a una tutoría, se deberá enviar un correo electrónico al profesor correspondiente para confirmar dicha tutoría. Esta asignatura está alineada con el Objetivo 4 \"Garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos\" definido dentro de los Objetivos de Desarrollo Sostenible (ODS) establecidos por la Organización de las Naciones Unidas (ONU)." .
+
+<http://example.org/instance/professor-agordillo> rdf:type <http://example.org/ontology/Professor> ;
+    <http://example.org/ontology/professorName> "Aldo Gordillo Mendez" ;
+    <http://example.org/ontology/professorOffice> "1219" ;
+    <http://example.org/ontology/professorEmail> "a.gordillo@upm.es" ;
+    <http://example.org/ontology/professorTutoringHours> "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+<http://example.org/instance/professor-mottaviano> rdf:type <http://example.org/ontology/Professor> ;
+    <http://example.org/ontology/professorName> "Manuel Ottaviano" ;
+    <http://example.org/ontology/professorOffice> "1212" ;
+    <http://example.org/ontology/professorEmail> "manuel.ottaviano@upm.es" ;
+    <http://example.org/ontology/professorTutoringHours> "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+<http://example.org/instance/professor-jserrano> rdf:type <http://example.org/ontology/Professor> ;
+    <http://example.org/ontology/professorName> "Javier Serrano Romero" ;
+    <http://example.org/ontology/professorOffice> "4219" ;
+    <http://example.org/ontology/professorEmail> "javier.serrano@upm.es" ;
+    <http://example.org/ontology/professorTutoringHours> "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+<http://example.org/instance/priorknowledge-subjects> rdf:type <http://example.org/ontology/PriorKnowledge> ;
+    <http://example.org/ontology/priorSubjectName> "Ingenieria De Requisitos Y Modelado" ;
+    <http://example.org/ontology/priorSubjectName> "Ingenieria Del Proceso Software Y Construccion" ;
+    <http://example.org/ontology/priorSubjectName> "Aspectos Legales Y Profesionales" ;
+    <http://example.org/ontology/priorSubjectName> "Fundamentos De Economia Y Empresa" ;
+    <http://example.org/ontology/priorSubjectName> "Fundamentos De Ingenieria Del Software" .
+
+<http://example.org/instance/priorknowledge-other> rdf:type <http://example.org/ontology/PriorKnowledge> ;
+    <http://example.org/ontology/priorKnowledgeDescription> "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+<http://example.org/instance/competence-cc2> rdf:type <http://example.org/ontology/Competence> ;
+    <http://example.org/ontology/competenceCode> "CC2" ;
+    <http://example.org/ontology/competenceDescription> "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+<http://example.org/instance/competence-cc3> rdf:type <http://example.org/ontology/Competence> ;
+    <http://example.org/ontology/competenceCode> "CC3" ;
+    <http://example.org/ontology/competenceDescription> "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+<http://example.org/instance/competence-ce6> rdf:type <http://example.org/ontology/Competence> ;
+    <http://example.org/ontology/competenceCode> "CE6" ;
+    <http://example.org/ontology/competenceDescription> "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+<http://example.org/instance/competence-ct11> rdf:type <http://example.org/ontology/Competence> ;
+    <http://example.org/ontology/competenceCode> "CT11" ;
+    <http://example.org/ontology/competenceDescription> "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+<http://example.org/instance/competence-ct5> rdf:type <http://example.org/ontology/Competence> ;
+    <http://example.org/ontology/competenceCode> "CT5" ;
+    <http://example.org/ontology/competenceDescription> "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+<http://example.org/instance/learningoutcome-ra112> rdf:type <http://example.org/ontology/LearningOutcome> ;
+    <http://example.org/ontology/learningOutcomeCode> "RA112" ;
+    <http://example.org/ontology/learningOutcomeDescription> "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+<http://example.org/instance/learningoutcome-ra116> rdf:type <http://example.org/ontology/LearningOutcome> ;
+    <http://example.org/ontology/learningOutcomeCode> "RA116" ;
+    <http://example.org/ontology/learningOutcomeDescription> "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+<http://example.org/instance/learningoutcome-ra111> rdf:type <http://example.org/ontology/LearningOutcome> ;
+    <http://example.org/ontology/learningOutcomeCode> "RA111" ;
+    <http://example.org/ontology/learningOutcomeDescription> "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+<http://example.org/instance/learningoutcome-ra118> rdf:type <http://example.org/ontology/LearningOutcome> ;
+    <http://example.org/ontology/learningOutcomeCode> "RA118" ;
+    <http://example.org/ontology/learningOutcomeDescription> "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+<http://example.org/instance/syllabus-gestion-proyectos> rdf:type <http://example.org/ontology/Syllabus> ;
+    <http://example.org/ontology/hasTopic> <http://example.org/instance/topic-1>, <http://example.org/instance/topic-2> .
+
+<http://example.org/instance/topic-1> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1" ;
+    <http://example.org/ontology/topicName> "Fundamentos de la gestión de proyectos." ;
+    <http://example.org/ontology/hasTopic> <http://example.org/instance/topic-1-1>, <http://example.org/instance/topic-1-2>, <http://example.org/instance/topic-1-3>, <http://example.org/instance/topic-1-4>, <http://example.org/instance/topic-1-5>, <http://example.org/instance/topic-1-6>, <http://example.org/instance/topic-1-7> .
+
+<http://example.org/instance/topic-2> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "2" ;
+    <http://example.org/ontology/topicName> "Gestión de proyectos con metodologías ágiles." ;
+    <http://example.org/ontology/hasTopic> <http://example.org/instance/topic-2-1>, <http://example.org/instance/topic-2-2>, <http://example.org/instance/topic-2-3> .
+
+<http://example.org/instance/topic-1-1> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.1" ;
+    <http://example.org/ontology/topicName> "Tema 1: Introducción a la gestión de proyectos." .
+
+<http://example.org/instance/topic-1-2> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.2" ;
+    <http://example.org/ontology/topicName> "Tema 2: Procesos de la dirección de proyectos." .
+
+<http://example.org/instance/topic-1-3> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.3" ;
+    <http://example.org/ontology/topicName> "Tema 3: Gestión del alcance." .
+
+<http://example.org/instance/topic-1-4> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.4" ;
+    <http://example.org/ontology/topicName> "Tema 4: Planificación temporal de proyectos." .
+
+<http://example.org/instance/topic-1-5> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.5" ;
+    <http://example.org/ontology/topicName> "Tema 5: Estimación en proyectos de software." .
+
+<http://example.org/instance/topic-1-6> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.6" ;
+    <http://example.org/ontology/topicName> "Tema 6: Gestión de riesgos." .
+
+<http://example.org/instance/topic-1-7> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "1.7" ;
+    <http://example.org/ontology/topicName> "Tema 7: Gestión de costes." .
+
+<http://example.org/instance/topic-2-1> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "2.1" ;
+    <http://example.org/ontology/topicName> "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+<http://example.org/instance/topic-2-2> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "2.2" ;
+    <http://example.org/ontology/topicName> "Tema 9: Prácticas ágiles." .
+
+<http://example.org/instance/topic-2-3> rdf:type <http://example.org/ontology/Topic> ;
+    <http://example.org/ontology/topicNumber> "2.3" ;
+    <http://example.org/ontology/topicName> "Tema 10: Scrum." .
+
+<http://example.org/instance/schedule-gestion-proyectos> rdf:type <http://example.org/ontology/Schedule> ;
+    <http://example.org/ontology/scheduleWeek> "1" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-presentacion-asignatura>, <http://example.org/instance/activity-tema1>, <http://example.org/instance/activity-tema2> ;
+    <http://example.org/ontology/scheduleWeek> "2" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema3>, <http://example.org/instance/activity-practica1-presentacion> ;
+    <http://example.org/ontology/scheduleWeek> "3" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema4-1>, <http://example.org/instance/activity-practica1-3> ;
+    <http://example.org/ontology/scheduleWeek> "4" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema4-2>, <http://example.org/instance/activity-practica1-4> ;
+    <http://example.org/ontology/scheduleWeek> "5" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema5-1>, <http://example.org/instance/activity-practica1-5> ;
+    <http://example.org/ontology/scheduleWeek> "6" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema5-2>, <http://example.org/instance/activity-practica1-6> ;
+    <http://example.org/ontology/scheduleWeek> "7" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema6>, <http://example.org/instance/activity-practica1-7> ;
+    <http://example.org/ontology/scheduleWeek> "8" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema7>, <http://example.org/instance/activity-practica1-8> ;
+    <http://example.org/ontology/scheduleWeek> "9" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema8>, <http://example.org/instance/activity-practica1-9> ;
+    <http://example.org/ontology/scheduleWeek> "10" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema9-1>, <http://example.org/instance/activity-practica1-10> ;
+    <http://example.org/ontology/scheduleWeek> "11" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema9-2>, <http://example.org/instance/activity-practica1-11>, <http://example.org/instance/evaluation-progresiva-1> , <http://example.org/instance/evaluation-progresiva-2>;
+    <http://example.org/ontology/scheduleWeek> "12" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema10-1>, <http://example.org/instance/activity-practica2-presentacion> ;
+    <http://example.org/ontology/scheduleWeek> "13" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-tema10-2>, <http://example.org/instance/activity-practica2-3> ;
+    <http://example.org/ontology/scheduleWeek> "14" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-resolucion-ejercicios>, <http://example.org/instance/activity-practica2-4> ;
+    <http://example.org/ontology/scheduleWeek> "15" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/activity-practica2-5>, <http://example.org/instance/evaluation-progresiva-3>, <http://example.org/instance/evaluation-progresiva-4> ;
+    <http://example.org/ontology/scheduleWeek> "17" ;
+    <http://example.org/ontology/hasActivity> <http://example.org/instance/evaluation-global> .
+
+
+<http://example.org/instance/activity-presentacion-asignatura> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Presentación de la asignatura" ;
+    <http://example.org/ontology/activityDuration> "00:30" .
+
+<http://example.org/instance/activity-tema1> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 1: Introducción a la gestión de proyectos." ;
+    <http://example.org/ontology/activityDuration> "01:30" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-1> .
+
+<http://example.org/instance/activity-tema2> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 2: Procesos de la dirección de proyectos." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-2> .
+
+<http://example.org/instance/activity-tema3> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 3: Gestión del alcance." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-3> .
+
+<http://example.org/instance/activity-practica1-presentacion> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Presentación Práctica 1 y formación de grupos de prácticas." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema4-1> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 4: Planificación temporal de proyectos." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-4> .
+
+<http://example.org/instance/activity-practica1-3> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema4-2> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 4: Planificación temporal de proyectos." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PR: Actividad del tipo Clase de Problemas" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-4> .
+
+<http://example.org/instance/activity-practica1-4> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema5-1> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 5: Estimación en proyectos de software." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-5> .
+
+<http://example.org/instance/activity-practica1-5> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema5-2> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 5: Estimación en proyectos de software." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PR: Actividad del tipo Clase de Problemas" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-5> .
+
+<http://example.org/instance/activity-practica1-6> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema6> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 6: Gestión de riesgos." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-6> .
+
+<http://example.org/instance/activity-practica1-7> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema7> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 7: Gestión de costes." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-1-7> .
+
+<http://example.org/instance/activity-practica1-8> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema8> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-2-1> .
+
+<http://example.org/instance/activity-practica1-9> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema9-1> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 9: Prácticas ágiles." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-2-2> .
+
+<http://example.org/instance/activity-practica1-10> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema9-2> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 9: Prácticas ágiles." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PR: Actividad del tipo Clase de Problemas" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-2-2> .
+
+<http://example.org/instance/activity-practica1-11> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Finalización de la Práctica 1." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema10-1> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 10: Scrum." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "LM: Actividad del tipo Lección Magistral" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-2-3> .
+
+<http://example.org/instance/activity-practica2-presentacion> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Presentación Práctica 2." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-tema10-2> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Tema 10: Scrum." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PR: Actividad del tipo Clase de Problemas" ;
+    <http://example.org/ontology/hasTopicReference> <http://example.org/instance/topic-2-3> .
+
+<http://example.org/instance/activity-practica2-3> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 2." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-resolucion-ejercicios> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Resolución de ejercicios." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PR: Actividad del tipo Clase de Problemas" .
+
+<http://example.org/instance/activity-practica2-4> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 2." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/activity-practica2-5> rdf:type <http://example.org/ontology/Activity> ;
+    <http://example.org/ontology/activityTypeName> "Práctica 2." ;
+    <http://example.org/ontology/activityDuration> "02:00" ;
+    <http://example.org/ontology/activityType> "PL: Actividad del tipo Prácticas de Laboratorio" .
+
+<http://example.org/instance/evaluation-progresiva-1> rdf:type <http://example.org/ontology/Evaluation> ;
+    <http://example.org/ontology/evaluationDescription> "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116)" ;
+    <http://example.org/ontology/evaluationModality> "No Presencial" ;
+    <http://example.org/ontology/evaluationType> <http://example.org/instance/evaluationtype-trabajo-individual> ;
+    <http://example.org/ontology/evaluationWeight> "10%" ;
+    <http://example.org/ontology/evaluatesCompetence> <http://example.org/instance/competence-ct5>, <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-ce6> .
+
+<http://example.org/instance/evaluation-progresiva-2> rdf:type <http://example.org/ontology/Evaluation> ;
+    <http://example.org/ontology/evaluationDescription> "Práctica 1. (RA111, RA112, RA116, RA118)" ;
+    <http://example.org/ontology/evaluationModality> "No Presencial" ;
+    <http://example.org/ontology/evaluationType> <http://example.org/instance/evaluationtype-trabajo-grupo> ;
+    <http://example.org/ontology/evaluationWeight> "23%" ;
+    <http://example.org/ontology/evaluatesCompetence> <http://example.org/instance/competence-ct5>, <http://example.org/instance/competence-ct11>, <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-cc3>, <http://example.org/instance/competence-ce6> .
+
+<http://example.org/instance/evaluation-progresiva-3> rdf:type <http://example.org/ontology/Evaluation> ;
+    <http://example.org/ontology/evaluationDescription> "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116)" ;
+    <http://example.org/ontology/evaluationModality> "No Presencial" ;
+    <http://example.org/ontology/evaluationType> <http://example.org/instance/evaluationtype-trabajo-individual> ;
+    <http://example.org/ontology/evaluationWeight> "5%" ;
+    <http://example.org/ontology/evaluatesCompetence> <http://example.org/instance/competence-ct5>, <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-ce6> .
+
+<http://example.org/instance/evaluation-progresiva-4> rdf:type <http://example.org/ontology/Evaluation> ;
+    <http://example.org/ontology/evaluationDescription> "Práctica 2. (RA112, RA116, RA118)" ;
+    <http://example.org/ontology/evaluationModality> "No Presencial" ;
+    <http://example.org/ontology/evaluationType> <http://example.org/instance/evaluationtype-trabajo-grupo> ;
+    <http://example.org/ontology/evaluationWeight> "12%" ;
+    <http://example.org/ontology/evaluatesCompetence> <http://example.org/instance/competence-ct5>, <http://example.org/instance/competence-ct11>, <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-cc3>, <http://example.org/instance/competence-ce6> .
+
+<http://example.org/instance/evaluation-global> rdf:type <http://example.org/ontology/Evaluation> ;
+    <http://example.org/ontology/evaluationDescription> "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118)" ;
+    <http://example.org/ontology/evaluationModality> "Presencial" ;
+    <http://example.org/ontology/evaluationType> <http://example.org/instance/evaluationtype-examen-escrito> ;
+    <http://example.org/ontology/evaluationDuration> "02:30" ;
+    <http://example.org/ontology/evaluationWeight> "50%" ;
+    <http://example.org/ontology/evaluationMinimumGrade> "4.5 / 10" ;
+    <http://example.org/ontology/evaluatesCompetence> <http://example.org/instance/competence-ct5>, <http://example.org/instance/competence-ct11>, <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-cc3>, <http://example.org/instance/competence-ce6> .
+
+<http://example.org/instance/evaluation-extraordinaria> rdf:type <http://example.org/ontology/Evaluation> ;
+    <http://example.org/ontology/evaluationDescription> "Examen final (Convocatoria extraordinaria). (RA111, RA112, RA116, RA118)" ;
+    <http://example.org/ontology/evaluationModality> "Presencial" ;
+    <http://example.org/ontology/evaluationType> <http://example.org/instance/evaluationtype-examen-escrito> ;
+    <http://example.org/ontology/evaluationDuration> "02:30" ;
+    <http://example.org/ontology/evaluationWeight> "100%" ;
+    <http://example.org/ontology/evaluationMinimumGrade> "5 / 10" ;
+    <http://example.org/ontology/evaluatesCompetence> <http://example.org/instance/competence-ct5>, <http://example.org/instance/competence-ct11>, <http://example.org/instance/competence-cc2>, <http://example.org/instance/competence-cc3>, <http://example.org/instance/competence-ce6> .
+
+<http://example.org/instance/evaluationtype-trabajo-individual> rdf:type <http://example.org/ontology/EvaluationType> ;
+    <http://example.org/ontology/evaluationTypeName> "Trabajo Individual" .
+
+<http://example.org/instance/evaluationtype-trabajo-grupo> rdf:type <http://example.org/ontology/EvaluationType> ;
+    <http://example.org/ontology/evaluationTypeName> "Trabajo en Grupo" .
+
+<http://example.org/instance/evaluationtype-examen-escrito> rdf:type <http://example.org/ontology/EvaluationType> ;
+    <http://example.org/ontology/evaluationTypeName> "Examen Escrito" .
+
+<http://example.org/instance/resource-pmbok> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-pmp-exam-prep> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-iso-16326> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-guia-practica-estimacion> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-agile-practice-guide> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "Agile Practice Guide" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-user-story-mapping> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "User Story Mapping: Discover the Whole Story, Build the Right Product" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-guia-scrum> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-agile-project-management> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "Agile Project Management with SCRUM" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-kanban-esencial> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "Kanban Esencial Condensado" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .
+
+<http://example.org/instance/resource-guia-kanban-scrum> rdf:type <http://example.org/ontology/Resource> ;
+    <http://example.org/ontology/resourceName> "La Guía Kanban para Equipos Scrum" ;
+    <http://example.org/ontology/resourceType> "Bibliografía" .

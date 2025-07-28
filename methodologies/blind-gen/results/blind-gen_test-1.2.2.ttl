@@ -1,0 +1,531 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ontology/> .
+@prefix course: <http://example.org/ontology/course/> .
+@prefix degree: <http://example.org/ontology/degree/> .
+@prefix academicYear: <http://example.org/ontology/academicYear/> .
+@prefix teacher: <http://example.org/ontology/teacher/> .
+@prefix competency: <http://example.org/ontology/competency/> .
+@prefix learningOutcome: <http://example.org/ontology/learningOutcome/> .
+@prefix syllabus: <http://example.org/ontology/syllabus/> .
+@prefix activity: <http://example.org/ontology/activity/> .
+@prefix evaluation: <http://example.org/ontology/evaluation/> .
+@prefix resource: <http://example.org/ontology/resource/> .
+@prefix school: <http://example.org/ontology/school/> .
+
+ex:Course rdfs:subClassOf rdfs:Class .
+ex:Degree rdfs:subClassOf rdfs:Class .
+ex:AcademicYear rdfs:subClassOf rdfs:Class .
+ex:Teacher rdfs:subClassOf rdfs:Class .
+ex:Competency rdfs:subClassOf rdfs:Class .
+ex:LearningOutcome rdfs:subClassOf rdfs:Class .
+ex:SyllabusItem rdfs:subClassOf rdfs:Class .
+ex:Activity rdfs:subClassOf rdfs:Class .
+ex:Evaluation rdfs:subClassOf rdfs:Class .
+ex:Resource rdfs:subClassOf rdfs:Class .
+ex:School rdfs:subClassOf rdfs:Class .
+
+ex:hasCourseCode rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:hasDegreeCode rdfs:domain ex:Degree ;
+    rdfs:range rdfs:Literal .
+ex:hasAcademicYearValue rdfs:domain ex:AcademicYear ;
+    rdfs:range rdfs:Literal .
+ex:hasName rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Literal .
+ex:hasECTS rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:hasCharacter rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:hasCourseYear rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:hasSemesterNumber rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:hasPeriodOfImpartation rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:hasLanguageOfImpartation rdfs:domain ex:Course ;
+    rdfs:range rdfs:Literal .
+ex:isOfferedBy rdfs:domain ex:Course ;
+    rdfs:range ex:Degree .
+ex:isGivenIn rdfs:domain ex:Course ;
+    rdfs:range ex:AcademicYear .
+ex:hasTeacher rdfs:domain ex:Course ;
+    rdfs:range ex:Teacher .
+ex:recommendsPreviousCourse rdfs:domain ex:Course ;
+    rdfs:range ex:Course .
+ex:hasCompetency rdfs:domain ex:Course ;
+    rdfs:range ex:Competency .
+ex:hasLearningOutcome rdfs:domain ex:Course ;
+    rdfs:range ex:LearningOutcome .
+ex:hasSyllabusItem rdfs:domain ex:Course ;
+    rdfs:range ex:SyllabusItem .
+ex:hasDescription rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Literal .
+ex:hasCompetencyCode rdfs:domain ex:Competency ;
+    rdfs:range rdfs:Literal .
+ex:hasLearningOutcomeCode rdfs:domain ex:LearningOutcome ;
+    rdfs:range rdfs:Literal .
+ex:hasSyllabusItemNumber rdfs:domain ex:SyllabusItem ;
+    rdfs:range rdfs:Literal .
+ex:hasActivity rdfs:domain ex:Course ;
+    rdfs:range ex:Activity .
+ex:activityType rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:activityDuration rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:hasEvaluationActivity rdfs:domain ex:Course ;
+    rdfs:range ex:Evaluation .
+ex:evaluationDescription rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:evaluationModalidad rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:evaluationType rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:evaluationDuration rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:evaluationWeight rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:evaluationMinimumNote rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:evaluatesCompetency rdfs:domain ex:Evaluation ;
+    rdfs:range ex:Competency .
+ex:isResourceFor rdfs:domain ex:Resource ;
+    rdfs:range ex:Course .
+ex:belongsToSchool rdfs:domain ex:Degree ;
+    rdfs:range ex:School .
+ex:hasSchoolCode rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal .
+
+course:615000258 a ex:Course ;
+    ex:hasCourseCode "615000258" ;
+    ex:hasName "Gestion De Proyectos Y Del Riesgo" ;
+    ex:hasECTS "6" ;
+    ex:hasCharacter "Obligatoria" ;
+    ex:hasCourseYear "Cuarto curso" ;
+    ex:hasSemesterNumber "Séptimo semestre" ;
+    ex:hasPeriodOfImpartation "Septiembre-Enero" ;
+    ex:hasLanguageOfImpartation "Castellano" ;
+    ex:isOfferedBy degree:61IW ;
+    ex:isGivenIn academicYear:2024_25 ;
+    ex:hasTeacher teacher:aldoGordilloMendez ;
+    ex:hasTeacher teacher:manuelOttaviano ;
+    ex:hasTeacher teacher:javierSerranoRomero ;
+    ex:recommendsPreviousCourse course:ingenieriaDeRequisitosYModelado ;
+    ex:recommendsPreviousCourse course:ingenieriaDelProcesoSoftwareYConstruccion ;
+    ex:recommendsPreviousCourse course:aspectosLegalesYProfesionales ;
+    ex:recommendsPreviousCourse course:fundamentosDeEconomiaYEmpresa ;
+    ex:recommendsPreviousCourse course:fundamentosDeIngenieriaDelSoftware ;
+    ex:hasCompetency competency:CC2 ;
+    ex:hasCompetency competency:CC3 ;
+    ex:hasCompetency competency:CE6 ;
+    ex:hasCompetency competency:CT11 ;
+    ex:hasCompetency competency:CT5 ;
+    ex:hasLearningOutcome learningOutcome:RA112 ;
+    ex:hasLearningOutcome learningOutcome:RA116 ;
+    ex:hasLearningOutcome learningOutcome:RA111 ;
+    ex:hasLearningOutcome learningOutcome:RA118 ;
+    ex:hasSyllabusItem syllabus:item1 ;
+    ex:hasSyllabusItem syllabus:item2 ;
+    ex:hasActivity activity:presentacionAsignatura_Sem1 ;
+    ex:hasActivity activity:tema1_Sem1 ;
+    ex:hasActivity activity:tema2_Sem1 ;
+    ex:hasActivity activity:tema3_Sem2 ;
+    ex:hasActivity activity:presentacionPractica1_Sem2 ;
+    ex:hasActivity activity:tema4_Sem3 ;
+    ex:hasActivity activity:practica1_Sem3 ;
+    ex:hasActivity activity:tema4_Sem4 ;
+    ex:hasActivity activity:practica1_Sem4 ;
+    ex:hasActivity activity:tema5_Sem5 ;
+    ex:hasActivity activity:practica1_Sem5 ;
+    ex:hasActivity activity:tema5_Sem6 ;
+    ex:hasActivity activity:practica1_Sem6 ;
+    ex:hasActivity activity:tema6_Sem7 ;
+    ex:hasActivity activity:practica1_Sem7 ;
+    ex:hasActivity activity:tema7_Sem8 ;
+    ex:hasActivity activity:practica1_Sem8 ;
+    ex:hasActivity activity:tema8_Sem9 ;
+    ex:hasActivity activity:practica1_Sem9 ;
+    ex:hasActivity activity:tema9_Sem10 ;
+    ex:hasActivity activity:practica1_Sem10 ;
+    ex:hasActivity activity:tema9_Sem11 ;
+    ex:hasActivity activity:finalizacionPractica1_Sem11 ;
+    ex:hasActivity activity:ejercicioGestionProyectosTradicionales_Sem11 ;
+    ex:hasActivity activity:practica1_eval_Sem11 ;
+    ex:hasActivity activity:tema10_Sem12 ;
+    ex:hasActivity activity:presentacionPractica2_Sem12 ;
+    ex:hasActivity activity:tema10_Sem13 ;
+    ex:hasActivity activity:practica2_Sem13 ;
+    ex:hasActivity activity:resolucionEjercicios_Sem14 ;
+    ex:hasActivity activity:practica2_Sem14 ;
+    ex:hasActivity activity:practica2_Sem15 ;
+    ex:hasActivity activity:finalizacionPractica2_Sem15 ;
+    ex:hasActivity activity:ejercicioGestionProyectosAgiles_Sem15 ;
+    ex:hasActivity activity:practica2_eval_Sem15 ;
+    ex:hasEvaluationActivity evaluation:ejercicioGestionProyectosTradicionales_eval ;
+    ex:hasEvaluationActivity evaluation:practica1_eval ;
+    ex:hasEvaluationActivity evaluation:ejercicioGestionProyectosAgiles_eval ;
+    ex:hasEvaluationActivity evaluation:practica2_eval ;
+    ex:hasEvaluationActivity evaluation:examenFinalOrdinario_eval ;
+    ex:hasEvaluationActivity evaluation:examenFinalExtraordinario_eval ;
+    ex:hasResource resource:guiaPMBOK ;
+    ex:hasResource resource:pmpExamPrep ;
+    ex:hasResource resource:isoIecIeee16326_2019 ;
+    ex:hasResource resource:guiaPracticaEstimacionMedicion ;
+    ex:hasResource resource:agilePracticeGuide ;
+    ex:hasResource resource:userStoryMapping ;
+    ex:hasResource resource:guiaScrum ;
+    ex:hasResource resource:agileProjectManagementScrum ;
+    ex:hasResource resource:kanbanEsencialCondensado ;
+    ex:hasResource resource:guiaKanbanEquiposScrum .
+
+degree:61IW a ex:Degree ;
+    ex:hasDegreeCode "61IW" ;
+    ex:hasName "Grado En Ingenieria Del Software" ;
+    ex:belongsToSchool school:etsisi .
+
+academicYear:2024_25 a ex:AcademicYear ;
+    ex:hasAcademicYearValue "2024/25" .
+
+teacher:aldoGordilloMendez a ex:Teacher ;
+    ex:hasName "Aldo Gordillo Mendez" .
+
+teacher:manuelOttaviano a ex:Teacher ;
+    ex:hasName "Manuel Ottaviano" .
+
+teacher:javierSerranoRomero a ex:Teacher ;
+    ex:hasName "Javier Serrano Romero" .
+
+competency:CC2 a ex:Competency ;
+    ex:hasCompetencyCode "CC2" ;
+    ex:hasDescription "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+competency:CC3 a ex:Competency ;
+    ex:hasCompetencyCode "CC3" ;
+    ex:hasDescription "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+competency:CE6 a ex:Competency ;
+    ex:hasCompetencyCode "CE6" ;
+    ex:hasDescription "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+competency:CT11 a ex:Competency ;
+    ex:hasCompetencyCode "CT11" ;
+    ex:hasDescription "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista" .
+
+competency:CT5 a ex:Competency ;
+    ex:hasCompetencyCode "CT5" ;
+    ex:hasDescription "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+learningOutcome:RA112 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA112" ;
+    ex:hasDescription "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+learningOutcome:RA116 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA116" ;
+    ex:hasDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+learningOutcome:RA111 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA111" ;
+    ex:hasDescription "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+learningOutcome:RA118 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA118" ;
+    ex:hasDescription "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+syllabus:item1 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1" ;
+    ex:hasName "Fundamentos de la gestión de proyectos." ;
+    ex:hasSyllabusItem syllabus:item1_1, syllabus:item1_2, syllabus:item1_3, syllabus:item1_4, syllabus:item1_5, syllabus:item1_6, syllabus:item1_7 .
+
+syllabus:item1_1 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.1" ;
+    ex:hasName "Tema 1: Introducción a la gestión de proyectos." .
+
+syllabus:item1_2 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.2" ;
+    ex:hasName "Tema 2: Procesos de la dirección de proyectos." .
+
+syllabus:item1_3 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.3" ;
+    ex:hasName "Tema 3: Gestión del alcance." .
+
+syllabus:item1_4 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.4" ;
+    ex:hasName "Tema 4: Planificación temporal de proyectos." .
+
+syllabus:item1_5 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.5" ;
+    ex:hasName "Tema 5: Estimación en proyectos de software." .
+
+syllabus:item1_6 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.6" ;
+    ex:hasName "Tema 6: Gestión de riesgos." .
+
+syllabus:item1_7 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "1.7" ;
+    ex:hasName "Tema 7: Gestión de costes." .
+
+syllabus:item2 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "2" ;
+    ex:hasName "Gestión de proyectos con metodologías ágiles." ;
+    ex:hasSyllabusItem syllabus:item2_1, syllabus:item2_2, syllabus:item2_3 .
+
+syllabus:item2_1 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "2.1" ;
+    ex:hasName "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+syllabus:item2_2 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "2.2" ;
+    ex:hasName "Tema 9: Prácticas ágiles." .
+
+syllabus:item2_3 a ex:SyllabusItem ;
+    ex:hasSyllabusItemNumber "2.3" ;
+    ex:hasName "Tema 10: Scrum." .
+
+activity:presentacionAsignatura_Sem1 a ex:Activity ;
+    ex:activityType "Presentación de la asignatura" ;
+    ex:activityDuration "00:30" .
+
+activity:tema1_Sem1 a ex:Activity ;
+    ex:activityType "Tema 1: Introducción a la gestión de proyectos." ;
+    ex:activityDuration "01:30" .
+
+activity:tema2_Sem1 a ex:Activity ;
+    ex:activityType "Tema 2: Procesos de la dirección de proyectos." ;
+    ex:activityDuration "02:00" .
+
+activity:tema3_Sem2 a ex:Activity ;
+    ex:activityType "Tema 3: Gestión del alcance." ;
+    ex:activityDuration "02:00" .
+
+activity:presentacionPractica1_Sem2 a ex:Activity ;
+    ex:activityType "Presentación Práctica 1 y formación de grupos de prácticas." ;
+    ex:activityDuration "02:00" .
+
+activity:tema4_Sem3 a ex:Activity ;
+    ex:activityType "Tema 4: Planificación temporal de proyectos." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem3 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema4_Sem4 a ex:Activity ;
+    ex:activityType "Tema 4: Planificación temporal de proyectos." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem4 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema5_Sem5 a ex:Activity ;
+    ex:activityType "Tema 5: Estimación en proyectos de software." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem5 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema5_Sem6 a ex:Activity ;
+    ex:activityType "Tema 5: Estimación en proyectos de software." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem6 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema6_Sem7 a ex:Activity ;
+    ex:activityType "Tema 6: Gestión de riesgos." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem7 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema7_Sem8 a ex:Activity ;
+    ex:activityType "Tema 7: Gestión de costes." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem8 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema8_Sem9 a ex:Activity ;
+    ex:activityType "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem9 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema9_Sem10 a ex:Activity ;
+    ex:activityType "Tema 9: Prácticas ágiles." ;
+    ex:activityDuration "02:00" .
+
+activity:practica1_Sem10 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:tema9_Sem11 a ex:Activity ;
+    ex:activityType "Tema 9: Prácticas ágiles." ;
+    ex:activityDuration "02:00" .
+
+activity:finalizacionPractica1_Sem11 a ex:Activity ;
+    ex:activityType "Finalización de la Práctica 1." ;
+    ex:activityDuration "02:00" .
+
+activity:ejercicioGestionProyectosTradicionales_Sem11 a ex:Activity ;
+    ex:activityType "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    ex:activityDuration "00:00" .
+
+activity:practica1_eval_Sem11 a ex:Activity ;
+    ex:activityType "Práctica 1." ;
+    ex:activityDuration "00:00" .
+
+activity:tema10_Sem12 a ex:Activity ;
+    ex:activityType "Tema 10: Scrum." ;
+    ex:activityDuration "02:00" .
+
+activity:presentacionPractica2_Sem12 a ex:Activity ;
+    ex:activityType "Presentación Práctica 2." ;
+    ex:activityDuration "02:00" .
+
+activity:tema10_Sem13 a ex:Activity ;
+    ex:activityType "Tema 10: Scrum." ;
+    ex:activityDuration "02:00" .
+
+activity:practica2_Sem13 a ex:Activity ;
+    ex:activityType "Práctica 2." ;
+    ex:activityDuration "02:00" .
+
+activity:resolucionEjercicios_Sem14 a ex:Activity ;
+    ex:activityType "Resolución de ejercicios." ;
+    ex:activityDuration "02:00" .
+
+activity:practica2_Sem14 a ex:Activity ;
+    ex:activityType "Práctica 2." ;
+    ex:activityDuration "02:00" .
+
+activity:practica2_Sem15 a ex:Activity ;
+    ex:activityType "Práctica 2." ;
+    ex:activityDuration "02:00" .
+
+activity:finalizacionPractica2_Sem15 a ex:Activity ;
+    ex:activityType "Finalización de la Práctica 2." ;
+    ex:activityDuration "02:00" .
+
+activity:ejercicioGestionProyectosAgiles_Sem15 a ex:Activity ;
+    ex:activityType "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    ex:activityDuration "00:00" .
+
+activity:practica2_eval_Sem15 a ex:Activity ;
+    ex:activityType "Práctica 2." ;
+    ex:activityDuration "00:00" .
+
+evaluation:ejercicioGestionProyectosTradicionales_eval a ex:Evaluation ;
+    ex:evaluationDescription "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116)" ;
+    ex:evaluationModalidad "No Presencial" ;
+    ex:evaluationType "Trabajo Individual" ;
+    ex:evaluationDuration "00:00" ;
+    ex:evaluationWeight "10%" ;
+    ex:evaluationMinimumNote "/" ;
+    ex:evaluatesCompetency competency:CT5, competency:CC2, competency:CE6 ;
+    ex:evaluatesCompetency learningOutcome:RA111, learningOutcome:RA112, learningOutcome:RA116 .
+
+evaluation:practica1_eval a ex:Evaluation ;
+    ex:evaluationDescription "Práctica 1. (RA111, RA112, RA116, RA118)" ;
+    ex:evaluationModalidad "No Presencial" ;
+    ex:evaluationType "Trabajo en Grupo" ;
+    ex:evaluationDuration "00:00" ;
+    ex:evaluationWeight "23%" ;
+    ex:evaluationMinimumNote "/" ;
+    ex:evaluatesCompetency competency:CT5, competency:CT11, competency:CC2, competency:CC3, competency:CE6 ;
+    ex:evaluatesCompetency learningOutcome:RA111, learningOutcome:RA112, learningOutcome:RA116, learningOutcome:RA118 .
+
+evaluation:ejercicioGestionProyectosAgiles_eval a ex:Evaluation ;
+    ex:evaluationDescription "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116)" ;
+    ex:evaluationModalidad "No Presencial" ;
+    ex:evaluationType "Trabajo Individual" ;
+    ex:evaluationDuration "00:00" ;
+    ex:evaluationWeight "5%" ;
+    ex:evaluationMinimumNote "/" ;
+    ex:evaluatesCompetency competency:CT5, competency:CC2, competency:CE6 ;
+    ex:evaluatesCompetency learningOutcome:RA112, learningOutcome:RA116 .
+
+evaluation:practica2_eval a ex:Evaluation ;
+    ex:evaluationDescription "Práctica 2. (RA112, RA116, RA118)" ;
+    ex:evaluationModalidad "No Presencial" ;
+    ex:evaluationType "Trabajo en Grupo" ;
+    ex:evaluationDuration "00:00" ;
+    ex:evaluationWeight "12%" ;
+    ex:evaluationMinimumNote "/" ;
+    ex:evaluatesCompetency competency:CT5, competency:CT11, competency:CC2, competency:CC3, competency:CE6 ;
+    ex:evaluatesCompetency learningOutcome:RA112, learningOutcome:RA116, learningOutcome:RA118 .
+
+evaluation:examenFinalOrdinario_eval a ex:Evaluation ;
+    ex:evaluationDescription "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118)" ;
+    ex:evaluationModalidad "Presencial" ;
+    ex:evaluationType "Examen Escrito" ;
+    ex:evaluationDuration "02:30" ;
+    ex:evaluationWeight "50%" ;
+    ex:evaluationMinimumNote "4.5" ;
+    ex:evaluatesCompetency competency:CT5, competency:CT11, competency:CC2, competency:CC3, competency:CE6 ;
+    ex:evaluatesCompetency learningOutcome:RA111, learningOutcome:RA112, learningOutcome:RA116, learningOutcome:RA118 .
+
+evaluation:examenFinalExtraordinario_eval a ex:Evaluation ;
+    ex:evaluationDescription "Examen final (Convocatoria extraordinaria). (RA111, RA112, RA116, RA118)" ;
+    ex:evaluationModalidad "Presencial" ;
+    ex:evaluationType "Examen Escrito" ;
+    ex:evaluationDuration "02:30" ;
+    ex:evaluationWeight "100%" ;
+    ex:evaluationMinimumNote "5" ;
+    ex:evaluatesCompetency competency:CT5, competency:CT11, competency:CC2, competency:CC3, competency:CE6 ;
+    ex:evaluatesCompetency learningOutcome:RA111, learningOutcome:RA112, learningOutcome:RA116, learningOutcome:RA118 .
+
+resource:guiaPMBOK a ex:Resource ;
+    ex:hasName "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" .
+
+resource:pmpExamPrep a ex:Resource ;
+    ex:hasName "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" .
+
+resource:isoIecIeee16326_2019 a ex:Resource ;
+    ex:hasName "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" .
+
+resource:guiaPracticaEstimacionMedicion a ex:Resource ;
+    ex:hasName "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" .
+
+resource:agilePracticeGuide a ex:Resource ;
+    ex:hasName "Agile Practice Guide" .
+
+resource:userStoryMapping a ex:Resource ;
+    ex:hasName "User Story Mapping: Discover the Whole Story, Build the Right Product" .
+
+resource:guiaScrum a ex:Resource ;
+    ex:hasName "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." .
+
+resource:agileProjectManagementScrum a ex:Resource ;
+    ex:hasName "Agile Project Management with SCRUM" .
+
+resource:kanbanEsencialCondensado a ex:Resource ;
+    ex:hasName "Kanban Esencial Condensado" .
+
+resource:guiaKanbanEquiposScrum a ex:Resource ;
+    ex:hasName "La Guía Kanban para Equipos Scrum" .
+
+course:ingenieriaDeRequisitosYModelado a ex:Course ;
+    ex:hasName "Ingenieria De Requisitos Y Modelado" .
+
+course:ingenieriaDelProcesoSoftwareYConstruccion a ex:Course ;
+    ex:hasName "Ingenieria Del Proceso Software Y Construccion" .
+
+course:aspectosLegalesYProfesionales a ex:Course ;
+    ex:hasName "Aspectos Legales Y Profesionales" .
+
+course:fundamentosDeEconomiaYEmpresa a ex:Course ;
+    ex:hasName "Fundamentos De Economia Y Empresa" .
+
+course:fundamentosDeIngenieriaDelSoftware a ex:Course ;
+    ex:hasName "Fundamentos De Ingenieria Del Software" .
+
+school:etsisi a ex:School ;
+    ex:hasSchoolCode "61" ;
+    ex:hasName "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .

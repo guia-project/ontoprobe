@@ -1,0 +1,1140 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ontology/> .
+
+ex:Document rdfs:label "Document" ;
+    rdfs:comment "A document." ;
+    a rdfs:Class .
+
+ex:Subject rdfs:label "Subject" ;
+    rdfs:comment "An academic subject." ;
+    a rdfs:Class .
+
+ex:StudyPlan rdfs:label "Study Plan" ;
+    rdfs:comment "An academic study plan." ;
+    a rdfs:Class .
+
+ex:Degree rdfs:label "Degree" ;
+    rdfs:comment "An academic degree." ;
+    a rdfs:Class .
+
+ex:School rdfs:label "School" ;
+    rdfs:comment "An educational school." ;
+    a rdfs:Class .
+
+ex:AcademicYear rdfs:label "Academic Year" ;
+    rdfs:comment "An academic year." ;
+    a rdfs:Class .
+
+ex:Semester rdfs:label "Semester" ;
+    rdfs:comment "An academic semester." ;
+    a rdfs:Class .
+
+ex:Process rdfs:label "Process" ;
+    rdfs:comment "A process." ;
+    a rdfs:Class .
+
+ex:DocumentCode rdfs:label "Document Code" ;
+    rdfs:comment "The code of a document." ;
+    a rdfs:Class .
+
+ex:AnnexCode rdfs:label "Annex Code" ;
+    rdfs:comment "The annex code of a document." ;
+    a rdfs:Class .
+
+ex:Professor rdfs:label "Professor" ;
+    rdfs:comment "A professor." ;
+    a rdfs:Class .
+
+ex:PriorSubject rdfs:label "Prior Subject" ;
+    rdfs:comment "A subject recommended as prior knowledge." ;
+    a rdfs:Class .
+
+ex:Competency rdfs:label "Competency" ;
+    rdfs:comment "A competency." ;
+    a rdfs:Class .
+
+ex:LearningOutcome rdfs:label "Learning Outcome" ;
+    rdfs:comment "A learning outcome." ;
+    a rdfs:Class .
+
+ex:Syllabus rdfs:label "Syllabus" ;
+    rdfs:comment "The syllabus of a subject." ;
+    a rdfs:Class .
+
+ex:SyllabusTopic rdfs:label "Syllabus Topic" ;
+    rdfs:comment "A topic within a syllabus." ;
+    a rdfs:Class .
+
+ex:SyllabusSubTopic rdfs:label "Syllabus Sub Topic" ;
+    rdfs:comment "A sub-topic within a syllabus topic." ;
+    a rdfs:Class .
+
+ex:Schedule rdfs:label "Schedule" ;
+    rdfs:comment "The schedule of a subject." ;
+    a rdfs:Class .
+
+ex:ScheduleEntry rdfs:label "Schedule Entry" ;
+    rdfs:comment "An entry in a schedule." ;
+    a rdfs:Class .
+
+ex:Activity rdfs:label "Activity" ;
+    rdfs:comment "An activity in a schedule entry." ;
+    a rdfs:Class .
+
+ex:ActivityType rdfs:label "Activity Type" ;
+    rdfs:comment "The type of an activity." ;
+    a rdfs:Class .
+
+ex:EvaluationActivity rdfs:label "Evaluation Activity" ;
+    rdfs:comment "An evaluation activity in a schedule entry." ;
+    a rdfs:Class .
+
+ex:Evaluation rdfs:label "Evaluation" ;
+    rdfs:comment "Evaluation details for a subject." ;
+    a rdfs:Class .
+
+ex:ProgressiveEvaluation rdfs:label "Progressive Evaluation" ;
+    rdfs:comment "Progressive evaluation details." ;
+    a rdfs:Class .
+
+ex:GlobalEvaluation rdfs:label "Global Evaluation" ;
+    rdfs:comment "Global evaluation details." ;
+    a rdfs:Class .
+
+ex:ExtraordinaryEvaluation rdfs:label "Extraordinary Evaluation" ;
+    rdfs:comment "Extraordinary evaluation details." ;
+    a rdfs:Class .
+
+ex:EvaluationActivityDetails rdfs:label "Evaluation Activity Details" ;
+    rdfs:comment "Details of an evaluation activity." ;
+    a rdfs:Class .
+
+ex:EvaluationCriteria rdfs:label "Evaluation Criteria" ;
+    rdfs:comment "Criteria for evaluation." ;
+    a rdfs:Class .
+
+ex:TeachingResource rdfs:label "Teaching Resource" ;
+    rdfs:comment "A teaching resource." ;
+    a rdfs:Class .
+
+ex:ResourceType rdfs:label "Resource Type" ;
+    rdfs:comment "The type of a teaching resource." ;
+    a rdfs:Class .
+
+ex:Platform rdfs:label "Platform" ;
+    rdfs:comment "A learning platform." ;
+    a rdfs:Class .
+
+ex:TeachingMethodology rdfs:label "Teaching Methodology" ;
+    rdfs:comment "A teaching methodology." ;
+    a rdfs:Class .
+
+ex:CommunicationMethod rdfs:label "Communication Method" ;
+    rdfs:comment "A communication method." ;
+    a rdfs:Class .
+
+ex:ODS rdfs:label "ODS" ;
+    rdfs:comment "Objetivos de Desarrollo Sostenible." ;
+    a rdfs:Class .
+
+
+ex:hasDocumentCode rdfs:label "has document code" ;
+    rdfs:domain ex:Document ;
+    rdfs:range ex:DocumentCode ;
+    a rdf:Property .
+
+ex:hasAnnexCode rdfs:label "has annex code" ;
+    rdfs:domain ex:Document ;
+    rdfs:range ex:AnnexCode ;
+    a rdf:Property .
+
+ex:documentType rdfs:label "document type" ;
+    rdfs:domain ex:Document ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSubjectName rdfs:label "has subject name" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSubjectCode rdfs:label "has subject code" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasStudyPlanName rdfs:label "has study plan name" ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasStudyPlanCode rdfs:label "has study plan code" ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasDegreeName rdfs:label "has degree name" ;
+    rdfs:domain ex:Degree ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSchoolName rdfs:label "has school name" ;
+    rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasAcademicYear rdfs:label "has academic year" ;
+    rdfs:domain ex:AcademicYear ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSemester rdfs:label "has semester" ;
+    rdfs:domain ex:Semester ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasProcessName rdfs:label "has process name" ;
+    rdfs:domain ex:Process ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:isPartOf rdfs:label "is part of" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:StudyPlan ;
+    a rdf:Property .
+
+ex:hasDegree rdfs:label "has degree" ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range ex:Degree ;
+    a rdf:Property .
+
+ex:isOfferedBy rdfs:label "is offered by" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:School ;
+    a rdf:Property .
+
+ex:concerns rdfs:label "concerns" ;
+    rdfs:domain ex:Document ;
+    rdfs:range rdfs:Resource ;
+    a rdf:Property .
+
+ex:isForAcademicYear rdfs:label "is for academic year" ;
+    rdfs:domain ex:Document ;
+    rdfs:range ex:AcademicYear ;
+    a rdf:Property .
+
+ex:isForSemester rdfs:label "is for semester" ;
+    rdfs:domain ex:Document ;
+    rdfs:range ex:Semester ;
+    a rdf:Property .
+
+ex:isAboutProcess rdfs:label "is about process" ;
+    rdfs:domain ex:Document ;
+    rdfs:range ex:Process ;
+    a rdf:Property .
+
+ex:hasCreditCount rdfs:label "has credit count" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSubjectCharacter rdfs:label "has subject character" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasCourseYear rdfs:label "has course year" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasTeachingPeriod rdfs:label "has teaching period" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasTeachingLanguage rdfs:label "has teaching language" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSchoolCode rdfs:label "has school code" ;
+    rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasProfessorName rdfs:label "has professor name" ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasOfficeNumber rdfs:label "has office number" ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEmail rdfs:label "has email" ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasTutorialHours rdfs:label "has tutorial hours" ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:isCoordinatorOf rdfs:label "is coordinator of" ;
+    rdfs:domain ex:Professor ;
+    rdfs:range ex:Subject ;
+    a rdf:Property .
+
+ex:hasPriorSubjectName rdfs:label "has prior subject name" ;
+    rdfs:domain ex:PriorSubject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:recommendsPriorSubject rdfs:label "recommends prior subject" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:PriorSubject ;
+    a rdf:Property .
+
+ex:hasCompetencyCode rdfs:label "has competency code" ;
+    rdfs:domain ex:Competency ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasCompetencyDescription rdfs:label "has competency description" ;
+    rdfs:domain ex:Competency ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasLearningOutcomeCode rdfs:label "has learning outcome code" ;
+    rdfs:domain ex:LearningOutcome ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasLearningOutcomeDescription rdfs:label "has learning outcome description" ;
+    rdfs:domain ex:LearningOutcome ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSyllabusTopicName rdfs:label "has syllabus topic name" ;
+    rdfs:domain ex:SyllabusTopic ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSyllabusSubTopicName rdfs:label "has syllabus sub topic name" ;
+    rdfs:domain ex:SyllabusSubTopic ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasTopicNumber rdfs:label "has topic number" ;
+    rdfs:domain ex:SyllabusTopic ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSubTopicNumber rdfs:label "has sub topic number" ;
+    rdfs:domain ex:SyllabusSubTopic ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasSyllabus rdfs:label "has syllabus" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Syllabus ;
+    a rdf:Property .
+
+ex:hasTopic rdfs:label "has topic" ;
+    rdfs:domain ex:Syllabus ;
+    rdfs:range ex:SyllabusTopic ;
+    a rdf:Property .
+
+ex:hasSubTopic rdfs:label "has sub topic" ;
+    rdfs:domain ex:SyllabusTopic ;
+    rdfs:range ex:SyllabusSubTopic ;
+    a rdf:Property .
+
+ex:hasSchedule rdfs:label "has schedule" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Schedule ;
+    a rdf:Property .
+
+ex:hasEntry rdfs:label "has entry" ;
+    rdfs:domain ex:Schedule ;
+    rdfs:range ex:ScheduleEntry ;
+    a rdf:Property .
+
+ex:hasActivity1 rdfs:label "has activity 1" ;
+    rdfs:domain ex:ScheduleEntry ;
+    rdfs:range ex:Activity ;
+    a rdf:Property .
+
+ex:hasActivity2 rdfs:label "has activity 2" ;
+    rdfs:domain ex:ScheduleEntry ;
+    rdfs:range ex:Activity ;
+    a rdf:Property .
+
+ex:hasEvaluationActivity rdfs:label "has evaluation activity" ;
+    rdfs:domain ex:ScheduleEntry ;
+    rdfs:range ex:EvaluationActivity ;
+    a rdf:Property .
+
+ex:hasActivityDescription rdfs:label "has activity description" ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasActivityDuration rdfs:label "has activity duration" ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasActivityTypeLabel rdfs:label "has activity type label" ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:ActivityType ;
+    a rdf:Property .
+
+ex:hasEvaluationActivityDescription rdfs:label "has evaluation activity description" ;
+    rdfs:domain ex:EvaluationActivity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluationActivityTypeLabel rdfs:label "has evaluation activity type label" ;
+    rdfs:domain ex:EvaluationActivity ;
+    rdfs:range ex:ActivityType ;
+    a rdf:Property .
+
+ex:hasEvaluationActivityDuration rdfs:label "has evaluation activity duration" ;
+    rdfs:domain ex:EvaluationActivity ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluation rdfs:label "has evaluation" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Evaluation ;
+    a rdf:Property .
+
+ex:hasProgressiveEvaluation rdfs:label "has progressive evaluation" ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:ProgressiveEvaluation ;
+    a rdf:Property .
+
+ex:hasGlobalEvaluation rdfs:label "has global evaluation" ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:GlobalEvaluation ;
+    a rdf:Property .
+
+ex:hasExtraordinaryEvaluation rdfs:label "has extraordinary evaluation" ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:ExtraordinaryEvaluation ;
+    a rdf:Property .
+
+ex:hasActivityDetails rdfs:label "has activity details" ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:EvaluationActivityDetails ;
+    a rdf:Property .
+
+ex:hasEvaluationDescription rdfs:label "has evaluation description" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluationModality rdfs:label "has evaluation modality" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluationTypeLabel rdfs:label "has evaluation type label" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range ex:ActivityType ;
+    a rdf:Property .
+
+ex:hasEvaluationDuration rdfs:label "has evaluation duration" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluationWeight rdfs:label "has evaluation weight" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasMinimumGrade rdfs:label "has minimum grade" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluatedCompetencies rdfs:label "has evaluated competencies" ;
+    rdfs:domain ex:EvaluationActivityDetails ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasEvaluationCriteria rdfs:label "has evaluation criteria" ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:EvaluationCriteria ;
+    a rdf:Property .
+
+ex:hasEvaluationCriteriaDescription rdfs:label "has evaluation criteria description" ;
+    rdfs:domain ex:EvaluationCriteria ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasTeachingResource rdfs:label "has teaching resource" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:TeachingResource ;
+    a rdf:Property .
+
+ex:hasResourceName rdfs:label "has resource name" ;
+    rdfs:domain ex:TeachingResource ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:hasResourceTypeLabel rdfs:label "has resource type label" ;
+    rdfs:domain ex:TeachingResource ;
+    rdfs:range ex:ResourceType ;
+    a rdf:Property .
+
+ex:hasResourceObservations rdfs:label "has resource observations" ;
+    rdfs:domain ex:TeachingResource ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+ex:usesPlatform rdfs:label "uses platform" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Platform ;
+    a rdf:Property .
+
+ex:usesMethodology rdfs:label "uses methodology" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:TeachingMethodology ;
+    a rdf:Property .
+
+ex:usesCommunicationMethod rdfs:label "uses communication method" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:CommunicationMethod ;
+    a rdf:Property .
+
+ex:isAlignedWithODS rdfs:label "is aligned with ODS" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:ODS ;
+    a rdf:Property .
+
+ex:hasSubjectDescription rdfs:label "has subject description" ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal ;
+    a rdf:Property .
+
+# Instances
+
+ex:document_guia_aprendizaje a ex:Document ;
+    ex:hasDocumentCode "PR/CL/001" ;
+    ex:hasAnnexCode "ANX-PR/CL/001-01" ;
+    ex:documentType "GUÍA DE APRENDIZAJE" ;
+    ex:isAboutProcess ex:process_coordinacion_ensenanzas ;
+    ex:concerns ex:subject_gestion_proyectos_riesgo, ex:studyplan_grado_ingenieria_software ;
+    ex:isForAcademicYear ex:academic_year_2024_25 ;
+    ex:isForSemester ex:semester_primer .
+
+ex:process_coordinacion_ensenanzas a ex:Process ;
+    ex:hasProcessName "PROCESO DE COORDINACIÓN DE LAS ENSEÑANZAS" .
+
+ex:school_etsisi a ex:School ;
+    ex:hasSchoolName "E.T.S. de Ingenieria de Sistemas Informaticos" ;
+    ex:hasSchoolCode "61" .
+
+ex:subject_gestion_proyectos_riesgo a ex:Subject ;
+    ex:hasSubjectName "Gestion De Proyectos Y Del Riesgo" ;
+    ex:hasSubjectCode "615000258" ;
+    ex:isPartOf ex:studyplan_grado_ingenieria_software ;
+    ex:isOfferedBy ex:school_etsisi ;
+    ex:hasCreditCount "6 ECTS" ;
+    ex:hasSubjectCharacter "Obligatoria" ;
+    ex:hasCourseYear "Cuarto curso" ;
+    ex:hasSemester "Séptimo semestre" ;
+    ex:hasTeachingPeriod "Septiembre-Enero" ;
+    ex:hasTeachingLanguage "Castellano" ;
+    ex:hasSubjectDescription "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. \nEl objetivo de esta asignatura es capacitar a los estudiantes para que puedan  planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles ." ;
+    ex:recommendsPriorSubject ex:priorsubject_ingenieria_requisitos_modelado, ex:priorsubject_ingenieria_proceso_software_construccion, ex:priorsubject_aspectos_legales_profesionales, ex:priorsubject_fundamentos_economia_empresa, ex:priorsubject_fundamentos_ingenieria_software ;
+    ex:hasCompetency ex:competency_cc2, ex:competency_cc3, ex:competency_ce6, ex:competency_ct11, ex:competency_ct5 ;
+    ex:hasLearningOutcome ex:learningoutcome_ra112, ex:learningoutcome_ra116, ex:learningoutcome_ra111, ex:learningoutcome_ra118 ;
+    ex:hasSyllabus ex:syllabus_gestion_proyectos_riesgo ;
+    ex:hasSchedule ex:schedule_gestion_proyectos_riesgo ;
+    ex:hasEvaluation ex:evaluation_gestion_proyectos_riesgo ;
+    ex:hasTeachingResource ex:resource_guia_pmbok, ex:resource_pmp_exam_prep, ex:resource_iso_iec_ieee_16326_2019, ex:resource_guia_practica_estimacion, ex:resource_agile_practice_guide, ex:resource_user_story_mapping, ex:resource_guia_scrum, ex:resource_agile_project_management_scrum, ex:resource_kanban_esencial_condensado, ex:resource_guia_kanban_equipos_scrum ;
+    ex:usesPlatform ex:platform_moodle ;
+    ex:usesMethodology ex:methodology_aula_invertida ;
+    ex:usesCommunicationMethod ex:communication_method_email, ex:communication_method_tutorias, ex:communication_method_clases_presenciales ;
+    ex:isAlignedWithODS ex:ods_4 .
+
+ex:studyplan_grado_ingenieria_software a ex:StudyPlan ;
+    ex:hasStudyPlanName "Grado En Ingenieria Del Software" ;
+    ex:hasStudyPlanCode "61IW" ;
+    ex:hasDegree ex:degree_ingenieria_software .
+
+ex:degree_ingenieria_software a ex:Degree ;
+    ex:hasDegreeName "Ingenieria Del Software" .
+
+ex:academic_year_2024_25 a ex:AcademicYear ;
+    ex:hasAcademicYear "2024-25" .
+
+ex:semester_primer a ex:Semester ;
+    ex:hasSemester "Primer semestre" .
+
+ex:professor_aldo_gordillo_mendez a ex:Professor ;
+    ex:hasProfessorName "Aldo Gordillo Mendez" ;
+    ex:hasOfficeNumber "1219" ;
+    ex:hasEmail "a.gordillo@upm.es" ;
+    ex:hasTutorialHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    ex:isCoordinatorOf ex:subject_gestion_proyectos_riesgo .
+
+ex:professor_manuel_ottaviano a ex:Professor ;
+    ex:hasProfessorName "Manuel Ottaviano" ;
+    ex:hasOfficeNumber "1212" ;
+    ex:hasEmail "manuel.ottaviano@upm.es" ;
+    ex:hasTutorialHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    ex:isCoordinatorOf ex:subject_gestion_proyectos_riesgo .
+
+ex:professor_javier_serrano_romero a ex:Professor ;
+    ex:hasProfessorName "Javier Serrano Romero" ;
+    ex:hasOfficeNumber "4219" ;
+    ex:hasEmail "javier.serrano@upm.es" ;
+    ex:hasTutorialHours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    ex:isCoordinatorOf ex:subject_gestion_proyectos_riesgo .
+
+ex:subject_gestion_proyectos_riesgo ex:hasProfessor ex:professor_aldo_gordillo_mendez, ex:professor_manuel_ottaviano, ex:professor_javier_serrano_romero .
+
+ex:priorsubject_ingenieria_requisitos_modelado a ex:PriorSubject ;
+    ex:hasPriorSubjectName "Ingenieria De Requisitos Y Modelado" .
+
+ex:priorsubject_ingenieria_proceso_software_construccion a ex:PriorSubject ;
+    ex:hasPriorSubjectName "Ingenieria Del Proceso Software Y Construccion" .
+
+ex:priorsubject_aspectos_legales_profesionales a ex:PriorSubject ;
+    ex:hasPriorSubjectName "Aspectos Legales Y Profesionales" .
+
+ex:priorsubject_fundamentos_economia_empresa a ex:PriorSubject ;
+    ex:hasPriorSubjectName "Fundamentos De Economia Y Empresa" .
+
+ex:priorsubject_fundamentos_ingenieria_software a ex:PriorSubject ;
+    ex:hasPriorSubjectName "Fundamentos De Ingenieria Del Software" .
+
+ex:competency_cc2 a ex:Competency ;
+    ex:hasCompetencyCode "CC2" ;
+    ex:hasCompetencyDescription "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos\nlos ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+ex:competency_cc3 a ex:Competency ;
+    ex:hasCompetencyCode "CC3" ;
+    ex:hasCompetencyDescription "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y\nlas habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+ex:competency_ce6 a ex:Competency ;
+    ex:hasCompetencyCode "CE6" ;
+    ex:hasCompetencyDescription "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de\nla ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+ex:competency_ct11 a ex:Competency ;
+    ex:hasCompetencyCode "CT11" ;
+    ex:hasCompetencyDescription "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de\nmodo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso\npara el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva\ne individualista." .
+
+ex:competency_ct5 a ex:Competency ;
+    ex:hasCompetencyCode "CT5" ;
+    ex:hasCompetencyDescription "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea\no proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los\nprocesos establecidos." .
+
+ex:learningoutcome_ra112 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA112" ;
+    ex:hasLearningOutcomeDescription "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+ex:learningoutcome_ra116 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA116" ;
+    ex:hasLearningOutcomeDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar\nestipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta\ny justifica las desviaciones producidas." .
+
+ex:learningoutcome_ra111 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA111" ;
+    ex:hasLearningOutcomeDescription "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+ex:learningoutcome_ra118 a ex:LearningOutcome ;
+    ex:hasLearningOutcomeCode "RA118" ;
+    ex:hasLearningOutcomeDescription "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos\ncon pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos\ndisponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores,\nademás del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de\nmanera coercitiva e individualista." .
+
+ex:syllabus_gestion_proyectos_riesgo a ex:Syllabus .
+
+ex:syllabustopic_fundamentos_gestion_proyectos a ex:SyllabusTopic ;
+    ex:hasTopicNumber "1" ;
+    ex:hasSyllabusTopicName "Fundamentos de la gestión de proyectos." ;
+    ex:hasSubTopic ex:syllabussubtopic_tema1, ex:syllabussubtopic_tema2, ex:syllabussubtopic_tema3, ex:syllabussubtopic_tema4, ex:syllabussubtopic_tema5, ex:syllabussubtopic_tema6, ex:syllabussubtopic_tema7 .
+
+ex:syllabustopic_gestion_proyectos_metodologias_agiles a ex:SyllabusTopic ;
+    ex:hasTopicNumber "2" ;
+    ex:hasSyllabusTopicName "Gestión de proyectos con metodologías ágiles." ;
+    ex:hasSubTopic ex:syllabussubtopic_tema8, ex:syllabussubtopic_tema9, ex:syllabussubtopic_tema10 .
+
+ex:syllabus_gestion_proyectos_riesgo ex:hasTopic ex:syllabustopic_fundamentos_gestion_proyectos, ex:syllabustopic_gestion_proyectos_metodologias_agiles .
+
+ex:syllabussubtopic_tema1 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.1" ;
+    ex:hasSyllabusSubTopicName "Tema 1: Introducción a la gestión de proyectos." .
+
+ex:syllabussubtopic_tema2 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.2" ;
+    ex:hasSyllabusSubTopicName "Tema 2: Procesos de la dirección de proyectos." .
+
+ex:syllabussubtopic_tema3 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.3" ;
+    ex:hasSyllabusSubTopicName "Tema 3: Gestión del alcance." .
+
+ex:syllabussubtopic_tema4 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.4" ;
+    ex:hasSyllabusSubTopicName "Tema 4: Planificación temporal de proyectos." .
+
+ex:syllabussubtopic_tema5 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.5" ;
+    ex:hasSyllabusSubTopicName "Tema 5: Estimación en proyectos de software." .
+
+ex:syllabussubtopic_tema6 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.6" ;
+    ex:hasSyllabusSubTopicName "Tema 6: Gestión de riesgos." .
+
+ex:syllabussubtopic_tema7 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "1.7" ;
+    ex:hasSyllabusSubTopicName "Tema 7: Gestión de costes." .
+
+ex:syllabussubtopic_tema8 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "2.1" ;
+    ex:hasSyllabusSubTopicName "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+ex:syllabussubtopic_tema9 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "2.2" ;
+    ex:hasSyllabusSubTopicName "Tema 9: Prácticas ágiles." .
+
+ex:syllabussubtopic_tema10 a ex:SyllabusSubTopic ;
+    ex:hasSubTopicNumber "2.3" ;
+    ex:hasSyllabusSubTopicName "Tema 10: Scrum." .
+
+ex:schedule_gestion_proyectos_riesgo a ex:Schedule .
+
+ex:scheduleentry_week1 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "1" ;
+    ex:hasActivity1 ex:activity_presentacion_asignatura ;
+    ex:hasActivity2 ex:activity_tema1 ;
+    ex:hasActivity2 ex:activity_tema2 .
+
+ex:scheduleentry_week2 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "2" ;
+    ex:hasActivity1 ex:activity_tema3 ;
+    ex:hasActivity2 ex:activity_presentacion_practica1 ;
+    ex:hasActivity2 ex:activity_formacion_grupos_practicas .
+
+ex:scheduleentry_week3 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "3" ;
+    ex:hasActivity1 ex:activity_tema4_week3 ;
+    ex:hasActivity2 ex:activity_practica1_week3 .
+
+ex:scheduleentry_week4 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "4" ;
+    ex:hasActivity1 ex:activity_tema4_week4 ;
+    ex:hasActivity2 ex:activity_practica1_week4 .
+
+ex:scheduleentry_week5 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "5" ;
+    ex:hasActivity1 ex:activity_tema5_week5 ;
+    ex:hasActivity2 ex:activity_practica1_week5 .
+
+ex:scheduleentry_week6 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "6" ;
+    ex:hasActivity1 ex:activity_tema5_week6 ;
+    ex:hasActivity2 ex:activity_practica1_week6 .
+
+ex:scheduleentry_week7 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "7" ;
+    ex:hasActivity1 ex:activity_tema6 ;
+    ex:hasActivity2 ex:activity_practica1_week7 .
+
+ex:scheduleentry_week8 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "8" ;
+    ex:hasActivity1 ex:activity_tema7 ;
+    ex:hasActivity2 ex:activity_practica1_week8 .
+
+ex:scheduleentry_week9 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "9" ;
+    ex:hasActivity1 ex:activity_tema8 ;
+    ex:hasActivity2 ex:activity_practica1_week9 .
+
+ex:scheduleentry_week10 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "10" ;
+    ex:hasActivity1 ex:activity_tema9_week10 ;
+    ex:hasActivity2 ex:activity_practica1_week10 .
+
+ex:scheduleentry_week11 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "11" ;
+    ex:hasActivity1 ex:activity_tema9_week11 ;
+    ex:hasActivity2 ex:activity_finalizacion_practica1 ;
+    ex:hasEvaluationActivity ex:evaluationactivity_ejercicio_gestion_tradicional ;
+    ex:hasEvaluationActivity ex:evaluationactivity_practica1_eval .
+
+ex:scheduleentry_week12 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "12" ;
+    ex:hasActivity1 ex:activity_tema10_week12 ;
+    ex:hasActivity2 ex:activity_presentacion_practica2 .
+
+ex:scheduleentry_week13 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "13" ;
+    ex:hasActivity1 ex:activity_tema10_week13 ;
+    ex:hasActivity2 ex:activity_practica2_week13 .
+
+ex:scheduleentry_week14 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "14" ;
+    ex:hasActivity1 ex:activity_resolucion_ejercicios ;
+    ex:hasActivity2 ex:activity_practica2_week14 .
+
+ex:scheduleentry_week15 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "15" ;
+    ex:hasActivity2 ex:activity_practica2_week15 ;
+    ex:hasActivity2 ex:activity_finalizacion_practica2 ;
+    ex:hasEvaluationActivity ex:evaluationactivity_ejercicio_gestion_agiles ;
+    ex:hasEvaluationActivity ex:evaluationactivity_practica2_eval .
+
+ex:scheduleentry_week17 a ex:ScheduleEntry ;
+    ex:hasWeekNumber "17" ;
+    ex:hasEvaluationActivity ex:evaluationactivity_examen_final_ordinaria .
+
+
+ex:schedule_gestion_proyectos_riesgo ex:hasEntry ex:scheduleentry_week1, ex:scheduleentry_week2, ex:scheduleentry_week3, ex:scheduleentry_week4, ex:scheduleentry_week5, ex:scheduleentry_week6, ex:scheduleentry_week7, ex:scheduleentry_week8, ex:scheduleentry_week9, ex:scheduleentry_week10, ex:scheduleentry_week11, ex:scheduleentry_week12, ex:scheduleentry_week13, ex:scheduleentry_week14, ex:scheduleentry_week15, ex:scheduleentry_week17 .
+
+ex:activity_presentacion_asignatura a ex:Activity ;
+    ex:hasActivityDescription "Presentación de la asignatura" ;
+    ex:hasActivityDuration "00:30" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_tema1 a ex:Activity ;
+    ex:hasActivityDescription "Tema 1: Introducción a la gestión de\nproyectos." ;
+    ex:hasActivityDuration "01:30" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_tema2 a ex:Activity ;
+    ex:hasActivityDescription "Tema 2: Procesos de la dirección de\nproyectos." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_tema3 a ex:Activity ;
+    ex:hasActivityDescription "Tema 3: Gestión del alcance." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_presentacion_practica1 a ex:Activity ;
+    ex:hasActivityDescription "Presentación Práctica 1" ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_formacion_grupos_practicas a ex:Activity ;
+    ex:hasActivityDescription "formación de\ngrupos de prácticas." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema4_week3 a ex:Activity ;
+    ex:hasActivityDescription "Tema 4: Planificación temporal de\nproyectos." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_practica1_week3 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema4_week4 a ex:Activity ;
+    ex:hasActivityDescription "Tema 4: Planificación temporal de\nproyectos." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pr .
+
+ex:activity_practica1_week4 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema5_week5 a ex:Activity ;
+    ex:hasActivityDescription "Tema 5: Estimación en proyectos de\nsoftware." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_practica1_week5 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema5_week6 a ex:Activity ;
+    ex:hasActivityDescription "Tema 5: Estimación en proyectos de\nsoftware." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pr .
+
+ex:activity_practica1_week6 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema6 a ex:Activity ;
+    ex:hasActivityDescription "Tema 6: Gestión de riesgos." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_practica1_week7 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema7 a ex:Activity ;
+    ex:hasActivityDescription "Tema 7: Gestión de costes." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_practica1_week8 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema8 a ex:Activity ;
+    ex:hasActivityDescription "Tema 8: Introducción a la gestión de\nproyectos con metodologías ágiles." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_practica1_week9 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema9_week10 a ex:Activity ;
+    ex:hasActivityDescription "Tema 9: Prácticas ágiles." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_practica1_week10 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema9_week11 a ex:Activity ;
+    ex:hasActivityDescription "Tema 9: Prácticas ágiles." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pr .
+
+ex:activity_finalizacion_practica1 a ex:Activity ;
+    ex:hasActivityDescription "Finalización de la Práctica 1." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema10_week12 a ex:Activity ;
+    ex:hasActivityDescription "Tema 10: Scrum." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_lm .
+
+ex:activity_presentacion_practica2 a ex:Activity ;
+    ex:hasActivityDescription "Presentación Práctica 2." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_tema10_week13 a ex:Activity ;
+    ex:hasActivityDescription "Tema 10: Scrum." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pr .
+
+ex:activity_practica2_week13 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 2." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_resolucion_ejercicios a ex:Activity ;
+    ex:hasActivityDescription "Resolución de ejercicios." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pr .
+
+ex:activity_practica2_week14 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 2." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_practica2_week15 a ex:Activity ;
+    ex:hasActivityDescription "Práctica 2." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+ex:activity_finalizacion_practica2 a ex:Activity ;
+    ex:hasActivityDescription "Finalización de la Práctica 2." ;
+    ex:hasActivityDuration "02:00" ;
+    ex:hasActivityTypeLabel ex:activitytype_pl .
+
+
+ex:activitytype_lm a ex:ActivityType ;
+    rdfs:label "Lección Magistral" .
+
+ex:activitytype_pl a ex:ActivityType ;
+    rdfs:label "Prácticas de Laboratorio" .
+
+ex:activitytype_pr a ex:ActivityType ;
+    rdfs:label "Clase de Problemas" .
+
+ex:activitytype_ti a ex:ActivityType ;
+    rdfs:label "Trabajo Individual" .
+
+ex:activitytype_tg a ex:ActivityType ;
+    rdfs:label "Trabajo en Grupo" .
+
+ex:activitytype_ex a ex:ActivityType ;
+    rdfs:label "Examen Escrito" .
+
+
+ex:evaluationactivity_ejercicio_gestion_tradicional a ex:EvaluationActivity ;
+    ex:hasEvaluationActivityDescription "Ejercicio sobre gestión de proyectos con\nmetodologías tradicionales. (RA111,\nRA112, RA116)" ;
+    ex:hasEvaluationActivityTypeLabel ex:activitytype_ti ;
+    ex:hasEvaluationActivityDuration "00:00" .
+
+ex:evaluationactivity_practica1_eval a ex:EvaluationActivity ;
+    ex:hasEvaluationActivityDescription "Práctica 1. (RA111, RA112, RA116,\nRA118)" ;
+    ex:hasEvaluationActivityTypeLabel ex:activitytype_tg ;
+    ex:hasEvaluationActivityDuration "00:00" .
+
+ex:evaluationactivity_ejercicio_gestion_agiles a ex:EvaluationActivity ;
+    ex:hasEvaluationActivityDescription "Ejercicio sobre gestión de proyectos con\nmetodologías ágiles. (RA112, RA116)" ;
+    ex:hasEvaluationActivityTypeLabel ex:activitytype_ti ;
+    ex:hasEvaluationActivityDuration "00:00" .
+
+ex:evaluationactivity_practica2_eval a ex:EvaluationActivity ;
+    ex:hasEvaluationActivityDescription "Práctica 2. (RA112, RA116,\nRA118)" ;
+    ex:hasEvaluationActivityTypeLabel ex:activitytype_tg ;
+    ex:hasEvaluationActivityDuration "00:00" .
+
+ex:evaluationactivity_examen_final_ordinaria a ex:EvaluationActivity ;
+    ex:hasEvaluationActivityDescription "Examen final (Convocatoria ordinaria).\n(RA111, RA112, RA116, RA118)" ;
+    ex:hasEvaluationActivityTypeLabel ex:activitytype_ex ;
+    ex:hasEvaluationActivityDuration "02:30" .
+
+
+ex:evaluation_gestion_proyectos_riesgo a ex:Evaluation ;
+    ex:hasProgressiveEvaluation ex:progressiveevaluation_gestion_proyectos_riesgo ;
+    ex:hasGlobalEvaluation ex:globalevaluation_gestion_proyectos_riesgo ;
+    ex:hasExtraordinaryEvaluation ex:extraordinaryevaluation_gestion_proyectos_riesgo ;
+    ex:hasCriteria ex:evaluationcriteria_gestion_proyectos_riesgo .
+
+ex:progressiveevaluation_gestion_proyectos_riesgo a ex:ProgressiveEvaluation ;
+    ex:hasActivityDetails ex:evaluationactivitydetails_ejercicio_gestion_tradicional, ex:evaluationactivitydetails_practica1, ex:evaluationactivitydetails_ejercicio_gestion_agiles, ex:evaluationactivitydetails_practica2 .
+
+ex:globalevaluation_gestion_proyectos_riesgo a ex:GlobalEvaluation ;
+    ex:hasActivityDetails ex:evaluationactivitydetails_examen_final_ordinaria .
+
+ex:extraordinaryevaluation_gestion_proyectos_riesgo a ex:ExtraordinaryEvaluation ;
+    ex:hasActivityDetails ex:evaluationactivitydetails_examen_final_extraordinaria .
+
+ex:evaluationactivitydetails_ejercicio_gestion_tradicional a ex:EvaluationActivityDetails ;
+    ex:hasEvaluationDescription "Ejercicio sobre gestión de\nproyectos con metodologías\ntradicionales. (RA111, RA112,\nRA116)" ;
+    ex:hasEvaluationModality "No Presencial" ;
+    ex:hasEvaluationTypeLabel ex:activitytype_ti ;
+    ex:hasEvaluationDuration "00:00" ;
+    ex:hasEvaluationWeight "10%" ;
+    ex:hasMinimumGrade "/" ;
+    ex:hasEvaluatedCompetencies "CT5, CC2, CE6" .
+
+ex:evaluationactivitydetails_practica1 a ex:EvaluationActivityDetails ;
+    ex:hasEvaluationDescription "Práctica 1. (RA111, RA112,\nRA116, RA118)" ;
+    ex:hasEvaluationModality "No Presencial" ;
+    ex:hasEvaluationTypeLabel ex:activitytype_tg ;
+    ex:hasEvaluationDuration "00:00" ;
+    ex:hasEvaluationWeight "23%" ;
+    ex:hasMinimumGrade "/" ;
+    ex:hasEvaluatedCompetencies "CT5, CT11, CC2, CC3, CE6" .
+
+ex:evaluationactivitydetails_ejercicio_gestion_agiles a ex:EvaluationActivityDetails ;
+    ex:hasEvaluationDescription "Ejercicio sobre gestión de\nproyectos con metodologías ágiles.\n(RA112, RA116)" ;
+    ex:hasEvaluationModality "No Presencial" ;
+    ex:hasEvaluationTypeLabel ex:activitytype_ti ;
+    ex:hasEvaluationDuration "00:00" ;
+    ex:hasEvaluationWeight "5%" ;
+    ex:hasMinimumGrade "/" ;
+    ex:hasEvaluatedCompetencies "CT5, CC2, CE6" .
+
+ex:evaluationactivitydetails_practica2 a ex:EvaluationActivityDetails ;
+    ex:hasEvaluationDescription "Práctica 2. (RA112, RA116,\nRA118)" ;
+    ex:hasEvaluationModality "No Presencial" ;
+    ex:hasEvaluationTypeLabel ex:activitytype_tg ;
+    ex:hasEvaluationDuration "00:00" ;
+    ex:hasEvaluationWeight "12%" ;
+    ex:hasMinimumGrade "/" ;
+    ex:hasEvaluatedCompetencies "CT5, CT11, CC2, CC3, CE6" .
+
+ex:evaluationactivitydetails_examen_final_ordinaria a ex:EvaluationActivityDetails ;
+    ex:hasEvaluationDescription "Examen final (Convocatoria\nordinaria). (RA111, RA112, RA116,\nRA118)" ;
+    ex:hasEvaluationModality "Presencial" ;
+    ex:hasEvaluationTypeLabel ex:activitytype_ex ;
+    ex:hasEvaluationDuration "02:30" ;
+    ex:hasEvaluationWeight "50%" ;
+    ex:hasMinimumGrade "4.5 / 10" ;
+    ex:hasEvaluatedCompetencies "CT5, CT11, CC2, CC3, CE6" .
+
+ex:evaluationactivitydetails_examen_final_extraordinaria a ex:EvaluationActivityDetails ;
+    ex:hasEvaluationDescription "Examen final (Convocatoria\nextraordinaria). (RA111, RA112,\nRA116, RA118)" ;
+    ex:hasEvaluationModality "Presencial" ;
+    ex:hasEvaluationTypeLabel ex:activitytype_ex ;
+    ex:hasEvaluationDuration "02:30" ;
+    ex:hasEvaluationWeight "100%" ;
+    ex:hasMinimumGrade "5 / 10" ;
+    ex:hasEvaluatedCompetencies "CT5, CT11, CC2, CC3, CE6" .
+
+ex:evaluationcriteria_gestion_proyectos_riesgo a ex:EvaluationCriteria ;
+    ex:hasEvaluationCriteriaDescription "Para aprobar la asignatura en la convocatoria ordinaria un estudiante deberá cumplir las siguientes dos\ncondiciones:\n1) Obtener una calificación final igual o superior a 5.\n2) Obtener, en el examen final de la convocatoria ordinaria, una calificación igual o superior a su nota mínima.\nEn el caso de que un estudiante no cumpla la segunda condición, su calificación final será como máximo la\nobtenida en el examen final de la convocatoria ordinaria.\nPor lo tanto, de acuerdo a la información previamente indicada, no es posible aprobar la asignatura en la\nconvocatoria ordinaria mediante evaluación progresiva. En la convocatoria ordinaria solo es posible aprobar la\nasignatura mediante evaluación global, para lo cual se deberán cumplir las dos condiciones indicadas\npreviamente.\nPara aprobar la asignatura en la convocatoria extraordinaria , un estudiante deberá obtener una calificación igual\no superior a 5 en el examen final de dicha convocatoria." .
+
+
+ex:resource_guia_pmbok a ex:TeachingResource ;
+    ex:hasResourceName "Guía de los Fundamentos para la\nDirección de Proyectos (Guía del\nPMBOK) (Sexta edición)" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_pmp_exam_prep a ex:TeachingResource ;
+    ex:hasResourceName "PMP Exam Prep: Accelerated\nLearning to Pass the Project\nManagement Professional (PMP)\nExam" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_iso_iec_ieee_16326_2019 a ex:TeachingResource ;
+    ex:hasResourceName "ISO/IEC/IEEE 16326:2019 Systems\nand software engineering - Life cycle\nprocesses - Project management" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_guia_practica_estimacion a ex:TeachingResource ;
+    ex:hasResourceName "Guía Práctica de Estimación y\nMedición de Proyectos Software:\n¿Por qué? ¿Para qué? y ¿Cómo?" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_agile_practice_guide a ex:TeachingResource ;
+    ex:hasResourceName "Agile Practice Guide" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_user_story_mapping a ex:TeachingResource ;
+    ex:hasResourceName "User Story Mapping: Discover the\nWhole Story, Build the Right Product" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_guia_scrum a ex:TeachingResource ;
+    ex:hasResourceName "La Guía de Scrum. La Guía Definitiva\nde Scrum: Las Reglas del Juego." ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_agile_project_management_scrum a ex:TeachingResource ;
+    ex:hasResourceName "Agile Project Management with\nSCRUM" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_kanban_esencial_condensado a ex:TeachingResource ;
+    ex:hasResourceName "Kanban Esencial Condensado" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resource_guia_kanban_equipos_scrum a ex:TeachingResource ;
+    ex:hasResourceName "La Guía Kanban para Equipos Scrum" ;
+    ex:hasResourceTypeLabel ex:resourcetype_bibliografia .
+
+ex:resourcetype_bibliografia a ex:ResourceType ;
+    rdfs:label "Bibliografía" .
+
+ex:platform_moodle a ex:Platform ;
+    ex:platformName "Moodle" .
+
+ex:methodology_aula_invertida a ex:TeachingMethodology ;
+    ex:methodologyName "Aula Invertida" .
+
+ex:communication_method_email a ex:CommunicationMethod ;
+    ex:communicationMethodName "correo electrónico" .
+
+ex:communication_method_tutorias a ex:CommunicationMethod ;
+    ex:communicationMethodName "tutorías" .
+
+ex:communication_method_clases_presenciales a ex:CommunicationMethod ;
+    ex:communicationMethodName "clases presenciales planificadas" .
+
+ex:ods_4 a ex:ODS ;
+    ex:odsNumber "4" ;
+    ex:odsDescription "Garantizar una educación inclusiva, equitativa y de calidad y\npromover oportunidades de aprendizaje durante toda la vida para todos" .

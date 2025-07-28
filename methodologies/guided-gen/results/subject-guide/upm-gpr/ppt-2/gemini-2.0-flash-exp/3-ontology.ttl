@@ -1,0 +1,444 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class .
+onto:OptionalCharacter a owl:Class .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+onto:MandatoryCharacter rdfs:subClassOf onto:Character .
+onto:OptionalCharacter rdfs:subClassOf onto:Character .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:School_code a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+onto:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range xsd:string .
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+onto:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Resource ;
+    rdfs:range xsd:string .
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+# Object Properties
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+onto:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Resource .
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+onto:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Outcome .
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousSubject .
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousKnowledge .
+onto:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Topic .
+onto:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Evaluation .
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+onto:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Outcome .
+onto:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Competence .
+onto:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Topic .
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+# Instances
+
+onto:gestionDeProyectosYDelRiesgo a onto:Subject ;
+    onto:Subject_name "Gestion De Proyectos Y Del Riesgo" ;
+    onto:Subject_code "615000258" ;
+    onto:Subject_credits "6 ECTS" ;
+    onto:Subject_course "Cuarto curso";
+    onto:Subject_semester "Séptimo semestre";
+    onto:Subject_period "Septiembre-Enero";
+    onto:Subject_language "Castellano";
+    onto:Subject_courseYear "2024-25" .
+
+onto:gradoEnIngenieriaDelSoftware a onto:StudyPlan ;
+    onto:StudyPlan_code "61IW" ;
+    onto:StudyPlan_name "Grado En Ingenieria Del Software" .
+
+onto:escuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos a onto:School ;
+    onto:School_code "61";
+    onto:School_name "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos".
+
+onto:upm a onto:University;
+    onto:University_name "Universidad Politécnica de Madrid".
+
+onto:obligatoria a onto:MandatoryCharacter .
+
+onto:AldoGordilloMendez a onto:Professor;
+    onto:Professor_name "Aldo Gordillo Mendez";
+    onto:Professor_office "1219";
+    onto:Professor_email "a.gordillo@upm.es";
+    onto:Professor_isCoordinator "Coordinador/a".
+
+onto:ManuelOttaviano a onto:Professor;
+    onto:Professor_name "Manuel Ottaviano";
+    onto:Professor_office "1212";
+    onto:Professor_email "manuel.ottaviano@upm.es".
+
+onto:JavierSerranoRomero a onto:Professor;
+    onto:Professor_name "Javier Serrano Romero";
+    onto:Professor_office "4219";
+    onto:Professor_email "javier.serrano@upm.es".
+
+onto:ingenieriaDeRequisitosYModelado a onto:RecommendedPreviousSubject;
+        onto:RecommendedPreviousSubject_description "Ingenieria De Requisitos Y Modelado".
+
+onto:ingenieriaDelProcesoSoftwareYConstruccion a onto:RecommendedPreviousSubject;
+    onto:RecommendedPreviousSubject_description "Ingenieria Del Proceso Software Y Construccion".
+
+onto:aspectosLegalesYProfesionales a onto:RecommendedPreviousSubject;
+    onto:RecommendedPreviousSubject_description "Aspectos Legales Y Profesionales".
+
+onto:fundamentosDeEconomiaYEmpresa a onto:RecommendedPreviousSubject;
+    onto:RecommendedPreviousSubject_description "Fundamentos De Economia Y Empresa".
+
+onto:fundamentosDeIngenieriaDelSoftware a onto:RecommendedPreviousSubject;
+    onto:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software".
+
+onto:capacidadParaPlanificarConcebirDesplegarYDirigirProyectosServiciosYSistemasInformaticosEnTodosLosAmbitosLiderandoSuPuestaEnMarchaYSuMejoraContinuaYValorandoSuImpactoEconomicoYSocial a onto:Competence;
+    onto:Competence_code "CC2";
+    onto:Competence_description "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social".
+
+onto:capacidadParaComprenderLaImportanciaDeLaNegociacionLosHabitosDeTrabajoEfectivosElLiderazgoYLasHabilidadesDeComunicacionEnTodosLosEntornosDeDesarrolloDeSoftware a onto:Competence;
+    onto:Competence_code "CC3";
+    onto:Competence_description "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software.".
+
+onto:capacidadParaDisenarSolucionesApropiadasEnUnoOMasDominiosDeAplicacionUtilizandoMetodosDeLaIngenieriaDelSoftwareQueIntegrenAspectosEticosSocialesLegalesYEconomicos a onto:Competence;
+    onto:Competence_code "CE6";
+    onto:Competence_description "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos.".
+
+onto:liderazgoCualidadesActitudesConocimientosYDestrezasQuePoseeUnIndividuoDesenvolviendoseDeModoQueLograInspirarGenerarConfianzaYCredibilidadEnUnGrupoDeColaboradoresAdemasDelCompromisoParaElLogroDeLaVisionCorporativaATravesDeSinergiasMotivacionesYCompromisosYNoDeManeraCoercitivaEIndividualista a onto:Competence;
+    onto:Competence_code "CT11";
+    onto:Competence_description "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista.".
+
+onto:organizacionYPlanificacionIdentificarYDefinirEficazmenteLasMetasObjetivosYPrioridadesDeUnaTareaOProyectoADesempenarEstipulandoLasActividadesLosPlazosYLosRecursosRequeridosYControlandoLosProcesosEstablecidos a onto:Competence;
+    onto:Competence_code "CT5";
+    onto:Competence_description "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos.".
+
+onto:estimaYRealizaElSeguimientoDeLosCostesYLosTiempoDeDesarrolloDeGrandesProyectosSoftware a onto:Outcome;
+    onto:Outcome_code "RA112";
+    onto:Outcome_description "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software".
+
+onto:identificaYDefineEficazmenteLasMetasObjetivosYPrioridadesDeUnaTareaOProyectoADesempenarEstipulandoLasActividadesLosPlazosYLosRecursosRequeridosYControlandoLosProcesosEstablecidosDetectaYJustificaLasDesviacionesProducidas a onto:Outcome;
+    onto:Outcome_code "RA116";
+    onto:Outcome_description "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas.".
+
+onto:identificaEvaluaYGestionaLosRiesgosPotencialesDeLasSolucionesSoftwareADesarrollar a onto:Outcome;
+    onto:Outcome_code "RA111";
+    onto:Outcome_description "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar".
+
+onto:esCapazDeTrabajarComoMiembroDeUnEquipoConLaFinalidadDeContribuirADesarrollarProyectosConPragmatismoYSentidoDeLaResponsabilidadAsumiendoCompromisosYTeniendoEnCuentaLosRecursosDisponiblesSeDesenvuelveDeModoQueLograGenerarConfianzaYCredibilidadEnUnGrupoDeColaboradoresAdemasDelCompromisoParaElLogroDeLaVisionCorporativaATravesDeNegociacionesYMotivacionesYNoDeManeraCoercitivaEIndividualista a onto:Outcome;
+    onto:Outcome_code "RA118";
+    onto:Outcome_description "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista.".
+
+onto:guiaDeLosFundamentosParaLaDireccionDeProyectos(GuiaDelPMBOK)(SextaEdicion) a onto:Resource;
+    onto:Resource_name "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)".
+
+onto:pmpExamPrepAcceleratedLearningToPassTheProjectManagementProfessional(PMP)Exam a onto:Resource;
+    onto:Resource_name "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam".
+
+onto:isoIecIeee163262019SystemsAndSoftwareEngineeringLifeCycleProcessesProjectManagement a onto:Resource;
+    onto:Resource_name "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management".
+
+onto:guiaPracticaDeEstimacionYMedicionDeProyectosSoftwarePorQueParaQueYComo a onto:Resource;
+    onto:Resource_name "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?".
+
+onto:agilePracticeGuide a onto:Resource;
+    onto:Resource_name "Agile Practice Guide".
+
+onto:userStoryMappingDiscoverTheWholeStoryBuildTheRightProduct a onto:Resource;
+    onto:Resource_name "User Story Mapping: Discover the Whole Story, Build the Right Product".
+
+onto:laGuiaDeScrumLaGuiaDefinitivaDeScrumLasReglasDelJuego a onto:Resource;
+    onto:Resource_name "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego.".
+
+onto:agileProjectManagementWithSCRUM a onto:Resource;
+    onto:Resource_name "Agile Project Management with SCRUM".
+
+onto:kanbanEsencialCondensado a onto:Resource;
+    onto:Resource_name "Kanban Esencial Condensado".
+
+onto:laGuiaKanbanParaEquiposScrum a onto:Resource;
+    onto:Resource_name "La Guía Kanban para Equipos Scrum".
+
+onto:tema1IntroduccionALaGestionDeProyectos a onto:Topic;
+    onto:Topic_name "Tema 1: Introducción a la gestión de proyectos.".
+
+onto:tema2ProcesosDeLaDireccionDeProyectos a onto:Topic;
+    onto:Topic_name "Tema 2: Procesos de la dirección de proyectos.".
+
+onto:tema3GestionDelAlcance a onto:Topic;
+    onto:Topic_name "Tema 3: Gestión del alcance.".
+
+onto:tema4PlanificacionTemporalDeProyectos a onto:Topic;
+    onto:Topic_name "Tema 4: Planificación temporal de proyectos.".
+
+onto:tema5EstimacionEnProyectosDeSoftware a onto:Topic;
+    onto:Topic_name "Tema 5: Estimación en proyectos de software.".
+
+onto:tema6GestionDeRiesgos a onto:Topic;
+    onto:Topic_name "Tema 6: Gestión de riesgos.".
+
+onto:tema7GestionDeCostes a onto:Topic;
+    onto:Topic_name "Tema 7: Gestión de costes.".
+
+onto:tema8IntroduccionALaGestionDeProyectosConMetodologiasAgiles a onto:Topic;
+    onto:Topic_name "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles.".
+
+onto:tema9PracticasAgiles a onto:Topic;
+    onto:Topic_name "Tema 9: Prácticas ágiles.".
+
+onto:tema10Scrum a onto:Topic;
+    onto:Topic_name "Tema 10: Scrum.".
+
+onto:evaluacionProgresiva a onto:Evaluation;
+    onto:Evaluation_name "Evaluación Progresiva".
+
+onto:evaluacionGlobal a onto:Evaluation;
+    onto:Evaluation_name "Evaluación Global".
+
+onto:ejercicioSobreGestionDeProyectosConMetodologiasTradicionalesRa111Ra112Ra116 a onto:Activity;
+    onto:Activity_name "Ejercicio sobre gestión de proyectos con metodologías tradicionales";
+    onto:Activity_modality "Trabajo Individual";
+    onto:Activity_weight "10%";
+    onto:Activity_duration "00:00";
+    onto:Activity_minGrade "/ 10".
+
+onto:practica1Ra111Ra112Ra116Ra118 a onto:Activity;
+    onto:Activity_name "Práctica 1";
+    onto:Activity_modality "Trabajo en Grupo";
+    onto:Activity_weight "23%";
+    onto:Activity_duration "00:00";
+    onto:Activity_minGrade "/ 10".
+
+onto:ejercicioSobreGestionDeProyectosConMetodologiasAgilesRa112Ra116 a onto:Activity;
+    onto:Activity_name "Ejercicio sobre gestión de proyectos con metodologías ágiles";
+    onto:Activity_modality "Trabajo Individual";
+    onto:Activity_weight "5%";
+    onto:Activity_duration "00:00";
+    onto:Activity_minGrade "/ 10".
+
+onto:practica2Ra112Ra116Ra118 a onto:Activity;
+    onto:Activity_name "Práctica 2";
+    onto:Activity_modality "Trabajo en Grupo";
+    onto:Activity_weight "12%";
+    onto:Activity_duration "00:00";
+    onto:Activity_minGrade "/ 10".
+
+onto:examenFinalConvocatoriaOrdinariaRa111Ra112Ra116Ra118 a onto:Activity;
+    onto:Activity_name "Examen final (Convocatoria ordinaria)";
+    onto:Activity_modality "Examen Escrito";
+    onto:Activity_weight "50%";
+    onto:Activity_duration "02:30";
+    onto:Activity_minGrade "4.5 / 10".
+
+onto:examenFinalConvocatoriaExtraordinariaRa111Ra112Ra116Ra118 a onto:Activity;
+    onto:Activity_name "Examen final (Convocatoria extraordinaria)";
+    onto:Activity_modality "Examen Escrito";
+    onto:Activity_weight "100%";
+    onto:Activity_duration "02:30";
+    onto:Activity_minGrade "5 / 10".
+
+    
+onto:gestionDeProyectosYDelRiesgo onto:Subject_studyPlan onto:gradoEnIngenieriaDelSoftware .
+onto:gradoEnIngenieriaDelSoftware onto:StudyPlan_school onto:escuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos .
+onto:escuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos onto:School_university onto:upm .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_character onto:obligatoria .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_professors onto:AldoGordilloMendez .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_professors onto:ManuelOttaviano .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_professors onto:JavierSerranoRomero .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_recommendedPreviousSubjects onto:ingenieriaDeRequisitosYModelado .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_recommendedPreviousSubjects onto:ingenieriaDelProcesoSoftwareYConstruccion .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_recommendedPreviousSubjects onto:aspectosLegalesYProfesionales .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_recommendedPreviousSubjects onto:fundamentosDeEconomiaYEmpresa .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_recommendedPreviousSubjects onto:fundamentosDeIngenieriaDelSoftware .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:guiaDeLosFundamentosParaLaDireccionDeProyectos(GuiaDelPMBOK)(SextaEdicion) .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:pmpExamPrepAcceleratedLearningToPassTheProjectManagementProfessional(PMP)Exam .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:isoIecIeee163262019SystemsAndSoftwareEngineeringLifeCycleProcessesProjectManagement .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:guiaPracticaDeEstimacionYMedicionDeProyectosSoftwarePorQueParaQueYComo .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:agilePracticeGuide .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:userStoryMappingDiscoverTheWholeStoryBuildTheRightProduct .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:laGuiaDeScrumLaGuiaDefinitivaDeScrumLasReglasDelJuego .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:agileProjectManagementWithSCRUM .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:kanbanEsencialCondensado .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_resources onto:laGuiaKanbanParaEquiposScrum .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_competencies onto:capacidadParaPlanificarConcebirDesplegarYDirigirProyectosServiciosYSistemasInformaticosEnTodosLosAmbitosLiderandoSuPuestaEnMarchaYSuMejoraContinuaYValorandoSuImpactoEconomicoYSocial .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_competencies onto:capacidadParaComprenderLaImportanciaDeLaNegociacionLosHabitosDeTrabajoEfectivosElLiderazgoYLasHabilidadesDeComunicacionEnTodosLosEntornosDeDesarrolloDeSoftware .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_competencies onto:capacidadParaDisenarSolucionesApropiadasEnUnoOMasDominiosDeAplicacionUtilizandoMetodosDeLaIngenieriaDelSoftwareQueIntegrenAspectosEticosSocialesLegalesYEconomicos .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_competencies onto:liderazgoCualidadesActitudesConocimientosYDestrezasQuePoseeUnIndividuoDesenvolviendoseDeModoQueLograInspirarGenerarConfianzaYCredibilidadEnUnGrupoDeColaboradoresAdemasDelCompromisoParaElLogroDeLaVisionCorporativaATravesDeSinergiasMotivacionesYCompromisosYNoDeManeraCoercitivaEIndividualista .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_competencies onto:organizacionYPlanificacionIdentificarYDefinirEficazmenteLasMetasObjetivosYPrioridadesDeUnaTareaOProyectoADesempenarEstipulandoLasActividadesLosPlazosYLosRecursosRequeridosYControlandoLosProcesosEstablecidos .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_outcomes onto:estimaYRealizaElSeguimientoDeLosCostesYLosTiempoDeDesarrolloDeGrandesProyectosSoftware .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_outcomes onto:identificaYDefineEficazmenteLasMetasObjetivosYPrioridadesDeUnaTareaOProyectoADesempenarEstipulandoLasActividadesLosPlazosYLosRecursosRequeridosYControlandoLosProcesosEstablecidosDetectaYJustificaLasDesviacionesProducidas .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_outcomes onto:identificaEvaluaYGestionaLosRiesgosPotencialesDeLasSolucionesSoftwareADesarrollar .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_outcomes onto:esCapazDeTrabajarComoMiembroDeUnEquipoConLaFinalidadDeContribuirADesarrollarProyectosConPragmatismoYSentidoDeLaResponsabilidadAsumiendoCompromisosYTeniendoEnCuentaLosRecursosDisponiblesSeDesenvuelveDeModoQueLograGenerarConfianzaYCredibilidadEnUnGrupoDeColaboradoresAdemasDelCompromisoParaElLogroDeLaVisionCorporativaATravesDeNegociacionesYMotivacionesYNoDeManeraCoercitivaEIndividualista .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema1IntroduccionALaGestionDeProyectos .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema2ProcesosDeLaDireccionDeProyectos .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema3GestionDelAlcance .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema4PlanificacionTemporalDeProyectos .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema5EstimacionEnProyectosDeSoftware .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema6GestionDeRiesgos .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema7GestionDeCostes .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema8IntroduccionALaGestionDeProyectosConMetodologiasAgiles .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema9PracticasAgiles .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_topics onto:tema10Scrum .
+
+onto:gestionDeProyectosYDelRiesgo onto:Subject_evaluations onto:evaluacionProgresiva .
+onto:gestionDeProyectosYDelRiesgo onto:Subject_evaluations onto:evaluacionGlobal .
+
+onto:evaluacionProgresiva onto:Evaluation_activities onto:ejercicioSobreGestionDeProyectosConMetodologiasTradicionalesRa111Ra112Ra116 .
+onto:evaluacionProgresiva onto:Evaluation_activities onto:practica1Ra111Ra112Ra116Ra118 .
+onto:evaluacionProgresiva onto:Evaluation_activities onto:ejercicioSobreGestionDeProyectosConMetodologiasAgilesRa112Ra116 .
+onto:evaluacionProgresiva onto:Evaluation_activities onto:practica2Ra112Ra116Ra118 .
+onto:evaluacionGlobal onto:Evaluation_activities onto:examenFinalConvocatoriaOrdinariaRa111Ra112Ra116Ra118 .
+

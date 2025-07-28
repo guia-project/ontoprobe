@@ -1,0 +1,365 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix upm: <http://www.example.org/upm#> .
+
+# Classes
+upm:Asignatura a rdfs:Class ;
+    rdfs:label "Asignatura" .
+
+upm:PlanEstudios a rdfs:Class ;
+    rdfs:label "Plan de Estudios" .
+
+upm:Profesor a rdfs:Class ;
+    rdfs:label "Profesor" .
+
+upm:Competencia a rdfs:Class ;
+    rdfs:label "Competencia" .
+
+upm:ResultadoAprendizaje a rdfs:Class ;
+    rdfs:label "Resultado de Aprendizaje" .
+
+upm:Tema a rdfs:Class ;
+    rdfs:label "Tema" .
+
+upm:Actividad a rdfs:Class ;
+    rdfs:label "Actividad" .
+
+upm:Evaluacion a rdfs:Class ;
+    rdfs:label "Evaluación" .
+
+upm:RecursoDidactico a rdfs:Class ;
+    rdfs:label "Recurso Didáctico" .
+
+# Properties
+upm:nombreAsignatura a rdf:Property ;
+    rdfs:label "nombre de la asignatura" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:noCreditos a rdf:Property ;
+    rdfs:label "número de créditos" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:integer .
+
+upm:caracter a rdf:Property ;
+    rdfs:label "carácter" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:curso a rdf:Property ;
+    rdfs:label "curso" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:semestre a rdf:Property ;
+    rdfs:label "semestre" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:periodoImparticion a rdf:Property ;
+    rdfs:label "período de impartición" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:idiomaImparticion a rdf:Property ;
+    rdfs:label "idioma de impartición" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:titulacion a rdf:Property ;
+    rdfs:label "titulación" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:centroResponsable a rdf:Property ;
+    rdfs:label "centro responsable de la titulación" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:cursoAcademico a rdf:Property ;
+    rdfs:label "curso académico" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:nombreProfesor a rdf:Property ;
+    rdfs:label "nombre del profesor" ;
+    rdfs:domain upm:Profesor ;
+    rdfs:range xsd:string .
+
+upm:despacho a rdf:Property ;
+    rdfs:label "despacho" ;
+    rdfs:domain upm:Profesor ;
+    rdfs:range xsd:string .
+
+upm:correoElectronico a rdf:Property ;
+    rdfs:label "correo electrónico" ;
+    rdfs:domain upm:Profesor ;
+    rdfs:range xsd:string .
+
+upm:horarioTutorias a rdf:Property ;
+    rdfs:label "horario de tutorías" ;
+    rdfs:domain upm:Profesor ;
+    rdfs:range xsd:string .
+
+upm:conocimientosPrevios a rdf:Property ;
+    rdfs:label "conocimientos previos recomendados" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:asignaturasPrevias a rdf:Property ;
+    rdfs:label "asignaturas previas recomendadas" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:descripcionCompetencia a rdf:Property ;
+    rdfs:label "descripción de la competencia" ;
+    rdfs:domain upm:Competencia ;
+    rdfs:range xsd:string .
+
+upm:descripcionResultadoAprendizaje a rdf:Property ;
+    rdfs:label "descripción del resultado de aprendizaje" ;
+    rdfs:domain upm:ResultadoAprendizaje ;
+    rdfs:range xsd:string .
+
+upm:descripcionAsignatura a rdf:Property ;
+    rdfs:label "descripción de la asignatura" ;
+    rdfs:domain upm:Asignatura ;
+    rdfs:range xsd:string .
+
+upm:nombreTema a rdf:Property ;
+    rdfs:label "nombre del tema" ;
+    rdfs:domain upm:Tema ;
+    rdfs:range xsd:string .
+
+upm:descripcionActividad a rdf:Property ;
+    rdfs:label "descripción de la actividad" ;
+    rdfs:domain upm:Actividad ;
+    rdfs:range xsd:string .
+
+upm:duracionActividad a rdf:Property ;
+    rdfs:label "duración de la actividad" ;
+    rdfs:domain upm:Actividad ;
+    rdfs:range xsd:string .
+
+upm:tipoActividad1 a rdf:Property ;
+    rdfs:label "tipo de actividad 1" ;
+    rdfs:domain upm:Actividad ;
+    rdfs:range xsd:string .
+
+upm:tipoActividad2 a rdf:Property ;
+    rdfs:label "tipo de actividad 2" ;
+    rdfs:domain upm:Actividad ;
+    rdfs:range xsd:string .
+
+upm:teleEnsenanza a rdf:Property ;
+    rdfs:label "tele-enseñanza" ;
+    rdfs:domain upm:Actividad ;
+    rdfs:range xsd:string .
+
+upm:actividadesEvaluacion a rdf:Property ;
+    rdfs:label "actividades de evaluación" ;
+    rdfs:domain upm:Actividad ;
+    rdfs:range xsd:string .
+
+upm:modalidadEvaluacion a rdf:Property ;
+    rdfs:label "modalidad de evaluación" ;
+    rdfs:domain upm:Evaluacion ;
+    rdfs:range xsd:string .
+
+upm:tipoEvaluacion a rdf:Property ;
+    rdfs:label "tipo de evaluación" ;
+    rdfs:domain upm:Evaluacion ;
+    rdfs:range xsd:string .
+
+upm:duracionEvaluacion a rdf:Property ;
+    rdfs:label "duración de la evaluación" ;
+    rdfs:domain upm:Evaluacion ;
+    rdfs:range xsd:string .
+
+upm:pesoNota a rdf:Property ;
+    rdfs:label "peso en la nota" ;
+    rdfs:domain upm:Evaluacion ;
+    rdfs:range xsd:string .
+
+upm:notaMinima a rdf:Property ;
+    rdfs:label "nota mínima" ;
+    rdfs:domain upm:Evaluacion ;
+    rdfs:range xsd:string .
+
+upm:competenciasEvaluadas a rdf:Property ;
+    rdfs:label "competencias evaluadas" ;
+    rdfs:domain upm:Evaluacion ;
+    rdfs:range xsd:string .
+
+upm:tipoRecursoDidactico a rdf:Property ;
+    rdfs:label "tipo de recurso didáctico" ;
+    rdfs:domain upm:RecursoDidactico ;
+    rdfs:range xsd:string .
+
+upm:observacionesRecursoDidactico a rdf:Property ;
+    rdfs:label "observaciones del recurso didáctico" ;
+    rdfs:domain upm:RecursoDidactico ;
+    rdfs:range xsd:string .
+
+upm:temarioAsignatura a rdf:Property;
+    rdfs:label "temario de la asignatura";
+    rdfs:domain upm:Asignatura;
+    rdfs:range xsd:string.
+
+# Instances
+
+upm:asignatura_615000258 a upm:Asignatura ;
+    upm:nombreAsignatura "615000258 - Gestion de Proyectos y del Riesgo" ;
+    upm:noCreditos 6 ;
+    upm:caracter "Obligatoria" ;
+    upm:curso "Cuarto curso" ;
+    upm:semestre "Séptimo semestre" ;
+    upm:periodoImparticion "Septiembre-Enero" ;
+    upm:idiomaImparticion "Castellano" ;
+    upm:titulacion "61IW - Grado en Ingenieria del Software" ;
+    upm:centroResponsable "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" ;
+    upm:cursoAcademico "2024-25" ;
+    upm:descripcionAsignatura "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. El objetivo de esta asignatura es capacitar a los estudiantes para que puedan planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles . El temario de la asignatura se basa principalmente, aunque no exclusivamente, en la Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) elaborada por el PMI (Project Management Institute) y en la Agile Practice Guide , desarrollada por el PMI en colaboración con la Agile Alliance." ;
+    upm:asignaturasPrevias "- Ingenieria De Requisitos Y Modelado \n- Ingenieria Del Proceso Software Y Construccion \n- Aspectos Legales Y Profesionales \n- Fundamentos De Economia Y Empresa \n- Fundamentos De Ingenieria Del Software";
+    upm:temarioAsignatura "1. Fundamentos de la gestión de proyectos. \n 1.1. Tema 1: Introducción a la gestión de proyectos. \n 1.2. Tema 2: Procesos de la dirección de proyectos. \n 1.3. Tema 3: Gestión del alcance. \n 1.4. Tema 4: Planificación temporal de proyectos. \n 1.5. Tema 5: Estimación en proyectos de software. \n 1.6. Tema 6: Gestión de riesgos. \n 1.7. Tema 7: Gestión de costes. \n 2. Gestión de proyectos con metodologías ágiles. \n 2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles. \n 2.2. Tema 9: Prácticas ágiles. \n 2.3. Tema 10: Scrum.";
+.
+
+upm:plan_61IW a upm:PlanEstudios ;
+    rdfs:label "61IW - Grado En Ingenieria Del Software" .
+
+upm:profesor_gordillo a upm:Profesor ;
+    upm:nombreProfesor "Aldo Gordillo Mendez" ;
+    upm:despacho "1219" ;
+    upm:correoElectronico "a.gordillo@upm.es" ;
+    upm:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+upm:profesor_ottaviano a upm:Profesor ;
+    upm:nombreProfesor "Manuel Ottaviano" ;
+    upm:despacho "1212" ;
+    upm:correoElectronico "manuel.ottaviano@upm.es" ;
+    upm:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+upm:profesor_serrano a upm:Profesor ;
+    upm:nombreProfesor "Javier Serrano Romero" ;
+    upm:despacho "4219" ;
+    upm:correoElectronico "javier.serrano@upm.es" ;
+    upm:horarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." .
+
+upm:competencia_CC2 a upm:Competencia ;
+    upm:descripcionCompetencia "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+upm:competencia_CC3 a upm:Competencia ;
+    upm:descripcionCompetencia "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+upm:competencia_CE6 a upm:Competencia ;
+    upm:descripcionCompetencia "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+upm:competencia_CT11 a upm:Competencia ;
+    upm:descripcionCompetencia "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+upm:competencia_CT5 a upm:Competencia ;
+    upm:descripcionCompetencia "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+upm:resultado_RA112 a upm:ResultadoAprendizaje ;
+    upm:descripcionResultadoAprendizaje "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+upm:resultado_RA116 a upm:ResultadoAprendizaje ;
+    upm:descripcionResultadoAprendizaje "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+upm:resultado_RA111 a upm:ResultadoAprendizaje ;
+    upm:descripcionResultadoAprendizaje "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+upm:resultado_RA118 a upm:ResultadoAprendizaje ;
+    upm:descripcionResultadoAprendizaje "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+upm:tema_introduccion a upm:Tema ;
+    upm:nombreTema "Introducción a la gestión de proyectos." .
+
+upm:recurso_PMBOK a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_PMPExamPrep a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_ISO_IEC_IEEE_16326_2019 a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_GuiaPracticaEstimacion a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_AgilePracticeGuide a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_UserStoryMapping a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_GuiaScrum a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_AgileProjectManagement_SCRUM a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_KanbanEsencialCondensado a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:recurso_GuiaKanbanEquiposScrum a upm:RecursoDidactico ;
+    upm:tipoRecursoDidactico "Bibliografía";
+    upm:observacionesRecursoDidactico "".
+
+upm:evaluacion_progresiva_tradicional a upm:Evaluacion;
+    upm:modalidadEvaluacion "No Presencial";
+    upm:tipoEvaluacion "Trabajo Individual";
+    upm:duracionEvaluacion "00:00";
+    upm:pesoNota "10%";
+    upm:notaMinima "/ 10";
+    upm:competenciasEvaluadas "CT5, CC2, CE6".
+
+upm:evaluacion_progresiva_practica1 a upm:Evaluacion;
+    upm:modalidadEvaluacion "No Presencial";
+    upm:tipoEvaluacion "Trabajo en Grupo";
+    upm:duracionEvaluacion "00:00";
+    upm:pesoNota "23%";
+    upm:notaMinima "/ 10";
+    upm:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6".
+
+upm:evaluacion_progresiva_agil a upm:Evaluacion;
+    upm:modalidadEvaluacion "No Presencial";
+    upm:tipoEvaluacion "Trabajo Individual";
+    upm:duracionEvaluacion "00:00";
+    upm:pesoNota "5%";
+    upm:notaMinima "/ 10";
+    upm:competenciasEvaluadas "CT5, CC2, CE6".
+
+upm:evaluacion_progresiva_practica2 a upm:Evaluacion;
+    upm:modalidadEvaluacion "No Presencial";
+    upm:tipoEvaluacion "Trabajo en Grupo";
+    upm:duracionEvaluacion "00:00";
+    upm:pesoNota "12%";
+    upm:notaMinima "/ 10";
+    upm:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6".
+
+upm:evaluacion_global_ordinaria a upm:Evaluacion;
+    upm:modalidadEvaluacion "Presencial";
+    upm:tipoEvaluacion "Examen Escrito";
+    upm:duracionEvaluacion "02:30";
+    upm:pesoNota "50%";
+    upm:notaMinima "4.5 / 10";
+    upm:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6".
+
+upm:evaluacion_global_extraordinaria a upm:Evaluacion;
+    upm:modalidadEvaluacion "Presencial";
+    upm:tipoEvaluacion "Examen Escrito";
+    upm:duracionEvaluacion "02:30";
+    upm:pesoNota "100%";
+    upm:notaMinima "5 / 10";
+    upm:competenciasEvaluadas "CT5, CT11, CC2, CC3, CE6".

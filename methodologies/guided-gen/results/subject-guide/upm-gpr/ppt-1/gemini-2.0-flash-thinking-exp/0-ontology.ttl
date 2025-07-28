@@ -1,0 +1,430 @@
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ont: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> a owl:Ontology .
+
+# Classes
+ont:Subject a owl:Class .
+ont:Character a owl:Class .
+ont:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf ont:Character .
+ont:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf ont:Character .
+ont:StudyPlan a owl:Class .
+ont:School a owl:Class .
+ont:University a owl:Class .
+ont:Professor a owl:Class .
+ont:Competence a owl:Class .
+ont:Outcome a owl:Class .
+ont:Evaluation a owl:Class .
+ont:Activity a owl:Class .
+ont:Topic a owl:Class .
+ont:Resource a owl:Class .
+ont:RecommendedPreviousSubject a owl:Class .
+ont:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+ont:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range xsd:string .
+ont:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain ont:StudyPlan ;
+    rdfs:range xsd:string .
+ont:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain ont:StudyPlan ;
+    rdfs:range xsd:string .
+ont:School_code a owl:DatatypeProperty ;
+    rdfs:domain ont:School ;
+    rdfs:range xsd:string .
+ont:School_name a owl:DatatypeProperty ;
+    rdfs:domain ont:School ;
+    rdfs:range xsd:string .
+ont:University_name a owl:DatatypeProperty ;
+    rdfs:domain ont:University ;
+    rdfs:range xsd:string .
+ont:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range xsd:string .
+ont:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range xsd:string .
+ont:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range xsd:string .
+ont:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range xsd:string .
+ont:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range xsd:boolean .
+ont:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain ont:Competence ;
+    rdfs:range xsd:string .
+ont:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain ont:Competence ;
+    rdfs:range xsd:string .
+ont:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain ont:Outcome ;
+    rdfs:range xsd:string .
+ont:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain ont:Outcome ;
+    rdfs:range xsd:string .
+ont:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Evaluation ;
+    rdfs:range xsd:string .
+ont:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range xsd:string .
+ont:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range xsd:string .
+ont:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range xsd:string .
+ont:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range xsd:string .
+ont:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range xsd:string .
+ont:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Topic ;
+    rdfs:range xsd:string .
+ont:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Resource ;
+    rdfs:range xsd:string .
+ont:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain ont:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+ont:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain ont:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+# Object Properties (Relationships)
+ont:Subject_character a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Character .
+ont:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:StudyPlan .
+ont:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Professor .
+ont:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Resource .
+ont:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Competence .
+ont:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Outcome .
+ont:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:RecommendedPreviousSubject .
+ont:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:RecommendedPreviousKnowledge .
+ont:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Topic .
+ont:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Evaluation .
+ont:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain ont:StudyPlan ;
+    rdfs:range ont:School .
+ont:School_university a owl:ObjectProperty ;
+    rdfs:domain ont:School ;
+    rdfs:range ont:University .
+ont:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain ont:Evaluation ;
+    rdfs:range ont:Activity .
+ont:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range ont:Outcome .
+ont:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range ont:Competence .
+ont:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range ont:Topic .
+ont:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain ont:Topic ;
+    rdfs:range ont:Topic .
+
+# Instances
+ont:subject_615000258 a ont:Subject ;
+    ont:Subject_name "Gestion De Proyectos Y Del Riesgo" ;
+    ont:Subject_description "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. El objetivo de esta asignatura es capacitar a los estudiantes para que puedan  planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles ." ;
+    ont:Subject_code "615000258" ;
+    ont:Subject_course "Cuarto curso" ;
+    ont:Subject_courseYear "2024/25" ;
+    ont:Subject_credits "6 ECTS" ;
+    ont:Subject_language "Castellano" ;
+    ont:Subject_semester "Primer semestre" ;
+    ont:Subject_period "Septiembre-Enero" ;
+    ont:Subject_evaluationCriteria "Para aprobar la asignatura en la convocatoria ordinaria un estudiante deberá cumplir las siguientes dos condiciones:\n1) Obtener una calificación final igual o superior a 5.\n2) Obtener, en el examen final de la convocatoria ordinaria, una calificación igual o superior a su nota mínima.\nEn el caso de que un estudiante no cumpla la segunda condición, su calificación final será como máximo la obtenida en el examen final de la convocatoria ordinaria.\nPor lo tanto, de acuerdo a la información previamente indicada, no es posible aprobar la asignatura en la convocatoria ordinaria mediante evaluación progresiva. En la convocatoria ordinaria solo es posible aprobar la asignatura mediante evaluación global, para lo cual se deberán cumplir las dos condiciones indicadas previamente.\nPara aprobar la asignatura en la convocatoria extraordinaria , un estudiante deberá obtener una calificación igual o superior a 5 en el examen final de dicha convocatoria." ;
+    ont:Subject_character ont:mandatoryCharacter_instance ;
+    ont:Subject_studyPlan ont:studyPlan_61IW ;
+    ont:Subject_professors ont:professor_aldoGordilloMendez, ont:professor_manuelOttaviano, ont:professor_javierSerranoRomero ;
+    ont:Subject_competencies ont:competence_CC2, ont:competence_CC3, ont:competence_CE6, ont:competence_CT11, ont:competence_CT5 ;
+    ont:Subject_outcomes ont:outcome_RA112, ont:outcome_RA116, ont:outcome_RA111, ont:outcome_RA118 ;
+    ont:Subject_recommendedPreviousSubjects ont:recommendedPreviousSubject_IngenieriaDeRequisitosYModelado, ont:recommendedPreviousSubject_IngenieriaDelProcesoSoftwareYConstruccion, ont:recommendedPreviousSubject_AspectosLegalesYProfesionales, ont:recommendedPreviousSubject_FundamentosDeEconomiaYEmpresa, ont:recommendedPreviousSubject_FundamentosDeIngenieriaDelSoftware ;
+    ont:Subject_topics ont:topic_fundamentosGestionProyectos, ont:topic_gestionProyectosMetodologiasAgiles ;
+    ont:Subject_evaluations ont:evaluation_evaluacionProgresiva, ont:evaluation_pruebaEvaluacionGlobal, ont:evaluation_evaluacionConvocatoriaExtraordinaria ;
+    ont:Subject_resources ont:resource_guiaPMBOK, ont:resource_pmpExamPrep, ont:resource_isoIecIeee16326_2019, ont:resource_guiaPracticaEstimacionMedicion, ont:resource_agilePracticeGuide, ont:resource_userStoryMapping, ont:resource_guiaScrum, ont:resource_agileProjectManagementScrum, ont:resource_kanbanEsencialCondensado, ont:resource_guiaKanbanEquiposScrum .
+
+ont:mandatoryCharacter_instance a ont:MandatoryCharacter .
+
+ont:studyPlan_61IW a ont:StudyPlan ;
+    ont:StudyPlan_code "61IW" ;
+    ont:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    ont:StudyPlan_school ont:school_61 .
+
+ont:school_61 a ont:School ;
+    ont:School_code "61" ;
+    ont:School_name "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" ;
+    ont:School_university ont:university_upm .
+
+ont:university_upm a ont:University ;
+    ont:University_name "Universidad Politécnica de Madrid" .
+
+ont:professor_aldoGordilloMendez a ont:Professor ;
+    ont:Professor_name "Aldo Gordillo Mendez" ;
+    ont:Professor_email "a.gordillo@upm.es" ;
+    ont:Professor_office "1219" ;
+    ont:Professor_hours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    ont:Professor_isCoordinator true .
+
+ont:professor_manuelOttaviano a ont:Professor ;
+    ont:Professor_name "Manuel Ottaviano" ;
+    ont:Professor_email "manuel.ottaviano@upm.es" ;
+    ont:Professor_office "1212" ;
+    ont:Professor_hours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    ont:Professor_isCoordinator false .
+
+ont:professor_javierSerranoRomero a ont:Professor ;
+    ont:Professor_name "Javier Serrano Romero" ;
+    ont:Professor_email "javier.serrano@upm.es" ;
+    ont:Professor_office "4219" ;
+    ont:Professor_hours "Sin horario. El horario de tutorías se publicará en la web de la ETSISI." ;
+    ont:Professor_isCoordinator false .
+
+ont:competence_CC2 a ont:Competence ;
+    ont:Competence_code "CC2" ;
+    ont:Competence_description "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+ont:competence_CC3 a ont:Competence ;
+    ont:Competence_code "CC3" ;
+    ont:Competence_description "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+ont:competence_CE6 a ont:Competence ;
+    ont:Competence_code "CE6" ;
+    ont:Competence_description "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+ont:competence_CT11 a ont:Competence ;
+    ont:Competence_code "CT11" ;
+    ont:Competence_description "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+ont:competence_CT5 a ont:Competence ;
+    ont:Competence_code "CT5" ;
+    ont:Competence_description "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+ont:outcome_RA112 a ont:Outcome ;
+    ont:Outcome_code "RA112" ;
+    ont:Outcome_description "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+ont:outcome_RA116 a ont:Outcome ;
+    ont:Outcome_code "RA116" ;
+    ont:Outcome_description "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+ont:outcome_RA111 a ont:Outcome ;
+    ont:Outcome_code "RA111" ;
+    ont:Outcome_description "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+ont:outcome_RA118 a ont:Outcome ;
+    ont:Outcome_code "RA118" ;
+    ont:Outcome_description "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+ont:recommendedPreviousSubject_IngenieriaDeRequisitosYModelado a ont:RecommendedPreviousSubject ;
+    ont:RecommendedPreviousSubject_description "Ingenieria De Requisitos Y Modelado" .
+
+ont:recommendedPreviousSubject_IngenieriaDelProcesoSoftwareYConstruccion a ont:RecommendedPreviousSubject ;
+    ont:RecommendedPreviousSubject_description "Ingenieria Del Proceso Software Y Construccion" .
+
+ont:recommendedPreviousSubject_AspectosLegalesYProfesionales a ont:RecommendedPreviousSubject ;
+    ont:RecommendedPreviousSubject_description "Aspectos Legales Y Profesionales" .
+
+ont:recommendedPreviousSubject_FundamentosDeEconomiaYEmpresa a ont:RecommendedPreviousSubject ;
+    ont:RecommendedPreviousSubject_description "Fundamentos De Economia Y Empresa" .
+
+ont:recommendedPreviousSubject_FundamentosDeIngenieriaDelSoftware a ont:RecommendedPreviousSubject ;
+    ont:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+ont:topic_fundamentosGestionProyectos a ont:Topic ;
+    ont:Topic_name "1. Fundamentos de la gestión de proyectos." ;
+    ont:Topic_subTopics ont:topic_tema1, ont:topic_tema2, ont:topic_tema3, ont:topic_tema4, ont:topic_tema5, ont:topic_tema6, ont:topic_tema7 .
+
+ont:topic_tema1 a ont:Topic ;
+    ont:Topic_name "1.1. Tema 1: Introducción a la gestión de proyectos." .
+
+ont:topic_tema2 a ont:Topic ;
+    ont:Topic_name "1.2. Tema 2: Procesos de la dirección de proyectos." .
+
+ont:topic_tema3 a ont:Topic ;
+    ont:Topic_name "1.3. Tema 3: Gestión del alcance." .
+
+ont:topic_tema4 a ont:Topic ;
+    ont:Topic_name "1.4. Tema 4: Planificación temporal de proyectos." .
+
+ont:topic_tema5 a ont:Topic ;
+    ont:Topic_name "1.5. Tema 5: Estimación en proyectos de software." .
+
+ont:topic_tema6 a ont:Topic ;
+    ont:Topic_name "1.6. Tema 6: Gestión de riesgos." .
+
+ont:topic_tema7 a ont:Topic ;
+    ont:Topic_name "1.7. Tema 7: Gestión de costes." .
+
+ont:topic_gestionProyectosMetodologiasAgiles a ont:Topic ;
+    ont:Topic_name "2. Gestión de proyectos con metodologías ágiles." ;
+    ont:Topic_subTopics ont:topic_tema8, ont:topic_tema9, ont:topic_tema10 .
+
+ont:topic_tema8 a ont:Topic ;
+    ont:Topic_name "2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+ont:topic_tema9 a ont:Topic ;
+    ont:Topic_name "2.2. Tema 9: Prácticas ágiles." .
+
+ont:topic_tema10 a ont:Topic ;
+    ont:Topic_name "2.3. Tema 10: Scrum." .
+
+ont:evaluation_evaluacionProgresiva a ont:Evaluation ;
+    ont:Evaluation_name "Evaluación progresiva" ;
+    ont:Evaluation_activities ont:activity_ejercicioGestionTradicional, ont:activity_practica1, ont:activity_ejercicioGestionAgiles, ont:activity_practica2 .
+
+ont:evaluation_pruebaEvaluacionGlobal a ont:Evaluation ;
+    ont:Evaluation_name "Prueba evaluación global" ;
+    ont:Evaluation_activities ont:activity_examenFinalOrdinaria .
+
+ont:evaluation_evaluacionConvocatoriaExtraordinaria a ont:Evaluation ;
+    ont:Evaluation_name "Evaluación convocatoria extraordinaria" ;
+    ont:Evaluation_activities ont:activity_examenFinalExtraordinaria .
+
+ont:activity_ejercicioGestionTradicional a ont:Activity ;
+    ont:Activity_name "Ejercicio sobre gestión de proyectos con metodologías tradicionales." ;
+    ont:Activity_modality "No Presencial" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_weight "10%" ;
+    ont:Activity_minGrade "/" ;
+    ont:Activity_relatedOutcomes ont:outcome_RA111, ont:outcome_RA112, ont:outcome_RA116 ;
+    ont:Activity_relatedCompetencies ont:competence_CT5, ont:competence_CC2, ont:competence_CE6 .
+
+ont:activity_practica1 a ont:Activity ;
+    ont:Activity_name "Práctica 1." ;
+    ont:Activity_modality "No Presencial" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_weight "23%" ;
+    ont:Activity_minGrade "/" ;
+    ont:Activity_relatedOutcomes ont:outcome_RA111, ont:outcome_RA112, ont:outcome_RA116, ont:outcome_RA118 ;
+    ont:Activity_relatedCompetencies ont:competence_CT5, ont:competence_CT11, ont:competence_CC2, ont:competence_CC3, ont:competence_CE6 .
+
+ont:activity_ejercicioGestionAgiles a ont:Activity ;
+    ont:Activity_name "Ejercicio sobre gestión de proyectos con metodologías ágiles." ;
+    ont:Activity_modality "No Presencial" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_weight "5%" ;
+    ont:Activity_minGrade "/" ;
+    ont:Activity_relatedOutcomes ont:outcome_RA112, ont:outcome_RA116 ;
+    ont:Activity_relatedCompetencies ont:competence_CT5, ont:competence_CC2, ont:competence_CE6 .
+
+ont:activity_practica2 a ont:Activity ;
+    ont:Activity_name "Práctica 2." ;
+    ont:Activity_modality "No Presencial" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_weight "12%" ;
+    ont:Activity_minGrade "/" ;
+    ont:Activity_relatedOutcomes ont:outcome_RA112, ont:outcome_RA116, ont:outcome_RA118 ;
+    ont:Activity_relatedCompetencies ont:competence_CT5, ont:competence_CT11, ont:competence_CC2, ont:competence_CC3, ont:competence_CE6 .
+
+ont:activity_examenFinalOrdinaria a ont:Activity ;
+    ont:Activity_name "Examen final (Convocatoria ordinaria)." ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_duration "02:30" ;
+    ont:Activity_weight "50%" ;
+    ont:Activity_minGrade "4.5 / 10" ;
+    ont:Activity_relatedOutcomes ont:outcome_RA111, ont:outcome_RA112, ont:outcome_RA116, ont:outcome_RA118 ;
+    ont:Activity_relatedCompetencies ont:competence_CT5, ont:competence_CT11, ont:competence_CC2, ont:competence_CC3, ont:competence_CE6 .
+
+ont:activity_examenFinalExtraordinaria a ont:Activity ;
+    ont:Activity_name "Examen final (Convocatoria extraordinaria)." ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_duration "02:30" ;
+    ont:Activity_weight "100%" ;
+    ont:Activity_minGrade "5 / 10" ;
+    ont:Activity_relatedOutcomes ont:outcome_RA111, ont:outcome_RA112, ont:outcome_RA116, ont:outcome_RA118 ;
+    ont:Activity_relatedCompetencies ont:competence_CT5, ont:competence_CT11, ont:competence_CC2, ont:competence_CC3, ont:competence_CE6 .
+
+ont:resource_guiaPMBOK a ont:Resource ;
+    ont:Resource_name "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)" .
+
+ont:resource_pmpExamPrep a ont:Resource ;
+    ont:Resource_name "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam" .
+
+ont:resource_isoIecIeee16326_2019 a ont:Resource ;
+    ont:Resource_name "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management" .
+
+ont:resource_guiaPracticaEstimacionMedicion a ont:Resource ;
+    ont:Resource_name "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?" .
+
+ont:resource_agilePracticeGuide a ont:Resource ;
+    ont:Resource_name "Agile Practice Guide" .
+
+ont:resource_userStoryMapping a ont:Resource ;
+    ont:Resource_name "User Story Mapping: Discover the Whole Story, Build the Right Product" .
+
+ont:resource_guiaScrum a ont:Resource ;
+    ont:Resource_name "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego." .
+
+ont:resource_agileProjectManagementScrum a ont:Resource ;
+    ont:Resource_name "Agile Project Management with SCRUM" .
+
+ont:resource_kanbanEsencialCondensado a ont:Resource ;
+    ont:Resource_name "Kanban Esencial Condensado" .
+
+ont:resource_guiaKanbanEquiposScrum a ont:Resource ;
+    ont:Resource_name "La Guía Kanban para Equipos Scrum" .
+
+```

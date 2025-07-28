@@ -1,0 +1,168 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/ontology#> .
+
+:ProjectManagementCourse a owl:Class ;
+    rdfs:label "Project Management Course" ;
+    rdfs:comment "A course on managing software project and risk" .
+
+:Course a owl:Class ;
+    rdfs:label "Course" ;
+    rdfs:comment "General educational course entity" .
+
+:Teacher a owl:Class ;
+    rdfs:label "Teacher" ;
+    rdfs:comment "An individual responsible for teaching" .
+
+:Competency a owl:Class ;
+    rdfs:label "Competency" ;
+    rdfs:comment "A skill or ability that the course aims to develop" .
+
+:LearningOutcome a owl:Class ;
+    rdfs:label "Learning Outcome" ;
+    rdfs:comment "Specific result of learning process" .
+
+:Subject a owl:Class ;
+    rdfs:label "Subject" ;
+    rdfs:comment "A topic or area of study within the course" .
+
+:Resource a owl:Class ;
+    rdfs:label "Resource" ;
+    rdfs:comment "Educational material used in the course" .
+
+:ProjectManagementCourse rdfs:subClassOf :Course .
+
+:hasCode a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has code" ;
+    rdfs:comment "The unique identifier for the course" .
+
+:hasTitle a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "has title" ;
+    rdfs:comment "The title of the course" .
+
+:isMandatory a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is mandatory" ;
+    rdfs:comment "Indicates if the course is mandatory" .
+
+:hasCredits a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has credits" ;
+    rdfs:comment "Number of ECTS credits for the course" .
+
+:offeredInYear a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "offered in year" ;
+    rdfs:comment "The academic year the course is offered" .
+
+:offeredInSemester a owl:DatatypeProperty ;
+    rdfs:domain :Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "offered in semester" ;
+    rdfs:comment "The semester in which the course is offered" .
+
+:taughtBy a owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :Teacher ;
+    rdfs:label "taught by" ;
+    rdfs:comment "The teacher who teaches the course" .
+
+:hasCompetency a owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :Competency ;
+    rdfs:label "has competency" ;
+    rdfs:comment "Competencies that the course aims to develop" .
+
+:hasLearningOutcome a owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :LearningOutcome ;
+    rdfs:label "has learning outcome" ;
+    rdfs:comment "Outcomes expected from the course" .
+
+:usesResource a owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :Resource ;
+    rdfs:label "uses resource" ;
+    rdfs:comment "Resources used in the course" .
+
+:coversSubject a owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :Subject ;
+    rdfs:label "covers subject" ;
+    rdfs:comment "Subjects covered by the course" .
+
+# Instances for the document
+:615000258 a :ProjectManagementCourse ;
+    :hasCode "615000258" ;
+    :hasTitle "Gestión de Proyectos y del Riesgo" ;
+    :isMandatory true ;
+    :hasCredits 6 ;
+    :offeredInYear "2024"^^xsd:gYear ;
+    :offeredInSemester "Primer semestre" ;
+    :taughtBy :AldoGordilloMendez, :ManuelOttaviano, :JavierSerranoRomero .
+
+:AldoGordilloMendez a :Teacher ;
+    rdfs:label "Aldo Gordillo Mendez" .
+
+:ManuelOttaviano a :Teacher ;
+    rdfs:label "Manuel Ottaviano" .
+
+:JavierSerranoRomero a :Teacher ;
+    rdfs:label "Javier Serrano Romero" .
+
+# Competencies listed in the document
+:CC2 a :Competency ;
+    rdfs:label "Capacidad para planificar proyectos" .
+
+:CC3 a :Competency ;
+    rdfs:label "Capacidad para comprender negociación y liderazgo" .
+
+:CE6 a :Competency ;
+    rdfs:label "Capacidad para diseñar soluciones software" .
+
+:CT11 a :Competency ;
+    rdfs:label "Liderazgo" .
+
+:CT5 a :Competency ;
+    rdfs:label "Organización y planificación" .
+
+# Learning Outcomes
+:RA112 a :LearningOutcome ;
+    rdfs:label "Estima y realiza seguimiento de costes y tiempos" .
+
+:RA116 a :LearningOutcome ;
+    rdfs:label "Identifica y define metas, objetivos y prioridades" .
+
+:RA111 a :LearningOutcome ;
+    rdfs:label "Gestiona riesgos en soluciones software" .
+
+:RA118 a :LearningOutcome ;
+    rdfs:label "Trabaja en equipo con responsabilidad" .
+
+# Subjects
+:ProjectManagementFundamentals a :Subject ;
+    rdfs:label "Fundamentos de la gestión de proyectos" .
+
+:AgileMethodologies a :Subject ;
+    rdfs:label "Gestión de proyectos con metodologías ágiles" .
+
+# Resources
+:PMBOKGuide a :Resource ;
+    rdfs:label "Guía de los Fundamentos para la Dirección de Proyectos" .
+
+:AgilePracticeGuide a :Resource ;
+    rdfs:label "Agile Practice Guide" .
+
+# Relationships
+:615000258 :hasCompetency :CC2, :CC3, :CE6, :CT11, :CT5 ;
+    :hasLearningOutcome :RA112, :RA116, :RA111, :RA118 ;
+    :coversSubject :ProjectManagementFundamentals, :AgileMethodologies ;
+    :usesResource :PMBOKGuide, :AgilePracticeGuide .

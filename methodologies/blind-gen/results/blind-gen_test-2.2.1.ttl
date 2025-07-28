@@ -1,0 +1,800 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix guia: <http://example.org/ontology/GuiaAprendizaje#> .
+
+<http://example.org/ontology/GuiaAprendizaje> rdf:type owl:Ontology .
+
+guia:Documento rdfs:label "Documento"@es ;
+    rdfs:comment "Documento Guía de Aprendizaje"@es ;
+    rdf:type rdfs:Class .
+
+guia:Asignatura rdfs:label "Asignatura"@es ;
+    rdfs:comment "Asignatura del plan de estudios"@es ;
+    rdfs:subClassOf guia:Documento ;
+    rdf:type rdfs:Class .
+
+guia:PlanEstudios rdfs:label "Plan de Estudios"@es ;
+    rdfs:comment "Plan de estudios de la titulación"@es ;
+    rdf:type rdfs:Class .
+
+guia:CursoAcademico rdfs:label "Curso Académico"@es ;
+    rdfs:comment "Curso académico de la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:Semestre rdfs:label "Semestre"@es ;
+    rdfs:comment "Semestre de impartición de la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:Escuela rdfs:label "Escuela"@es ;
+    rdfs:comment "Escuela responsable de la titulación"@es ;
+    rdf:type rdfs:Class .
+
+guia:Profesor rdfs:label "Profesor"@es ;
+    rdfs:comment "Profesor implicado en la docencia de la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:Competencia rdfs:label "Competencia"@es ;
+    rdfs:comment "Competencia del plan de estudios"@es ;
+    rdf:type rdfs:Class .
+
+guia:ResultadoAprendizaje rdfs:label "Resultado de Aprendizaje"@es ;
+    rdfs:comment "Resultado de aprendizaje de la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:Tema rdfs:label "Tema"@es ;
+    rdfs:comment "Tema del temario de la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:Actividad rdfs:label "Actividad"@es ;
+    rdfs:comment "Actividad planificada en el cronograma de la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:TipoActividad rdfs:label "Tipo de Actividad"@es ;
+    rdfs:comment "Tipo de actividad (Lección Magistral, Prácticas de Laboratorio, etc.)"@es ;
+    rdf:type rdfs:Class .
+
+guia:Evaluacion rdfs:label "Evaluación"@es ;
+    rdfs:comment "Actividad de evaluación de la asignatura"@es ;
+    rdfs:subClassOf guia:Actividad ;
+    rdf:type rdfs:Class .
+
+guia:TipoEvaluacion rdfs:label "Tipo de Evaluación"@es ;
+    rdfs:comment "Tipo de evaluación (Progresiva, Global)"@es ;
+    rdf:type rdfs:Class .
+
+guia:RecursoDidactico rdfs:label "Recurso Didáctico"@es ;
+    rdfs:comment "Recurso didáctico para la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:Titulacion rdfs:label "Titulación"@es ;
+    rdfs:comment "Titulación a la que pertenece la asignatura"@es ;
+    rdf:type rdfs:Class .
+
+guia:tieneDocumentoCodigo rdfs:label "tiene código de documento"@es ;
+    rdfs:domain guia:Documento ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneDocumentoNombre rdfs:label "tiene nombre de documento"@es ;
+    rdfs:domain guia:Documento ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaCodigo rdfs:label "tiene código de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaNombre rdfs:label "tiene nombre de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaCreditos rdfs:label "tiene créditos de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaCarácter rdfs:label "tiene carácter de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaCurso rdfs:label "tiene curso de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaSemestre rdfs:label "tiene semestre de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaPeriodoImparticion rdfs:label "tiene periodo de impartición de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneAsignaturaIdiomaImparticion rdfs:label "tiene idioma de impartición de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneConocimientosPreviosRecomendados rdfs:label "tiene conocimientos previos recomendados"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneObjetivoAsignatura rdfs:label "tiene objetivo de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTemarioAsignatura rdfs:label "tiene temario de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tienePlanEstudiosCodigo rdfs:label "tiene código de plan de estudios"@es ;
+    rdfs:domain guia:PlanEstudios ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tienePlanEstudiosNombre rdfs:label "tiene nombre de plan de estudios"@es ;
+    rdfs:domain guia:PlanEstudios ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneCursoAcademicoAno rdfs:label "tiene año de curso académico"@es ;
+    rdfs:domain guia:CursoAcademico ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneSemestreValor rdfs:label "tiene valor de semestre"@es ;
+    rdfs:domain guia:Semestre ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneEscuelaNombre rdfs:label "tiene nombre de escuela"@es ;
+    rdfs:domain guia:Escuela ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneProfesorNombre rdfs:label "tiene nombre de profesor"@es ;
+    rdfs:domain guia:Profesor ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneProfesorDespacho rdfs:label "tiene despacho de profesor"@es ;
+    rdfs:domain guia:Profesor ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneProfesorCorreoElectronico rdfs:label "tiene correo electrónico de profesor"@es ;
+    rdfs:domain guia:Profesor ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneProfesorHorarioTutorias rdfs:label "tiene horario de tutorías de profesor"@es ;
+    rdfs:domain guia:Profesor ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneCompetenciaCodigo rdfs:label "tiene código de competencia"@es ;
+    rdfs:domain guia:Competencia ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneCompetenciaDescripcion rdfs:label "tiene descripción de competencia"@es ;
+    rdfs:domain guia:Competencia ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneResultadoAprendizajeCodigo rdfs:label "tiene código de resultado de aprendizaje"@es ;
+    rdfs:domain guia:ResultadoAprendizaje ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneResultadoAprendizajeDescripcion rdfs:label "tiene descripción de resultado de aprendizaje"@es ;
+    rdfs:domain guia:ResultadoAprendizaje ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTemaNumero rdfs:label "tiene número de tema"@es ;
+    rdfs:domain guia:Tema ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTemaNombre rdfs:label "tiene nombre de tema"@es ;
+    rdfs:domain guia:Tema ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneActividadNombre rdfs:label "tiene nombre de actividad"@es ;
+    rdfs:domain guia:Actividad ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneActividadDuracion rdfs:label "tiene duración de actividad"@es ;
+    rdfs:domain guia:Actividad ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTipoActividadCodigo rdfs:label "tiene código de tipo de actividad"@es ;
+    rdfs:domain guia:TipoActividad ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneEvaluacionDescripcion rdfs:label "tiene descripción de evaluación"@es ;
+    rdfs:domain guia:Evaluacion ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTipoEvaluacionNombre rdfs:label "tiene nombre de tipo de evaluación"@es ;
+    rdfs:domain guia:TipoEvaluacion ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneRecursoDidacticoNombre rdfs:label "tiene nombre de recurso didáctico"@es ;
+    rdfs:domain guia:RecursoDidactico ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTitulacionCodigo rdfs:label "tiene código de titulación"@es ;
+    rdfs:domain guia:Titulacion ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:tieneTitulacionNombre rdfs:label "tiene nombre de titulación"@es ;
+    rdfs:domain guia:Titulacion ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:seImparteEn rdfs:label "se imparte en"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:PlanEstudios ;
+    rdf:type rdf:Property .
+
+guia:tieneCursoAcademico rdfs:label "tiene curso académico"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:CursoAcademico ;
+    rdf:type rdf:Property .
+
+guia:tieneSemestre rdfs:label "tiene semestre"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Semestre ;
+    rdf:type rdf:Property .
+
+guia:seImparteEnEscuela rdfs:label "se imparte en escuela"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Escuela ;
+    rdf:type rdf:Property .
+
+guia:esResponsableDe rdfs:label "es responsable de"@es ;
+    rdfs:domain guia:Escuela ;
+    rdfs:range guia:Titulacion ;
+    rdf:type rdf:Property .
+
+guia:tieneProfesor rdfs:label "tiene profesor"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Profesor ;
+    rdf:type rdf:Property .
+
+guia:tieneCompetenciaAsignatura rdfs:label "tiene competencia de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Competencia ;
+    rdf:type rdf:Property .
+
+guia:tieneResultadoAprendizajeAsignatura rdfs:label "tiene resultado de aprendizaje de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:ResultadoAprendizaje ;
+    rdf:type rdf:Property .
+
+guia:tieneTemaAsignatura rdfs:label "tiene tema de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Tema ;
+    rdf:type rdf:Property .
+
+guia:tieneActividadCronograma rdfs:label "tiene actividad de cronograma"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Actividad ;
+    rdf:type rdf:Property .
+
+guia:tieneEvaluacionAsignatura rdfs:label "tiene evaluación de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:Evaluacion ;
+    rdf:type rdf:Property .
+
+guia:tieneRecursoDidacticoAsignatura rdfs:label "tiene recurso didáctico de asignatura"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range guia:RecursoDidactico ;
+    rdf:type rdf:Property .
+
+guia:tieneTipoActividadActividad rdfs:label "tiene tipo de actividad"@es ;
+    rdfs:domain guia:Actividad ;
+    rdfs:range guia:TipoActividad ;
+    rdf:type rdf:Property .
+
+guia:tieneTipoEvaluacionEvaluacion rdfs:label "tiene tipo de evaluación"@es ;
+    rdfs:domain guia:Evaluacion ;
+    rdfs:range guia:TipoEvaluacion ;
+    rdf:type rdf:Property .
+
+guia:evaluaCompetencia rdfs:label "evalúa competencia"@es ;
+    rdfs:domain guia:Evaluacion ;
+    rdfs:range guia:Competencia ;
+    rdf:type rdf:Property .
+
+guia:requiereConocimientoPrevio rdfs:label "requiere conocimiento previo"@es ;
+    rdfs:domain guia:Asignatura ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:actividadSemana rdfs:label "semana de actividad"@es ;
+    rdfs:domain guia:Actividad ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:actividadModalidad rdfs:label "modalidad de actividad"@es ;
+    rdfs:domain guia:Actividad ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:actividadPesoNota rdfs:label "peso en la nota de actividad"@es ;
+    rdfs:domain guia:Evaluacion ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+guia:actividadNotaMinima rdfs:label "nota mínima de actividad"@es ;
+    rdfs:domain guia:Evaluacion ;
+    rdfs:range rdfs:Literal ;
+    rdf:type rdf:Property .
+
+
+guia:DocumentoGuiaAprendizaje rdf:type guia:Documento ;
+    guia:tieneDocumentoNombre "PROCESO DE COORDINACIÓN DE LAS ENSEÑANZAS GUÍA DE APRENDIZAJE"@es ;
+    guia:tieneDocumentoCodigo "PR/CL/001E.T.S. de Ingenieria de Sistemas Informaticos ANX-PR/CL/001-01" .
+
+guia:AsignaturaGestionProyectosRiesgo rdf:type guia:Asignatura ;
+    guia:tieneAsignaturaCodigo "615000258" ;
+    guia:tieneAsignaturaNombre "Gestion De Proyectos Y Del Riesgo"@es ;
+    guia:tieneAsignaturaCreditos "6 ECTS" ;
+    guia:tieneAsignaturaCarácter "Obligatoria"@es ;
+    guia:tieneAsignaturaCurso "Cuarto curso"@es ;
+    guia:tieneAsignaturaSemestre "Séptimo semestre"@es ;
+    guia:tieneAsignaturaPeriodoImparticion "Septiembre-Enero"@es ;
+    guia:tieneAsignaturaIdiomaImparticion "Castellano"@es ;
+    guia:tieneObjetivoAsignatura "capacitar a los estudiantes para que puedan  planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles"@es ;
+    guia:tieneTemarioAsignatura "1. Fundamentos de la gestión de proyectos.\n1.1. Tema 1: Introducción a la gestión de proyectos.\n1.2. Tema 2: Procesos de la dirección de proyectos.\n1.3. Tema 3: Gestión del alcance.\n1.4. Tema 4: Planificación temporal de proyectos.\n1.5. Tema 5: Estimación en proyectos de software.\n1.6. Tema 6: Gestión de riesgos.\n1.7. Tema 7: Gestión de costes.\n2. Gestión de proyectos con metodologías ágiles.\n2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles.\n2.2. Tema 9: Prácticas ágiles.\n2.3. Tema 10: Scrum."@es ;
+    guia:seImparteEn guia:PlanEstudiosIngenieriaSoftware ;
+    guia:tieneCursoAcademico guia:CursoAcademico2024_25 ;
+    guia:tieneSemestre guia:PrimerSemestre ;
+    guia:seImparteEnEscuela guia:ETSISI ;
+    guia:tieneProfesor guia:AldoGordilloMendez, guia:ManuelOttaviano, guia:JavierSerranoRomero ;
+    guia:tieneCompetenciaAsignatura guia:CompetenciaCC2, guia:CompetenciaCC3, guia:CompetenciaCE6, guia:CompetenciaCT11, guia:CompetenciaCT5 ;
+    guia:tieneResultadoAprendizajeAsignatura guia:ResultadoAprendizajeRA112, guia:ResultadoAprendizajeRA116, guia:ResultadoAprendizajeRA111, guia:ResultadoAprendizajeRA118 ;
+    guia:tieneTemaAsignatura guia:Tema1, guia:Tema2, guia:Tema3, guia:Tema4, guia:Tema5, guia:Tema6, guia:Tema7, guia:Tema8, guia:Tema9, guia:Tema10 ;
+    guia:tieneActividadCronograma guia:PresentacionAsignaturaActividad, guia:Tema1Actividad, guia:Tema2Actividad, guia:Tema3Actividad, guia:PresentacionPractica1Actividad, guia:Tema4ActividadSemana3, guia:Practica1Semana3, guia:Tema4ActividadSemana4, guia:Practica1Semana4, guia:Tema5ActividadSemana5, guia:Practica1Semana5, guia:Tema5ActividadSemana6, guia:Practica1Semana6, guia:Tema6ActividadSemana7, guia:Practica1Semana7, guia:Tema7ActividadSemana8, guia:Practica1Semana8, guia:Tema8ActividadSemana9, guia:Practica1Semana9, guia:Tema9ActividadSemana10, guia:Practica1Semana10, guia:Tema9ActividadSemana11, guia:FinalizacionPractica1Actividad, guia:EjercicioGestionProyectosTradicionalesEval, guia:Practica1Eval, guia:Tema10ActividadSemana12, guia:PresentacionPractica2Actividad, guia:Tema10ActividadSemana13, guia:Practica2Semana13, guia:ResolucionEjerciciosActividadSemana14, guia:Practica2Semana14, guia:Practica2Semana15, guia:FinalizacionPractica2Actividad, guia:EjercicioGestionProyectosAgilesEval, guia:Practica2Eval, guia:ExamenFinalOrdinarioEval ;
+    guia:tieneEvaluacionAsignatura guia:EjercicioGestionProyectosTradicionalesEval, guia:Practica1Eval, guia:EjercicioGestionProyectosAgilesEval, guia:Practica2Eval, guia:ExamenFinalOrdinarioEval, guia:ExamenFinalExtraordinarioEval ;
+    guia:tieneRecursoDidacticoAsignatura guia:GuiaPMBOK, guia:PMPExamPrep, guia:ISO_IEC_IEEE_16326, guia:GuiaPracticaEstimacion, guia:AgilePracticeGuide, guia:UserStoryMapping, guia:GuiaScrum, guia:AgileProjectManagementScrum, guia:KanbanEsencial, guia:GuiaKanbanScrum ;
+    guia:requiereConocimientoPrevio "- Ingenieria De Requisitos Y Modelado\n- Ingenieria Del Proceso Software Y Construccion\n- Aspectos Legales Y Profesionales\n- Fundamentos De Economia Y Empresa\n- Fundamentos De Ingenieria Del Software"@es .
+
+guia:PlanEstudiosIngenieriaSoftware rdf:type guia:PlanEstudios ;
+    guia:tienePlanEstudiosCodigo "61IW" ;
+    guia:tienePlanEstudiosNombre "Grado En Ingenieria Del Software"@es ;
+    guia:esResponsableDe guia:ETSISI .
+
+guia:CursoAcademico2024_25 rdf:type guia:CursoAcademico ;
+    guia:tieneCursoAcademicoAno "2024/25" .
+
+guia:PrimerSemestre rdf:type guia:Semestre ;
+    guia:tieneSemestreValor "Primer semestre"@es .
+
+guia:ETSISI rdf:type guia:Escuela ;
+    guia:tieneEscuelaNombre "E.T.S. de Ingenieria de Sistemas Informaticos"@es .
+
+guia:AldoGordilloMendez rdf:type guia:Profesor ;
+    guia:tieneProfesorNombre "Aldo Gordillo Mendez"@es ;
+    guia:tieneProfesorDespacho "1219" ;
+    guia:tieneProfesorCorreoElectronico "a.gordillo@upm.es" ;
+    guia:tieneProfesorHorarioTutorias "Sin horario.\nEl horario de\ntutorías se\npublicará en la web\nde la ETSISI."@es .
+
+guia:ManuelOttaviano rdf:type guia:Profesor ;
+    guia:tieneProfesorNombre "Manuel Ottaviano"@es ;
+    guia:tieneProfesorDespacho "1212" ;
+    guia:tieneProfesorCorreoElectronico "manuel.ottaviano@upm.es" ;
+    guia:tieneProfesorHorarioTutorias "Sin horario.\nEl horario de\ntutorías se\npublicará en la web\nde la ETSISI."@es .
+
+guia:JavierSerranoRomero rdf:type guia:Profesor ;
+    guia:tieneProfesorNombre "Javier Serrano Romero"@es ;
+    guia:tieneProfesorDespacho "4219" ;
+    guia:tieneProfesorCorreoElectronico "javier.serrano@upm.es" ;
+    guia:tieneProfesorHorarioTutorias "Sin horario.\nEl horario de\ntutorías se\npublicará en la web\nde la ETSISI."@es .
+
+guia:CompetenciaCC2 rdf:type guia:Competencia ;
+    guia:tieneCompetenciaCodigo "CC2" ;
+    guia:tieneCompetenciaDescripcion "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos\nlos ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social"@es .
+
+guia:CompetenciaCC3 rdf:type guia:Competencia ;
+    guia:tieneCompetenciaCodigo "CC3" ;
+    guia:tieneCompetenciaDescripcion "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y\nlas habilidades de comunicación en todos los entornos de desarrollo de software."@es .
+
+guia:CompetenciaCE6 rdf:type guia:Competencia ;
+    guia:tieneCompetenciaCodigo "CE6" ;
+    guia:tieneCompetenciaDescripcion "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de\nla ingeniería del software que integren aspectos éticos, sociales, legales y económicos."@es .
+
+guia:CompetenciaCT11 rdf:type guia:Competencia ;
+    guia:tieneCompetenciaCodigo "CT11" ;
+    guia:tieneCompetenciaDescripcion "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de\nmodo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso\npara el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva\ne individualista."@es .
+
+guia:CompetenciaCT5 rdf:type guia:Competencia ;
+    guia:tieneCompetenciaCodigo "CT5" ;
+    guia:tieneCompetenciaDescripcion "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea\no proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los\nprocesos establecidos."@es .
+
+guia:ResultadoAprendizajeRA112 rdf:type guia:ResultadoAprendizaje ;
+    guia:tieneResultadoAprendizajeCodigo "RA112" ;
+    guia:tieneResultadoAprendizajeDescripcion "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software"@es .
+
+guia:ResultadoAprendizajeRA116 rdf:type guia:ResultadoAprendizaje ;
+    guia:tieneResultadoAprendizajeCodigo "RA116" ;
+    guia:tieneResultadoAprendizajeDescripcion "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar\nestipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta\ny justifica las desviaciones producidas."@es .
+
+guia:ResultadoAprendizajeRA111 rdf:type guia:ResultadoAprendizaje ;
+    guia:tieneResultadoAprendizajeCodigo "RA111" ;
+    guia:tieneResultadoAprendizajeDescripcion "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar"@es .
+
+guia:ResultadoAprendizajeRA118 rdf:type guia:ResultadoAprendizaje ;
+    guia:tieneResultadoAprendizajeCodigo "RA118" ;
+    guia:tieneResultadoAprendizajeDescripcion "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos\ncon pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos\ndisponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores,\n además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de\nmanera coercitiva e individualista."@es .
+
+guia:Tema1 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "1" ;
+    guia:tieneTemaNombre "Introducción a la gestión de proyectos."@es .
+
+guia:Tema2 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "2" ;
+    guia:tieneTemaNombre "Procesos de la dirección de proyectos."@es .
+
+guia:Tema3 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "3" ;
+    guia:tieneTemaNombre "Gestión del alcance."@es .
+
+guia:Tema4 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "4" ;
+    guia:tieneTemaNombre "Planificación temporal de proyectos."@es .
+
+guia:Tema5 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "5" ;
+    guia:tieneTemaNombre "Estimación en proyectos de software."@es .
+
+guia:Tema6 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "6" ;
+    guia:tieneTemaNombre "Gestión de riesgos."@es .
+
+guia:Tema7 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "7" ;
+    guia:tieneTemaNombre "Gestión de costes."@es .
+
+guia:Tema8 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "8" ;
+    guia:tieneTemaNombre "Introducción a la gestión de proyectos con metodologías ágiles."@es .
+
+guia:Tema9 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "9" ;
+    guia:tieneTemaNombre "Prácticas ágiles."@es .
+
+guia:Tema10 rdf:type guia:Tema ;
+    guia:tieneTemaNumero "10" ;
+    guia:tieneTemaNombre "Scrum."@es .
+
+guia:TipoActividadLeccionMagistral rdf:type guia:TipoActividad ;
+    guia:tieneTipoActividadCodigo "LM" ;
+    guia:tieneTipoActividadNombre "Lección Magistral"@es .
+
+guia:TipoActividadPracticasLaboratorio rdf:type guia:TipoActividad ;
+    guia:tieneTipoActividadCodigo "PL" ;
+    guia:tieneTipoActividadNombre "Prácticas de Laboratorio"@es .
+
+guia:TipoActividadClaseProblemas rdf:type guia:TipoActividad ;
+    guia:tieneTipoActividadCodigo "PR" ;
+    guia:tieneTipoActividadNombre "Clase de Problemas"@es .
+
+guia:TipoActividadTrabajoIndividual rdf:type guia:TipoActividad ;
+    guia:tieneTipoActividadCodigo "TI" ;
+    guia:tieneTipoActividadNombre "Trabajo Individual"@es .
+
+guia:TipoActividadTrabajoGrupo rdf:type guia:TipoActividad ;
+    guia:tieneTipoActividadCodigo "TG" ;
+    guia:tieneTipoActividadNombre "Trabajo en Grupo"@es .
+
+guia:TipoActividadExamenEscrito rdf:type guia:TipoActividad ;
+    guia:tieneTipoActividadCodigo "EX" ;
+    guia:tieneTipoActividadNombre "Examen Escrito"@es .
+
+guia:TipoEvaluacionProgresiva rdf:type guia:TipoEvaluacion ;
+    guia:tieneTipoEvaluacionNombre "Evaluación Progresiva"@es .
+
+guia:TipoEvaluacionGlobal rdf:type guia:TipoEvaluacion ;
+    guia:tieneTipoEvaluacionNombre "Evaluación Global"@es .
+
+guia:PresentacionAsignaturaActividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Presentación de la asignatura"@es ;
+    guia:tieneActividadDuracion "00:30" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "1" .
+
+guia:Tema1Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 1: Introducción a la gestión de proyectos."@es ;
+    guia:tieneActividadDuracion "01:30" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "1" .
+
+guia:Tema2Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 2: Procesos de la dirección de proyectos."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "1" .
+
+guia:Tema3Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 3: Gestión del alcance."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "2" .
+
+guia:PresentacionPractica1Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Presentación Práctica 1 y formación de grupos de prácticas."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "2" .
+
+guia:Tema4ActividadSemana3 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 4: Planificación temporal de proyectos."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "3" .
+
+guia:Practica1Semana3 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "3" .
+
+guia:Tema4ActividadSemana4 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 4: Planificación temporal de proyectos."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadClaseProblemas ;
+    guia:actividadSemana "4" .
+
+guia:Practica1Semana4 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "4" .
+
+guia:Tema5ActividadSemana5 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 5: Estimación en proyectos de software."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "5" .
+
+guia:Practica1Semana5 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "5" .
+
+guia:Tema5ActividadSemana6 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 5: Estimación en proyectos de software."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadClaseProblemas ;
+    guia:actividadSemana "6" .
+
+guia:Practica1Semana6 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "6" .
+
+guia:Tema6ActividadSemana7 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 6: Gestión de riesgos."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "7" .
+
+guia:Practica1Semana7 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "7" .
+
+guia:Tema7ActividadSemana8 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 7: Gestión de costes."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "8" .
+
+guia:Practica1Semana8 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "8" .
+
+guia:Tema8ActividadSemana9 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "9" .
+
+guia:Practica1Semana9 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "9" .
+
+guia:Tema9ActividadSemana10 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 9: Prácticas ágiles."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "10" .
+
+guia:Practica1Semana10 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "10" .
+
+guia:Tema9ActividadSemana11 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 9: Prácticas ágiles."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadClaseProblemas ;
+    guia:actividadSemana "11" .
+
+guia:FinalizacionPractica1Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Finalización de la Práctica 1."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "11" .
+
+guia:EjercicioGestionProyectosTradicionalesEval rdf:type guia:Evaluacion ;
+    guia:tieneActividadNombre "Ejercicio sobre gestión de proyectos con metodologías tradicionales."@es ;
+    guia:tieneActividadDuracion "00:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadTrabajoIndividual ;
+    guia:tieneTipoEvaluacionEvaluacion guia:TipoEvaluacionProgresiva ;
+    guia:actividadSemana "11" ;
+    guia:actividadModalidad "No Presencial"@es ;
+    guia:actividadPesoNota "10%" ;
+    guia:evaluaCompetencia guia:CompetenciaCT5, guia:CompetenciaCC2, guia:CompetenciaCE6 .
+
+guia:Practica1Eval rdf:type guia:Evaluacion ;
+    guia:tieneActividadNombre "Práctica 1."@es ;
+    guia:tieneActividadDuracion "00:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadTrabajoGrupo ;
+    guia:tieneTipoEvaluacionEvaluacion guia:TipoEvaluacionProgresiva ;
+    guia:actividadSemana "11" ;
+    guia:actividadModalidad "No Presencial"@es ;
+    guia:actividadPesoNota "23%" ;
+    guia:evaluaCompetencia guia:CompetenciaCT5, guia:CompetenciaCT11, guia:CompetenciaCC2, guia:CompetenciaCC3, guia:CompetenciaCE6 .
+
+guia:Tema10ActividadSemana12 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 10: Scrum."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadLeccionMagistral ;
+    guia:actividadSemana "12" .
+
+guia:PresentacionPractica2Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Presentación Práctica 2."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "12" .
+
+guia:Tema10ActividadSemana13 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Tema 10: Scrum."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadClaseProblemas ;
+    guia:actividadSemana "13" .
+
+guia:Practica2Semana13 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 2."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "13" .
+
+guia:ResolucionEjerciciosActividadSemana14 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Resolución de ejercicios."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadClaseProblemas ;
+    guia:actividadSemana "14" .
+
+guia:Practica2Semana14 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 2."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "14" .
+
+guia:Practica2Semana15 rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Práctica 2."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "15" .
+
+guia:FinalizacionPractica2Actividad rdf:type guia:Actividad ;
+    guia:tieneActividadNombre "Finalización de la Práctica 2."@es ;
+    guia:tieneActividadDuracion "02:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadPracticasLaboratorio ;
+    guia:actividadSemana "15" .
+
+guia:EjercicioGestionProyectosAgilesEval rdf:type guia:Evaluacion ;
+    guia:tieneActividadNombre "Ejercicio sobre gestión de proyectos con metodologías ágiles."@es ;
+    guia:tieneActividadDuracion "00:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadTrabajoIndividual ;
+    guia:tieneTipoEvaluacionEvaluacion guia:TipoEvaluacionProgresiva ;
+    guia:actividadSemana "15" ;
+    guia:actividadModalidad "No Presencial"@es ;
+    guia:actividadPesoNota "5%" ;
+    guia:evaluaCompetencia guia:CompetenciaCT5, guia:CompetenciaCC2, guia:CompetenciaCE6 .
+
+guia:Practica2Eval rdf:type guia:Evaluacion ;
+    guia:tieneActividadNombre "Práctica 2."@es ;
+    guia:tieneActividadDuracion "00:00" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadTrabajoGrupo ;
+    guia:tieneTipoEvaluacionEvaluacion guia:TipoEvaluacionProgresiva ;
+    guia:actividadSemana "15" ;
+    guia:actividadModalidad "No Presencial"@es ;
+    guia:actividadPesoNota "12%" ;
+    guia:evaluaCompetencia guia:CompetenciaCT5, guia:CompetenciaCT11, guia:CompetenciaCC2, guia:CompetenciaCC3, guia:CompetenciaCE6 .
+
+guia:ExamenFinalOrdinarioEval rdf:type guia:Evaluacion ;
+    guia:tieneActividadNombre "Examen final (Convocatoria ordinaria)."@es ;
+    guia:tieneActividadDuracion "02:30" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadExamenEscrito ;
+    guia:tieneTipoEvaluacionEvaluacion guia:TipoEvaluacionGlobal ;
+    guia:actividadSemana "17" ;
+    guia:actividadModalidad "Presencial"@es ;
+    guia:actividadPesoNota "50%" ;
+    guia:actividadNotaMinima "4.5 / 10" ;
+    guia:evaluaCompetencia guia:CompetenciaCT5, guia:CompetenciaCT11, guia:CompetenciaCC2, guia:CompetenciaCC3, guia:CompetenciaCE6 .
+
+guia:ExamenFinalExtraordinarioEval rdf:type guia:Evaluacion ;
+    guia:tieneActividadNombre "Examen final (Convocatoria extraordinaria)."@es ;
+    guia:tieneActividadDuracion "02:30" ;
+    guia:tieneTipoActividadActividad guia:TipoActividadExamenEscrito ;
+    guia:tieneTipoEvaluacionEvaluacion guia:TipoEvaluacionGlobal ; # Assuming Extraordinaria is also Global, as only Global is mentioned for approval
+    guia:actividadModalidad "Presencial"@es ;
+    guia:actividadPesoNota "100%" ;
+    guia:actividadNotaMinima "5 / 10" ;
+    guia:evaluaCompetencia guia:CompetenciaCT5, guia:CompetenciaCT11, guia:CompetenciaCC2, guia:CompetenciaCC3, guia:CompetenciaCE6 .
+
+guia:GuiaPMBOK rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)"@es .
+
+guia:PMPExamPrep rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam"@es .
+
+guia:ISO_IEC_IEEE_16326 rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management"@es .
+
+guia:GuiaPracticaEstimacion rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?"@es .
+
+guia:AgilePracticeGuide rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "Agile Practice Guide"@es .
+
+guia:UserStoryMapping rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "User Story Mapping: Discover the Whole Story, Build the Right Product"@es .
+
+guia:GuiaScrum rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego."@es .
+
+guia:AgileProjectManagementScrum rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "Agile Project Management with SCRUM"@es .
+
+guia:KanbanEsencial rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "Kanban Esencial Condensado"@es .
+
+guia:GuiaKanbanScrum rdf:type guia:RecursoDidactico ;
+    guia:tieneRecursoDidacticoNombre "La Guía Kanban para Equipos Scrum"@es .
+
+guia:TitulacionIngenieriaSoftware rdf:type guia:Titulacion ;
+    guia:tieneTitulacionCodigo "61IW" ;
+    guia:tieneTitulacionNombre "Grado en Ingenieria del Software"@es .

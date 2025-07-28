@@ -1,0 +1,1 @@
+Given the annexed pdf, generate a precise, complete and coherent Ontology in Turtle RDFS (.ttl) representing it's information. The output must be only the content of the .ttl and not be inside a code block.

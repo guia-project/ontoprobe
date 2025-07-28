@@ -1,0 +1,431 @@
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> a owl:Ontology .
+
+# Classes
+ex:Subject a owl:Class .
+ex:Character a owl:Class .
+ex:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:StudyPlan a owl:Class .
+ex:School a owl:Class .
+ex:University a owl:Class .
+ex:Professor a owl:Class .
+ex:Competence a owl:Class .
+ex:Outcome a owl:Class .
+ex:Evaluation a owl:Class .
+ex:Activity a owl:Class .
+ex:Topic a owl:Class .
+ex:Resource a owl:Class .
+ex:RecommendedPreviousSubject a owl:Class .
+ex:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+ex:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range rdfs:Literal .
+ex:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range rdfs:Literal .
+ex:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range rdfs:Literal .
+ex:School_code a owl:DatatypeProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal .
+ex:School_name a owl:DatatypeProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range rdfs:Literal .
+ex:University_name a owl:DatatypeProperty ;
+    rdfs:domain ex:University ;
+    rdfs:range rdfs:Literal .
+ex:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range rdfs:Literal .
+ex:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Competence ;
+    rdfs:range rdfs:Literal .
+ex:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Competence ;
+    rdfs:range rdfs:Literal .
+ex:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Outcome ;
+    rdfs:range rdfs:Literal .
+ex:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Outcome ;
+    rdfs:range rdfs:Literal .
+ex:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range rdfs:Literal .
+ex:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range rdfs:Literal .
+ex:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range rdfs:Literal .
+ex:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Resource ;
+    rdfs:range rdfs:Literal .
+ex:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain ex:RecommendedPreviousSubject ;
+    rdfs:range rdfs:Literal .
+ex:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain ex:RecommendedPreviousKnowledge ;
+    rdfs:range rdfs:Literal .
+
+# Object Properties
+ex:Subject_character a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Character .
+ex:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:StudyPlan .
+ex:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Professor .
+ex:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Resource .
+ex:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Competence .
+ex:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Outcome .
+ex:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousSubject .
+ex:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousKnowledge .
+ex:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Topic .
+ex:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Evaluation .
+ex:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range ex:School .
+ex:School_university a owl:ObjectProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range ex:University .
+ex:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:Activity .
+ex:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Outcome .
+ex:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Competence .
+ex:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Topic .
+ex:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Topic .
+
+# Instances
+ex:subject_615000258 a ex:Subject ;
+    ex:Subject_name "Gestion De Proyectos Y Del Riesgo" ;
+    ex:Subject_description "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el\nprimer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. \nEl objetivo de esta asignatura es capacitar a los estudiantes para que puedan  planificar y dirigir proyectos de\ndesarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles ." ;
+    ex:Subject_code "615000258" ;
+    ex:Subject_course "Cuarto curso" ;
+    ex:Subject_courseYear "2024-25" ;
+    ex:Subject_credits "6 ECTS" ;
+    ex:Subject_language "Castellano" ;
+    ex:Subject_semester "Primer semestre" ;
+    ex:Subject_period "Septiembre-Enero" ;
+    ex:Subject_evaluationCriteria "Para aprobar la asignatura en la convocatoria ordinaria un estudiante deberá cumplir las siguientes dos\ncondiciones:\n1) Obtener una calificación final igual o superior a 5.\n2) Obtener, en el examen final de la convocatoria ordinaria, una calificación igual o superior a su nota mínima.\nEn el caso de que un estudiante no cumpla la segunda condición, su calificación final será como máximo la\nobtenida en el examen final de la convocatoria ordinaria.\nPor lo tanto, de acuerdo a la información previamente indicada, no es posible aprobar la asignatura en la\nconvocatoria ordinaria mediante evaluación progresiva. En la convocatoria ordinaria solo es posible aprobar la\nasignatura mediante evaluación global, para lo cual se deberán cumplir las dos condiciones indicadas\npreviamente.\nPara aprobar la asignatura en la convocatoria extraordinaria , un estudiante deberá obtener una calificación igual\no superior a 5 en el examen final de dicha convocatoria." ;
+    ex:Subject_character ex:mandatoryCharacter_obligatoria ;
+    ex:Subject_studyPlan ex:studyPlan_61IW ;
+    ex:Subject_professors ex:professor_aldoGordilloMendez, ex:professor_manuelOttaviano, ex:professor_javierSerranoRomero ;
+    ex:Subject_resources ex:resource_guiaFundamentosDireccionProyectos, ex:resource_pmpExamPrep, ex:resource_isoIecIeee16326, ex:resource_guiaPracticaEstimacionMedicionProyectosSoftware, ex:resource_agilePracticeGuide, ex:resource_userStoryMapping, ex:resource_laGuiaScrum, ex:resource_agileProjectManagementScrum, ex:resource_kanbanEsencialCondensado, ex:resource_laGuiaKanbanEquiposScrum ;
+    ex:Subject_competencies ex:competence_CC2, ex:competence_CC3, ex:competence_CE6, ex:competence_CT11, ex:competence_CT5 ;
+    ex:Subject_outcomes ex:outcome_RA112, ex:outcome_RA116, ex:outcome_RA111, ex:outcome_RA118 ;
+    ex:Subject_recommendedPreviousSubjects ex:recommendedPreviousSubject_ingenieriaRequisitosModelado, ex:recommendedPreviousSubject_ingenieriaProcesoSoftwareConstruccion, ex:recommendedPreviousSubject_aspectosLegalesProfesionales, ex:recommendedPreviousSubject_fundamentosEconomiaEmpresa, ex:recommendedPreviousSubject_fundamentosIngenieriaSoftware ;
+    ex:Subject_recommendedPreviousKnowledges ex:recommendedPreviousKnowledge_ningunoDefinido ;
+    ex:Subject_topics ex:topic_fundamentosGestionProyectos, ex:topic_gestionProyectosMetodologiasAgiles ;
+    ex:Subject_evaluations ex:evaluation_evaluacionProgresiva, ex:evaluation_pruebaEvaluacionGlobal, ex:evaluation_evaluacionConvocatoriaExtraordinaria .
+
+ex:mandatoryCharacter_obligatoria a ex:MandatoryCharacter .
+
+ex:studyPlan_61IW a ex:StudyPlan ;
+    ex:StudyPlan_code "61IW" ;
+    ex:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    ex:StudyPlan_school ex:school_61 .
+
+ex:school_61 a ex:School ;
+    ex:School_code "61" ;
+    ex:School_name "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" ;
+    ex:School_university ex:university_upm .
+
+ex:university_upm a ex:University ;
+    ex:University_name "Universidad Politécnica de Madrid" .
+
+ex:professor_aldoGordilloMendez a ex:Professor ;
+    ex:Professor_name "Aldo Gordillo Mendez" ;
+    ex:Professor_email "a.gordillo@upm.es" ;
+    ex:Professor_office "1219" ;
+    ex:Professor_hours "Sin horario. El horario detutorías sepublicará en la webde la ETSISI." ;
+    ex:Professor_isCoordinator "true" .
+
+ex:professor_manuelOttaviano a ex:Professor ;
+    ex:Professor_name "Manuel Ottaviano" ;
+    ex:Professor_email "manuel.ottaviano@upm.es" ;
+    ex:Professor_office "1212" ;
+    ex:Professor_hours "Sin horario. El horario detutorías sepublicará en la webde la ETSISI." ;
+    ex:Professor_isCoordinator "false" .
+
+ex:professor_javierSerranoRomero a ex:Professor ;
+    ex:Professor_name "Javier Serrano Romero" ;
+    ex:Professor_email "javier.serrano@upm.es" ;
+    ex:Professor_office "4219" ;
+    ex:Professor_hours "Sin horario. El horario detutorías sepublicará en la webde la ETSISI." ;
+    ex:Professor_isCoordinator "false" .
+
+ex:competence_CC2 a ex:Competence ;
+    ex:Competence_code "CC2" ;
+    ex:Competence_description "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos\nlos ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+ex:competence_CC3 a ex:Competence ;
+    ex:Competence_code "CC3" ;
+    ex:Competence_description "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y\nlas habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+ex:competence_CE6 a ex:Competence ;
+    ex:Competence_code "CE6" ;
+    ex:Competence_description "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de\nla ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+ex:competence_CT11 a ex:Competence ;
+    ex:Competence_code "CT11" ;
+    ex:Competence_description "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de\nmodo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso\npara el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva\ne individualista." .
+
+ex:competence_CT5 a ex:Competence ;
+    ex:Competence_code "CT5" ;
+    ex:Competence_description "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea\no proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los\nprocesos establecidos." .
+
+ex:outcome_RA112 a ex:Outcome ;
+    ex:Outcome_code "RA112" ;
+    ex:Outcome_description "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software" .
+
+ex:outcome_RA116 a ex:Outcome ;
+    ex:Outcome_code "RA116" ;
+    ex:Outcome_description "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar\nestipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta\ny justifica las desviaciones producidas." .
+
+ex:outcome_RA111 a ex:Outcome ;
+    ex:Outcome_code "RA111" ;
+    ex:Outcome_description "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar" .
+
+ex:outcome_RA118 a ex:Outcome ;
+    ex:Outcome_code "RA118" ;
+    ex:Outcome_description "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos\ncon pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos\ndisponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores,\n además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de\nmanera coercitiva e individualista." .
+
+ex:evaluation_evaluacionProgresiva a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación (progresiva)" ;
+    ex:Evaluation_activities ex:activity_ejercicioGestionProyectosMetodologiasTradicionales_progresiva, ex:activity_practica1_progresiva, ex:activity_ejercicioGestionProyectosMetodologiasAgiles_progresiva, ex:activity_practica2_progresiva .
+
+ex:evaluation_pruebaEvaluacionGlobal a ex:Evaluation ;
+    ex:Evaluation_name "Prueba evaluación global" ;
+    ex:Evaluation_activities ex:activity_examenFinalConvocatoriaOrdinaria_global .
+
+ex:evaluation_evaluacionConvocatoriaExtraordinaria a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación convocatoria extraordinaria" ;
+    ex:Evaluation_activities ex:activity_examenFinalConvocatoriaExtraordinaria_extraordinaria .
+
+ex:activity_ejercicioGestionProyectosMetodologiasTradicionales_progresiva a ex:Activity ;
+    ex:Activity_name "Ejercicio sobre gestión de proyectos con metodologías tradicionales" ;
+    ex:Activity_modality "No Presencial" ;
+    ex:Activity_weight "10%" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA111, ex:outcome_RA112, ex:outcome_RA116 ;
+    ex:Activity_relatedCompetencies ex:competence_CT5, ex:competence_CC2, ex:competence_CE6 .
+
+ex:activity_practica1_progresiva a ex:Activity ;
+    ex:Activity_name "Práctica 1" ;
+    ex:Activity_modality "No Presencial" ;
+    ex:Activity_weight "23%" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA111, ex:outcome_RA112, ex:outcome_RA116, ex:outcome_RA118 ;
+    ex:Activity_relatedCompetencies ex:competence_CT5, ex:competence_CT11, ex:competence_CC2, ex:competence_CC3, ex:competence_CE6 .
+
+ex:activity_ejercicioGestionProyectosMetodologiasAgiles_progresiva a ex:Activity ;
+    ex:Activity_name "Ejercicio sobre gestión de proyectos con metodologías ágiles" ;
+    ex:Activity_modality "No Presencial" ;
+    ex:Activity_weight "5%" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA112, ex:outcome_RA116 ;
+    ex:Activity_relatedCompetencies ex:competence_CT5, ex:competence_CC2, ex:competence_CE6 .
+
+ex:activity_practica2_progresiva a ex:Activity ;
+    ex:Activity_name "Práctica 2" ;
+    ex:Activity_modality "No Presencial" ;
+    ex:Activity_weight "12%" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_minGrade "/" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA112, ex:outcome_RA116, ex:outcome_RA118 ;
+    ex:Activity_relatedCompetencies ex:competence_CT5, ex:competence_CT11, ex:competence_CC2, ex:competence_CC3, ex:competence_CE6 .
+
+ex:activity_examenFinalConvocatoriaOrdinaria_global a ex:Activity ;
+    ex:Activity_name "Examen final (Convocatoria ordinaria)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_weight "50%" ;
+    ex:Activity_duration "02:30" ;
+    ex:Activity_minGrade "4.5 / 10" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA111, ex:outcome_RA112, ex:outcome_RA116, ex:outcome_RA118 ;
+    ex:Activity_relatedCompetencies ex:competence_CT5, ex:competence_CT11, ex:competence_CC2, ex:competence_CC3, ex:competence_CE6 .
+
+ex:activity_examenFinalConvocatoriaExtraordinaria_extraordinaria a ex:Activity ;
+    ex:Activity_name "Examen final (Convocatoria extraordinaria)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_weight "100%" ;
+    ex:Activity_duration "02:30" ;
+    ex:Activity_minGrade "5 / 10" ;
+    ex:Activity_relatedOutcomes ex:outcome_RA111, ex:outcome_RA112, ex:outcome_RA116, ex:outcome_RA118 ;
+    ex:Activity_relatedCompetencies ex:competence_CT5, ex:competence_CT11, ex:competence_CC2, ex:competence_CC3, ex:competence_CE6 .
+
+ex:topic_fundamentosGestionProyectos a ex:Topic ;
+    ex:Topic_name "Fundamentos de la gestión de proyectos" ;
+    ex:Topic_subTopics ex:topic_tema1, ex:topic_tema2, ex:topic_tema3, ex:topic_tema4, ex:topic_tema5, ex:topic_tema6, ex:topic_tema7 .
+
+ex:topic_gestionProyectosMetodologiasAgiles a ex:Topic ;
+    ex:Topic_name "Gestión de proyectos con metodologías ágiles" ;
+    ex:Topic_subTopics ex:topic_tema8, ex:topic_tema9, ex:topic_tema10 .
+
+ex:topic_tema1 a ex:Topic ;
+    ex:Topic_name "Tema 1: Introducción a la gestión de proyectos." .
+
+ex:topic_tema2 a ex:Topic ;
+    ex:Topic_name "Tema 2: Procesos de la dirección de proyectos." .
+
+ex:topic_tema3 a ex:Topic ;
+    ex:Topic_name "Tema 3: Gestión del alcance." .
+
+ex:topic_tema4 a ex:Topic ;
+    ex:Topic_name "Tema 4: Planificación temporal de proyectos." .
+
+ex:topic_tema5 a ex:Topic ;
+    ex:Topic_name "Tema 5: Estimación en proyectos de software." .
+
+ex:topic_tema6 a ex:Topic ;
+    ex:Topic_name "Tema 6: Gestión de riesgos." .
+
+ex:topic_tema7 a ex:Topic ;
+    ex:Topic_name "Tema 7: Gestión de costes." .
+
+ex:topic_tema8 a ex:Topic ;
+    ex:Topic_name "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles." .
+
+ex:topic_tema9 a ex:Topic ;
+    ex:Topic_name "Tema 9: Prácticas ágiles." .
+
+ex:topic_tema10 a ex:Topic ;
+    ex:Topic_name "Tema 10: Scrum." .
+
+ex:resource_guiaFundamentosDireccionProyectos a ex:Resource ;
+    ex:Resource_name "Guía de los Fundamentos para la\nDirección de Proyectos (Guía del\nPMBOK) (Sexta edición)" .
+
+ex:resource_pmpExamPrep a ex:Resource ;
+    ex:Resource_name "PMP Exam Prep: Accelerated\nLearning to Pass the Project\nManagement Professional (PMP)\nExam" .
+
+ex:resource_isoIecIeee16326 a ex:Resource ;
+    ex:Resource_name "ISO/IEC/IEEE 16326:2019 Systems\nand software engineering - Life cycle\nprocesses - Project management" .
+
+ex:resource_guiaPracticaEstimacionMedicionProyectosSoftware a ex:Resource ;
+    ex:Resource_name "Guía Práctica de Estimación y\nMedición de Proyectos Software:\n¿Por qué? ¿Para qué? y ¿Cómo?" .
+
+ex:resource_agilePracticeGuide a ex:Resource ;
+    ex:Resource_name "Agile Practice Guide" .
+
+ex:resource_userStoryMapping a ex:Resource ;
+    ex:Resource_name "User Story Mapping: Discover the\nWhole Story, Build the Right Product" .
+
+ex:resource_laGuiaScrum a ex:Resource ;
+    ex:Resource_name "La Guía de Scrum. La Guía Definitiva\nde Scrum: Las Reglas del Juego." .
+
+ex:resource_agileProjectManagementScrum a ex:Resource ;
+    ex:Resource_name "Agile Project Management with\nSCRUM" .
+
+ex:resource_kanbanEsencialCondensado a ex:Resource ;
+    ex:Resource_name "Kanban Esencial Condensado" .
+
+ex:resource_laGuiaKanbanEquiposScrum a ex:Resource ;
+    ex:Resource_name "La Guía Kanban para Equipos Scrum" .
+
+ex:recommendedPreviousSubject_ingenieriaRequisitosModelado a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Ingenieria De Requisitos Y Modelado" .
+
+ex:recommendedPreviousSubject_ingenieriaProcesoSoftwareConstruccion a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Ingenieria Del Proceso Software Y Construccion" .
+
+ex:recommendedPreviousSubject_aspectosLegalesProfesionales a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Aspectos Legales Y Profesionales" .
+
+ex:recommendedPreviousSubject_fundamentosEconomiaEmpresa a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Fundamentos De Economia Y Empresa" .
+
+ex:recommendedPreviousSubject_fundamentosIngenieriaSoftware a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+ex:recommendedPreviousKnowledge_ningunoDefinido a ex:RecommendedPreviousKnowledge ;
+    ex:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta\nasignatura." .

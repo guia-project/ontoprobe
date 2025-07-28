@@ -1,0 +1,1 @@
+{"error": "at line 34 of <>:\nBad syntax (Prefix \"rfs:\" not bound) at ^ in:\n\"...b'xsd:string .\\nonto:Subject_code a owl:DatatypeProperty ;\\n    '^b'rfs:domain onto:Subject ;\\n    rdfs:range xsd:string .\\nonto:S'...\""}

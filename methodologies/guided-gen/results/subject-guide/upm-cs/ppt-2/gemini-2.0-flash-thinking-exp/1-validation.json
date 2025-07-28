@@ -1,0 +1,1 @@
+{"error": "at line 314 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'tas de la calidad.\" .\\n\\nonto:Topic1_2 a onto:Topic ;\\n    onto'^b':Topic_name \"1.2. Evoluci\\xc3\\xb3n de la calidad.\" .\\n\\nonto:Topic1_'...\""}

@@ -1,0 +1,312 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:School_code a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+onto:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range xsd:string .
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+onto:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Resource ;
+    rdfs:range xsd:string .
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+# Object Properties (Relationships)
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+onto:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Resource .
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+onto:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Outcome .
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousSubject .
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousKnowledge .
+onto:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Topic .
+onto:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Evaluation .
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+onto:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Outcome .
+onto:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Competence .
+onto:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Topic .
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+# Instances
+onto:fundamentosDeProgramacion a onto:Subject ;
+    onto:Subject_name "Fundamentos de Programación" ;
+    onto:Subject_code "2050001" ;
+    onto:Subject_credits "12" ;
+    onto:Subject_course "1" ;
+    onto:Subject_period "Anual" ;
+    onto:Subject_language "ESPAÑOL" ;
+    onto:Subject_courseYear "2024-25" ;
+    onto:Subject_description "Aprender una metodología para el diseño, implementación y documentación de programas. Apreciar el papel central que juega la abstracción en la tarea de programar. Conocer estructuras de datos, algoritmos y esquemas de uso general. Introducir el paradigma (y aprender un lenguaje) de programación imperativa. Introducir el paradigma (y aprender un lenguaje) de programación orientada a objetos." ;
+    onto:Subject_evaluationCriteria "Tal y como establece el artículo 6 de la normativa de la Universidad de Sevilla que regula la evaluación   y   calificación   de   las   asignaturas,   la   evaluación   de   las competencias, conocimientos y capacidades adquiridas por los estudiantes podrán basarse en actividades de  evaluación  continua,  exámenes parciales y/o exámenes finales. La asistencia a clases teóricas    podrá  puntuar  de  manera  positiva  en  la  calificación  final. Además se podrán contemplar  requisitos  específicos,  que  deberán  ser  definidos  en los proyectos docentes anuales,  en relación a la realización de exámenes, a la realización de cualquier otro tipo de pruebas,  a la obligatoriedad en la realización de trabajos, a la obligatoriedad a la asistencia a   clases   prácticas,   a   proyectos  y  a  clases  prácticas  de  laboratorio,  así  como  a la participación en seminarios." , "PRIMERA CONVOCATORIA \n======================\nEn  la  primera  convocatoria  existen  dos  sistemas  de  evaluación:  la evaluación continua y la evaluación ordinaria.\n1. Evaluación continua\nLa  evaluación  continua  se compone de dos exámenes teóricos y un examen práctico por cada cuatrimestre.  Para  poder  realizar  el examen práctico de un cuatrimestre es necesario obtener una media de 4 o más puntos en los exámenes teóricos del cuatrimestre.\nLa  nota  de  cada  cuatrimestre  se  calcula  ponderando  en un 20% las notas de los exámenes teóricos y en un 80% la nota del examen práctico:\n- Nota del cuatrimestre = 0,2 * nota media de teoría + 0,8 * nota del examen práctico\nLa  nota  de  la evaluación continua es la media de ambos cuatrimestres (C1 y C2), siempre que se haya obtenido al menos un 4 en cada uno:\n- Si C1 >= 4 y C2 >= 4, entonces NOTA_EV_CONT = (C1 + C2) / 2\n- Si C1 < 4 o C2 < 4, entonces NOTA_EV_CONT = mínimo (4, (C1 + C2) / 2)\nSi NOTA_EV_CONT es igual o superior a 5 puntos, la asignatura estará aprobada.\n2. Evaluación ordinaria\nSi el alumno no realiza la evaluación continua, o la realiza, pero no aprueba mediante ella, debe presentarse  a  un  examen  final,  de  carácter práctico, que se compone de dos partes, una por cuatrimestre.  Para aprobar el examen debe obtenerse al menos un 4 en cada parte y un 5 en la media de ambas.\nSi  ha  obtenido  una  nota  mayor  o  igual  a 4 en uno de los dos cuatrimestres de la evaluación continua, puede presentarse únicamente al otro cuatrimestre en el examen final. \nLa nota final es la media de ambas partes (F1 y F2), siempre que se haya obtenido al menos un 4 en cada una:\n- Si F1 >= 4 y F2 >= 4, entonces NOTA_FINAL = (F1 + F2) / 2\n- Si F1 < 4 o F2 < 4, entonces NOTA_FINAL = mínimo (4, (F1 + F2) / 2)\nSi NOTA_FINAL es igual o superior a 5 puntos, la asignatura estará aprobada.\nSEGUNDA CONVOCATORIA\n=======================\nLa  evaluación  de  la segunda convocatoria consiste en un examen práctico compuesto por dos partes,  una  por  cada  cuatrimestre. Para aprobar el examen debe obtenerse al menos un 5 en cada parte.\nSi el alumno obtuvo una nota mayor o igual que 5 en uno de los dos cuatrimestres en la primera convocatoria,   en   la   segunda   convocatoria   puede   presentarse   únicamente   a   la  parte correspondiente al cuatrimestre que no superó (con 5 ó más) en la primera convocatoria.\nLa  nota  de  la  segunda  convocatoria  es  la media de ambas partes (S1 y S2), siempre que se haya obtenido al menos un 5 en cada una:\n- Si S1 >= 5 y S2 >= 5, entonces NOTA_2CONV = (S1 + S2) / 2\n- Si S1 < 5 o S2 < 5, entonces NOTA_2CONV = mínimo (4, (S1 + S2) / 2)\nTERCERA CONVOCATORIA\n=======================\nLa  evaluación  de  la  tercera  convocatoria  es  análoga a la de la segunda convocatoria, con la diferencia de que no se conservan notas de las partes obtenidas en convocatorias anteriores." ;
+    onto:Subject_outcomes onto:outcome_E03 , onto:outcome_E04 , onto:outcome_E05 ;
+    onto:Subject_competencies onto:competence_E03 , onto:competence_E04 , onto:competence_E05 ;
+    onto:Subject_resources onto:resource_pythonDocs , onto:resource_pythonBook , onto:resource_javaDocs , onto:resource_miguelToroSite , onto:resource_javaAPI , onto:resource_objectsFirstJava , onto:resource_pooJava ;
+    onto:Subject_topics onto:topic_introPython , onto:topic_expresionesTipos , onto:topic_instruccionesCondicionales , onto:topic_funciones , onto:topic_secuenciasListasTuplas , onto:topic_diccionariosConjuntos , onto:topic_introJava , onto:topic_disenoTipos , onto:topic_colecciones , onto:topic_tratamientosSecuenciales ;
+    onto:Subject_studyPlan onto:studyPlan_gradoIngenieriaInformatica ;
+    onto:Subject_professors onto:professor_reinaQuintero , onto:professor_manuelCarranza , onto:professor_joseRiquelme , onto:professor_ferminCruz , onto:professor_patriciaJimenez , onto:professor_joseSanchez , onto:professor_belenVega .
+
+onto:studyPlan_gradoIngenieriaInformatica a onto:StudyPlan ;
+    onto:StudyPlan_name "Grado en Ingeniería Informática-Ingeniería del Software" ;
+    onto:StudyPlan_code "2010" ;
+    onto:StudyPlan_school onto:school_etsii .
+
+onto:school_etsii a onto:School ;
+    onto:School_name "E.T.S. Ingeniería Informática" ;
+    onto:School_code "ETSII" ;
+    onto:School_university onto:university_us .
+
+onto:university_us a onto:University ;
+    onto:University_name "Universidad de Sevilla" .
+
+onto:professor_reinaQuintero a onto:Professor ;
+    onto:Professor_name "REINA QUINTERO, ANTONIA MARIA" ;
+    onto:Professor_isCoordinator "true"^^xsd:boolean .
+
+onto:professor_manuelCarranza a onto:Professor ;
+    onto:Professor_name "CARRANZA GARCIA, MANUEL" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:professor_joseRiquelme a onto:Professor ;
+    onto:Professor_name "RIQUELME SANTOS, JOSE CRISTOBAL" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:professor_ferminCruz a onto:Professor ;
+    onto:Professor_name "CRUZ MATA, FERMIN" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:professor_patriciaJimenez a onto:Professor ;
+    onto:Professor_name "JIMENEZ AGUIRRE, PATRICIA" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:professor_joseSanchez a onto:Professor ;
+    onto:Professor_name "SANCHEZ LOPEZ, JOSE ENRIQUE" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:professor_belenVega a onto:Professor ;
+    onto:Professor_name "VEGA MARQUEZ, BELEN" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:competence_E03 a onto:Competence ;
+    onto:Competence_code "E03" .
+
+onto:competence_E04 a onto:Competence ;
+    onto:Competence_code "E04" .
+
+onto:competence_E05 a onto:Competence ;
+    onto:Competence_code "E05" .
+
+onto:outcome_E03 a onto:Outcome ;
+    onto:Outcome_code "E03" .
+
+onto:outcome_E04 a onto:Outcome ;
+    onto:Outcome_code "E04" .
+
+onto:outcome_E05 a onto:Outcome ;
+    onto:Outcome_code "E05" .
+
+onto:topic_introPython a onto:Topic ;
+    onto:Topic_name "Introducción a Python" .
+
+onto:topic_expresionesTipos a onto:Topic ;
+    onto:Topic_name "Expresiones y tipos básicos" .
+
+onto:topic_instruccionesCondicionales a onto:Topic ;
+    onto:Topic_name "Instrucciones condicionales y bucles" .
+
+onto:topic_funciones a onto:Topic ;
+    onto:Topic_name "Funciones" .
+
+onto:topic_secuenciasListasTuplas a onto:Topic ;
+    onto:Topic_name "Secuencias, listas y tuplas" .
+
+onto:topic_diccionariosConjuntos a onto:Topic ;
+    onto:Topic_name "Diccionarios y conjuntos" .
+
+onto:topic_introJava a onto:Topic ;
+    onto:Topic_name "Introducción al lenguaje Java" .
+
+onto:topic_disenoTipos a onto:Topic ;
+    onto:Topic_name "Diseño de tipos" .
+
+onto:topic_colecciones a onto:Topic ;
+    onto:Topic_name "Colecciones" .
+
+onto:topic_tratamientosSecuenciales a onto:Topic ;
+    onto:Topic_name "Tratamientos secuenciales" .
+
+onto:resource_pythonDocs a onto:Resource ;
+    onto:Resource_name "Python Software Foundation. https://docs.python.org/3/" .
+
+onto:resource_pythonBook a onto:Resource ;
+    onto:Resource_name "-  Python  3:  Los  fundamentos  del  lenguaje  (2ª  edición). Sébastien Chazallet. Ediciones ENI, 2016. ISBN: 409-00614-2" .
+
+onto:resource_javaDocs a onto:Resource ;
+    onto:Resource_name "- Lenguaje Java. ORACLE. http://www.oracle.com/technetwork/java/index.html" .
+
+onto:resource_miguelToroSite a onto:Resource ;
+    onto:Resource_name "-               Introducción              a              la              Programación.              Miguel             Toro.\nhttps://sites.google.com/site/lsintroprogramacion/home" .
+
+onto:resource_javaAPI a onto:Resource ;
+    onto:Resource_name "-     Java     Platform,     Standard     Edition     Version     17     API     Specification.    ORACLE.\nhttps://docs.oracle.com/en/java/javase/17/docs/api/" .
+
+onto:resource_objectsFirstJava a onto:Resource ;
+    onto:Resource_name "-  Objects  First  with Java: A Practical Introduction Using BlueJ, Global Edition (6ª Ed.). David J.\nBarnes. Pearson, 2016. ISBN: 978-1292159041." .
+
+onto:resource_pooJava a onto:Resource ;
+    onto:Resource_name "-  Programación  orientada  a  objetos  con  Java  usando  Blue  J.  David J. Barnes and Michael\nKölling. Prentice-Hall, 2013. ISBN: 978-8483227916." .
+

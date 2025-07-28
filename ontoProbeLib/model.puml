@@ -1,0 +1,112 @@
+@startuml
+
+class Subject {
+    name
+    description
+    code
+    course
+    courseYear
+    credits
+    language
+    semester
+    period
+    evaluationCriteria
+}
+
+Subject --> Character : character
+Subject --> StudyPlan : studyPlan
+Subject --> Professor : professors
+Subject --> Resource : resources
+Subject --> Competence : competencies
+Subject --> Outcome : outcomes
+Subject --> RecommendedPreviousSubject : recommendedPreviousSubjects
+Subject --> RecommendedPreviousKnowledge : recommendedPreviousKnowledges
+Subject --> Topic : topics
+Subject --> Evaluation : evaluations
+
+class Character {
+}
+
+class MandatoryCharacter {
+}
+
+MandatoryCharacter --|> Character
+
+class OptionalCharacter {
+}
+
+OptionalCharacter --|> Character
+
+class StudyPlan {
+    code
+    name
+}
+
+StudyPlan --> School : school
+
+class School {
+    code
+    name
+}
+
+School --> University : university
+
+class University {
+    name
+}
+
+class Professor {
+    email
+    name
+    office
+    hours
+    isCoordinator
+}
+
+class Competence {
+    code
+    description
+}
+
+class Outcome {
+    code
+    description
+}
+
+class Evaluation {
+    name
+}
+
+Evaluation --> Activity : activities
+
+class Activity {
+    name
+    modality
+    weight
+    duration
+    minGrade
+}
+
+Activity --> Outcome : relatedOutcomes
+Activity --> Competence : relatedCompetencies
+Activity --> Topic : relatedTopics
+
+class Topic {
+    name
+}
+
+Topic --> Topic : subTopics
+
+class Resource {
+    name
+}
+
+class RecommendedPreviousSubject {
+    description
+}
+
+class RecommendedPreviousKnowledge {
+    description
+}
+
+@enduml

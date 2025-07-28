@@ -1,0 +1,225 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class Definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:boolean .
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:integer .
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+
+# Object Properties
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+# Instances
+## Subject
+onto:fundamentosDeProgramacion a onto:Subject ;
+    onto:Subject_name "Fundamentos de Programación" ;
+    onto:Subject_code "2050001" ;
+    onto:Subject_course "1" ;
+    onto:Subject_credits "12 ECTS" ;
+    onto:Subject_period "Anual" ;
+    onto:Subject_language "ESPAÑOL" ;
+    onto:Subject_character onto:mandatoryCharacter ;
+    onto:Subject_studyPlan onto:gradoIngenieriaInformatica ;
+    onto:Subject_professors onto:reinaQuinteroAntoniaMaria, onto:carranzaGarciaManuel, onto:riquelmeSantosJoseCristobal, onto:cruzMataFermin, onto:jimenezAguirrePatricia, onto:sanchezLopezJoseEnrique, onto:vegaMarquezBelen ;
+    onto:Subject_competencies onto:e03, onto:e04, onto:e05 .
+
+## Character
+onto:mandatoryCharacter a onto:MandatoryCharacter .
+
+## StudyPlan
+onto:gradoIngenieriaInformatica a onto:StudyPlan ;
+    onto:StudyPlan_name "Grado en Ingeniería Informática-Ingeniería del Software" ;
+    onto:StudyPlan_school onto:etsiInformatica .
+
+## School
+onto:etsiInformatica a onto:School ;
+    onto:School_name "E.T.S. Ingeniería Informática" ;
+    onto:School_university onto:universidadDeSevilla .
+
+## University
+onto:universidadDeSevilla a onto:University ;
+    onto:University_name "Universidad de Sevilla" .
+
+## Professors
+onto:reinaQuinteroAntoniaMaria a onto:Professor ;
+    onto:Professor_name "REINA QUINTERO, ANTONIA MARIA" ;
+    onto:Professor_isCoordinator true .
+
+onto:carranzaGarciaManuel a onto:Professor ;
+    onto:Professor_name "CARRANZA GARCIA, MANUEL" ;
+    onto:Professor_isCoordinator false .
+
+onto:riquelmeSantosJoseCristobal a onto:Professor ;
+    onto:Professor_name "RIQUELME SANTOS, JOSE CRISTOBAL" ;
+    onto:Professor_isCoordinator false .
+
+onto:cruzMataFermin a onto:Professor ;
+    onto:Professor_name "CRUZ MATA, FERMIN" ;
+    onto:Professor_isCoordinator false .
+
+onto:jimenezAguirrePatricia a onto:Professor ;
+    onto:Professor_name "JIMENEZ AGUIRRE, PATRICIA" ;
+    onto:Professor_isCoordinator false .
+
+onto:sanchezLopezJoseEnrique a onto:Professor ;
+    onto:Professor_name "SANCHEZ LOPEZ, JOSE ENRIQUE" ;
+    onto:Professor_isCoordinator false .
+
+onto:vegaMarquezBelen a onto:Professor ;
+    onto:Professor_name "VEGA MARQUEZ, BELEN" ;
+    onto:Professor_isCoordinator false .
+
+## Competences
+onto:e03 a onto:Competence ;
+    onto:Competence_code "E03" .
+
+onto:e04 a onto:Competence ;
+    onto:Competence_code "E04" .
+
+onto:e05 a onto:Competence ;
+    onto:Competence_code "E05" .
+
+## Activities
+onto:clasesTeoricas a onto:Activity ;
+    onto:Activity_name "Clases Teóricas" ;
+    onto:Activity_duration 72 .
+
+onto:practicasLaboratorio a onto:Activity ;
+    onto:Activity_name "Prácticas de Laboratorio" ;
+    onto:Activity_duration 24 .
+
+onto:practicasInformatica a onto:Activity ;
+    onto:Activity_name "Prácticas de Informática" ;
+    onto:Activity_duration 24 .
+
+## Evaluations
+onto:evaluacionContinua a onto:Evaluation ;
+    onto:Evaluation_activities onto:clasesTeoricas, onto:practicasLaboratorio, onto:practicasInformatica .
+
+## Topics
+onto:parteI_Python a onto:Topic ;
+    onto:Topic_name "Parte I: Python" ;
+    onto:Topic_subTopics onto:introduccionPython, onto:expresionesTiposBasicos, onto:controlFlujo, onto:funciones, onto:secuenciasListasTuplas, onto:diccionariosConjuntos .
+
+onto:introduccionPython a onto:Topic ;
+    onto:Topic_name "Introducción a Python" .
+
+onto:expresionesTiposBasicos a onto:Topic ;
+    onto:Topic_name "Expresiones y tipos básicos" .
+
+onto:controlFlujo a onto:Topic ;
+    onto:Topic_name "Control de flujo y abstracción funcional" .
+
+onto:funciones a onto:Topic ;
+    onto:Topic_name "Funciones" .
+
+onto:secuenciasListasTuplas a onto:Topic ;
+    onto:Topic_name "Secuencias, listas y tuplas" .
+
+onto:diccionariosConjuntos a onto:Topic ;
+    onto:Topic_name "Diccionarios y conjuntos" .
+
+onto:parteII_Java a onto:Topic ;
+    onto:Topic_name "Parte II: Java" ;
+    onto:Topic_subTopics onto:introduccionJava, onto:disenoTipos, onto:colecciones, onto:tratamientosSecuenciales .
+
+onto:introduccionJava a onto:Topic ;
+    onto:Topic_name "Introducción al lenguaje Java" .
+
+onto:disenoTipos a onto:Topic ;
+    onto:Topic_name "Diseño de tipos" .
+
+onto:colecciones a onto:Topic ;
+    onto:Topic_name "Colecciones" .
+
+onto:tratamientosSecuenciales a onto:Topic ;
+    onto:Topic_name "Tratamientos secuenciales" .

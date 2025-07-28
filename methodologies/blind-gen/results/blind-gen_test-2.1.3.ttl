@@ -1,0 +1,434 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uni: <http://www.example.org/ontology/> .
+
+uni:Asignatura a rdfs:Class ;
+    rdfs:label "Asignatura"@es .
+
+uni:PlanDeEstudios a rdfs:Class ;
+    rdfs:label "Plan de Estudios"@es .
+
+uni:Profesor a rdfs:Class ;
+    rdfs:label "Profesor"@es .
+
+uni:ConocimientosPrevios a rdfs:Class ;
+    rdfs:label "Conocimientos Previos"@es .
+
+uni:Competencia a rdfs:Class ;
+    rdfs:label "Competencia"@es .
+
+uni:ResultadoAprendizaje a rdfs:Class ;
+    rdfs:label "Resultado del Aprendizaje"@es .
+
+uni:Temario a rdfs:Class ;
+    rdfs:label "Temario"@es .
+
+uni:ActividadEvaluacion a rdfs:Class ;
+    rdfs:label "Actividad de Evaluación"@es .
+
+uni:RecursoDidactico a rdfs:Class ;
+    rdfs:label "Recurso Didáctico"@es .
+
+uni:CursoAcademico a rdfs:Class ;
+    rdfs:label "Curso Académico"@es .
+
+uni:CreditosECTS a rdfs:Class ;
+    rdfs:label "Créditos ECTS"@es .
+
+uni:Semestre a rdfs:Class ;
+    rdfs:label "Semestre"@es .
+
+uni:Carácter a rdfs:Class ;
+    rdfs:label "Carácter"@es .
+
+uni:Curso a rdfs:Class ;
+    rdfs:label "Curso"@es .
+
+uni:PeríodoImpartición a rdfs:Class ;
+    rdfs:label "Período de Impartición"@es .
+
+uni:IdiomaImpartición a rdfs:Class ;
+    rdfs:label "Idioma de Impartición"@es .
+
+uni:Titulación a rdfs:Class ;
+    rdfs:label "Titulación"@es .
+
+uni:CentroResponsable a rdfs:Class ;
+    rdfs:label "Centro Responsable"@es .
+
+uni:NombreAsignatura a rdf:Property ;
+    rdfs:label "Nombre de la Asignatura"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range xsd:string .
+
+uni:tieneCreditos a rdf:Property ;
+    rdfs:label "tiene Créditos"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:CreditosECTS .
+
+uni:esDeCarácter a rdf:Property ;
+    rdfs:label "es de Carácter"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:Carácter .
+
+uni:perteneceAlCurso a rdf:Property ;
+    rdfs:label "pertenece al Curso"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:Curso .
+
+uni:seImparteEnSemestre a rdf:Property ;
+    rdfs:label "se imparte en Semestre"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:Semestre .
+
+uni:periodoDeImparticion a rdf:Property ;
+    rdfs:label "período de Impartición"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:PeríodoImpartición .
+
+uni:idiomaDeImparticion a rdf:Property ;
+    rdfs:label "idioma de Impartición"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:IdiomaImpartición .
+
+uni:titulacion a rdf:Property ;
+    rdfs:label "titulación"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:Titulación .
+
+uni:centroResponsable a rdf:Property ;
+    rdfs:label "centro responsable"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:CentroResponsable .
+
+uni:cursoAcademico a rdf:Property ;
+    rdfs:label "curso académico"@es ;
+    rdfs:domain uni:Asignatura ;
+    rdfs:range uni:CursoAcademico .
+
+uni:asignaturaPreviaRecomendada a rdf:Property ;
+    rdfs:label "asignatura previa recomendada"@es ;
+    rdfs:domain uni:ConocimientosPrevios ;
+    rdfs:range xsd:string .
+
+uni:otrosConocimientosPrevios a rdf:Property ;
+    rdfs:label "otros conocimientos previos"@es ;
+    rdfs:domain uni:ConocimientosPrevios ;
+    rdfs:range xsd:string .
+
+uni:codigoCompetencia a rdf:Property ;
+    rdfs:label "código competencia"@es ;
+    rdfs:domain uni:Competencia ;
+    rdfs:range xsd:string .
+
+uni:descripcionCompetencia a rdf:Property ;
+    rdfs:label "descripción competencia"@es ;
+    rdfs:domain uni:Competencia ;
+    rdfs:range xsd:string .
+
+uni:codigoResultadoAprendizaje a rdf:Property ;
+    rdfs:label "código resultado aprendizaje"@es ;
+    rdfs:domain uni:ResultadoAprendizaje ;
+    rdfs:range xsd:string .
+
+uni:descripcionResultadoAprendizaje a rdf:Property ;
+    rdfs:label "descripción resultado aprendizaje"@es ;
+    rdfs:domain uni:ResultadoAprendizaje ;
+    rdfs:range xsd:string .
+
+uni:tituloTemario a rdf:Property ;
+    rdfs:label "título temario"@es ;
+    rdfs:domain uni:Temario ;
+    rdfs:range xsd:string .
+
+uni:descripcionTemario a rdf:Property ;
+    rdfs:label "descripción temario"@es ;
+    rdfs:domain uni:Temario ;
+    rdfs:range xsd:string .
+
+uni:descripcionActividad a rdf:Property ;
+    rdfs:label "descripción actividad"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range xsd:string .
+
+uni:modalidadActividad a rdf:Property ;
+    rdfs:label "modalidad actividad"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range xsd:string .
+
+uni:tipoActividad a rdf:Property ;
+    rdfs:label "tipo actividad"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range xsd:string .
+
+uni:duracionActividad a rdf:Property ;
+    rdfs:label "duración actividad"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range xsd:string .
+
+uni:pesoEnNota a rdf:Property ;
+    rdfs:label "peso en la nota"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range xsd:string .
+
+uni:notaMínima a rdf:Property ;
+    rdfs:label "nota mínima"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range xsd:string .
+
+uni:competenciasEvaluadas a rdf:Property ;
+    rdfs:label "competencias evaluadas"@es ;
+    rdfs:domain uni:ActividadEvaluacion ;
+    rdfs:range uni:Competencia .
+
+uni:nombreRecurso a rdf:Property ;
+    rdfs:label "nombre recurso"@es ;
+    rdfs:domain uni:RecursoDidactico ;
+    rdfs:range xsd:string .
+
+uni:tipoRecurso a rdf:Property ;
+    rdfs:label "tipo recurso"@es ;
+    rdfs:domain uni:RecursoDidactico ;
+    rdfs:range xsd:string .
+
+uni:observacionesRecurso a rdf:Property ;
+    rdfs:label "observaciones recurso"@es ;
+    rdfs:domain uni:RecursoDidactico ;
+    rdfs:range xsd:string .
+
+uni:nombreProfesor a rdf:Property ;
+    rdfs:label "Nombre del profesor"@es ;
+    rdfs:domain uni:Profesor ;
+    rdfs:range xsd:string .
+
+uni:despachoProfesor a rdf:Property ;
+    rdfs:label "Despacho del profesor"@es ;
+    rdfs:domain uni:Profesor ;
+    rdfs:range xsd:string .
+
+uni:correoElectronicoProfesor a rdf:Property ;
+    rdfs:label "Correo electrónico del profesor"@es ;
+    rdfs:domain uni:Profesor ;
+    rdfs:range xsd:string .
+
+uni:horarioTutoriasProfesor a rdf:Property ;
+    rdfs:label "Horario de tutorías del profesor"@es ;
+    rdfs:domain uni:Profesor ;
+    rdfs:range xsd:string .
+
+uni:GestionDeProyectosYDelRiesgo a uni:Asignatura ;
+    uni:NombreAsignatura "615000258 - Gestion de Proyectos y del Riesgo"@es ;
+    uni:tieneCreditos "6 ECTS" ;
+    uni:esDeCarácter "Obligatoria"@es ;
+    uni:perteneceAlCurso "Cuarto curso"@es ;
+    uni:seImparteEnSemestre "Séptimo semestre"@es ;
+    uni:periodoDeImparticion "Septiembre-Enero"@es ;
+    uni:idiomaDeImparticion "Castellano"@es ;
+    uni:titulacion "61IW - Grado en Ingenieria del Software"@es ;
+    uni:centroResponsable "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"@es ;
+    uni:cursoAcademico "2024-25"@es .
+
+uni:IngenieriaDeRequisitosYModelado a uni:ConocimientosPrevios ;
+    uni:asignaturaPreviaRecomendada "Ingenieria De Requisitos Y Modelado"@es .
+
+uni:IngenieriaDelProcesoSoftwareYConstruccion a uni:ConocimientosPrevios ;
+    uni:asignaturaPreviaRecomendada "Ingenieria Del Proceso Software Y Construccion"@es .
+
+uni:AspectosLegalesYProfesionales a uni:ConocimientosPrevios ;
+    uni:asignaturaPreviaRecomendada "Aspectos Legales Y Profesionales"@es .
+
+uni:FundamentosDeEconomiaYEmpresa a uni:ConocimientosPrevios ;
+    uni:asignaturaPreviaRecomendada "Fundamentos De Economia Y Empresa"@es .
+
+uni:FundamentosDeIngenieriaDelSoftware a uni:ConocimientosPrevios ;
+    uni:asignaturaPreviaRecomendada "Fundamentos De Ingenieria Del Software"@es .
+
+uni:CC2 a uni:Competencia ;
+    uni:codigoCompetencia "CC2" ;
+    uni:descripcionCompetencia "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social"@es .
+
+uni:CC3 a uni:Competencia ;
+    uni:codigoCompetencia "CC3" ;
+    uni:descripcionCompetencia "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software."@es .
+
+uni:CE6 a uni:Competencia ;
+    uni:codigoCompetencia "CE6" ;
+    uni:descripcionCompetencia "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos."@es .
+
+uni:CT11 a uni:Competencia ;
+    uni:codigoCompetencia "CT11" ;
+    uni:descripcionCompetencia "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista."@es .
+
+uni:CT5 a uni:Competencia ;
+    uni:codigoCompetencia "CT5" ;
+    uni:descripcionCompetencia "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos."@es .
+
+uni:RA112 a uni:ResultadoAprendizaje ;
+    uni:codigoResultadoAprendizaje "RA112" ;
+    uni:descripcionResultadoAprendizaje "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software"@es .
+
+uni:RA116 a uni:ResultadoAprendizaje ;
+    uni:codigoResultadoAprendizaje "RA116" ;
+    uni:descripcionResultadoAprendizaje "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas."@es .
+
+uni:RA111 a uni:ResultadoAprendizaje ;
+    uni:codigoResultadoAprendizaje "RA111" ;
+    uni:descripcionResultadoAprendizaje "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar"@es .
+
+uni:RA118 a uni:ResultadoAprendizaje ;
+    uni:codigoResultadoAprendizaje "RA118" ;
+    uni:descripcionResultadoAprendizaje "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista."@es .
+
+uni:Tema1 a uni:Temario ;
+    uni:tituloTemario "Tema 1" ;
+    uni:descripcionTemario "Introducción a la gestión de proyectos."@es .
+
+uni:Tema2 a uni:Temario ;
+    uni:tituloTemario "Tema 2" ;
+    uni:descripcionTemario "Procesos de la dirección de proyectos."@es .
+
+uni:Tema3 a uni:Temario ;
+    uni:tituloTemario "Tema 3" ;
+    uni:descripcionTemario "Gestión del alcance."@es .
+
+uni:Tema4 a uni:Temario ;
+    uni:tituloTemario "Tema 4" ;
+    uni:descripcionTemario "Planificación temporal de proyectos."@es .
+
+uni:Tema5 a uni:Temario ;
+    uni:tituloTemario "Tema 5" ;
+    uni:descripcionTemario "Estimación en proyectos de software."@es .
+
+uni:Tema6 a uni:Temario ;
+    uni:tituloTemario "Tema 6" ;
+    uni:descripcionTemario "Gestión de riesgos."@es .
+
+uni:Tema7 a uni:Temario ;
+    uni:tituloTemario "Tema 7" ;
+    uni:descripcionTemario "Gestión de costes."@es .
+
+uni:Tema8 a uni:Temario ;
+    uni:tituloTemario "Tema 8" ;
+    uni:descripcionTemario "Introducción a la gestión de proyectos con metodologías ágiles."@es .
+
+uni:Tema9 a uni:Temario ;
+    uni:tituloTemario "Tema 9" ;
+    uni:descripcionTemario "Prácticas ágiles."@es .
+
+uni:Tema10 a uni:Temario ;
+    uni:tituloTemario "Tema 10" ;
+    uni:descripcionTemario "Scrum."@es .
+
+uni:EjercicioGestionTradicional a uni:ActividadEvaluacion ;
+    uni:descripcionActividad "Ejercicio sobre gestión de proyectos con metodologías tradicionales."@es ;
+    uni:modalidadActividad "No Presencial"@es ;
+    uni:tipoActividad "Trabajo Individual"@es ;
+    uni:duracionActividad "00:00"@es ;
+    uni:pesoEnNota "10%" ;
+    uni:notaMínima "/ 10"@es ;
+    uni:competenciasEvaluadas uni:CT5, uni:CC2, uni:CE6 .
+
+uni:Practica1 a uni:ActividadEvaluacion ;
+    uni:descripcionActividad "Práctica 1."@es ;
+    uni:modalidadActividad "No Presencial"@es ;
+    uni:tipoActividad "Trabajo en Grupo"@es ;
+    uni:duracionActividad "00:00"@es ;
+    uni:pesoEnNota "23%" ;
+    uni:notaMínima "/ 10"@es ;
+    uni:competenciasEvaluadas uni:CT5, uni:CT11, uni:CC2, uni:CC3, uni:CE6 .
+
+uni:EjercicioGestionAgil a uni:ActividadEvaluacion ;
+    uni:descripcionActividad "Ejercicio sobre gestión de proyectos con metodologías ágiles."@es ;
+    uni:modalidadActividad "No Presencial"@es ;
+    uni:tipoActividad "Trabajo Individual"@es ;
+    uni:duracionActividad "00:00"@es ;
+    uni:pesoEnNota "5%" ;
+    uni:notaMínima "/ 10"@es ;
+    uni:competenciasEvaluadas uni:CT5, uni:CC2, uni:CE6 .
+
+uni:Practica2 a uni:ActividadEvaluacion ;
+    uni:descripcionActividad "Práctica 2."@es ;
+    uni:modalidadActividad "No Presencial"@es ;
+    uni:tipoActividad "Trabajo en Grupo"@es ;
+    uni:duracionActividad "00:00"@es ;
+    uni:pesoEnNota "12%" ;
+    uni:notaMínima "/ 10"@es ;
+    uni:competenciasEvaluadas uni:CT5, uni:CT11, uni:CC2, uni:CC3, uni:CE6 .
+
+uni:ExamenFinalOrdinario a uni:ActividadEvaluacion ;
+    uni:descripcionActividad "Examen final (Convocatoria ordinaria)."@es ;
+    uni:modalidadActividad "Presencial"@es ;
+    uni:tipoActividad "Examen Escrito"@es ;
+    uni:duracionActividad "02:30"@es ;
+    uni:pesoEnNota "50%" ;
+    uni:notaMínima "4.5 / 10"@es ;
+    uni:competenciasEvaluadas uni:CT5, uni:CT11, uni:CC2, uni:CC3, uni:CE6 .
+
+uni:ExamenFinalExtraordinario a uni:ActividadEvaluacion ;
+    uni:descripcionActividad "Examen final (Convocatoria extraordinaria)."@es ;
+    uni:modalidadActividad "Presencial"@es ;
+    uni:tipoActividad "Examen Escrito"@es ;
+    uni:duracionActividad "02:30"@es ;
+    uni:pesoEnNota "100%" ;
+    uni:notaMínima "5 / 10"@es ;
+    uni:competenciasEvaluadas uni:CT5, uni:CT11, uni:CC2, uni:CC3, uni:CE6 .
+
+uni:GuiaPMBOK a uni:RecursoDidactico ;
+    uni:nombreRecurso "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:PMPExamPrep a uni:RecursoDidactico ;
+    uni:nombreRecurso "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:ISO_IEC_IEEE_16326_2019 a uni:RecursoDidactico ;
+    uni:nombreRecurso "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:GuiaPracticaEstimacionMedicion a uni:RecursoDidactico ;
+    uni:nombreRecurso "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:AgilePracticeGuide a uni:RecursoDidactico ;
+    uni:nombreRecurso "Agile Practice Guide"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:UserStoryMapping a uni:RecursoDidactico ;
+    uni:nombreRecurso "User Story Mapping: Discover the Whole Story, Build the Right Product"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:LaGuiaDeScrum a uni:RecursoDidactico ;
+    uni:nombreRecurso "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego."@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:AgileProjectManagementWithSCRUM a uni:RecursoDidactico ;
+    uni:nombreRecurso "Agile Project Management with SCRUM"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:KanbanEsencialCondensado a uni:RecursoDidactico ;
+    uni:nombreRecurso "Kanban Esencial Condensado"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:LaGuiaKanbanParaEquiposScrum a uni:RecursoDidactico ;
+    uni:nombreRecurso "La Guía Kanban para Equipos Scrum"@es ;
+    uni:tipoRecurso "Bibliografía"@es .
+
+uni:AldoGordilloMendez a uni:Profesor ;
+    uni:nombreProfesor "Aldo Gordillo Mendez"@es ;
+    uni:despachoProfesor "1219"@es ;
+    uni:correoElectronicoProfesor "a.gordillo@upm.es"@es ;
+    uni:horarioTutoriasProfesor "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:ManuelOttaviano a uni:Profesor ;
+    uni:nombreProfesor "Manuel Ottaviano"@es ;
+    uni:despachoProfesor "1212"@es ;
+    uni:correoElectronicoProfesor "manuel.ottaviano@upm.es"@es ;
+    uni:horarioTutoriasProfesor "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:JavierSerranoRomero a uni:Profesor ;
+    uni:nombreProfesor "Javier Serrano Romero"@es ;
+    uni:despachoProfesor "4219"@es ;
+    uni:correoElectronicoProfesor "javier.serrano@upm.es"@es ;
+    uni:horarioTutoriasProfesor "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .

@@ -1,0 +1,1 @@
+{"error": "at line 145 of <>:\nBad syntax (objectList expected) at ^ in:\n\"...b'onto:Subject_outcomes a owl:ObjectProperty ;\\n    rdfs:domain'^b' ont'\""}

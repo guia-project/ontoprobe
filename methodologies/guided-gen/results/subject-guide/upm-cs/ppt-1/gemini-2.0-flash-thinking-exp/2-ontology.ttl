@@ -1,0 +1,601 @@
+
+```turtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix onto: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> a owl:Ontology .
+
+onto:Subject a owl:Class .
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+onto:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Resource .
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+onto:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Outcome .
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousSubject .
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousKnowledge .
+onto:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Topic .
+onto:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Evaluation .
+
+onto:Character a owl:Class .
+
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+
+onto:StudyPlan a owl:Class .
+onto:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+
+onto:School a owl:Class .
+onto:School_code a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+
+onto:University a owl:Class .
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+
+onto:Professor a owl:Class .
+onto:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:boolean .
+
+onto:Competence a owl:Class .
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+
+onto:Outcome a owl:Class .
+onto:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+onto:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+
+onto:Evaluation a owl:Class .
+onto:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range xsd:string .
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+
+onto:Activity a owl:Class .
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Outcome .
+onto:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Competence .
+onto:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Topic .
+
+onto:Topic a owl:Class .
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+onto:Resource a owl:Class .
+onto:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Resource ;
+    rdfs:range xsd:string .
+
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+
+onto:RecommendedPreviousKnowledge a owl:Class .
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain onto:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+onto:university_upm a onto:University ;
+    onto:University_name "UPM" .
+
+onto:school_etsisi a onto:School ;
+    onto:School_code "61" ;
+    onto:School_name "E.T.S De Ing. De Sistemas Informáticos" ;
+    onto:School_university onto:university_upm .
+
+onto:studyPlan_61IW a onto:StudyPlan ;
+    onto:StudyPlan_code "61IW" ;
+    onto:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    onto:StudyPlan_school onto:school_etsisi .
+
+onto:mandatoryCharacter a onto:MandatoryCharacter .
+
+onto:subject_615000259 a onto:Subject ;
+    onto:Subject_name "Calidad Del Software" ;
+    onto:Subject_description "La asignatura presenta técnicas y mediciciones de calidad, modelos y procesos para la gestión de la calidad en el ámbito de la ingeniería del software." ;
+    onto:Subject_code "615000259" ;
+    onto:Subject_course "Cuarto curso" ;
+    onto:Subject_courseYear "2024/25" ;
+    onto:Subject_credits "6 ECTS" ;
+    onto:Subject_language "Castellano" ;
+    onto:Subject_semester "Primer semestre, Séptimo semestre" ;
+    onto:Subject_period "Septiembre-Enero" ;
+    onto:Subject_character onto:mandatoryCharacter ;
+    onto:Subject_studyPlan onto:studyPlan_61IW .
+
+onto:professor_carolina_gallardo a onto:Professor ;
+    onto:Professor_name "Carolina Gallardo Perez" ;
+    onto:Professor_email "carolina.gallardop@upm.es" ;
+    onto:Professor_office "1209" ;
+    onto:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle" ;
+    onto:Professor_isCoordinator true .
+
+onto:professor_juan_garbajosa a onto:Professor ;
+    onto:Professor_name "Juan Garbajosa Sopeña" ;
+    onto:Professor_email "juan.garbajosa@upm.es" ;
+    onto:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." ;
+    onto:Professor_isCoordinator false .
+
+onto:professor_javier_alegre a onto:Professor ;
+    onto:Professor_name "Javier Alegre Landaburu" ;
+    onto:Professor_email "javier.alegre.landaburu@upm.es" ;
+    onto:Professor_hours "Sin horario." ;
+    onto:Professor_isCoordinator false .
+
+onto:subject_615000259
+    onto:Subject_professors onto:professor_carolina_gallardo, onto:professor_juan_garbajosa, onto:professor_javier_alegre .
+
+onto:competence_cc1 a onto:Competence ;
+    onto:Competence_code "CC1" ;
+    onto:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+
+onto:competence_cc4 a onto:Competence ;
+    onto:Competence_code "CC4" ;
+    onto:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los estándares y normativas vigentes" .
+
+onto:competence_ce1 a onto:Competence ;
+    onto:Competence_code "CE1" ;
+    onto:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+
+onto:competence_ct6 a onto:Competence ;
+    onto:Competence_code "CT6" ;
+    onto:Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar dispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las experiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta habilidad en la aplicación de esos métodos." .
+
+onto:subject_615000259
+    onto:Subject_competencies onto:competence_cc1, onto:competence_cc4, onto:competence_ce1, onto:competence_ct6 .
+
+onto:outcome_ra113 a onto:Outcome ;
+    onto:Outcome_code "RA113" ;
+    onto:Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a desarrollar" .
+
+onto:outcome_ra109 a onto:Outcome ;
+    onto:Outcome_code "RA109" ;
+    onto:Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+
+onto:outcome_ra83 a onto:Outcome ;
+    onto:Outcome_code "RA83" ;
+    onto:Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para abordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información, maneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e interacción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las decisiones oportunas para lograr su propósito." .
+
+onto:outcome_ra114 a onto:Outcome ;
+    onto:Outcome_code "RA114" ;
+    onto:Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de manera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones. Identifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos niveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+onto:subject_615000259
+    onto:Subject_outcomes onto:outcome_ra113, onto:outcome_ra109, onto:outcome_ra83, onto:outcome_ra114 .
+
+onto:evaluation_progresiva a onto:Evaluation ;
+    onto:Evaluation_name "Evaluación progresiva" .
+
+onto:evaluation_global a onto:Evaluation ;
+    onto:Evaluation_name "Prueba evaluación global" .
+
+onto:evaluation_extraordinaria a onto:Evaluation ;
+    onto:Evaluation_name "Evaluación convocatoria extraordinaria" .
+
+onto:subject_615000259
+    onto:Subject_evaluations onto:evaluation_progresiva, onto:evaluation_global, onto:evaluation_extraordinaria .
+
+onto:activity_presencial_ot_sem2 a onto:Activity ;
+    onto:Activity_name "Actividad presencial OT Semana 2" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "3%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem3 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 3" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "3%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem4 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 4" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem5 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 5" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem7_1 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 7 (1)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_examen_temas1_4_ex_sem7 a onto:Activity ;
+    onto:Activity_name "Examen Temas 1-2-3-4 EX Semana 7" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "02:00" ;
+    onto:Activity_weight "30%" ;
+    onto:Activity_minGrade "3 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_ce1, onto:competence_ct6 .
+
+onto:activity_presencial_tg_sem9 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 9" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem10 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 10" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem11 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 11" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_presencial_tg_sem12 a onto:Activity ;
+    onto:Activity_name "Actividad presencial TG Semana 12" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "2%" ;
+    onto:Activity_minGrade "/ 10" .
+
+onto:activity_trabajo_final_memoria_tg_sem15_1 a onto:Activity ;
+    onto:Activity_name "Trabajo Final. Valoración de la memoria TG Semana 15 (1)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "15%" ;
+    onto:Activity_minGrade "4 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1 ;
+    onto:Activity_relatedOutcomes onto:outcome_ra83.
+
+onto:activity_trabajo_final_defensa_pg_sem15_2 a onto:Activity ;
+    onto:Activity_name "Trabajo Final. Defensa y exposición PG Semana 15 (2)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "5%" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1, onto:competence_ct6 .
+
+onto:activity_examen_temas5_8_ex_sem15_3 a onto:Activity ;
+    onto:Activity_name "Examen Temas 5-6-7-8 EX Semana 15 (3)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "02:00" ;
+    onto:Activity_weight "30%" ;
+    onto:Activity_minGrade "3 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1, onto:competence_cc4 .
+
+onto:activity_examen_final_esc2_ex_sem17_1 a onto:Activity ;
+    onto:Activity_name "Examen Final (Escenario 2) EX Semana 17 (1)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "03:00" ;
+    onto:Activity_weight "80%" ;
+    onto:Activity_minGrade "4 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1, onto:competence_cc4, onto:competence_ce1, onto:competence_ct6 .
+
+onto:activity_trabajo_final_memoria_tg_sem17_2 a onto:Activity ;
+    onto:Activity_name "Trabajo Final. Valoración de la memoria TG Semana 17 (2)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "15%" ;
+    onto:Activity_minGrade "4 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1 ;
+    onto:Activity_relatedOutcomes onto:outcome_ra83.
+
+onto:activity_trabajo_final_defensa_pg_sem17_3 a onto:Activity ;
+    onto:Activity_name "Trabajo Final. Defensa y exposición PG Semana 17 (3)" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "5%" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1, onto:competence_ct6 .
+
+onto:activity_examen_extraordinario_ex_extra a onto:Activity ;
+    onto:Activity_name "Examen extraordinario EX Extraordinaria" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "02:00" ;
+    onto:Activity_weight "80%" ;
+    onto:Activity_minGrade "4 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1, onto:competence_cc4, onto:competence_ce1, onto:competence_ct6 ;
+    onto:Activity_relatedOutcomes onto:outcome_ra83, onto:outcome_ra109, onto:outcome_ra113, onto:outcome_ra114.
+
+onto:activity_trabajo_final_documentacion_ot_extra a onto:Activity ;
+    onto:Activity_name "Trabajo final: documentación OT Extraordinaria" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:00" ;
+    onto:Activity_weight "15%" ;
+    onto:Activity_minGrade "5 / 10" ;
+    onto:Activity_relatedCompetencies onto:competence_ct6, onto:competence_cc4, onto:competence_ce1 .
+
+onto:activity_defensa_oral_practica_ot_extra a onto:Activity ;
+    onto:Activity_name "Defensa oral de la práctica OT Extraordinaria" ;
+    onto:Activity_modality "Presencial" ;
+    onto:Activity_duration "00:05" ;
+    onto:Activity_weight "5%" ;
+    onto:Activity_minGrade "/ 10" ;
+    onto:Activity_relatedCompetencies onto:competence_cc1, onto:competence_cc4, onto:competence_ce1, onto:competence_ct6 .
+
+
+onto:evaluation_progresiva
+    onto:Evaluation_activities
+        onto:activity_presencial_ot_sem2,
+        onto:activity_presencial_tg_sem3,
+        onto:activity_presencial_tg_sem4,
+        onto:activity_presencial_tg_sem5,
+        onto:activity_presencial_tg_sem7_1,
+        onto:activity_examen_temas1_4_ex_sem7,
+        onto:activity_presencial_tg_sem9,
+        onto:activity_presencial_tg_sem10,
+        onto:activity_presencial_tg_sem11,
+        onto:activity_presencial_tg_sem12,
+        onto:activity_trabajo_final_memoria_tg_sem15_1,
+        onto:activity_trabajo_final_defensa_pg_sem15_2,
+        onto:activity_examen_temas5_8_ex_sem15_3 .
+
+onto:evaluation_global
+    onto:Evaluation_activities
+        onto:activity_examen_final_esc2_ex_sem17_1,
+        onto:activity_trabajo_final_memoria_tg_sem17_2,
+        onto:activity_trabajo_final_defensa_pg_sem17_3 .
+
+onto:evaluation_extraordinaria
+    onto:Evaluation_activities
+        onto:activity_examen_extraordinario_ex_extra,
+        onto:activity_trabajo_final_documentacion_ot_extra,
+        onto:activity_defensa_oral_practica_ot_extra .
+
+
+onto:topic_1 a onto:Topic ;
+    onto:Topic_name "1. Introducción e historia de la calidad" .
+onto:topic_1_1 a onto:Topic ;
+    onto:Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." .
+onto:topic_1_2 a onto:Topic ;
+    onto:Topic_name "1.2. Evolución de la calidad." .
+onto:topic_1
+    onto:Topic_subTopics onto:topic_1_1, onto:topic_1_2 .
+
+onto:topic_2 a onto:Topic ;
+    onto:Topic_name "2. Técnicas de la calidad" .
+onto:topic_2_1 a onto:Topic ;
+    onto:Topic_name "2.1. Técnicas básicas." .
+onto:topic_2_2 a onto:Topic ;
+    onto:Topic_name "2.2. Técnicas estadísticas." .
+onto:topic_2_3 a onto:Topic ;
+    onto:Topic_name "2.3. Técnicas avanzadas." .
+onto:topic_2
+    onto:Topic_subTopics onto:topic_2_1, onto:topic_2_2, onto:topic_2_3 .
+
+onto:topic_3 a onto:Topic ;
+    onto:Topic_name "3. Mediciones de calidad del software" .
+ onto:topic_3_1 a onto:Topic ;
+    onto:Topic_name "3.1. Medidas y métricas." .
+onto:topic_3_2 a onto:Topic ;
+    onto:Topic_name "3.2. Medición del producto." .
+onto:topic_3
+    onto:Topic_subTopics onto:topic_3_1, onto:topic_3_2 .
+
+onto:topic_4 a onto:Topic ;
+    onto:Topic_name "4. Costes y consideraciones éticas" .
+onto:topic_4_1 a onto:Topic ;
+    onto:Topic_name "4.1. Costes de la calidad. Modelos de costes." .
+onto:topic_4_2 a onto:Topic ;
+    onto:Topic_name "4.2. Caracterización de defectos." .
+onto:topic_4_3 a onto:Topic ;
+    onto:Topic_name "4.3. Código ético del ingeniero de software." .
+onto:topic_4
+    onto:Topic_subTopics onto:topic_4_1, onto:topic_4_2, onto:topic_4_3 .
+
+onto:topic_5 a onto:Topic ;
+    onto:Topic_name "5. Procesos de gestión de la calidad" .
+onto:topic_5_1 a onto:Topic ;
+    onto:Topic_name "5.1. Estándares de calidad" .
+onto:topic_5_2 a onto:Topic ;
+    onto:Topic_name "5.2. Gestión de la calidad por procesos" .
+onto:topic_5
+    onto:Topic_subTopics onto:topic_5_1, onto:topic_5_2 .
+
+onto:topic_6 a onto:Topic ;
+    onto:Topic_name "6. Estándares de calidad del software: SQUARE" .
+onto:topic_6_1 a onto:Topic ;
+    onto:Topic_name "6.1. Estándares y modelos para la calidad del software." .
+onto:topic_6_2 a onto:Topic ;
+    onto:Topic_name "6.2. Serie ISO 25000n" .
+onto:topic_6
+    onto:Topic_subTopics onto:topic_6_1, onto:topic_6_2 .
+
+onto:topic_7 a onto:Topic ;
+    onto:Topic_name "7. Aseguramiento de la calidad del software" .
+onto:topic_7_1 a onto:Topic ;
+    onto:Topic_name "7.1. Aseguramiento del proceso software" .
+onto:topic_7_2 a onto:Topic ;
+    onto:Topic_name "7.2. Aseguramiento del producto software" .
+onto:topic_7
+    onto:Topic_subTopics onto:topic_7_1, onto:topic_7_2 .
+
+onto:topic_8 a onto:Topic ;
+    onto:Topic_name "8. Mejora de procesos SW" .
+onto:topic_8_1 a onto:Topic ;
+    onto:Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" .
+onto:topic_8_2 a onto:Topic ;
+    onto:Topic_name "8.2. Modelos de referencia para mejora de procesos SW" .
+onto:topic_8
+    onto:Topic_subTopics onto:topic_8_1, onto:topic_8_2 .
+
+onto:subject_615000259
+    onto:Subject_topics onto:topic_1, onto:topic_2, onto:topic_3, onto:topic_4, onto:topic_5, onto:topic_6, onto:topic_7, onto:topic_8 .
+
+
+onto:resource_sqa_laporte a onto:Resource ;
+    onto:Resource_name "Software Quality Assurance BibliografíaSoftware Quality Assurance. Claude Y. Laporte, Alain April<br />.ISBN: 978-1-118-50182-5 January 2018 Wiley-IEEE Computer Society Press" .
+
+onto:resource_sq_galin a onto:Resource ;
+    onto:Resource_name "Software Quality: Concepts and PracticeBibliografíaSoftware Quality: Concepts and Practice.<br />Daniel Galin. ISBN: 978-1-119-13452-7 May 2018 Wiley-IEEE Computer Society Press" .
+
+onto:resource_sevoca a onto:Resource ;
+    onto:Resource_name "Sevocab Recursos webhttps://pascal.computer.org/sev_display/index.action<br />Vocabulario autorizado de términos de Ingeniería del Software" .
+
+onto:resource_gestion_calidad_hoyle a onto:Resource ;
+    onto:Resource_name "\"Del aseguramiento a la gestión de la calidad: El enfoque basado en procesos\".  David Hoyle, John Thompson. AENORBibliografía Bibliografía específica 1" .
+
+onto:resource_tqm_besterfield a onto:Resource ;
+    onto:Resource_name "\"Total Quality Management\".  Dale H. Besterfield, Carol Besterfield-Michna, Glen H. Besterfield, Mary Besterfield-Sacre. Prentice HallBibliografía Bibliografía específica 4" .
+
+onto:resource_medicion_gestion_dolado a onto:Resource ;
+    onto:Resource_name "\"Medición para la Gestión en la Ingeniería del Software\". José J. Dolado, Luís Fernández. Ed Ra-Ma.Bibliografía Bibliografía Básica 3" .
+
+onto:resource_aula_etsisi a onto:Resource ;
+    onto:Resource_name "Aula EquipamientoAula de la ETSISI con cañón de luz conectado a PC en la mesa del profesor y sistema de audio inalámbrico. Pizarra clásica." .
+
+onto:resource_moodle_upm a onto:Resource ;
+    onto:Resource_name "Plataforma de enseñanza MOODLE Recursos webInformación general, documentación, actividades, información complementaria, enlaces, calificaciones, foros, etc. En español y en inglés." .
+
+onto:subject_615000259
+    onto:Subject_resources
+        onto:resource_sqa_laporte,
+        onto:resource_sq_galin,
+        onto:resource_sevoca,
+        onto:resource_gestion_calidad_hoyle,
+        onto:resource_tqm_besterfield,
+        onto:resource_medicion_gestion_dolado,
+        onto:resource_aula_etsisi,
+        onto:resource_moodle_upm .
+
+onto:recommendedPreviousSubject_fisw a onto:RecommendedPreviousSubject ;
+    onto:RecommendedPreviousSubject_description "- Fundamentos De Ingenieria Del Software" .
+
+onto:subject_615000259
+    onto:Subject_recommendedPreviousSubjects onto:recommendedPreviousSubject_fisw .
+
+onto:recommendedPreviousKnowledge_none a onto:RecommendedPreviousKnowledge ;
+    onto:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+onto:subject_615000259
+    onto:Subject_recommendedPreviousKnowledges onto:recommendedPreviousKnowledge_none .
+
+```

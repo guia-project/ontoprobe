@@ -1,0 +1,1 @@
+{"error": "at line 8 of <>:\nBad syntax (expected '.' or '}' or ']' at end of statement) at ^ in:\n\"...b'chema#> .\\n@prefix ex: <http://example.org/ontology/> .\\n\\nex: '^b'Ontology a owl:Ontology .\\n\\n# Classes\\nex:Subject a owl:Class '...\""}

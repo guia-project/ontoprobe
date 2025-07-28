@@ -1,0 +1,470 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uni: <http://example.org/ontology/> .
+
+uni:Asignatura a rdfs:Class;
+    rdfs:label "Asignatura"@es .
+
+uni:CreditosECTS a rdf:Property;
+    rdfs:label "Número de créditos ECTS"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:integer .
+
+uni:Carácter a rdf:Property;
+    rdfs:label "Carácter"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:Curso a rdf:Property;
+    rdfs:label "Curso"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:Semestre a rdf:Property;
+    rdfs:label "Semestre"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:PeriodoImparticion a rdf:Property;
+    rdfs:label "Período de impartición"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:IdiomaImparticion a rdf:Property;
+    rdfs:label "Idioma de impartición"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:Titulación a rdf:Property;
+    rdfs:label "Titulación"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:CentroResponsable a rdf:Property;
+    rdfs:label "Centro responsable de la titulación"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:CursoAcademico a rdf:Property;
+    rdfs:label "Curso académico"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:Profesor a rdfs:Class;
+    rdfs:label "Profesor"@es .
+
+uni:NombreProfesor a rdf:Property;
+    rdfs:label "Nombre del profesor"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:Despacho a rdf:Property;
+    rdfs:label "Despacho"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:CorreoElectronico a rdf:Property;
+    rdfs:label "Correo electrónico"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:HorarioTutorias a rdf:Property;
+    rdfs:label "Horario de tutorías"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:Recomendacion a rdfs:Class;
+    rdfs:label "Recomendación"@es .
+
+uni:AsignaturaPreviaRecomendada a rdf:Property;
+    rdfs:label "Asignatura previa recomendada"@es;
+    rdfs:domain uni:Recomendacion;
+    rdfs:range xsd:string .
+
+uni:ConocimientoPrevioRecomendado a rdf:Property;
+    rdfs:label "Otro conocimiento previo recomendado"@es;
+    rdfs:domain uni:Recomendacion;
+    rdfs:range xsd:string .
+
+uni:Competencia a rdfs:Class;
+    rdfs:label "Competencia"@es .
+
+uni:CodigoCompetencia a rdf:Property;
+    rdfs:label "Código de la competencia"@es;
+    rdfs:domain uni:Competencia;
+    rdfs:range xsd:string .
+
+uni:DescripcionCompetencia a rdf:Property;
+    rdfs:label "Descripción de la competencia"@es;
+    rdfs:domain uni:Competencia;
+    rdfs:range xsd:string .
+
+uni:ResultadoAprendizaje a rdfs:Class;
+    rdfs:label "Resultado del aprendizaje"@es .
+
+uni:CodigoResultado a rdf:Property;
+    rdfs:label "Código del resultado de aprendizaje"@es;
+    rdfs:domain uni:ResultadoAprendizaje;
+    rdfs:range xsd:string .
+
+uni:DescripcionResultado a rdf:Property;
+    rdfs:label "Descripción del resultado de aprendizaje"@es;
+    rdfs:domain uni:ResultadoAprendizaje;
+    rdfs:range xsd:string .
+
+uni:Temario a rdfs:Class;
+    rdfs:label "Temario"@es .
+
+uni:DescripcionAsignatura a rdf:Property;
+    rdfs:label "Descripción de la asignatura"@es;
+    rdfs:domain uni:Temario;
+    rdfs:range xsd:string .
+
+uni:Tema a rdf:Property;
+    rdfs:label "Tema"@es;
+    rdfs:domain uni:Temario;
+    rdfs:range xsd:string .
+
+uni:Cronograma a rdfs:Class;
+    rdfs:label "Cronograma"@es .
+
+uni:Semana a rdf:Property;
+    rdfs:label "Semana"@es;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:integer .
+
+uni:ActividadTipo1 a rdf:Property;
+    rdfs:label "Actividad tipo 1"@es;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string .
+
+uni:ActividadTipo2 a rdf:Property;
+    rdfs:label "Actividad tipo 2"@es;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string .
+
+uni:TeleEnsenanza a rdf:Property;
+    rdfs:label "Tele-enseñanza"@es;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string .
+
+uni:ActividadesEvaluacion a rdf:Property;
+    rdfs:label "Actividades de evaluación"@es;
+    rdfs:domain uni:Cronograma;
+    rdfs:range xsd:string .
+
+uni:ActividadEvaluacion a rdfs:Class;
+    rdfs:label "Actividad de Evaluación"@es .
+
+uni:DescripcionEvaluacion a rdf:Property;
+    rdfs:label "Descripción de la evaluación"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:Modalidad a rdf:Property;
+    rdfs:label "Modalidad"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:Tipo a rdf:Property;
+    rdfs:label "Tipo"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:Duracion a rdf:Property;
+    rdfs:label "Duración"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:PesoNota a rdf:Property;
+    rdfs:label "Peso en la nota"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:NotaMinima a rdf:Property;
+    rdfs:label "Nota mínima"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:CompetenciasEvaluadas a rdf:Property;
+    rdfs:label "Competencias evaluadas"@es;
+    rdfs:domain uni:ActividadEvaluacion;
+    rdfs:range xsd:string .
+
+uni:CriteriosEvaluacion a rdfs:Class;
+    rdfs:label "Criterios de Evaluación"@es .
+
+uni:CondicionAprobacion a rdf:Property;
+    rdfs:label "Condición para aprobar"@es;
+    rdfs:domain uni:CriteriosEvaluacion;
+    rdfs:range xsd:string .
+
+uni:RecursoDidactico a rdfs:Class;
+    rdfs:label "Recurso Didáctico"@es .
+
+uni:NombreRecurso a rdf:Property;
+    rdfs:label "Nombre del recurso"@es;
+    rdfs:domain uni:RecursoDidactico;
+    rdfs:range xsd:string .
+
+uni:TipoRecurso a rdf:Property;
+    rdfs:label "Tipo de recurso"@es;
+    rdfs:domain uni:RecursoDidactico;
+    rdfs:range xsd:string .
+
+uni:ObservacionesRecurso a rdf:Property;
+    rdfs:label "Observaciones del recurso"@es;
+    rdfs:domain uni:RecursoDidactico;
+    rdfs:range xsd:string .
+
+uni:InformacionAdicional a rdfs:Class;
+    rdfs:label "Información Adicional"@es .
+
+uni:Informacion a rdf:Property;
+    rdfs:label "Información"@es;
+    rdfs:domain uni:InformacionAdicional;
+    rdfs:range xsd:string .
+
+uni:GestionDeProyectosYRiesgo a uni:Asignatura;
+    rdfs:label "615000258 - Gestion De Proyectos Y Del Riesgo"@es;
+    uni:CreditosECTS "6"^^xsd:integer;
+    uni:Carácter "Obligatoria"@es;
+    uni:Curso "Cuarto curso"@es;
+    uni:Semestre "Séptimo semestre"@es;
+    uni:PeriodoImparticion "Septiembre-Enero"@es;
+    uni:IdiomaImparticion "Castellano"@es;
+    uni:Titulación "61IW - Grado en Ingenieria del Software"@es;
+    uni:CentroResponsable "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"@es;
+    uni:CursoAcademico "2024-25"@es .
+
+uni:AldoGordilloMendez a uni:Profesor;
+    uni:NombreProfesor "Aldo Gordillo Mendez"@es;
+    uni:Despacho "1219"@es;
+    uni:CorreoElectronico "a.gordillo@upm.es"@es;
+    uni:HorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:ManuelOttaviano a uni:Profesor;
+    uni:NombreProfesor "Manuel Ottaviano"@es;
+    uni:Despacho "1212"@es;
+    uni:CorreoElectronico "manuel.ottaviano@upm.es"@es;
+    uni:HorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:JavierSerranoRomero a uni:Profesor;
+    uni:NombreProfesor "Javier Serrano Romero"@es;
+    uni:Despacho "4219"@es;
+    uni:CorreoElectronico "javier.serrano@upm.es"@es;
+    uni:HorarioTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:RecomendacionesGPR a uni:Recomendacion;
+    uni:AsignaturaPreviaRecomendada "Ingenieria De Requisitos Y Modelado"@es;
+    uni:AsignaturaPreviaRecomendada "Ingenieria Del Proceso Software Y Construccion"@es;
+    uni:AsignaturaPreviaRecomendada "Aspectos Legales Y Profesionales"@es;
+    uni:AsignaturaPreviaRecomendada "Fundamentos De Economia Y Empresa"@es;
+    uni:AsignaturaPreviaRecomendada "Fundamentos De Ingenieria Del Software"@es .
+
+uni:CompetenciaCC2 a uni:Competencia;
+    uni:CodigoCompetencia "CC2"@es;
+    uni:DescripcionCompetencia "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social"@es .
+
+uni:CompetenciaCC3 a uni:Competencia;
+    uni:CodigoCompetencia "CC3"@es;
+    uni:DescripcionCompetencia "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software."@es .
+
+uni:CompetenciaCE6 a uni:Competencia;
+    uni:CodigoCompetencia "CE6"@es;
+    uni:DescripcionCompetencia "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos."@es .
+
+uni:CompetenciaCT11 a uni:Competencia;
+    uni:CodigoCompetencia "CT11"@es;
+    uni:DescripcionCompetencia "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista."@es .
+
+uni:CompetenciaCT5 a uni:Competencia;
+    uni:CodigoCompetencia "CT5"@es;
+    uni:DescripcionCompetencia "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos."@es .
+
+uni:ResultadoRA112 a uni:ResultadoAprendizaje;
+    uni:CodigoResultado "RA112"@es;
+    uni:DescripcionResultado "Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software"@es .
+
+uni:ResultadoRA116 a uni:ResultadoAprendizaje;
+    uni:CodigoResultado "RA116"@es;
+    uni:DescripcionResultado "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas."@es .
+
+uni:ResultadoRA111 a uni:ResultadoAprendizaje;
+    uni:CodigoResultado "RA111"@es;
+    uni:DescripcionResultado "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar"@es .
+
+uni:ResultadoRA118 a uni:ResultadoAprendizaje;
+    uni:CodigoResultado "RA118"@es;
+    uni:DescripcionResultado "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista."@es .
+
+uni:TemarioGPR a uni:Temario;
+    uni:DescripcionAsignatura "La asignatura de Gestión de Proyectos y del Riesgo (GPR ) es una asignatura obligatoria que se imparte en el primer semestre del cuarto curso del Grado en Ingeniería del Software, donde tiene asignados 6 créditos ECTS. El objetivo de esta asignatura es capacitar a los estudiantes para que puedan planificar y dirigir proyectos de desarrollo de software empleando tanto metodologías tradicionales como metodologías ágiles . El temario de la asignatura se basa principalmente, aunque no exclusivamente, en la Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) elaborada por el PMI (Project Management Institute) y en la Agile Practice Guide , desarrollada por el PMI en colaboración con la Agile Alliance."@es;
+    uni:Tema "1. Fundamentos de la gestión de proyectos."@es;
+    uni:Tema "1.1. Tema 1: Introducción a la gestión de proyectos."@es;
+    uni:Tema "1.2. Tema 2: Procesos de la dirección de proyectos."@es;
+    uni:Tema "1.3. Tema 3: Gestión del alcance."@es;
+    uni:Tema "1.4. Tema 4: Planificación temporal de proyectos."@es;
+    uni:Tema "1.5. Tema 5: Estimación en proyectos de software."@es;
+    uni:Tema "1.6. Tema 6: Gestión de riesgos."@es;
+    uni:Tema "1.7. Tema 7: Gestión de costes."@es;
+    uni:Tema "2. Gestión de proyectos con metodologías ágiles."@es;
+    uni:Tema "2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles."@es;
+    uni:Tema "2.2. Tema 9: Prácticas ágiles."@es;
+    uni:Tema "2.3. Tema 10: Scrum."@es .
+
+uni:CronogramaGPR a uni:Cronograma;
+    uni:Semana "1"^^xsd:integer;
+    uni:ActividadTipo1 "Presentación de la asignatura Duración: 00:30 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo1 "Tema 1: Introducción a la gestión de proyectos. Duración: 01:30 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo1 "Tema 2: Procesos de la dirección de proyectos. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:Semana "2"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 3: Gestión del alcance. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Presentación Práctica 1 y formación de grupos de prácticas. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "3"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 4: Planificación temporal de proyectos. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "4"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 4: Planificación temporal de proyectos. Duración: 02:00 PR: Actividad del tipo Clase de Problemas"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "5"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 5: Estimación en proyectos de software. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "6"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 5: Estimación en proyectos de software. Duración: 02:00 PR: Actividad del tipo Clase de Problemas"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "7"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 6: Gestión de riesgos. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "8"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 7: Gestión de costes. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "9"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 8: Introducción a la gestión de proyectos con metodologías ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "10"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 9: Prácticas ágiles. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "11"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 9: Prácticas ágiles. Duración: 02:00 PR: Actividad del tipo Clase de Problemas"@es;
+    uni:ActividadTipo2 "Finalización de la Práctica 1. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:ActividadesEvaluacion "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116) TI: Técnica del tipo Trabajo Individual Evaluación Progresiva No presencial Duración: 00:00"@es;
+    uni:ActividadesEvaluacion "Práctica 1. (RA111, RA112, RA116, RA118) TG: Técnica del tipo Trabajo en Grupo Evaluación Progresiva No presencial Duración: 00:00"@es;
+    uni:Semana "12"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 10: Scrum. Duración: 02:00 LM: Actividad del tipo Lección Magistral"@es;
+    uni:ActividadTipo2 "Presentación Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "13"^^xsd:integer;
+    uni:ActividadTipo1 "Tema 10: Scrum. Duración: 02:00 PR: Actividad del tipo Clase de Problemas"@es;
+    uni:ActividadTipo2 "Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "14"^^xsd:integer;
+    uni:ActividadTipo1 "Resolución de ejercicios. Duración: 02:00 PR: Actividad del tipo Clase de Problemas"@es;
+    uni:ActividadTipo2 "Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:Semana "15"^^xsd:integer;
+    uni:ActividadTipo2 "Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio Finalización de la Práctica 2. Duración: 02:00 PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:ActividadesEvaluacion "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116) TI: Técnica del tipo Trabajo Individual Evaluación Progresiva No presencial Duración: 00:00"@es;
+    uni:ActividadesEvaluacion "Práctica 2. (RA112, RA116, RA118) TG: Técnica del tipo Trabajo en Grupo Evaluación Progresiva No presencial Duración: 00:00"@es;
+    uni:Semana "17"^^xsd:integer;
+    uni:ActividadesEvaluacion "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118) EX: Técnica del tipo Examen Escrito Presencial Duración: 02:30"@es .
+
+uni:EvaluacionProgresiva11 a uni:ActividadEvaluacion;
+    uni:DescripcionEvaluacion "Ejercicio sobre gestión de proyectos con metodologías tradicionales. (RA111, RA112, RA116)"@es;
+    uni:Modalidad "No Presencial"@es;
+    uni:Tipo "Trabajo Individual"@es;
+    uni:Duracion "00:00"@es;
+    uni:PesoNota "10%"@es;
+    uni:NotaMinima "/"@es;
+    uni:CompetenciasEvaluadas "CT5, CC2, CE6"@es .
+
+uni:Practica1 a uni:ActividadEvaluacion;
+    uni:DescripcionEvaluacion "Práctica 1. (RA111, RA112, RA116, RA118)"@es;
+    uni:Modalidad "No Presencial"@es;
+    uni:Tipo "Trabajo en Grupo"@es;
+    uni:Duracion "00:00"@es;
+    uni:PesoNota "23%"@es;
+    uni:NotaMinima "/"@es;
+    uni:CompetenciasEvaluadas "CT5, CT11, CC2, CC3, CE6"@es .
+
+uni:EvaluacionProgresiva15 a uni:ActividadEvaluacion;
+    uni:DescripcionEvaluacion "Ejercicio sobre gestión de proyectos con metodologías ágiles. (RA112, RA116)"@es;
+    uni:Modalidad "No Presencial"@es;
+    uni:Tipo "Trabajo Individual"@es;
+    uni:Duracion "00:00"@es;
+    uni:PesoNota "5%"@es;
+    uni:NotaMinima "/"@es;
+    uni:CompetenciasEvaluadas "CT5, CC2, CE6"@es .
+
+uni:Practica2 a uni:ActividadEvaluacion;
+    uni:DescripcionEvaluacion "Práctica 2. (RA112, RA116, RA118)"@es;
+    uni:Modalidad "No Presencial"@es;
+    uni:Tipo "Trabajo en Grupo"@es;
+    uni:Duracion "00:00"@es;
+    uni:PesoNota "12%"@es;
+    uni:NotaMinima "/"@es;
+    uni:CompetenciasEvaluadas "CT5, CT11, CC2, CC3, CE6"@es .
+
+uni:ExamenFinalOrdinario a uni:ActividadEvaluacion;
+    uni:DescripcionEvaluacion "Examen final (Convocatoria ordinaria). (RA111, RA112, RA116, RA118)"@es;
+    uni:Modalidad "Presencial"@es;
+    uni:Tipo "Examen Escrito"@es;
+    uni:Duracion "02:30"@es;
+    uni:PesoNota "50%"@es;
+    uni:NotaMinima "4.5 / 10"@es;
+    uni:CompetenciasEvaluadas "CT5, CT11, CC2, CC3, CE6"@es .
+
+uni:ExamenFinalExtraordinario a uni:ActividadEvaluacion;
+    uni:DescripcionEvaluacion "Examen final (Convocatoria extraordinaria). (RA111, RA112, RA116, RA118)"@es;
+    uni:Modalidad "Presencial"@es;
+    uni:Tipo "Examen Escrito"@es;
+    uni:Duracion "02:30"@es;
+    uni:PesoNota "100%"@es;
+    uni:NotaMinima "5 / 10"@es;
+    uni:CompetenciasEvaluadas "CT5, CT11, CC2, CC3, CE6"@es .
+
+uni:CriteriosEvaluacionGPR a uni:CriteriosEvaluacion;
+    uni:CondicionAprobacion "Para aprobar la asignatura en la convocatoria ordinaria un estudiante deberá cumplir las siguientes dos condiciones: 1) Obtener una calificación final igual o superior a 5. 2) Obtener, en el examen final de la convocatoria ordinaria, una calificación igual o superior a su nota mínima. En el caso de que un estudiante no cumpla la segunda condición, su calificación final será como máximo la obtenida en el examen final de la convocatoria ordinaria. Por lo tanto, de acuerdo a la información previamente indicada, no es posible aprobar la asignatura en la convocatoria ordinaria mediante evaluación progresiva. En la convocatoria ordinaria solo es posible aprobar la asignatura mediante evaluación global, para lo cual se deberán cumplir las dos condiciones indicadas previamente. Para aprobar la asignatura en la convocatoria extraordinaria , un estudiante deberá obtener una calificación igual o superior a 5 en el examen final de dicha convocatoria."@es .
+
+uni:GuiaPMBOK a uni:RecursoDidactico;
+    uni:NombreRecurso "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:PMPExamPrep a uni:RecursoDidactico;
+    uni:NombreRecurso "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:ISO16326 a uni:RecursoDidactico;
+    uni:NombreRecurso "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:GuiaEstimacionMedicion a uni:RecursoDidactico;
+    uni:NombreRecurso "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:AgilePracticeGuide a uni:RecursoDidactico;
+    uni:NombreRecurso "Agile Practice Guide"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:UserStoryMapping a uni:RecursoDidactico;
+    uni:NombreRecurso "User Story Mapping: Discover the Whole Story, Build the Right Product"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:GuiaScrum a uni:RecursoDidactico;
+    uni:NombreRecurso "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego."@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:AgileProjectManagementScrum a uni:RecursoDidactico;
+    uni:NombreRecurso "Agile Project Management with SCRUM"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:KanbanEsencial a uni:RecursoDidactico;
+    uni:NombreRecurso "Kanban Esencial Condensado"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:GuiaKanbanScrum a uni:RecursoDidactico;
+    uni:NombreRecurso "La Guía Kanban para Equipos Scrum"@es;
+    uni:TipoRecurso "Bibliografía"@es .
+
+uni:InformacionAdicionalGPR a uni:InformacionAdicional;
+    uni:Informacion "Todos los materiales y recursos de la asignatura se pondrán a disposición del estudiantado a través de la plataforma Moodle del curso. Esta misma plataforma se utilizará para gestionar las entregas de todos los ejercicios y prácticas de la asignatura, así como para la realización de diferentes actividades. Se adoptará la metodología de aula invertida para la impartición de ciertos temas de la asignatura de modo que parte del temario deberá ser estudiado fuera del aula y algunas lecciones magistrales se combinarán con actividades de resolución de problemas. El profesorado de la asignatura indicará durante el curso qué partes del temario deberán ser estudiadas fuera del aula. La comunicación con el profesorado de la asignatura se realizará a través de correo electrónico, tutorías y durante las clases presenciales planificadas. Los horarios de tutorías se publicarán en la web de la ETSISI. Antes de acudir a una tutoría, se deberá enviar un correo electrónico al profesor correspondiente para confirmar dicha tutoría. Esta asignatura está alineada con el Objetivo 4 Gar" .
+

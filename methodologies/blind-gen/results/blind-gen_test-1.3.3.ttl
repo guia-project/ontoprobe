@@ -1,0 +1,87 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/gestion-proyectos-y-riesgo#> .
+
+:ProjectManagementRDF a owl:Ontology ;
+    rdfs:label "Gestión de Proyectos y del Riesgo Ontology" .
+
+:Subject a owl:Class ;
+    rdfs:label "Subject" .
+
+:Course a owl:Class ;
+    rdfs:subClassOf :Subject ;
+    rdfs:label "Course" .
+
+:Coordinator a owl:Class ;
+    rdfs:label "Coordinator" .
+
+:Teacher a owl:Class ;
+    rdfs:label "Teacher" .
+
+:Competency a owl:Class ;
+    rdfs:label "Competency" .
+
+:LearningOutcome a owl:Class ;
+    rdfs:label "Learning Outcome" .
+
+:Resource a owl:Class ;
+    rdfs:label "Resource" .
+
+:SoftwareProjectManagement a :Course ;
+    rdfs:label "Gestion de Proyectos y del Riesgo" ;
+    :courseCode "615000258" ;
+    :credits "6" ;
+    :type "Obligatoria" ;
+    :semester "Séptimo" ;
+    :year "2024-25" ;
+    :language "Castellano" ;
+    :degree "Grado en Ingenieria del Software" ;
+    :responsibleCenter "Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos" .
+
+:AldoGordillo a :Coordinator, :Teacher ;
+    rdfs:label "Aldo Gordillo Mendez" ;
+    :office "1219" ;
+    :email "a.gordillo@upm.es" .
+
+:ManuelOttaviano a :Teacher ;
+    rdfs:label "Manuel Ottaviano" ;
+    :office "1212" .
+
+:JavierSerranoRomero a :Teacher ;
+    rdfs:label "Javier Serrano Romero" ;
+    :office "4219" ;
+    :email "javier.serrano@upm.es" .
+
+:CC2 a :Competency ;
+    rdfs:label "Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social" .
+
+:CC3 a :Competency ;
+    rdfs:label "Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software." .
+
+:CE6 a :Competency ;
+    rdfs:label "Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos." .
+
+:CT11 a :Competency ;
+    rdfs:label "Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista." .
+
+:CT5 a :Competency ;
+    rdfs:label "Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos." .
+
+:RA112 a :LearningOutcome ;
+    rdfs:label "Estima y realiza el seguimiento de los costes y los tiempos de desarrollo de grandes proyectos software." .
+
+:RA116 a :LearningOutcome ;
+    rdfs:label "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas." .
+
+:RA111 a :LearningOutcome ;
+    rdfs:label "Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar." .
+
+:RA118 a :LearningOutcome ;
+    rdfs:label "Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista." .
+
+:PMBOKGuide a :Resource ;
+    rdfs:label "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK)" .
+
+:AgilePracticeGuide a :Resource ;
+    rdfs:label "Agile Practice Guide" .

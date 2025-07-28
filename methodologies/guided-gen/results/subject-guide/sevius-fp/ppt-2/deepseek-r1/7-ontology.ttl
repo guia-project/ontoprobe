@@ -1,0 +1,334 @@
+
+@prefix onto: <http://example.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class Definitions
+onto:Subject a owl:Class .
+onto:Character a owl:Class .
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf onto:Character .
+onto:StudyPlan a owl:Class .
+onto:School a owl:Class .
+onto:University a owl:Class .
+onto:Professor a owl:Class .
+onto:Competence a owl:Class .
+onto:Outcome a owl:Class .
+onto:Evaluation a owl:Class .
+onto:Activity a owl:Class .
+onto:Topic a owl:Class .
+onto:Resource a owl:Class .
+onto:RecommendedPreviousSubject a owl:Class .
+onto:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+onto:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+onto:School_code a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:boolean .
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+onto:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range xsd:string .
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+onto:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain onto:Resource ;
+    rdfs:range xsd:string .
+
+# Object Properties
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+onto:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Evaluation .
+onto:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Topic .
+onto:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Resource .
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+onto:School_university a owl:ObjectProperty ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+# Instances
+onto:fundamentosDeProgramacion a onto:Subject ;
+    onto:Subject_name "Fundamentos de Programación" ;
+    onto:Subject_code "2050001" ;
+    onto:Subject_course "1" ;
+    onto:Subject_courseYear "2010" ;
+    onto:Subject_credits "12 ECTS" ;
+    onto:Subject_language "ESPAÑOL" ;
+    onto:Subject_semester "Anual" ;
+    onto:Subject_period "2010-11" ;
+    onto:Subject_evaluationCriteria "La evaluación continua consiste en dos exámenes teóricos y un práctico por cuatrimestre. Para aprobar, se necesita al menos un 4 en cada parte y promedio de 5. La evaluación ordinaria es un examen final con dos partes." ;
+    onto:Subject_character onto:troncalFormacionBasica ;
+    onto:Subject_studyPlan onto:gradoIngInformaticaSoftware ;
+    onto:Subject_professors onto:reinaQuinteroAntoniaMaria, 
+                            onto:carrranzaGarciaManuel, 
+                            onto:riquelmeSantosJoseCristobal, 
+                            onto:cruzMataFermin, 
+                            onto:jimenezAguirrePatricia, 
+                            onto:sanchezLopezJoseEnrique, 
+                            onto:vegaMarquezBelen ;
+    onto:Subject_competencies onto:e03, onto:e04, onto:e05 ;
+    onto:Subject_evaluations onto:primeraConvocatoria, 
+                            onto:segundaConvocatoria, 
+                            onto:terceraConvocatoria ;
+    onto:Subject_topics onto:parteIPython, 
+                        onto:parteIIJava ;
+    onto:Subject_resources onto:pythonDoc, 
+                          onto:pythonBook, 
+                          onto:javaDoc, 
+                          onto:programacionIntro, 
+                          onto:javaAPI, 
+                          onto:objectsFirstJava, 
+                          onto:blueJBook .
+
+onto:troncalFormacionBasica a onto:MandatoryCharacter .
+
+onto:gradoIngInformaticaSoftware a onto:StudyPlan ;
+    onto:StudyPlan_code "2010" ;
+    onto:StudyPlan_name "Grado en Ingeniería Informática-Ingeniería del Software" ;
+    onto:StudyPlan_school onto:etsIngInformatica .
+
+onto:etsIngInformatica a onto:School ;
+    onto:School_code "E.T.S. Ingeniería Informática" ;
+    onto:School_name "E.T.S. Ingeniería Informática" ;
+    onto:School_university onto:universidadSevilla .
+
+onto:universidadSevilla a onto:University ;
+    onto:University_name "Universidad de Sevilla" .
+
+onto:reinaQuinteroAntoniaMaria a onto:Professor ;
+    onto:Professor_name "REINA QUINTERO, ANTONIA MARIA" ;
+    onto:Professor_isCoordinator "true"^^xsd:boolean .
+
+onto:carrranzaGarciaManuel a onto:Professor ;
+    onto:Professor_name "CARRANZA GARCIA, MANUEL" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:riquelmeSantosJoseCristobal a onto:Professor ;
+    onto:Professor_name "RIQUELME SANTOS, JOSE CRISTOBAL" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:cruzMataFermin a onto:Professor ;
+    onto:Professor_name "CRUZ MATA, FERMIN" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:jimenezAguirrePatricia a onto:Professor ;
+    onto:Professor_name "JIMENEZ AGUIRRE, PATRICIA" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:sanchezLopezJoseEnrique a onto:Professor ;
+    onto:Professor_name "SANCHEZ LOPEZ, JOSE ENRIQUE" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:vegaMarquezBelen a onto:Professor ;
+    onto:Professor_name "VEGA MARQUEZ, BELEN" ;
+    onto:Professor_isCoordinator "false"^^xsd:boolean .
+
+onto:e03 a onto:Competence ;
+    onto:Competence_code "E03" ;
+    onto:Competence_description "" .
+
+onto:e04 a onto:Competence ;
+    onto:Competence_code "E04" ;
+    onto:Competence_description "" .
+
+onto:e05 a onto:Competence ;
+    onto:Competence_code "E05" ;
+    onto:Competence_description "" .
+
+onto:primeraConvocatoria a onto:Evaluation ;
+    onto:Evaluation_name "Primera Convocatoria" ;
+    onto:Evaluation_activities onto:evaluacionContinuaTeorico1, 
+                              onto:evaluacionContinuaPractico1, 
+                              onto:evaluacionContinuaTeorico2, 
+                              onto:evaluacionContinuaPractico2, 
+                              onto:examenFinalPractico1, 
+                              onto:examenFinalPractico2 .
+
+onto:segundaConvocatoria a onto:Evaluation ;
+    onto:Evaluation_name "Segunda Convocatoria" .
+
+onto:terceraConvocatoria a onto:Evaluation ;
+    onto:Evaluation_name "Tercera Convocatoria" .
+
+onto:evaluacionContinuaTeorico1 a onto:Activity ;
+    onto:Activity_name "Examen Teórico Cuatrimestre 1" ;
+    onto:Activity_modality "Evaluación Continua" ;
+    onto:Activity_weight "0.2"^^xsd:decimal ;
+    onto:Activity_minGrade "4"^^xsd:integer .
+
+onto:evaluacionContinuaPractico1 a onto:Activity ;
+    onto:Activity_name "Examen Práctico Cuatrimestre 1" ;
+    onto:Activity_modality "Evaluación Continua" ;
+    onto:Activity_weight "0.8"^^xsd:decimal ;
+    onto:Activity_minGrade "4"^^xsd:integer .
+
+onto:evaluacionContinuaTeorico2 a onto:Activity ;
+    onto:Activity_name "Examen Teórico Cuatrimestre 2" ;
+    onto:Activity_modality "Evaluación Continua" ;
+    onto:Activity_weight "0.2"^^xsd:decimal ;
+    onto:Activity_minGrade "4"^^xsd:integer .
+
+onto:evaluacionContinuaPractico2 a onto:Activity ;
+    onto:Activity_name "Examen Práctico Cuatrimestre 2" ;
+    onto:Activity_modality "Evaluación Continua" ;
+    onto:Activity_weight "0.8"^^xsd:decimal ;
+    onto:Activity_minGrade "4"^^xsd:integer .
+
+onto:examenFinalPractico1 a onto:Activity ;
+    onto:Activity_name "Examen Final Práctico Cuatrimestre 1" ;
+    onto:Activity_modality "Evaluación Ordinaria" ;
+    onto:Activity_minGrade "4"^^xsd:integer .
+
+onto:examenFinalPractico2 a onto:Activity ;
+    onto:Activity_name "Examen Final Práctico Cuatrimestre 2" ;
+    onto:Activity_modality "Evaluación Ordinaria" ;
+    onto:Activity_minGrade "4"^^xsd:integer .
+
+onto:parteIPython a onto:Topic ;
+    onto:Topic_name "Parte I: Python" ;
+    onto:Topic_subTopics onto:introduccionPython, 
+                        onto:expresionesTipos, 
+                        onto:controlFlujo, 
+                        onto:funciones, 
+                        onto:listasTuplas, 
+                        onto:dictConjuntos .
+
+onto:parteIIJava a onto:Topic ;
+    onto:Topic_name "Parte II: Java" ;
+    onto:Topic_subTopics onto:introduccionJava, 
+                        onto:disenoTipos, 
+                        onto:colecciones, 
+                        onto:tratamientoSecuencial .
+
+onto:introduccionPython a onto:Topic ;
+    onto:Topic_name "Introducción a Python" .
+
+onto:expresionesTipos a onto:Topic ;
+    onto:Topic_name "Expresiones, tipos predefinidos y entrada/salida" .
+
+onto:controlFlujo a onto:Topic ;
+    onto:Topic_name "Instrucciones condicionales y bucles" .
+
+onto:funciones a onto:Topic ;
+    onto:Topic_name "Funciones" .
+
+onto:listasTuplas a onto:Topic ;
+    onto:Topic_name "Secuencias, listas y tuplas" .
+
+onto:dictConjuntos a onto:Topic ;
+    onto:Topic_name "Diccionarios y conjuntos" .
+
+onto:introduccionJava a onto:Topic ;
+    onto:Topic_name "Introducción al lenguaje Java" .
+
+onto:disenoTipos a onto:Topic ;
+    onto:Topic_name "Diseño de tipos" .
+
+onto:colecciones a onto:Topic ;
+    onto:Topic_name "Colecciones" .
+
+onto:tratamientoSecuencial a onto:Topic ;
+    onto:Topic_name "Tratamientos secuenciales" .
+
+onto:pythonDoc a onto:Resource ;
+    onto:Resource_name "Lenguaje Python. Python Software Foundation. https://docs.python.org/3/" .
+
+onto:pythonBook a onto:Resource ;
+    onto:Resource_name "Python 3: Los fundamentos del lenguaje (2ª edición). Sébastien Chazallet. ISBN: 409-00614-2" .
+
+onto:javaDoc a onto:Resource ;
+    onto:Resource_name "Lenguaje Java. ORACLE. http://www.oracle.com/technetwork/java/index.html" .
+
+onto:programacionIntro a onto:Resource ;
+    onto:Resource_name "Introducción a la Programación. Miguel Toro. https://sites.google.com/site/lsintroprogramacion/home" .
+
+onto:javaAPI a onto:Resource ;
+    onto:Resource_name "Java Platform, Standard Edition Version 17 API Specification. ORACLE. https://docs.oracle.com/en/java/javase/17/docs/api/" .
+
+onto:objectsFirstJava a onto:Resource ;
+    onto:Resource_name "Objects First with Java: A Practical Introduction Using BlueJ, Global Edition (6ª Ed.). David J. Barnes. ISBN: 978-1292159041" .
+
+onto:blueJBook a onto:Resource ;
+    onto:Resource_name "Programación orientada a objetos con Java usando Blue J. David J. Barnes and Michael Kölling. ISBN: 978-8483227916" .

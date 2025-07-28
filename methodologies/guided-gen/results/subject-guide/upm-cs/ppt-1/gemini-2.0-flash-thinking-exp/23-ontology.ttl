@@ -1,0 +1,610 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ontology/> .
+
+ex: Ontology a owl:Ontology .
+
+# Classes
+ex:Subject a owl:Class .
+ex:Character a owl:Class .
+ex:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf ex:Character .
+ex:StudyPlan a owl:Class .
+ex:School a owl:Class .
+ex:University a owl:Class .
+ex:Professor a owl:Class .
+ex:Competence a owl:Class .
+ex:Outcome a owl:Class .
+ex:Evaluation a owl:Class .
+ex:Activity a owl:Class .
+ex:Topic a owl:Class .
+ex:Resource a owl:Class .
+ex:RecommendedPreviousSubject a owl:Class .
+ex:RecommendedPreviousKnowledge a owl:Class .
+
+# Datatype Properties
+ex:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+ex:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range xsd:string .
+
+ex:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range xsd:string .
+ex:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range xsd:string .
+
+ex:School_code a owl:DatatypeProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range xsd:string .
+ex:School_name a owl:DatatypeProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range xsd:string .
+
+ex:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range xsd:string .
+ex:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range xsd:string .
+ex:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range xsd:string .
+ex:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range xsd:string .
+ex:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain ex:Professor ;
+    rdfs:range xsd:boolean .
+
+ex:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Competence ;
+    rdfs:range xsd:string .
+ex:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Competence ;
+    rdfs:range xsd:string .
+
+ex:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain ex:Outcome ;
+    rdfs:range xsd:string .
+ex:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain ex:Outcome ;
+    rdfs:range xsd:string .
+
+ex:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range xsd:string .
+
+ex:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range xsd:string .
+ex:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range xsd:string .
+ex:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range xsd:string .
+ex:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range xsd:string .
+ex:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range xsd:string .
+
+ex:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range xsd:string .
+
+ex:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain ex:Resource ;
+    rdfs:range xsd:string .
+
+ex:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain ex:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+
+ex:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain ex:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+# Object Properties
+ex:Subject_character a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Character .
+ex:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:StudyPlan .
+ex:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Professor .
+ex:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Resource .
+ex:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Competence .
+ex:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Outcome .
+ex:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousSubject .
+ex:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:RecommendedPreviousKnowledge .
+ex:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Topic .
+ex:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain ex:Subject ;
+    rdfs:range ex:Evaluation .
+
+ex:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain ex:StudyPlan ;
+    rdfs:range ex:School .
+
+ex:School_university a owl:ObjectProperty ;
+    rdfs:domain ex:School ;
+    rdfs:range ex:University .
+
+ex:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain ex:Evaluation ;
+    rdfs:range ex:Activity .
+
+ex:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Outcome .
+ex:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Competence .
+ex:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain ex:Activity ;
+    rdfs:range ex:Topic .
+
+ex:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain ex:Topic ;
+    rdfs:range ex:Topic .
+
+# Instances
+
+# University
+ex:university-UPM a ex:University .
+
+# School
+ex:school-61 a ex:School ;
+    ex:School_code "61" ;
+    ex:School_name "E.T.S. de Ing. de Sistemas Informáticos" ;
+    ex:School_university ex:university-UPM .
+
+# StudyPlan
+ex:studyplan-61IW a ex:StudyPlan ;
+    ex:StudyPlan_code "61IW" ;
+    ex:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    ex:StudyPlan_school ex:school-61 .
+
+# Character
+ex:mandatory-character a ex:MandatoryCharacter .
+ex:optional-character a ex:OptionalCharacter . # Not used based on PDF, but defined
+
+# Professor
+ex:professor-carolina-gallardo-perez a ex:Professor ;
+    ex:Professor_name "Carolina Gallardo Perez" ;
+    ex:Professor_office "1209" ;
+    ex:Professor_email "carolina.gallardop@upm.es" ;
+    ex:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle" ;
+    ex:Professor_isCoordinator true .
+
+ex:professor-juan-garbajosa-sopena a ex:Professor ;
+    ex:Professor_name "Juan Garbajosa Sopeña" ;
+    ex:Professor_email "juan.garbajosa@upm.es" ;
+    ex:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." ;
+    ex:Professor_isCoordinator false .
+
+ex:professor-javier-alegre-landaburu a ex:Professor ;
+    ex:Professor_name "Javier Alegre Landaburu" ;
+    ex:Professor_email "javier.alegre.landaburu@upm.es" ;
+    ex:Professor_hours "Sin horario. Las tutorías se publicarán." ;
+    ex:Professor_isCoordinator false .
+
+# Competence
+ex:competence-CC1 a ex:Competence ;
+    ex:Competence_code "CC1" ;
+    ex:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+ex:competence-CC4 a ex:Competence ;
+    ex:Competence_code "CC4" ;
+    ex:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los estándares y normativas vigentes" .
+ex:competence-CE1 a ex:Competence ;
+    ex:Competence_code "CE1" ;
+    ex:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+ex:competence-CT6 a ex:Competence ;
+    ex:Competence_code "CT6" ;
+    ex:Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar dispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las experiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta habilidad en la aplicación de esos métodos." .
+
+# Outcome
+ex:outcome-RA113 a ex:Outcome ;
+    ex:Outcome_code "RA113" ;
+    ex:Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a desarrollar" .
+ex:outcome-RA109 a ex:Outcome ;
+    ex:Outcome_code "RA109" ;
+    ex:Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+ex:outcome-RA83 a ex:Outcome ;
+    ex:Outcome_code "RA83" ;
+    ex:Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para abordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información, maneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e interacción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las decisiones oportunas para lograr su propósito." .
+ex:outcome-RA114 a ex:Outcome ;
+    ex:Outcome_code "RA114" ;
+    ex:Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de manera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones. Identifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos niveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+# Recommended Previous Subject
+ex:recommended-previous-subject-fundamentos-ingenieria-software a ex:RecommendedPreviousSubject ;
+    ex:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+# Resource
+ex:resource-software-quality-assurance-laporte a ex:Resource ;
+    ex:Resource_name "Software Quality Assurance. Claude Y. Laporte, Alain April. ISBN: 978-1-118-50182-5 January 2018 Wiley-IEEE Computer Society Press" .
+ex:resource-software-quality-galin a ex:Resource ;
+    ex:Resource_name "Software Quality: Concepts and Practice. Daniel Galin. ISBN: 978-1-119-13452-7 May 2018 Wiley-IEEE Computer Society Press" .
+ex:resource-sevobab a ex:Resource ;
+    ex:Resource_name "Sevocab https://pascal.computer.org/sev_display/index.action Vocabulario autorizado de términos de Ingeniería del Software" .
+ex:resource-aseguramiento-gestion-calidad a ex:Resource ;
+    ex:Resource_name "\"Del aseguramiento a la gestión de la calidad: El enfoque basado en procesos\". David Hoyle, John Thompson. AENOR" .
+ex:resource-total-quality-management a ex:Resource ;
+    ex:Resource_name "\"Total Quality Management\". Dale H. Besterfield, Carol Besterfield-Michna, Glen H. Besterfield, Mary Besterfield-Sacre. Prentice Hall" .
+ex:resource-medicion-gestion-ingenieria-software a ex:Resource ;
+    ex:Resource_name "\"Medición para la Gestión en la Ingeniería del Software\". José J. Dolado, Luís Fernández. Ed Ra-Ma." .
+ex:resource-aula a ex:Resource ;
+    ex:Resource_name "Aula de la ETSISI con cañón de luz conectado a PC en la mesa del profesor y sistema de audio inalámbrico. Pizarra clásica." .
+ex:resource-moodle a ex:Resource ;
+    ex:Resource_name "Plataforma de enseñanza MOODLE Información general, documentación, actividades, información complementaria, enlaces, calificaciones, foros, etc. En español y en inglés." .
+
+# Topics
+ex:topic-1-introduccion a ex:Topic ;
+    ex:Topic_name "1. Introducción e historia de la calidad" .
+ex:topic-1-1-historia a ex:Topic ;
+    ex:Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." ;
+    ex:Topic_subTopics ex:topic-1-introduccion . # Assuming sub-topic links *to* main topic based on diagram direction
+ex:topic-1-2-evolucion a ex:Topic ;
+    ex:Topic_name "1.2. Evolución de la calidad." ;
+    ex:Topic_subTopics ex:topic-1-introduccion .
+
+ex:topic-2-tecnicas a ex:Topic ;
+    ex:Topic_name "2. Técnicas de la calidad" .
+ex:topic-2-1-basicas a ex:Topic ;
+    ex:Topic_name "2.1. Técnicas básicas." ;
+    ex:Topic_subTopics ex:topic-2-tecnicas .
+ex:topic-2-2-estadisticas a ex:Topic ;
+    ex:Topic_name "2.2. Técnicas estadísticas." ;
+    ex:Topic_subTopics ex:topic-2-tecnicas .
+ex:topic-2-3-avanzadas a ex:Topic ;
+    ex:Topic_name "2.3. Técnicas avanzadas." ;
+    ex:Topic_subTopics ex:topic-2-tecnicas .
+
+ex:topic-3-mediciones a ex:Topic ;
+    ex:Topic_name "3. Mediciones de calidad del software" .
+ex:topic-3-1-medidas-metricas a ex:Topic ;
+    ex:Topic_name "3.1. Medidas y métricas." ;
+    ex:Topic_subTopics ex:topic-3-mediciones .
+ex:topic-3-2-medicion-producto a ex:Topic ;
+    ex:Topic_name "3.2. Medición del producto." ;
+    ex:Topic_subTopics ex:topic-3-mediciones .
+
+ex:topic-4-costes-eticas a ex:Topic ;
+    ex:Topic_name "4. Costes y consideraciones éticas" .
+ex:topic-4-1-costes-modelos a ex:Topic ;
+    ex:Topic_name "4.1. Costes de la calidad. Modelos de costes." ;
+    ex:Topic_subTopics ex:topic-4-costes-eticas .
+ex:topic-4-2-caracterizacion-defectos a ex:Topic ;
+    ex:Topic_name "4.2. Caracterización de defectos." ;
+    ex:Topic_subTopics ex:topic-4-costes-eticas .
+ex:topic-4-3-codigo-etico a ex:Topic ;
+    ex:Topic_name "4.3. Código ético del ingeniero de software." ;
+    ex:Topic_subTopics ex:topic-4-costes-eticas .
+
+ex:topic-5-procesos-gestion a ex:Topic ;
+    ex:Topic_name "5. Procesos de gestión de la calidad" .
+ex:topic-5-1-estandares-calidad a ex:Topic ;
+    ex:Topic_name "5.1. Estándares de calidad" ;
+    ex:Topic_subTopics ex:topic-5-procesos-gestion .
+ex:topic-5-2-gestion-procesos a ex:Topic ;
+    ex:Topic_name "5.2. Gestión de la calidad por procesos" ;
+    ex:Topic_subTopics ex:topic-5-procesos-gestion .
+
+ex:topic-6-estandares-square a ex:Topic ;
+    ex:Topic_name "6. Estándares de calidad del software: SQUARE" .
+ex:topic-6-1-estandares-modelos a ex:Topic ;
+    ex:Topic_name "6.1. Estándares y modelos para la calidad del software." ;
+    ex:Topic_subTopics ex:topic-6-estandares-square .
+ex:topic-6-2-serie-iso-25000n a ex:Topic ;
+    ex:Topic_name "6.2. Serie ISO 25000n" ;
+    ex:Topic_subTopics ex:topic-6-estandares-square .
+
+ex:topic-7-aseguramiento a ex:Topic ;
+    ex:Topic_name "7. Aseguramiento de la calidad del software" .
+ex:topic-7-1-aseguramiento-proceso a ex:Topic ;
+    ex:Topic_name "7.1. Aseguramiento del proceso software" ;
+    ex:Topic_subTopics ex:topic-7-aseguramiento .
+ex:topic-7-2-aseguramiento-producto a ex:Topic ;
+    ex:Topic_name "7.2. Aseguramiento del producto software" ;
+    ex:Topic_subTopics ex:topic-7-aseguramiento .
+
+ex:topic-8-mejora-procesos a ex:Topic ;
+    ex:Topic_name "8. Mejora de procesos SW" .
+ex:topic-8-1-introduccion-evaluacion a ex:Topic ;
+    ex:Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" ;
+    ex:Topic_subTopics ex:topic-8-mejora-procesos .
+ex:topic-8-2-modelos-referencia a ex:Topic ;
+    ex:Topic_name "8.2. Modelos de referencia para mejora de procesos SW" ;
+    ex:Topic_subTopics ex:topic-8-mejora-procesos .
+
+# Evaluations
+ex:evaluation-progressive a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación (progresiva)" .
+
+ex:evaluation-global a ex:Evaluation ;
+    ex:Evaluation_name "Prueba evaluación global" .
+
+ex:evaluation-extraordinary a ex:Evaluation ;
+    ex:Evaluation_name "Evaluación convocatoria extraordinaria" .
+
+# Activities
+
+# Progressive Evaluation Activities (from 7.1.1)
+ex:activity-progressive-sem2-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "3%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem3-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "3%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem4-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem5-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem7-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem7-examen-t1-4 a ex:Activity ;
+    ex:Activity_name "Examen Temas 1-2-3-4" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "30%" ;
+    ex:Activity_minGrade "3 / 10" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedCompetencies ex:competence-CE1, ex:competence-CT6 ;
+    ex:Activity_relatedOutcomes ex:outcome-RA114 ; # Based on 7.2 T1
+    ex:Activity_relatedTopics ex:topic-1-introduccion, ex:topic-2-tecnicas, ex:topic-3-mediciones, ex:topic-4-costes-eticas .
+
+ex:activity-progressive-sem9-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem10-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem11-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem12-presencial a ex:Activity ;
+    ex:Activity_name "Actividad presencial" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "2%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on 7.2 A. Actividades de clase
+
+ex:activity-progressive-sem15-trabajo-final-memoria a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedCompetencies ex:competence-CC1 ;
+    ex:Activity_relatedOutcomes ex:outcome-RA83 . # Based on 7.2 P.Doc
+
+ex:activity-progressive-sem15-trabajo-final-defensa a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Defensa y exposición" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "5%" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedCompetencies ex:competence-CC1, ex:competence-CT6 . # Based on 7.1.1
+
+ex:activity-progressive-sem15-examen-t5-8 a ex:Activity ;
+    ex:Activity_name "Examen Temas 5-6-7-8" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "30%" ;
+    ex:Activity_minGrade "3 / 10" ;
+    ex:Evaluation_activities ex:evaluation-progressive ;
+    ex:Activity_relatedCompetencies ex:competence-CC1, ex:competence-CC4 ;
+    ex:Activity_relatedOutcomes ex:outcome-RA109, ex:outcome-RA113 ; # Based on 7.2 T2
+    ex:Activity_relatedTopics ex:topic-5-procesos-gestion, ex:topic-6-estandares-square, ex:topic-7-aseguramiento, ex:topic-8-mejora-procesos .
+
+# Global Evaluation Activities (from 7.1.2)
+ex:activity-global-sem17-examen-final a ex:Activity ;
+    ex:Activity_name "Examen Final (Escenario 2)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "03:00" ;
+    ex:Activity_weight "80%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:Evaluation_activities ex:evaluation-global ;
+    ex:Activity_relatedCompetencies ex:competence-CC1, ex:competence-CC4, ex:competence-CE1, ex:competence-CT6 ; # Based on 7.1.2
+    ex:Activity_relatedOutcomes ex:outcome-RA114, ex:outcome-RA109, ex:outcome-RA113 ; # Based on 7.2 T1 + T2 in Scenario 2
+    ex:Activity_relatedTopics ex:topic-1-introduccion, ex:topic-2-tecnicas, ex:topic-3-mediciones, ex:topic-4-costes-eticas, ex:topic-5-procesos-gestion, ex:topic-6-estandares-square, ex:topic-7-aseguramiento, ex:topic-8-mejora-procesos . # Covers all topics implicitly as final exam
+
+ex:activity-global-sem17-trabajo-final-memoria a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Valoración de la memoria (RA83)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:Evaluation_activities ex:evaluation-global ;
+    ex:Activity_relatedCompetencies ex:competence-CC1 ; # Based on 7.1.2
+    ex:Activity_relatedOutcomes ex:outcome-RA83 . # Based on 7.2 P.Doc in Scenario 2
+
+ex:activity-global-sem17-trabajo-final-defensa a ex:Activity ;
+    ex:Activity_name "Trabajo Final. Defensa y exposición" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "5%" ;
+    ex:Evaluation_activities ex:evaluation-global ;
+    ex:Activity_relatedCompetencies ex:competence-CC1, ex:competence-CT6 . # Based on 7.1.2
+
+# Extraordinary Evaluation Activities (from 7.1.3)
+ex:activity-extraordinary-examen a ex:Activity ;
+    ex:Activity_name "Examen extraordinario (RA83, RA109, RA113, RA114)" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "02:00" ;
+    ex:Activity_weight "80%" ;
+    ex:Activity_minGrade "4 / 10" ;
+    ex:Evaluation_activities ex:evaluation-extraordinary ;
+    ex:Activity_relatedCompetencies ex:competence-CC1, ex:competence-CC4, ex:competence-CE1, ex:competence-CT6 ; # Based on 7.1.3
+    ex:Activity_relatedOutcomes ex:outcome-RA83, ex:outcome-RA109, ex:outcome-RA113, ex:outcome-RA114 . # Based on name in 7.1.3
+
+ex:activity-extraordinary-trabajo-final-documentacion a ex:Activity ;
+    ex:Activity_name "Trabajo final: documentación" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:00" ;
+    ex:Activity_weight "15%" ;
+    ex:Activity_minGrade "5 / 10" ;
+    ex:Evaluation_activities ex:evaluation-extraordinary ;
+    ex:Activity_relatedCompetencies ex:competence-CT6, ex:competence-CC4, ex:competence-CE1 ; # Based on 7.1.3
+    ex:Activity_relatedOutcomes ex:outcome-RA83 . # Based on 7.2 P.Doc in Scenario 2 (same scheme)
+
+ex:activity-extraordinary-defensa-oral-practica a ex:Activity ;
+    ex:Activity_name "Defensa oral de la práctica" ;
+    ex:Activity_modality "Presencial" ;
+    ex:Activity_duration "00:05" ;
+    ex:Activity_weight "5%" ;
+    ex:Evaluation_activities ex:evaluation-extraordinary ;
+    ex:Activity_relatedCompetencies ex:competence-CC1, ex:competence-CC4, ex:competence-CE1, ex:competence-CT6 . # Based on 7.1.3
+
+# Subject
+ex:subject-615000259 a ex:Subject ;
+    ex:Subject_name "Calidad Del Software" ;
+    ex:Subject_description "La asignatura presenta técnicas y mediciones de calidad, modelos y procesos para la gestión de la calidad en el ámbito de la ingeniería del software." ;
+    ex:Subject_code "615000259" ;
+    ex:Subject_course "2024-25" ;
+    ex:Subject_courseYear "Cuarto curso" ;
+    ex:Subject_credits "6" ;
+    ex:Subject_language "Castellano" ;
+    ex:Subject_semester "Séptimo semestre" ;
+    ex:Subject_period "Septiembre-Enero" ;
+    ex:Subject_evaluationCriteria """CONVOCATORIA ORDINARIA
+EVALUACIÓN PROGRESIVA
+PARTE TEORÍA PESO % Nota mínima RRAA
+T1. Examen temas 1, 2, 3, 4. 30% 30% (*) RA114
+T2. Examen temas 5, 6, 7 y 8 30% 30% (*) RA109, RA113
+PARTE PRÁCTICA PESO % Nota mínima RRAA
+A. Actividades de clase 20% 70% RA109, RA113, R114
+P.Doc. Práctica final: documentación 15% 40% RA83
+P.Oral. Práctica final: exposición oral (coevaluación) 5% -
+(*) Para que la nota de los exámenes parciales se pueda acumular debe ser al menos el 30% del valor asignado.
+Para que la nota de las actividades de clase se pueda acumular deben ser entregadas y valoradas positivamente al menos el 70% de todas las propuestas.
+El trabajo final y la exposición oral (P.Doc y P.Oral) son obligatorios para la superación de la asignatura.
+La práctica final implica una defensa oral abierta al grupo de clase y co-evaluación obligatoria por parte del resto de estudiantes.
+La asignatura será superada siempre y cuando las calificaciones de la parte teórica y la parte práctica no sean inferiores al 50% de su valor. La calificación final de la asignatura será la suma de ambas.
+EVALUACIÓN GLOBAL
+Se contemplan dos escenarios en la evaluación global:
+ESCENARIO 1: Estudiantes que sí han superado el 70% de las actividades prácticas (A): en este caso, la evaluación global consta de las mismas pruebas de evaluación y pesos que la evaluación progresiva.
+ESCENARIO 2: Estudiantes que no han superado el 70% de las actividades prácticas (A): la evaluación global constaría de las siguientes pruebas de evaluación:
+PARTE TEORÍA PESO % Nota mínima RRAA
+T1. Examen temas 1, 2, 3, 4 40% 30% RA114
+T2. Examen temas 5, 6, 7 y 8 40% 30% RA109, RA113
+PARTE PRÁCTICA PESO % Nota mínima RRAA
+Práctica final: documentación 15% 40% RA83
+P.Oral. Práctica final: exposición oral 5%
+La entrega de la documentación de la práctica final y su defensa se realizarán el día del examen programado por la Subdirección de Ordenación Académica. Para superar la asignatura es necesario obtener una calificación mayor o igual que 5 en cualquiera de las convocatorias sumando las calificaciones de las diferentes pruebas, una vez que han superado la calificación mínima exigida en todas aquellas que la tenga.
+NOTA PARA ALUMNOS ERASMUS OUT QUE CURSEN LA ASIGNATURA
+Si se diera la circunstancia de que algún estudiante matriculado en Calidad del Software se encontrase cursando el semestre en una universidad extranjera, deberá observar todas las normas y criterios expuestos en esta guía.
+En concreto, se recuerda que:
+considerar las siguientes normas de la asignatura comunes a todo slos estudiantes:
+Evaluación progresiva: la entrega de las actividades prácticas se realizará exclusivamente a través de la plataforma Moodle y en el plazo estipulado durante el periodo docente.
+Evaluación progresiva: se permitirá a los estudiantes Erasmus OUT la realización de la defensa oral del trabajo final por medios telemáticos. Esta será la única causa que justifique la realización de la defensa de manera virtual.
+Evaluación progresiva y global: todos los exámenes son presenciales, se realizarán en las aulas habilitadas por Ordenación Académica en las dependencias de la ETSISI.
+CONVOCATORIA EXTRAORDINARIA
+La convocatoria extraordinaria contará con el mismo esquema de evaluación que el propuesto en el ESCENARIO 2 de la evaluación global.
+Aquellos alumnos que tengan superada la parte teórica o la parte práctica en la convocatoria ordinaria, se les mantendrá la calificación de dicha parte para esta convocatoria. La nota final será la suma de la parte teórica y de la parte práctica, una vez superadas las calificaciones mínimas en cada una de las actividades de evaluación, para aprobar la signatura deberá obtener al menos un 5.""" ;
+    ex:Subject_character ex:mandatory-character ;
+    ex:Subject_studyPlan ex:studyplan-61IW ;
+    ex:Subject_professors ex:professor-carolina-gallardo-perez, ex:professor-juan-garbajosa-sopena, ex:professor-javier-alegre-landaburu ;
+    ex:Subject_resources ex:resource-software-quality-assurance-laporte, ex:resource-software-quality-galin, ex:resource-sevobab, ex:resource-aseguramiento-gestion-calidad, ex:resource-total-quality-management, ex:resource-medicion-gestion-ingenieria-software, ex:resource-aula, ex:resource-moodle ;
+    ex:Subject_competencies ex:competence-CC1, ex:competence-CC4, ex:competence-CE1, ex:competence-CT6 ;
+    ex:Subject_outcomes ex:outcome-RA113, ex:outcome-RA109, ex:outcome-RA83, ex:outcome-RA114 ;
+    ex:Subject_recommendedPreviousSubjects ex:recommended-previous-subject-fundamentos-ingenieria-software ;
+    # ex:Subject_recommendedPreviousKnowledges -> No instances based on PDF
+    ex:Subject_topics ex:topic-1-introduccion, ex:topic-2-tecnicas, ex:topic-3-mediciones, ex:topic-4-costes-eticas, ex:topic-5-procesos-gestion, ex:topic-6-estandares-square, ex:topic-7-aseguramiento, ex:topic-8-mejora-procesos ;
+    ex:Subject_evaluations ex:evaluation-progressive, ex:evaluation-global, ex:evaluation-extraordinary .
+

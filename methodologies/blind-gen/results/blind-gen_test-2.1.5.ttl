@@ -1,0 +1,535 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uni: <http://www.example.org/ontology/> .
+
+uni:Asignatura a rdfs:Class;
+    rdfs:label "Asignatura"@es .
+
+uni:Profesor a rdfs:Class;
+    rdfs:label "Profesor"@es .
+
+uni:EscuelaTecnicaSuperior a rdfs:Class;
+    rdfs:label "Escuela Tecnica Superior"@es .
+
+uni:GradoEnIngenieriaDelSoftware a rdfs:Class;
+    rdfs:label "Grado En Ingenieria Del Software"@es .
+
+uni:Semestre a rdfs:Class;
+    rdfs:label "Semestre"@es .
+
+uni:CreditosECTS a rdfs:Class;
+    rdfs:label "Creditos ECTS"@es .
+
+uni:Competencia a rdfs:Class;
+    rdfs:label "Competencia"@es .
+
+uni:ResultadoAprendizaje a rdfs:Class;
+    rdfs:label "Resultado de Aprendizaje"@es .
+
+uni:Tema a rdfs:Class;
+    rdfs:label "Tema"@es .
+
+uni:Actividad a rdfs:Class;
+    rdfs:label "Actividad"@es .
+
+uni:Evaluacion a rdfs:Class;
+    rdfs:label "Evaluacion"@es .
+
+uni:RecursoDidactico a rdfs:Class;
+    rdfs:label "Recurso Didactico"@es .
+
+uni:hasNombre a rdf:Property;
+    rdfs:label "tiene nombre"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:hasCodigo a rdf:Property;
+    rdfs:label "tiene código"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:hasCreditos a rdf:Property;
+    rdfs:label "tiene créditos"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:CreditosECTS .
+
+uni:esDeCarácter a rdf:Property;
+    rdfs:label "es de carácter"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:esDeCurso a rdf:Property;
+    rdfs:label "es de curso"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:esDeSemestre a rdf:Property;
+    rdfs:label "es de semestre"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Semestre .
+
+uni:seImparteEnPeriodo a rdf:Property;
+    rdfs:label "se imparte en período"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:seImparteEnIdioma a rdf:Property;
+    rdfs:label "se imparte en idioma"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:esDeTitulacion a rdf:Property;
+    rdfs:label "es de titulación"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:GradoEnIngenieriaDelSoftware .
+
+uni:esResponsableLaEscuela a rdf:Property;
+    rdfs:label "es responsable la escuela"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:EscuelaTecnicaSuperior .
+
+uni:esDeCursoAcademico a rdf:Property;
+    rdfs:label "es de curso académico"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:impartidoPor a rdf:Property;
+    rdfs:label "impartido por"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Profesor .
+
+uni:tieneDespacho a rdf:Property;
+    rdfs:label "tiene despacho"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:tieneCorreoElectronico a rdf:Property;
+    rdfs:label "tiene correo electrónico"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:tieneHorarioDeTutorias a rdf:Property;
+    rdfs:label "tiene horario de tutorías"@es;
+    rdfs:domain uni:Profesor;
+    rdfs:range xsd:string .
+
+uni:recomiendaAsignaturaPrevia a rdf:Property;
+    rdfs:label "recomienda asignatura previa"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Asignatura .
+
+uni:tieneCompetencia a rdf:Property;
+    rdfs:label "tiene competencia"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Competencia .
+
+uni:tieneResultadoDeAprendizaje a rdf:Property;
+    rdfs:label "tiene resultado de aprendizaje"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:ResultadoAprendizaje .
+
+uni:tieneTema a rdf:Property;
+    rdfs:label "tiene tema"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Tema .
+
+uni:tieneDescripcion a rdf:Property;
+    rdfs:label "tiene descripción"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range xsd:string .
+
+uni:tieneActividad a rdf:Property;
+    rdfs:label "tiene actividad"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Actividad .
+
+uni:tieneEvaluacion a rdf:Property;
+    rdfs:label "tiene evaluación"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:Evaluacion .
+
+uni:tieneRecursoDidactico a rdf:Property;
+    rdfs:label "tiene recurso didáctico"@es;
+    rdfs:domain uni:Asignatura;
+    rdfs:range uni:RecursoDidactico .
+
+uni:esTipoActividad1 a rdf:Property;
+    rdfs:label "es tipo de actividad 1"@es;
+    rdfs:domain uni:Actividad;
+    rdfs:range xsd:string .
+
+uni:esTipoActividad2 a rdf:Property;
+    rdfs:label "es tipo de actividad 2"@es;
+    rdfs:domain uni:Actividad;
+    rdfs:range xsd:string .
+
+uni:teleEnsenanza a rdf:Property;
+    rdfs:label "tele-enseñanza"@es;
+    rdfs:domain uni:Actividad;
+    rdfs:range xsd:string .
+
+uni:actividadesDeEvaluacion a rdf:Property;
+    rdfs:label "actividades de evaluación"@es;
+    rdfs:domain uni:Actividad;
+    rdfs:range xsd:string .
+
+uni:tieneDuracion a rdf:Property;
+    rdfs:label "tiene duración"@es;
+    rdfs:domain uni:Actividad;
+    rdfs:range xsd:string .
+
+uni:tienePesoEnLaNota a rdf:Property;
+    rdfs:label "tiene peso en la nota"@es;
+    rdfs:domain uni:Evaluacion;
+    rdfs:range xsd:string .
+
+uni:tieneNotaMinima a rdf:Property;
+    rdfs:label "tiene nota mínima"@es;
+    rdfs:domain uni:Evaluacion;
+    rdfs:range xsd:string .
+
+uni:tieneModalidad a rdf:Property;
+    rdfs:label "tiene modalidad"@es;
+    rdfs:domain uni:Evaluacion;
+    rdfs:range xsd:string .
+
+uni:tieneTipo a rdf:Property;
+    rdfs:label "tiene tipo"@es;
+    rdfs:domain uni:Evaluacion;
+    rdfs:range xsd:string .
+
+uni:GestionDeProyectosYDelRiesgo a uni:Asignatura;
+    uni:hasNombre "Gestion de Proyectos y del Riesgo"@es;
+    uni:hasCodigo "615000258"@es;
+    uni:hasCreditos [ rdf:type uni:CreditosECTS ; rdfs:label "6 ECTS"@es ];
+    uni:esDeCarácter "Obligatoria"@es;
+    uni:esDeCurso "Cuarto curso"@es;
+    uni:esDeSemestre [ rdf:type uni:Semestre ; rdfs:label "Séptimo semestre"@es ];
+    uni:seImparteEnPeriodo "Septiembre-Enero"@es;
+    uni:seImparteEnIdioma "Castellano"@es;
+    uni:esDeTitulacion uni:GradoEnIngenieriaDelSoftware61IW;
+    uni:esResponsableLaEscuela uni:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos61;
+    uni:esDeCursoAcademico "2024-25"@es .
+
+uni:GradoEnIngenieriaDelSoftware61IW a uni:GradoEnIngenieriaDelSoftware;
+    rdfs:label "61IW - Grado en Ingenieria del Software"@es .
+
+uni:EscuelaTecnicaSuperiorDeIngenieriaDeSistemasInformaticos61 a uni:EscuelaTecnicaSuperior;
+    rdfs:label "61 - Escuela Tecnica Superior De Ingenieria De Sistemas Informaticos"@es .
+
+uni:AldoGordilloMendez a uni:Profesor;
+    uni:hasNombre "Aldo Gordillo Mendez"@es;
+    uni:tieneDespacho "1219"@es;
+    uni:tieneCorreoElectronico "a.gordillo@upm.es"@es;
+    uni:tieneHorarioDeTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:ManuelOttaviano a uni:Profesor;
+    uni:hasNombre "Manuel Ottaviano"@es;
+    uni:tieneDespacho "1212"@es;
+    uni:tieneCorreoElectronico "manuel.ottaviano@upm.es"@es;
+    uni:tieneHorarioDeTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:JavierSerranoRomero a uni:Profesor;
+    uni:hasNombre "Javier Serrano Romero"@es;
+    uni:tieneDespacho "4219"@es;
+    uni:tieneCorreoElectronico "javier.serrano@upm.es"@es;
+    uni:tieneHorarioDeTutorias "Sin horario. El horario de tutorías se publicará en la web de la ETSISI."@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:impartidoPor uni:AldoGordilloMendez, uni:ManuelOttaviano, uni:JavierSerranoRomero .
+
+uni:IngenieriaDeRequisitosYModelado a uni:Asignatura;
+    rdfs:label "Ingenieria De Requisitos Y Modelado"@es .
+
+uni:IngenieriaDelProcesoSoftwareYConstruccion a uni:Asignatura;
+    rdfs:label "Ingenieria Del Proceso Software Y Construccion"@es .
+
+uni:AspectosLegalesYProfesionales a uni:Asignatura;
+    rdfs:label "Aspectos Legales Y Profesionales"@es .
+
+uni:FundamentosDeEconomiaYEmpresa a uni:Asignatura;
+    rdfs:label "Fundamentos De Economia Y Empresa"@es .
+
+uni:FundamentosDeIngenieriaDelSoftware a uni:Asignatura;
+    rdfs:label "Fundamentos De Ingenieria Del Software"@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:recomiendaAsignaturaPrevia uni:IngenieriaDeRequisitosYModelado,
+        uni:IngenieriaDelProcesoSoftwareYConstruccion,
+        uni:AspectosLegalesYProfesionales,
+        uni:FundamentosDeEconomiaYEmpresa,
+        uni:FundamentosDeIngenieriaDelSoftware .
+
+uni:CC2 a uni:Competencia;
+    rdfs:label "CC2 - Capacidad para planificar, concebir, desplegar y dirigir proyectos, servicios y sistemas informáticos en todos los ámbitos, liderando su puesta en marcha y su mejora continua y valorando su impacto económico y social"@es .
+
+uni:CC3 a uni:Competencia;
+    rdfs:label "CC3 - Capacidad para comprender la importancia de la negociación, los hábitos de trabajo efectivos, el liderazgo y las habilidades de comunicación en todos los entornos de desarrollo de software."@es .
+
+uni:CE6 a uni:Competencia;
+    rdfs:label "CE6 - Capacidad para diseñar soluciones apropiadas en uno o más dominios de aplicación utilizando métodos de la ingeniería del software que integren aspectos éticos, sociales, legales y económicos."@es .
+
+uni:CT11 a uni:Competencia;
+    rdfs:label "CT11 - Liderazgo: Cualidades, actitudes, conocimientos y destrezas que posee un individuo, desenvolviéndose de modo que logra inspirar, generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de sinergias, motivaciones y compromisos, y no de manera coercitiva e individualista."@es .
+
+uni:CT5 a uni:Competencia;
+    rdfs:label "CT5 - Organización y planificación: Identificar y definir eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos."@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:tieneCompetencia uni:CC2, uni:CC3, uni:CE6, uni:CT11, uni:CT5 .
+
+uni:RA112 a uni:ResultadoAprendizaje;
+    rdfs:label "RA112 - Estima y realiza el seguimiento de los costes y los tiempo de desarrollo de grandes proyectos software"@es .
+
+uni:RA116 a uni:ResultadoAprendizaje;
+    rdfs:label "RA116 - Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto a desempeñar estipulando las actividades, los plazos y los recursos requeridos y controlando los procesos establecidos. Detecta y justifica las desviaciones producidas."@es .
+
+uni:RA111 a uni:ResultadoAprendizaje;
+    rdfs:label "RA111 - Identifica, evalúa y gestiona los riesgos potenciales de las soluciones software a desarrollar"@es .
+
+uni:RA118 a uni:ResultadoAprendizaje;
+    rdfs:label "RA118 - Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista."@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:tieneResultadoDeAprendizaje uni:RA111, uni:RA112, uni:RA116, uni:RA118 .
+
+uni:Tema1 a uni:Tema;
+    rdfs:label "1. Fundamentos de la gestión de proyectos."@es .
+
+uni:Tema1_1 a uni:Tema;
+    rdfs:label "1.1. Tema 1: Introducción a la gestión de proyectos."@es .
+
+uni:Tema1_2 a uni:Tema;
+    rdfs:label "1.2. Tema 2: Procesos de la dirección de proyectos."@es .
+
+uni:Tema1_3 a uni:Tema;
+    rdfs:label "1.3. Tema 3: Gestión del alcance."@es .
+
+uni:Tema1_4 a uni:Tema;
+    rdfs:label "1.4. Tema 4: Planificación temporal de proyectos."@es .
+
+uni:Tema1_5 a uni:Tema;
+    rdfs:label "1.5. Tema 5: Estimación en proyectos de software."@es .
+
+uni:Tema1_6 a uni:Tema;
+    rdfs:label "1.6. Tema 6: Gestión de riesgos."@es .
+
+uni:Tema1_7 a uni:Tema;
+    rdfs:label "1.7. Tema 7: Gestión de costes."@es .
+
+uni:Tema2 a uni:Tema;
+    rdfs:label "2. Gestión de proyectos con metodologías ágiles."@es .
+
+uni:Tema2_1 a uni:Tema;
+    rdfs:label "2.1. Tema 8: Introducción a la gestión de proyectos con metodologías ágiles."@es .
+
+uni:Tema2_2 a uni:Tema;
+    rdfs:label "2.2. Tema 9: Prácticas ágiles."@es .
+
+uni:Tema2_3 a uni:Tema;
+    rdfs:label "2.3. Tema 10: Scrum."@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:tieneTema uni:Tema1, uni:Tema1_1, uni:Tema1_2, uni:Tema1_3, uni:Tema1_4, uni:Tema1_5, uni:Tema1_6, uni:Tema1_7, uni:Tema2, uni:Tema2_1, uni:Tema2_2, uni:Tema2_3 .
+
+uni:PresentacionAsignatura a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:tieneDuracion "00:30"@es .
+
+uni:Tema1_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:tieneDuracion "01:30"@es .
+
+uni:Tema2_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema3_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema4_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema4_Problemas a uni:Actividad;
+    uni:esTipoActividad1 "PR: Actividad del tipo Clase de Problemas"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema5_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema5_Problemas a uni:Actividad;
+    uni:esTipoActividad1 "PR: Actividad del tipo Clase de Problemas"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema6_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema7_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema8_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema9_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema9_Problemas a uni:Actividad;
+    uni:esTipoActividad1 "PR: Actividad del tipo Clase de Problemas"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:EjercicioGestionTradicional a uni:Actividad;
+    uni:teleEnsenanza "Evaluación Progresiva No presencial"@es;
+    uni:actividadesDeEvaluacion "(RA111, RA112, RA116)"@es;
+    uni:tieneDuracion "00:00"@es;
+    uni:esTipoActividad1 "TI: Técnica del tipo Trabajo Individual"@es .
+
+uni:Practica1 a uni:Actividad;
+    uni:teleEnsenanza "Evaluación Progresiva No presencial"@es;
+    uni:actividadesDeEvaluacion "(RA111, RA112, RA116, RA118)"@es;
+    uni:tieneDuracion "00:00"@es;
+    uni:esTipoActividad1 "TG: Técnica del tipo Trabajo en Grupo"@es .
+
+uni:Tema10_Actividad a uni:Actividad;
+    uni:esTipoActividad1 "LM: Actividad del tipo Lección Magistral"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:Tema10_Problemas a uni:Actividad;
+    uni:esTipoActividad1 "PR: Actividad del tipo Clase de Problemas"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:ResolucionEjercicios a uni:Actividad;
+    uni:esTipoActividad1 "PR: Actividad del tipo Clase de Problemas"@es;
+    uni:esTipoActividad2 "PL: Actividad del tipo Prácticas de Laboratorio"@es;
+    uni:tieneDuracion "02:00"@es .
+
+uni:EjercicioGestionAgil a uni:Actividad;
+    uni:teleEnsenanza "Evaluación Progresiva No presencial"@es;
+    uni:actividadesDeEvaluacion "(RA112, RA116)"@es;
+    uni:tieneDuracion "00:00"@es;
+    uni:esTipoActividad1 "TI: Técnica del tipo Trabajo Individual"@es .
+
+uni:Practica2 a uni:Actividad;
+    uni:teleEnsenanza "Evaluación Progresiva No presencial"@es;
+    uni:actividadesDeEvaluacion "(RA112, RA116, RA118)"@es;
+    uni:tieneDuracion "00:00"@es;
+    uni:esTipoActividad1 "TG: Técnica del tipo Trabajo en Grupo"@es .
+
+uni:ExamenFinalOrdinario a uni:Actividad;
+    uni:teleEnsenanza "Evaluación Global Presencial"@es;
+    uni:actividadesDeEvaluacion "(RA111, RA112, RA116, RA118)"@es;
+    uni:tieneDuracion "02:30"@es;
+    uni:esTipoActividad1 "EX: Técnica del tipo Examen Escrito"@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:tieneActividad
+        uni:PresentacionAsignatura, uni:Tema1_Actividad,
+        uni:Tema2_Actividad, uni:Tema3_Actividad,
+        uni:Tema4_Actividad, uni:Tema4_Problemas,
+        uni:Tema5_Actividad, uni:Tema5_Problemas,
+        uni:Tema6_Actividad, uni:Tema7_Actividad,
+        uni:Tema8_Actividad, uni:Tema9_Actividad,
+        uni:Tema9_Problemas, uni:EjercicioGestionTradicional,
+        uni:Practica1, uni:Tema10_Actividad,
+        uni:Tema10_Problemas, uni:ResolucionEjercicios,
+        uni:EjercicioGestionAgil, uni:Practica2,
+        uni:ExamenFinalOrdinario .
+
+uni:EvaluacionProgresiva1 a uni:Evaluacion;
+    uni:tieneModalidad "No Presencial"@es;
+    uni:tieneTipo "Trabajo Individual"@es;
+    uni:tienePesoEnLaNota "10%"@es;
+    uni:tieneNotaMinima "/ 10"@es .
+
+uni:EvaluacionProgresiva2 a uni:Evaluacion;
+    uni:tieneModalidad "No Presencial"@es;
+    uni:tieneTipo "Trabajo en Grupo"@es;
+    uni:tienePesoEnLaNota "23%"@es;
+    uni:tieneNotaMinima "/ 10"@es .
+
+uni:EvaluacionProgresiva3 a uni:Evaluacion;
+    uni:tieneModalidad "No Presencial"@es;
+    uni:tieneTipo "Trabajo Individual"@es;
+    uni:tienePesoEnLaNota "5%"@es;
+    uni:tieneNotaMinima "/ 10"@es .
+
+uni:EvaluacionProgresiva4 a uni:Evaluacion;
+    uni:tieneModalidad "No Presencial"@es;
+    uni:tieneTipo "Trabajo en Grupo"@es;
+    uni:tienePesoEnLaNota "12%"@es;
+    uni:tieneNotaMinima "/ 10"@es .
+
+uni:EvaluacionGlobal a uni:Evaluacion;
+    uni:tieneModalidad "Presencial"@es;
+    uni:tieneTipo "Examen Escrito"@es;
+    uni:tienePesoEnLaNota "50%"@es;
+    uni:tieneNotaMinima "4.5 / 10"@es .
+
+uni:EvaluacionExtraordinaria a uni:Evaluacion;
+    uni:tieneModalidad "Presencial"@es;
+    uni:tieneTipo "Examen Escrito"@es;
+    uni:tienePesoEnLaNota "100%"@es;
+    uni:tieneNotaMinima "5 / 10"@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:tieneEvaluacion
+        uni:EvaluacionProgresiva1, uni:EvaluacionProgresiva2,
+        uni:EvaluacionProgresiva3, uni:EvaluacionProgresiva4,
+        uni:EvaluacionGlobal, uni:EvaluacionExtraordinaria .
+
+uni:GuiaPMBOKSextaEdicion a uni:RecursoDidactico;
+    rdfs:label "Guía de los Fundamentos para la Dirección de Proyectos (Guía del PMBOK) (Sexta edición)"@es .
+
+uni:PMPExamPrep a uni:RecursoDidactico;
+    rdfs:label "PMP Exam Prep: Accelerated Learning to Pass the Project Management Professional (PMP) Exam"@es .
+
+uni:ISO_IEC_IEEE16326_2019 a uni:RecursoDidactico;
+    rdfs:label "ISO/IEC/IEEE 16326:2019 Systems and software engineering - Life cycle processes - Project management"@es .
+
+uni:GuiaPracticaEstimacionMedicionProyectosSoftware a uni:RecursoDidactico;
+    rdfs:label "Guía Práctica de Estimación y Medición de Proyectos Software: ¿Por qué? ¿Para qué? y ¿Cómo?"@es .
+
+uni:AgilePracticeGuide a uni:RecursoDidactico;
+    rdfs:label "Agile Practice Guide"@es .
+
+uni:UserStoryMapping a uni:RecursoDidactico;
+    rdfs:label "User Story Mapping: Discover the Whole Story, Build the Right Product"@es .
+
+uni:LaGuiaDeScrum a uni:RecursoDidactico;
+    rdfs:label "La Guía de Scrum. La Guía Definitiva de Scrum: Las Reglas del Juego."@es .
+
+uni:AgileProjectManagementWithSCRUM a uni:RecursoDidactico;
+    rdfs:label "Agile Project Management with SCRUM"@es .
+
+uni:KanbanEsencialCondensado a uni:RecursoDidactico;
+    rdfs:label "Kanban Esencial Condensado"@es .
+
+uni:LaGuiaKanbanParaEquiposScrum a uni:RecursoDidactico;
+    rdfs:label "La Guía Kanban para Equipos Scrum"@es .
+
+uni:GestionDeProyectosYDelRiesgo
+    uni:tieneRecursoDidactico
+        uni:GuiaPMBOKSextaEdicion, uni:PMPExamPrep,
+        uni:ISO_IEC_IEEE16326_2019, uni:GuiaPracticaEstimacionMedicionProyectosSoftware,
+        uni:AgilePracticeGuide, uni:UserStoryMapping,
+        uni:LaGuiaDeScrum, uni:AgileProjectManagementWithSCRUM,
+        uni:KanbanEsencialCondensado, uni:LaGuiaKanbanParaEquiposScrum .

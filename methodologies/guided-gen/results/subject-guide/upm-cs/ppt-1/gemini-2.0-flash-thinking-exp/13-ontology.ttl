@@ -1,0 +1,615 @@
+urtle
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ont: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> a owl:Ontology .
+
+# Classes
+ont:Subject a owl:Class .
+ont:Character a owl:Class .
+ont:MandatoryCharacter a owl:Class ;
+    rdfs:subClassOf ont:Character .
+ont:OptionalCharacter a owl:Class ;
+    rdfs:subClassOf ont:Character .
+ont:StudyPlan a owl:Class .
+ont:School a owl:Class .
+ont:University a owl:Class .
+ont:Professor a owl:Class .
+ont:Competence a owl:Class .
+ont:Outcome a owl:Class .
+ont:Evaluation a owl:Class .
+ont:Activity a owl:Class .
+ont:Topic a owl:Class .
+ont:Resource a owl:Class .
+ont:RecommendedPreviousSubject a owl:Class .
+ont:RecommendedPreviousKnowledge a owl:Class .
+
+# Data properties
+ont:Subject_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_description a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_code a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_course a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_credits a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_language a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_semester a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_period a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+ont:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range rdfs:Literal .
+
+ont:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:domain ont:StudyPlan ;
+    rdfs:range rdfs:Literal .
+ont:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:domain ont:StudyPlan ;
+    rdfs:range rdfs:Literal .
+
+ont:School_code a owl:DatatypeProperty ;
+    rdfs:domain ont:School ;
+    rdfs:range rdfs:Literal .
+ont:School_name a owl:DatatypeProperty ;
+    rdfs:domain ont:School ;
+    rdfs:range rdfs:Literal .
+
+ont:University_name a owl:DatatypeProperty ;
+    rdfs:domain ont:University ;
+    rdfs:range rdfs:Literal .
+
+ont:Professor_email a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range rdfs:Literal .
+ont:Professor_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range rdfs:Literal .
+ont:Professor_office a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range rdfs:Literal .
+ont:Professor_hours a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range rdfs:Literal .
+ont:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:domain ont:Professor ;
+    rdfs:range rdfs:Literal .
+
+ont:Competence_code a owl:DatatypeProperty ;
+    rdfs:domain ont:Competence ;
+    rdfs:range rdfs:Literal .
+ont:Competence_description a owl:DatatypeProperty ;
+    rdfs:domain ont:Competence ;
+    rdfs:range rdfs:Literal .
+
+ont:Outcome_code a owl:DatatypeProperty ;
+    rdfs:domain ont:Outcome ;
+    rdfs:range rdfs:Literal .
+ont:Outcome_description a owl:DatatypeProperty ;
+    rdfs:domain ont:Outcome ;
+    rdfs:range rdfs:Literal .
+
+ont:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Evaluation ;
+    rdfs:range rdfs:Literal .
+
+ont:Activity_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range rdfs:Literal .
+ont:Activity_modality a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range rdfs:Literal .
+ont:Activity_weight a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range rdfs:Literal .
+ont:Activity_duration a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range rdfs:Literal .
+ont:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range rdfs:Literal .
+
+ont:Topic_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Topic ;
+    rdfs:range rdfs:Literal .
+
+ont:Resource_name a owl:DatatypeProperty ;
+    rdfs:domain ont:Resource ;
+    rdfs:range rdfs:Literal .
+
+ont:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:domain ont:RecommendedPreviousSubject ;
+    rdfs:range rdfs:Literal .
+
+ont:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:domain ont:RecommendedPreviousKnowledge ;
+    rdfs:range rdfs:Literal .
+
+# Object properties
+ont:Subject_character a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Character .
+ont:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:StudyPlan .
+ont:Subject_professors a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Professor .
+ont:Subject_resources a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Resource .
+ont:Subject_competencies a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Competence .
+ont:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Outcome .
+ont:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:RecommendedPreviousSubject .
+ont:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:RecommendedPreviousKnowledge .
+ont:Subject_topics a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Topic .
+ont:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:domain ont:Subject ;
+    rdfs:range ont:Evaluation .
+
+ont:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:domain ont:StudyPlan ;
+    rdfs:range ont:School .
+
+ont:School_university a owl:ObjectProperty ;
+    rdfs:domain ont:School ;
+    rdfs:range ont:University .
+
+ont:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:domain ont:Evaluation ;
+    rdfs:range ont:Activity .
+
+ont:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range ont:Outcome .
+ont:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range ont:Competence .
+ont:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:domain ont:Activity ;
+    rdfs:range ont:Topic .
+
+ont:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:domain ont:Topic ;
+    rdfs:range ont:Topic .
+
+
+# Instances
+
+## University
+ont:UniversidadPolitecnicaMadrid a ont:University ;
+    ont:University_name "Universidad Politécnica de Madrid" .
+
+## School
+ont:ETSISI a ont:School ;
+    ont:School_code "61" ;
+    ont:School_name "E.T.S De Ing. De Sistemas Informáticos" ;
+    ont:School_university ont:UniversidadPolitecnicaMadrid .
+
+## StudyPlan
+ont:GradoIngenieriaSoftware a ont:StudyPlan ;
+    ont:StudyPlan_code "61IW" ;
+    ont:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    ont:StudyPlan_school ont:ETSISI .
+
+## Subject
+ont:CalidadDelSoftware a ont:Subject ;
+    ont:Subject_name "Calidad Del Software" ;
+    ont:Subject_description "La asignatura presenta técnicas y mediciones de calidad, modelos y procesos para la gestión de la calidad en el ámbito de la ingeniería del software." ;
+    ont:Subject_code "615000259" ;
+    ont:Subject_credits "6 ECTS" ;
+    ont:Subject_language "Castellano" ;
+    ont:Subject_semester "Primer semestre", "Séptimo semestre" ;
+    ont:Subject_period "Septiembre-Enero" ;
+    ont:Subject_course "Cuarto curso" ;
+    ont:Subject_courseYear "2024-25" ;
+    ont:Subject_studyPlan ont:GradoIngenieriaSoftware .
+
+## Character
+ont:ObligatoriaCharacter a ont:MandatoryCharacter .
+ont:CalidadDelSoftware ont:Subject_character ont:ObligatoriaCharacter .
+
+## Professor
+ont:CarolinaGallardoPerez a ont:Professor ;
+    ont:Professor_name "Carolina Gallardo Perez" ;
+    ont:Professor_email "carolina.gallardop@upm.es" ;
+    ont:Professor_office "1209" ;
+    ont:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." ;
+    ont:Professor_isCoordinator "true" .
+
+ont:JuanGarbajosaSopena a ont:Professor ;
+    ont:Professor_name "Juan Garbajosa Sopeña" ;
+    ont:Professor_email "juan.garbajosa@upm.es" ;
+    ont:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." .
+
+ont:JavierAlegreLandaburu a ont:Professor ;
+    ont:Professor_name "Javier Alegre Landaburu" ;
+    ont:Professor_email "javier.alegre.landaburu@upm.es" ;
+    ont:Professor_hours "Sin horario." .
+
+ont:CalidadDelSoftware ont:Subject_professors ont:CarolinaGallardoPerez , ont:JuanGarbajosaSopena , ont:JavierAlegreLandaburu .
+
+## RecommendedPreviousSubject
+ont:FundamentosIngenieriaSoftware a ont:RecommendedPreviousSubject ;
+    ont:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+ont:CalidadDelSoftware ont:Subject_recommendedPreviousSubjects ont:FundamentosIngenieriaSoftware .
+
+## RecommendedPreviousKnowledge
+ont:NoPreviousKnowledgeNeeded a ont:RecommendedPreviousKnowledge ;
+    ont:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+ont:CalidadDelSoftware ont:Subject_recommendedPreviousKnowledges ont:NoPreviousKnowledgeNeeded .
+
+## Competence
+ont:CC1 a ont:Competence ;
+    ont:Competence_code "CC1" ;
+    ont:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+
+ont:CC4 a ont:Competence ;
+    ont:Competence_code "CC4" ;
+    ont:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los estándares y normativas vigentes" .
+
+ont:CE1 a ont:Competence ;
+    ont:Competence_code "CE1" ;
+    ont:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+
+ont:CT6 a ont:Competence ;
+    ont:Competence_code "CT6" ;
+    ont:Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar dispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las experiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta habilidad en la aplicación de esos métodos." .
+
+ont:CalidadDelSoftware ont:Subject_competencies ont:CC1, ont:CC4, ont:CE1, ont:CT6 .
+
+## Outcome
+ont:RA113 a ont:Outcome ;
+    ont:Outcome_code "RA113" ;
+    ont:Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a desarrollar" .
+
+ont:RA109 a ont:Outcome ;
+    ont:Outcome_code "RA109" ;
+    ont:Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+
+ont:RA83 a ont:Outcome ;
+    ont:Outcome_code "RA83" ;
+    ont:Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para abordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información, maneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e interacción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las decisiones oportunas para lograr su propósito." .
+
+ont:RA114 a ont:Outcome ;
+    ont:Outcome_code "RA114" ;
+    ont:Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de manera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones. Identifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos niveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+ont:CalidadDelSoftware ont:Subject_outcomes ont:RA113, ont:RA109, ont:RA83, ont:RA114 .
+
+
+## Topic
+ont:Topic1 a ont:Topic ;
+    ont:Topic_name "1. Introducción e historia de la calidad" .
+    ont:Topic_subTopics ont:Topic1_1, ont:Topic1_2 .
+
+ont:Topic1_1 a ont:Topic ;
+    ont:Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." .
+
+ont:Topic1_2 a ont:Topic ;
+    ont:Topic_name "1.2. Evolución de la calidad." .
+
+ont:Topic2 a ont:Topic ;
+    ont:Topic_name "2. Técnicas de la calidad" ;
+    ont:Topic_subTopics ont:Topic2_1, ont:Topic2_2, ont:Topic2_3 .
+
+ont:Topic2_1 a ont:Topic ;
+    ont:Topic_name "2.1. Técnicas básicas." .
+
+ont:Topic2_2 a ont:Topic ;
+    ont:Topic_name "2.2. Técnicas estadísticas." .
+
+ont:Topic2_3 a ont:Topic ;
+    ont:Topic_name "2.3. Técnicas avanzadas." .
+
+ont:Topic3 a ont:Topic ;
+    ont:Topic_name "3. Mediciones de calidad del software" ;
+    ont:Topic_subTopics ont:Topic3_1, ont:Topic3_2 .
+
+ont:Topic3_1 a ont:Topic ;
+    ont:Topic_name "3.1. Medidas y métricas." .
+
+ont:Topic3_2 a ont:Topic ;
+    ont:Topic_name "3.2. Medición del producto." .
+
+ont:Topic4 a ont:Topic ;
+    ont:Topic_name "4. Costes y consideraciones éticas" ;
+    ont:Topic_subTopics ont:Topic4_1, ont:Topic4_2, ont:Topic4_3 .
+
+ont:Topic4_1 a ont:Topic ;
+    ont:Topic_name "4.1. Costes de la calidad. Modelos de costes." .
+
+ont:Topic4_2 a ont:Topic ;
+    ont:Topic_name "4.2. Caracterización de defectos." .
+
+ont:Topic4_3 a ont:Topic ;
+    ont:Topic_name "4.3. Código ético del ingeniero de software." .
+
+ont:Topic5 a ont:Topic ;
+    ont:Topic_name "5. Procesos de gestión de la calidad" ;
+    ont:Topic_subTopics ont:Topic5_1, ont:Topic5_2 .
+
+ont:Topic5_1 a ont:Topic ;
+    ont:Topic_name "5.1. Estándares de calidad" .
+
+ont:Topic5_2 a ont:Topic ;
+    ont:Topic_name "5.2. Gestión de la calidad por procesos" .
+
+ont:Topic6 a ont:Topic ;
+    ont:Topic_name "6. Estándares de calidad del software: SQUARE" ;
+    ont:Topic_subTopics ont:Topic6_1, ont:Topic6_2 .
+
+ont:Topic6_1 a ont:Topic ;
+    ont:Topic_name "6.1. Estándares y modelos para la calidad del software." .
+
+ont:Topic6_2 a ont:Topic ;
+    ont:Topic_name "6.2. Serie ISO 25000n" .
+
+ont:Topic7 a ont:Topic ;
+    ont:Topic_name "7. Aseguramiento de la calidad del software" ;
+    ont:Topic_subTopics ont:Topic7_1, ont:Topic7_2 .
+
+ont:Topic7_1 a ont:Topic ;
+    ont:Topic_name "7.1. Aseguramiento del proceso software" .
+
+ont:Topic7_2 a ont:Topic ;
+    ont:Topic_name "7.2. Aseguramiento del producto software" .
+
+ont:Topic8 a ont:Topic ;
+    ont:Topic_name "8. Mejora de procesos SW" ;
+    ont:Topic_subTopics ont:Topic8_1, ont:Topic8_2 .
+
+ont:Topic8_1 a ont:Topic ;
+    ont:Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" .
+
+ont:Topic8_2 a ont:Topic ;
+    ont:Topic_name "8.2. Modelos de referencia para mejora de procesos SW" .
+
+
+ont:CalidadDelSoftware ont:Subject_topics ont:Topic1, ont:Topic2, ont:Topic3, ont:Topic4, ont:Topic5, ont:Topic6, ont:Topic7, ont:Topic8 .
+
+
+## Resource
+ont:SoftwareQualityAssuranceLaporteApril a ont:Resource ;
+    ont:Resource_name "Software Quality Assurance BibliografíaSoftware Quality Assurance. Claude Y. Laporte, Alain April.ISBN: 978-1-118-50182-5 January 2018 Wiley-IEEE Computer Society Press" .
+
+ont:SoftwareQualityConceptsPracticeGalin a ont:Resource ;
+    ont:Resource_name "Software Quality: Concepts and PracticeBibliografíaSoftware Quality: Concepts and Practice..Daniel Galin. ISBN: 978-1-119-13452-7 May 2018 Wiley-IEEE Computer Society Press" .
+
+ont:Sevocab a ont:Resource ;
+    ont:Resource_name "Sevocab Recursos webhttps://pascal.computer.org/sev_display/index.action Vocabulario autorizado de términos de Ingeniería del Software" .
+
+ont:DelAseguramientoALaGestionDeCalidadAenor a ont:Resource ;
+    ont:Resource_name "\"Del aseguramiento a la gestión de la calidad: El enfoque basado en procesos\".  David Hoyle, John Thompson. AENORBibliografía Bibliografía específica 1" .
+
+ont:TotalQualityManagementBesterfield a ont:Resource ;
+    ont:Resource_name "\"Total Quality Management\".  Dale H. Besterfield, Carol Besterfield-Michna, Glen H. Besterfield, Mary Besterfield-Sacre. Prentice HallBibliografía Bibliografía específica 4" .
+
+ont:MedicionGestionIngenieriaSoftwareDoladoFernandez a ont:Resource ;
+    ont:Resource_name "\"Medición para la Gestión en la Ingeniería del Software\". José J. Dolado, Luís Fernández. Ed Ra-Ma.Bibliografía Bibliografía Básica 3" .
+
+ont:AulaETSISI a ont:Resource ;
+    ont:Resource_name "Aula EquipamientoAula de la ETSISI con cañón de luz conectado a PC en la mesa del profesor y sistema de audio inalámbrico. Pizarra clásica." .
+
+ont:PlataformaEnsenanzaMOODLE a ont:Resource ;
+    ont:Resource_name "Plataforma de enseñanza MOODLE Recursos webInformación general, documentación, actividades, información complementaria, enlaces, calificaciones, foros, etc. En español y en inglés." .
+
+ont:CalidadDelSoftware ont:Subject_resources ont:SoftwareQualityAssuranceLaporteApril, ont:SoftwareQualityConceptsPracticeGalin, ont:Sevocab, ont:DelAseguramientoALaGestionDeCalidadAenor, ont:TotalQualityManagementBesterfield, ont:MedicionGestionIngenieriaSoftwareDoladoFernandez, ont:AulaETSISI, ont:PlataformaEnsenanzaMOODLE .
+
+
+## Evaluation and Activities (Progressive Evaluation)
+ont:EvaluacionProgresiva a ont:Evaluation ;
+    ont:Evaluation_name "Evaluación progresiva" .
+
+ont:ActividadPresencialSemana2 a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 2" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "3%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic2 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana2 .
+
+ont:ActividadPresencialSemana3TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 3 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "3%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic2 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana3TG .
+
+ont:ActividadPresencialSemana4TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 4 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic2 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana4TG .
+
+ont:ActividadPresencialSemana5TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 5 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic3 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana5TG .
+
+ont:ActividadPresencialSemana7TG_1 a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 7 TG (first)" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic4 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana7TG_1 .
+
+ont:ExamenTemas1_2_3_4 a ont:Activity ;
+    ont:Activity_name "Examen Temas 1-2-3-4" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "30%" ;
+    ont:Activity_duration "02:00" ;
+    ont:Activity_minGrade "3" ;
+    ont:Activity_relatedCompetencies ont:CE1, ont:CT6 ;
+    ont:Activity_relatedOutcomes ont:RA114 ;
+    ont:Activity_relatedTopics ont:Topic1, ont:Topic2, ont:Topic3, ont:Topic4 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ExamenTemas1_2_3_4 .
+
+ont:ActividadPresencialSemana9TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 9 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic5 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana9TG .
+
+ont:ActividadPresencialSemana10TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 10 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic6 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana10TG .
+
+ont:ActividadPresencialSemana11TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 11 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic7 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana11TG .
+
+ont:ActividadPresencialSemana12TG a ont:Activity ;
+    ont:Activity_name "Actividad presencial Semana 12 TG" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "2%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedTopics ont:Topic8 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ActividadPresencialSemana12TG .
+
+ont:TrabajoFinalValoracionMemoriaRA83_Progressive a ont:Activity ;
+    ont:Activity_name "Trabajo Final. Valoración de la memoria (RA83) Progressive" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "15%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_minGrade "4" ;
+    ont:Activity_relatedCompetencies ont:CC1 ;
+    ont:Activity_relatedOutcomes ont:RA83 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:TrabajoFinalValoracionMemoriaRA83_Progressive .
+
+ont:TrabajoFinalDefensaExposicion_Progressive a ont:Activity ;
+    ont:Activity_name "Trabajo Final. Defensa y exposición Progressive" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "5%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedCompetencies ont:CC1, ont:CT6 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:TrabajoFinalDefensaExposicion_Progressive .
+
+ont:ExamenTemas5_6_7_8 a ont:Activity ;
+    ont:Activity_name "Examen Temas 5-6-7-8" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "30%" ;
+    ont:Activity_duration "02:00" ;
+    ont:Activity_minGrade "3" ;
+    ont:Activity_relatedCompetencies ont:CC1, ont:CC4 ;
+    ont:Activity_relatedTopics ont:Topic5, ont:Topic6, ont:Topic7, ont:Topic8 .
+ont:EvaluacionProgresiva ont:Evaluation_activities ont:ExamenTemas5_6_7_8 .
+
+ont:CalidadDelSoftware ont:Subject_evaluations ont:EvaluacionProgresiva .
+
+
+## Evaluation and Activities (Global Evaluation)
+ont:EvaluacionGlobal a ont:Evaluation ;
+    ont:Evaluation_name "Prueba evaluación global" .
+
+ont:ExamenFinalEscenario2 a ont:Activity ;
+    ont:Activity_name "Examen Final (Escenario 2)" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "80%" ;
+    ont:Activity_duration "03:00" ;
+    ont:Activity_minGrade "4" ;
+    ont:Activity_relatedCompetencies ont:CC1, ont:CC4, ont:CE1, ont:CT6 .
+ont:EvaluacionGlobal ont:Evaluation_activities ont:ExamenFinalEscenario2 .
+
+ont:TrabajoFinalValoracionMemoriaRA83_Global a ont:Activity ;
+    ont:Activity_name "Trabajo Final. Valoración de la memoria (RA83) Global" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "15%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_minGrade "4" ;
+    ont:Activity_relatedCompetencies ont:CC1 ;
+    ont:Activity_relatedOutcomes ont:RA83 .
+ont:EvaluacionGlobal ont:Evaluation_activities ont:TrabajoFinalValoracionMemoriaRA83_Global .
+
+ont:TrabajoFinalDefensaExposicion_Global a ont:Activity ;
+    ont:Activity_name "Trabajo Final. Defensa y exposición Global" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "5%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_relatedCompetencies ont:CC1, ont:CT6 .
+ont:EvaluacionGlobal ont:Evaluation_activities ont:TrabajoFinalDefensaExposicion_Global .
+
+ont:CalidadDelSoftware ont:Subject_evaluations ont:EvaluacionGlobal .
+
+
+## Evaluation and Activities (Extraordinary Evaluation)
+ont:EvaluacionExtraordinaria a ont:Evaluation ;
+    ont:Evaluation_name "Evaluación convocatoria extraordinaria" .
+
+ont:ExamenExtraordinarioRA83_RA109_RA113_RA114 a ont:Activity ;
+    ont:Activity_name "Examen extraordinario (RA83, RA109, RA113, RA114)" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "80%" ;
+    ont:Activity_duration "02:00" ;
+    ont:Activity_minGrade "4" ;
+    ont:Activity_relatedCompetencies ont:CC1, ont:CC4, ont:CE1, ont:CT6 ;
+    ont:Activity_relatedOutcomes ont:RA83, ont:RA109, ont:RA113, ont:RA114 .
+ont:EvaluacionExtraordinaria ont:Evaluation_activities ont:ExamenExtraordinarioRA83_RA109_RA113_RA114 .
+
+ont:TrabajoFinalDocumentacion_Extraordinary a ont:Activity ;
+    ont:Activity_name "Trabajo final: documentación Extraordinary" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "15%" ;
+    ont:Activity_duration "00:00" ;
+    ont:Activity_minGrade "5" ;
+    ont:Activity_relatedCompetencies ont:CT6, ont:CC4, ont:CE1 .
+ont:EvaluacionExtraordinaria ont:Evaluation_activities ont:TrabajoFinalDocumentacion_Extraordinary .
+
+ont:DefensaOralPractica_Extraordinary a ont:Activity ;
+    ont:Activity_name "Defensa oral de la práctica Extraordinary" ;
+    ont:Activity_modality "Presencial" ;
+    ont:Activity_weight "5%" ;
+    ont:Activity_duration "00:05" ;
+    ont:Activity_relatedCompetencies ont:CC1, ont:CC4, ont:CE1, ont:CT6 .
+ont:EvaluacionExtraordinaria ont:Evaluation_activities ont:DefensaOralPractica_Extraordinary .
+
+ont:CalidadDelSoftware ont:Subject_evaluations ont:EvaluacionExtraordinaria .
+
+
+```

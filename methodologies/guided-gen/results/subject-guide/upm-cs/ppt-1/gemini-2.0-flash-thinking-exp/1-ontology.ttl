@@ -1,0 +1,523 @@
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix onto: <http://example.org/ontology/> .
+
+<http://example.org/ontology/> a owl:Ontology ;
+    rdfs:label "Ontology for Asignatura Guide" .
+
+# Classes
+onto:Subject a owl:Class ;
+    rdfs:label "Subject" .
+
+onto:Character a owl:Class ;
+    rdfs:label "Character" .
+
+onto:MandatoryCharacter a owl:Class ;
+    rdfs:label "MandatoryCharacter" ;
+    rdfs:subClassOf onto:Character .
+
+onto:OptionalCharacter a owl:Class ;
+    rdfs:label "OptionalCharacter" ;
+    rdfs:subClassOf onto:Character .
+
+onto:StudyPlan a owl:Class ;
+    rdfs:label "StudyPlan" .
+
+onto:School a owl:Class ;
+    rdfs:label "School" .
+
+onto:University a owl:Class ;
+    rdfs:label "University" .
+
+onto:Professor a owl:Class ;
+    rdfs:label "Professor" .
+
+onto:Competence a owl:Class ;
+    rdfs:label "Competence" .
+
+onto:Outcome a owl:Class ;
+    rdfs:label "Outcome" .
+
+onto:Evaluation a owl:Class ;
+    rdfs:label "Evaluation" .
+
+onto:Activity a owl:Class ;
+    rdfs:label "Activity" .
+
+onto:Topic a owl:Class ;
+    rdfs:label "Topic" .
+
+onto:Resource a owl:Class ;
+    rdfs:label "Resource" .
+
+onto:RecommendedPreviousSubject a owl:Class ;
+    rdfs:label "RecommendedPreviousSubject" .
+
+onto:RecommendedPreviousKnowledge a owl:Class ;
+    rdfs:label "RecommendedPreviousKnowledge" .
+
+# Datatype Properties
+onto:Subject_name a owl:DatatypeProperty ;
+    rdfs:label "Subject name" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_description a owl:DatatypeProperty ;
+    rdfs:label "Subject description" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_code a owl:DatatypeProperty ;
+    rdfs:label "Subject code" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_course a owl:DatatypeProperty ;
+    rdfs:label "Subject course" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_courseYear a owl:DatatypeProperty ;
+    rdfs:label "Subject courseYear" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_credits a owl:DatatypeProperty ;
+    rdfs:label "Subject credits" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:integer .
+
+onto:Subject_language a owl:DatatypeProperty ;
+    rdfs:label "Subject language" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_semester a owl:DatatypeProperty ;
+    rdfs:label "Subject semester" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_period a owl:DatatypeProperty ;
+    rdfs:label "Subject period" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:Subject_evaluationCriteria a owl:DatatypeProperty ;
+    rdfs:label "Subject evaluationCriteria" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range xsd:string .
+
+onto:StudyPlan_code a owl:DatatypeProperty ;
+    rdfs:label "StudyPlan code" ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+
+onto:StudyPlan_name a owl:DatatypeProperty ;
+    rdfs:label "StudyPlan name" ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range xsd:string .
+
+onto:School_code a owl:DatatypeProperty ;
+    rdfs:label "School code" ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+
+onto:School_name a owl:DatatypeProperty ;
+    rdfs:label "School name" ;
+    rdfs:domain onto:School ;
+    rdfs:range xsd:string .
+
+onto:University_name a owl:DatatypeProperty ;
+    rdfs:label "University name" ;
+    rdfs:domain onto:University ;
+    rdfs:range xsd:string .
+
+onto:Professor_email a owl:DatatypeProperty ;
+    rdfs:label "Professor email" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Professor_name a owl:DatatypeProperty ;
+    rdfs:label "Professor name" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Professor_office a owl:DatatypeProperty ;
+    rdfs:label "Professor office" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Professor_hours a owl:DatatypeProperty ;
+    rdfs:label "Professor hours" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:string .
+
+onto:Professor_isCoordinator a owl:DatatypeProperty ;
+    rdfs:label "Professor isCoordinator" ;
+    rdfs:domain onto:Professor ;
+    rdfs:range xsd:boolean .
+
+onto:Competence_code a owl:DatatypeProperty ;
+    rdfs:label "Competence code" ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+
+onto:Competence_description a owl:DatatypeProperty ;
+    rdfs:label "Competence description" ;
+    rdfs:domain onto:Competence ;
+    rdfs:range xsd:string .
+
+onto:Outcome_code a owl:DatatypeProperty ;
+    rdfs:label "Outcome code" ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+
+onto:Outcome_description a owl:DatatypeProperty ;
+    rdfs:label "Outcome description" ;
+    rdfs:domain onto:Outcome ;
+    rdfs:range xsd:string .
+
+onto:Evaluation_name a owl:DatatypeProperty ;
+    rdfs:label "Evaluation name" ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range xsd:string .
+
+onto:Activity_name a owl:DatatypeProperty ;
+    rdfs:label "Activity name" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+
+onto:Activity_modality a owl:DatatypeProperty ;
+    rdfs:label "Activity modality" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+
+onto:Activity_weight a owl:DatatypeProperty ;
+    rdfs:label "Activity weight" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+
+onto:Activity_duration a owl:DatatypeProperty ;
+    rdfs:label "Activity duration" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+
+onto:Activity_minGrade a owl:DatatypeProperty ;
+    rdfs:label "Activity minGrade" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range xsd:string .
+
+onto:Topic_name a owl:DatatypeProperty ;
+    rdfs:label "Topic name" ;
+    rdfs:domain onto:Topic ;
+    rdfs:range xsd:string .
+
+onto:Resource_name a owl:DatatypeProperty ;
+    rdfs:label "Resource name" ;
+    rdfs:domain onto:Resource ;
+    rdfs:range xsd:string .
+
+onto:RecommendedPreviousSubject_description a owl:DatatypeProperty ;
+    rdfs:label "RecommendedPreviousSubject description" ;
+    rdfs:domain onto:RecommendedPreviousSubject ;
+    rdfs:range xsd:string .
+
+onto:RecommendedPreviousKnowledge_description a owl:DatatypeProperty ;
+    rdfs:label "RecommendedPreviousKnowledge description" ;
+    rdfs:domain onto:RecommendedPreviousKnowledge ;
+    rdfs:range xsd:string .
+
+# Object Properties
+onto:Subject_character a owl:ObjectProperty ;
+    rdfs:label "Subject character" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Character .
+
+onto:Subject_studyPlan a owl:ObjectProperty ;
+    rdfs:label "Subject studyPlan" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:StudyPlan .
+
+onto:Subject_professors a owl:ObjectProperty ;
+    rdfs:label "Subject professors" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Professor .
+
+onto:Subject_resources a owl:ObjectProperty ;
+    rdfs:label "Subject resources" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Resource .
+
+onto:Subject_competencies a owl:ObjectProperty ;
+    rdfs:label "Subject competencies" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Competence .
+
+onto:Subject_outcomes a owl:ObjectProperty ;
+    rdfs:label "Subject outcomes" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Outcome .
+
+onto:Subject_recommendedPreviousSubjects a owl:ObjectProperty ;
+    rdfs:label "Subject recommendedPreviousSubjects" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousSubject .
+
+onto:Subject_recommendedPreviousKnowledges a owl:ObjectProperty ;
+    rdfs:label "Subject recommendedPreviousKnowledges" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:RecommendedPreviousKnowledge .
+
+onto:Subject_topics a owl:ObjectProperty ;
+    rdfs:label "Subject topics" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Topic .
+
+onto:Subject_evaluations a owl:ObjectProperty ;
+    rdfs:label "Subject evaluations" ;
+    rdfs:domain onto:Subject ;
+    rdfs:range onto:Evaluation .
+
+onto:StudyPlan_school a owl:ObjectProperty ;
+    rdfs:label "StudyPlan school" ;
+    rdfs:domain onto:StudyPlan ;
+    rdfs:range onto:School .
+
+onto:School_university a owl:ObjectProperty ;
+    rdfs:label "School university" ;
+    rdfs:domain onto:School ;
+    rdfs:range onto:University .
+
+onto:Evaluation_activities a owl:ObjectProperty ;
+    rdfs:label "Evaluation activities" ;
+    rdfs:domain onto:Evaluation ;
+    rdfs:range onto:Activity .
+
+onto:Activity_relatedOutcomes a owl:ObjectProperty ;
+    rdfs:label "Activity relatedOutcomes" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Outcome .
+
+onto:Activity_relatedCompetencies a owl:ObjectProperty ;
+    rdfs:label "Activity relatedCompetencies" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Competence .
+
+onto:Activity_relatedTopics a owl:ObjectProperty ;
+    rdfs:label "Activity relatedTopics" ;
+    rdfs:domain onto:Activity ;
+    rdfs:range onto:Topic .
+
+onto:Topic_subTopics a owl:ObjectProperty ;
+    rdfs:label "Topic subTopics" ;
+    rdfs:domain onto:Topic ;
+    rdfs:range onto:Topic .
+
+
+# Instances
+onto:asignatura_calidad_software a onto:Subject ;
+    onto:Subject_name "Calidad Del Software" ;
+    onto:Subject_code "615000259" ;
+    onto:Subject_description "La asignatura presenta técnicas y mediciones de calidad, modelos y procesos para la gestión de la calidad en el ámbito de la ingeniería del software." ;
+    onto:Subject_credits 6 ;
+    onto:Subject_character onto:character_obligatoria ;
+    onto:Subject_course "Cuarto curso" ;
+    onto:Subject_semester "Primer semestre" ;
+    onto:Subject_period "Septiembre-Enero" ;
+    onto:Subject_language "Castellano" ;
+    onto:Subject_courseYear "2024/25" ;
+    onto:Subject_studyPlan onto:plan_estudios_ingenieria_software ;
+    onto:Subject_professors onto:profesor_carolina_gallardo_perez , onto:profesor_juan_garbajosa_sopena , onto:profesor_javier_alegre_landaburu ;
+    onto:Subject_competencies onto:competencia_cc1 , onto:competencia_cc4 , onto:competencia_ce1 , onto:competencia_ct6 ;
+    onto:Subject_outcomes onto:outcome_ra113 , onto:outcome_ra109 , onto:outcome_ra83 , onto:outcome_ra114 ;
+    onto:Subject_recommendedPreviousSubjects onto:recommended_subject_fundamentos_ingenieria_software ;
+    onto:Subject_recommendedPreviousKnowledges onto:recommended_knowledge_none ;
+    onto:Subject_topics onto:topic_introduccion_historia_calidad , onto:topic_tecnicas_calidad , onto:topic_mediciones_calidad_software , onto:topic_costes_consideraciones_eticas , onto:topic_procesos_gestion_calidad , onto:topic_estandares_calidad_software_square , onto:topic_aseguramiento_calidad_software , onto:topic_mejora_procesos_sw ;
+    onto:Subject_evaluationCriteria "CONVOCATORIA ORDINARIA\nEVALUACIÓN PROGRESIVA\nPARTE TEORÍA PESO % Nota mínima RRAA\nT1. Examen temas 1, 2, 3,\n4.30% 30% (*) RA114\nT2. Examen temas 5, 6, 7 y\n830% 30% (*) RA109, RA113\nPARTE PRÁCTICA PESO % Nota mínima RRAA\nA. Actividades de clase 20% 70%  RA109, RA113, R114\nP.Doc. Práctica final:\ndocumentación15% 40% RA83\nP.Oral. Práctica final:\nexposición oral\n(coevaluación)  5% -\n(*)\n\nEVALUACIÓN GLOBAL\nSe contemplan dos escenarios en la evaluación global:\nESCENARIO 1:  Estudiantes que sí han superado el 70% de las actividades prácticas (A)\nESCENARIO 2:  Estudiantes que no han superado el 70% de las actividades prácticas (A)\nCONVOCATORIA EXTRAORDINARIA\nLa convocatoria extraordinaria contará con el mismo esquema de evaluación que el propuesto en el ESCENARIO 2 de la evaluación global." .
+
+onto:character_obligatoria a onto:MandatoryCharacter .
+
+onto:plan_estudios_ingenieria_software a onto:StudyPlan ;
+    onto:StudyPlan_code "61IW" ;
+    onto:StudyPlan_name "Grado En Ingenieria Del Software" ;
+    onto:StudyPlan_school onto:school_etsisi .
+
+onto:school_etsisi a onto:School ;
+    onto:School_code "61" ;
+    onto:School_name "E.T.S De Ing. De Sistemas Informáticos" ;
+    onto:School_university onto:university_upm .
+
+onto:university_upm a onto:University ;
+    onto:University_name "UPM" .
+
+onto:profesor_carolina_gallardo_perez a onto:Professor ;
+    onto:Professor_name "Carolina Gallardo Perez" ;
+    onto:Professor_email "carolina.gallardop@upm.es" ;
+    onto:Professor_office "1209" ;
+    onto:Professor_isCoordinator true ;
+    onto:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle" .
+
+onto:profesor_juan_garbajosa_sopena a onto:Professor ;
+    onto:Professor_name "Juan Garbajosa Sopeña" ;
+    onto:Professor_email "juan.garbajosa@upm.es" ;
+    onto:Professor_hours "Sin horario. Las tutorías se publicarán en la página Web de la Escuela y en Moodle." .
+
+onto:profesor_javier_alegre_landaburu a onto:Professor ;
+    onto:Professor_name "Javier Alegre Landaburu" ;
+    onto:Professor_email "javier.alegre.landaburu@upm.es" ;
+    onto:Professor_hours "Sin horario." .
+
+onto:competencia_cc1 a onto:Competence ;
+    onto:Competence_code "CC1" ;
+    onto:Competence_description "Capacidad para diseñar, desarrollar, seleccionar y evaluar aplicaciones y sistemas informáticos, asegurando su fiabilidad, seguridad y calidad, conforme a principios éticos y a la legislación y normativa vigente." .
+
+onto:competencia_cc4 a onto:Competence ;
+    onto:Competence_code "CC4" ;
+    onto:Competence_description "Capacidad para elaborar el pliego de condiciones técnicas de una instalación informática que cumpla los estándares y normativas vigentes" .
+
+onto:competencia_ce1 a onto:Competence ;
+    onto:Competence_code "CE1" ;
+    onto:Competence_description "Capacidad para desarrollar, mantener y evaluar servicios y sistemas software que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos prácticas de la Ingeniería del Software." .
+
+onto:competencia_ct6 a onto:Competence ;
+    onto:Competence_code "CT6" ;
+    onto:Competence_description "Razonamiento crítico: La capacidad de pensar de manera crítica implica tres cosas: (1) una actitud de estar dispuesto a considerar de una manera reflexiva los problemas y asuntos que entran dentro del rango de las experiencias de uno, (2) conocimiento de los métodos de investigación lógica y el razonamiento, y (3) una cierta habilidad en la aplicación de esos métodos." .
+
+onto:outcome_ra113 a onto:Outcome ;
+    onto:Outcome_code "RA113" ;
+    onto:Outcome_description "Selecciona y evalúa las métricas y los indicadores que le permiten controlar la calidad del software a desarrollar" .
+
+onto:outcome_ra109 a onto:Outcome ;
+    onto:Outcome_code "RA109" ;
+    onto:Outcome_description "Maneja procesos de la gestión de calidad y las normas" .
+
+onto:outcome_ra83 a onto:Outcome ;
+    onto:Outcome_code "RA83" ;
+    onto:Outcome_description "Realiza una tarea compleja de manera autónoma, seleccionando las estrategias más convenientes para abordar el estudio, en base al análisis de las condiciones y la meta propuesta. Analiza e interpreta la información, maneja las tecnologías de la información y comunicación (TICs), muestra habilidades de comunicación e interacción para un aprendizaje colaborativo. Valora la efectividad de la planificación de las tareas y toma las decisiones oportunas para lograr su propósito." .
+
+onto:outcome_ra114 a onto:Outcome ;
+    onto:Outcome_code "RA114" ;
+    onto:Outcome_description "Resuelve problemas abiertos, barajando varias alternativas, justificando las decisiones tomadas de manera razonada y crítica, expresando con precisión las argumentaciones necesarias y las conclusiones. Identifica situaciones en las que el planteamiento del problema exija una aproximación que no permita distintos niveles de abstracción o no sea posible una jerarquización de los mismos y su solución" .
+
+onto:recommended_subject_fundamentos_ingenieria_software a onto:RecommendedPreviousSubject ;
+    onto:RecommendedPreviousSubject_description "Fundamentos De Ingenieria Del Software" .
+
+onto:recommended_knowledge_none a onto:RecommendedPreviousKnowledge ;
+    onto:RecommendedPreviousKnowledge_description "El plan de estudios Grado en Ingenieria del Software no tiene definidos otros conocimientos previos para esta asignatura." .
+
+onto:topic_introduccion_historia_calidad a onto:Topic ;
+    onto:Topic_name "1. Introducción e historia de la calidad" ;
+    onto:Topic_subTopics onto:topic_historia_calidad , onto:topic_evolucion_calidad .
+
+onto:topic_historia_calidad a onto:Topic ;
+    onto:Topic_name "1.1. Historia de la calidad. Protagonistas de la calidad." .
+
+onto:topic_evolucion_calidad a onto:Topic ;
+    onto:Topic_name "1.2. Evolución de la calidad." .
+
+onto:topic_tecnicas_calidad a onto:Topic ;
+    onto:Topic_name "2. Técnicas de la calidad" ;
+    onto:Topic_subTopics onto:topic_tecnicas_basicas , onto:topic_tecnicas_estadisticas , onto:topic_tecnicas_avanzadas .
+
+onto:topic_tecnicas_basicas a onto:Topic ;
+    onto:Topic_name "2.1. Técnicas básicas." .
+
+onto:topic_tecnicas_estadisticas a onto:Topic ;
+    onto:Topic_name "2.2. Técnicas estadísticas." .
+
+onto:topic_tecnicas_avanzadas a onto:Topic ;
+    onto:Topic_name "2.3. Técnicas avanzadas." .
+
+onto:topic_mediciones_calidad_software a onto:Topic ;
+    onto:Topic_name "3. Mediciones de calidad del software" ;
+    onto:Topic_subTopics onto:topic_medidas_metricas , onto:topic_medicion_producto .
+
+onto:topic_medidas_metricas a onto:Topic ;
+    onto:Topic_name "3.1. Medidas y métricas." .
+
+onto:topic_medicion_producto a onto:Topic ;
+    onto:Topic_name "3.2. Medición del producto." .
+
+onto:topic_costes_consideraciones_eticas a onto:Topic ;
+    onto:Topic_name "4. Costes y consideraciones éticas" ;
+    onto:Topic_subTopics onto:topic_costes_calidad , onto:topic_caracterizacion_defectos , onto:topic_codigo_etico_ingeniero_software .
+
+onto:topic_costes_calidad a onto:Topic ;
+    onto:Topic_name "4.1. Costes de la calidad. Modelos de costes." .
+
+onto:topic_caracterizacion_defectos a onto:Topic ;
+    onto:Topic_name "4.2. Caracterización de defectos." .
+
+onto:topic_codigo_etico_ingeniero_software a onto:Topic ;
+    onto:Topic_name "4.3. Código ético del ingeniero de software." .
+
+onto:topic_procesos_gestion_calidad a onto:Topic ;
+    onto:Topic_name "5. Procesos de gestión de la calidad" ;
+    onto:Topic_subTopics onto:topic_estandares_calidad_1 , onto:topic_gestion_calidad_procesos .
+
+onto:topic_estandares_calidad_1 a onto:Topic ;
+    onto:Topic_name "5.1. Estándares de calidad" .
+
+onto:topic_gestion_calidad_procesos a onto:Topic ;
+    onto:Topic_name "5.2. Gestión de la calidad por procesos" .
+
+onto:topic_estandares_calidad_software_square a onto:Topic ;
+    onto:Topic_name "6. Estándares de calidad del software: SQUARE" ;
+    onto:Topic_subTopics onto:topic_estandares_modelos_calidad_software , onto:topic_serie_iso_25000n .
+
+onto:topic_estandares_modelos_calidad_software a onto:Topic ;
+    onto:Topic_name "6.1. Estándares y modelos para la calidad del software." .
+
+onto:topic_serie_iso_25000n a onto:Topic ;
+    onto:Topic_name "6.2. Serie ISO 25000n" .
+
+onto:topic_aseguramiento_calidad_software a onto:Topic ;
+    onto:Topic_name "7. Aseguramiento de la calidad del software" ;
+    onto:Topic_subTopics onto:topic_aseguramiento_proceso_software , onto:topic_aseguramiento_producto_software .
+
+onto:topic_aseguramiento_proceso_software a onto:Topic ;
+    onto:Topic_name "7.1. Aseguramiento del proceso software" .
+
+onto:topic_aseguramiento_producto_software a onto:Topic ;
+    onto:Topic_name "7.2. Aseguramiento del producto software" .
+
+onto:topic_mejora_procesos_sw a onto:Topic ;
+    onto:Topic_name "8. Mejora de procesos SW" ;
+    onto:Topic_subTopics onto:topic_introduccion_evaluacion_mejora_procesos_sw , onto:topic_modelos_referencia_mejora_procesos_sw .
+
+onto:topic_introduccion_evaluacion_mejora_procesos_sw a onto:Topic ;
+    onto:Topic_name "8.1. Introducción a la evaluación y mejora de procesos SW" .
+
+onto:topic_modelos_referencia_mejora_procesos_sw a onto:Topic ;
+    onto:Topic_name "8.2. Modelos de referencia para mejora de procesos SW" .
+
+onto:recurso_software_quality_assurance_laporte a onto:Resource ;
+    onto:Resource_name "Software Quality Assurance BibliografíaSoftware Quality Assurance. Claude Y.\nLaporte, Alain April. ISBN: 978-1-118-50182-5 January 2018\nWiley-IEEE Computer Society Press" .
+
+onto:recurso_software_quality_concepts_practice_galin a onto:Resource ;
+    onto:Resource_name "Software Quality: Concepts and PracticeBibliografíaSoftware Quality: Concepts and Practice.\nDaniel Galin. ISBN: 978-1-119-13452-7 May\n2018 Wiley-IEEE Computer Society Press" .
+
+onto:recurso_sevvocab a onto:Resource ;
+    onto:Resource_name "Sevocab Recursos webhttps://pascal.computer.org/sev_display/index\n.action\nVocabulario autorizado de términos de\nIngeniería del Software" .
+
+onto:recurso_del_aseguramiento_gestion_calidad_aenor a onto:Resource ;
+    onto:Resource_name "\"Del aseguramiento a la gestión de la\calidad: El enfoque basado en\procesos\".  David Hoyle, John\nThompson. AENORBibliografía Bibliografía específica 1" .
+
+onto:recurso_total_quality_management_besterfield a onto:Resource ;
+    onto:Resource_name "\"Total Quality Management\".  Dale H.\nBesterfield, Carol Besterfield-Michna,\nGlen H. Besterfield, Mary Besterfield-\nSacre. Prentice HallBibliografía Bibliografía específica 4" .
+
+onto:recurso_medicion_gestion_ingenieria_software_dolado a onto:Resource ;
+    onto:Resource_name "\"Medición para la Gestión en la\nIngeniería del Software\". José J.\nDolado, Luís Fernández. Ed Ra-Ma.Bibliografía Bibliografía Básica 3" .
+
+onto:recurso_aula_etsisi a onto:Resource ;
+    onto:Resource_name "Aula EquipamientoAula de la ETSISI con cañón de luz\nconectado a PC en la mesa del profesor y\nsistema de audio inalámbrico. Pizarra\nclásica." .
+
+onto:recurso_plataforma_moodle_upm a onto:Resource ;
+    onto:Resource_name "Plataforma de enseñanza MOODLE Recursos webInformación general, documentación,\nactividades, información complementaria,\nenlaces, calificaciones, foros, etc. En español\ny en inglés." .
+
+onto:asignatura_calidad_software onto:Subject_resources onto:recurso_software_quality_assurance_laporte , onto:recurso_software_quality_concepts_practice_galin , onto:recurso_sevvocab , onto:recurso_del_aseguramiento_gestion_calidad_aenor , onto:recurso_total_quality_management_besterfield , onto:recurso_medicion_gestion_ingenieria_software_dolado , onto:recurso_aula_etsisi , onto:recurso_plataforma_moodle_upm .
+
+
